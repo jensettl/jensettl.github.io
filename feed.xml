@@ -5,9 +5,32 @@
     <description>I share my coding journey and insights.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Aug 2025 16:32:41 +0200</pubDate>
-    <lastBuildDate>Thu, 21 Aug 2025 16:32:41 +0200</lastBuildDate>
+    <pubDate>Thu, 21 Aug 2025 17:06:51 +0200</pubDate>
+    <lastBuildDate>Thu, 21 Aug 2025 17:06:51 +0200</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
+    
+      <item>
+        <title>[PROJECT] Analyze resumes with Ollama locally</title>
+        <description>&lt;p&gt;Placeholder for project i have built using Ollama locally to analyze resumes. Later i add a RAG pipeline to feed company data to the model.&lt;/p&gt;
+
+&lt;h1 id=&quot;overview&quot;&gt;Overview&lt;/h1&gt;
+</description>
+        <pubDate>Thu, 21 Aug 2025 00:00:00 +0200</pubDate>
+        <link>/PRJ-ollama-resume-analyzer/</link>
+        <guid isPermaLink="true">/PRJ-ollama-resume-analyzer/</guid>
+        
+        <category>coding</category>
+        
+        <category>python</category>
+        
+        <category>ollama</category>
+        
+        
+        <category>AI</category>
+        
+        <category>LLM</category>
+        
+      </item>
     
       <item>
         <title>Template instructions for creating a blog post</title>
