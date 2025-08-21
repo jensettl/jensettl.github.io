@@ -5,8 +5,8 @@
     <description>I share my coding journey and insights.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Aug 2025 16:10:54 +0200</pubDate>
-    <lastBuildDate>Thu, 21 Aug 2025 16:10:54 +0200</lastBuildDate>
+    <pubDate>Thu, 21 Aug 2025 16:32:41 +0200</pubDate>
+    <lastBuildDate>Thu, 21 Aug 2025 16:32:41 +0200</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
     
       <item>
@@ -147,6 +147,180 @@ toc: true # Summary
         
         
         <category>Coding</category>
+        
+      </item>
+    
+      <item>
+        <title>LangChain Basics</title>
+        <description>&lt;h1 id=&quot;langchain-basics&quot;&gt;LangChain Basics&lt;/h1&gt;
+
+&lt;p&gt;LangChain is an &lt;strong&gt;open-source framework&lt;/strong&gt; that helps developers build applications with large language models (LLMs).&lt;br /&gt;
+It provides abstractions and integrations for working with LLMs like OpenAI, Anthropic, Cohere, and others.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-langchain&quot;&gt;What is LangChain?&lt;/h2&gt;
+
+&lt;p&gt;At its core, LangChain makes it easier to connect:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;LLMs&lt;/strong&gt; (e.g. GPT-4, Claude, etc.)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data sources&lt;/strong&gt; (databases, PDFs, APIs, documents, etc.)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Chains&lt;/strong&gt; (sequences of steps combining prompts, logic, and tools)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Agents&lt;/strong&gt; (LLMs that decide which tools or actions to use)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This allows you to build applications such as:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Chatbots &amp;amp; assistants&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Document Q&amp;amp;A systems&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Code helpers&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Workflow automation with LLMs&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;where-is-langchain-being-used&quot;&gt;Where is LangChain Being Used?&lt;/h2&gt;
+
+&lt;p&gt;Some popular use cases include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Customer support chatbots&lt;/strong&gt; trained on company documentation&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Research assistants&lt;/strong&gt; that can read PDFs or websites&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;AI-powered search engines&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data analysis tools&lt;/strong&gt; where the LLM runs queries on your dataset&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Prototyping AI workflows quickly&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;basic-examples&quot;&gt;Basic Examples&lt;/h2&gt;
+
+&lt;p&gt;Here are some minimal Python examples:&lt;/p&gt;
+
+&lt;h3 id=&quot;1-simple-llm-call&quot;&gt;1. Simple LLM Call&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;from langchain_openai import OpenAI
+
+llm = OpenAI(model=&quot;gpt-3.5-turbo&quot;, temperature=0)
+response = llm.invoke(&quot;Explain LangChain in one sentence.&quot;)
+print(response)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;2-prompt-template--chain&quot;&gt;2: Prompt Template + Chain&lt;/h3&gt;
+
+&lt;p&gt;Sometimes you want to reuse a prompt in a structured way.
+Here we create a PromptTemplate, pass it to an LLMChain, and use it to generate consistent outputs.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
+from langchain_openai import OpenAI
+
+# Define a reusable prompt template
+prompt = PromptTemplate(
+    input_variables=[&quot;topic&quot;, &quot;audience&quot;],
+    template=&quot;Explain {topic} in simple terms for {audience}.&quot;
+)
+
+llm = OpenAI(model=&quot;gpt-3.5-turbo&quot;, temperature=0.5)
+chain = LLMChain(llm=llm, prompt=prompt)
+
+# Run the chain with different inputs
+print(chain.run({&quot;topic&quot;: &quot;quantum computing&quot;, &quot;audience&quot;: &quot;high school students&quot;}))
+print(chain.run({&quot;topic&quot;: &quot;machine learning&quot;, &quot;audience&quot;: &quot;software engineers&quot;}))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;3-document-qa-vectorstore&quot;&gt;3: Document Q&amp;amp;A (Vectorstore)&lt;/h3&gt;
+
+&lt;p&gt;Here’s how to let an LLM answer questions over your own data using embeddings + vector search.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;from langchain_openai import OpenAIEmbeddings, OpenAI
+from langchain_community.vectorstores import FAISS
+from langchain.chains import RetrievalQA
+
+# Step 1: Prepare documents (could also load from PDF, DB, API)
+docs = [
+    &quot;LangChain is a framework for building applications with LLMs.&quot;,
+    &quot;LangChain supports document Q&amp;amp;A, chatbots, and workflow automation.&quot;,
+    &quot;It integrates with vector databases like FAISS, Pinecone, Chroma.&quot;
+]
+
+# Step 2: Build embeddings + vectorstore
+embeddings = OpenAIEmbeddings()
+docsearch = FAISS.from_texts(docs, embeddings)
+
+# Step 3: Build a Retrieval-based QA chain
+qa = RetrievalQA.from_chain_type(
+    llm=OpenAI(model=&quot;gpt-3.5-turbo&quot;, temperature=0),
+    retriever=docsearch.as_retriever(),
+    return_source_documents=True
+)
+
+# Step 4: Ask questions
+query = &quot;What can LangChain be used for?&quot;
+result = qa.invoke(query)
+
+print(&quot;Answer:&quot;, result[&quot;result&quot;])
+print(&quot;\nSources:&quot;)
+for doc in result[&quot;source_documents&quot;]:
+    print(&quot;-&quot;, doc.page_content)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;4-automation-workflow-with-an-agent&quot;&gt;4: Automation Workflow with an Agent&lt;/h3&gt;
+
+&lt;p&gt;Agents allow an LLM to decide which tools to use dynamically (like calling APIs, running calculations, etc.).
+Here’s a simple workflow: the agent can answer general questions and do math.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;from langchain_openai import OpenAI
+from langchain.agents import initialize_agent, AgentType, load_tools
+
+# Step 1: Load tools (here we add a calculator tool)
+llm = OpenAI(model=&quot;gpt-3.5-turbo&quot;, temperature=0)
+tools = load_tools([&quot;llm-math&quot;], llm=llm)
+
+# Step 2: Initialize an agent
+agent = initialize_agent(
+    tools=tools,
+    llm=llm,
+    agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+    verbose=True
+)
+
+# Step 3: Run queries
+print(agent.run(&quot;What&apos;s 17 times the square root of 2?&quot;))
+print(agent.run(&quot;Summarize what LangChain is in 2 sentences.&quot;))
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;💡 Here the LLM chooses when to use the calculator tool vs. just generating text.
+In production, you can wire up tools like web search, APIs, databases, shell commands, etc.&lt;/p&gt;
+
+&lt;h2 id=&quot;key-takeaways&quot;&gt;Key Takeaways&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;LangChain is a toolkit for LLM apps.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It simplifies prompt management, chaining, and external data integration.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Supports many backends (OpenAI, Hugging Face, Anthropic, etc.).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Great for quickly building chatbots, assistants, and AI-powered workflows.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 21 Aug 2025 00:00:00 +0200</pubDate>
+        <link>/TIL-langchain-basics/</link>
+        <guid isPermaLink="true">/TIL-langchain-basics/</guid>
+        
+        <category>langchain</category>
+        
+        <category>python</category>
+        
+        <category>automation</category>
+        
+        
+        <category>AI</category>
+        
+        <category>LLM</category>
         
       </item>
     

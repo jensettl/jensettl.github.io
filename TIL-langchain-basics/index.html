@@ -6,25 +6,25 @@
 
 <link rel="icon" href="/assets/images/logo.png">
 
-<title>Markdown Syntax | Jens' Blog</title>
+<title>LangChain Basics | Jens' Blog</title>
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Markdown Syntax | Jens’ Blog</title>
+<title>LangChain Basics | Jens’ Blog</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Markdown Syntax" />
+<meta property="og:title" content="LangChain Basics" />
 <meta name="author" content="jens" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case" />
-<meta property="og:description" content="This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case" />
+<meta name="description" content="LangChain Basics" />
+<meta property="og:description" content="LangChain Basics" />
 <meta property="og:site_name" content="Jens’ Blog" />
-<meta property="og:image" content="/assets/images/cropped_markdown.jpg" />
+<meta property="og:image" content="/assets/images/cropped_langchain.jpg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-08-21T00:00:00+02:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="/assets/images/cropped_markdown.jpg" />
-<meta property="twitter:title" content="Markdown Syntax" />
+<meta property="twitter:image" content="/assets/images/cropped_langchain.jpg" />
+<meta property="twitter:title" content="LangChain Basics" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"jens"},"dateModified":"2025-08-21T00:00:00+02:00","datePublished":"2025-08-21T00:00:00+02:00","description":"This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case","headline":"Markdown Syntax","image":"/assets/images/cropped_markdown.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/markdown-syntax/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/logo.png"},"name":"jens"},"url":"/markdown-syntax/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"jens"},"dateModified":"2025-08-21T00:00:00+02:00","datePublished":"2025-08-21T00:00:00+02:00","description":"LangChain Basics","headline":"LangChain Basics","image":"/assets/images/cropped_langchain.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/TIL-langchain-basics/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/logo.png"},"name":"jens"},"url":"/TIL-langchain-basics/"}</script>
 <!-- End Jekyll SEO tag -->
 
     
@@ -111,7 +111,7 @@
     <div class="main-content">
         <div class="entry-header">
     <!-- Post Title -->
-    <h1 class="posttitle">Markdown Syntax</h1>
+    <h1 class="posttitle">LangChain Basics</h1>
     <!-- Author & Date  Box -->
     
     
@@ -137,7 +137,7 @@
 
 <div class="entry-featured-image">
     
-    <img class="featured-image " src="/assets/images/cropped_markdown.jpg" alt="Markdown Syntax">
+    <img class="featured-image " src="/assets/images/cropped_langchain.jpg" alt="LangChain Basics">
     
 </div>
 
@@ -149,110 +149,182 @@
     <!-- Toc if any -->
     
     
-        <p><em>This markdown cheat sheet covers just the basic syntax of markdown. For more information search the web.</em></p>
-    
     <div class="toc mt-4 mb-4 lead">
         <h3 class="font-weight-bold">Summary</h3>
         <ul>
-  <li><a href="#basic">Basic</a></li>
-  <li><a href="#extended-syntax">Extended Syntax</a></li>
+  <li><a href="#langchain-basics">LangChain Basics</a>
+    <ul>
+      <li><a href="#what-is-langchain">What is LangChain?</a></li>
+      <li><a href="#where-is-langchain-being-used">Where is LangChain Being Used?</a></li>
+      <li><a href="#basic-examples">Basic Examples</a>
+        <ul>
+          <li><a href="#1-simple-llm-call">1. Simple LLM Call</a></li>
+          <li><a href="#2-prompt-template--chain">2: Prompt Template + Chain</a></li>
+          <li><a href="#3-document-qa-vectorstore">3: Document Q&amp;A (Vectorstore)</a></li>
+          <li><a href="#4-automation-workflow-with-an-agent">4: Automation Workflow with an Agent</a></li>
+        </ul>
+      </li>
+      <li><a href="#key-takeaways">Key Takeaways</a></li>
+    </ul>
+  </li>
 </ul>
     </div>
     
     <!-- End Toc -->
-    <p>This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case</p>
+    <h1 id="langchain-basics">LangChain Basics</h1>
 
-<h2 id="basic">Basic</h2>
+<p>LangChain is an <strong>open-source framework</strong> that helps developers build applications with large language models (LLMs).<br />
+It provides abstractions and integrations for working with LLMs like OpenAI, Anthropic, Cohere, and others.</p>
 
-<p>These are the elements outlined in John Gruber’s original design document. All Markdown applications support these elements.</p>
+<h2 id="what-is-langchain">What is LangChain?</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Element</th>
-      <th style="text-align: center">Markdown Syntax</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Headinng</td>
-      <td style="text-align: center"># H1 <br /> ## H2 <br /> ### H3</td>
-    </tr>
-    <tr>
-      <td>Bold Text</td>
-      <td style="text-align: center">** Text **</td>
-    </tr>
-    <tr>
-      <td>Italic</td>
-      <td style="text-align: center">* Text *</td>
-    </tr>
-    <tr>
-      <td>Blockquote</td>
-      <td style="text-align: center">&gt; Text</td>
-    </tr>
-    <tr>
-      <td>Ordered List</td>
-      <td style="text-align: center">1. First <br /> 2. Second <br /> 3. Third</td>
-    </tr>
-    <tr>
-      <td>Unordered List</td>
-      <td style="text-align: center">- First <br /> - Second <br /> - Third</td>
-    </tr>
-    <tr>
-      <td>Code</td>
-      <td style="text-align: center">`Code`</td>
-    </tr>
-    <tr>
-      <td>Horizontal Rule</td>
-      <td style="text-align: center">—</td>
-    </tr>
-    <tr>
-      <td>Link</td>
-      <td style="text-align: center">[Text] (URL)</td>
-    </tr>
-    <tr>
-      <td>Image</td>
-      <td style="text-align: center">! [Text] (URL)</td>
-    </tr>
-  </tbody>
-</table>
+<p>At its core, LangChain makes it easier to connect:</p>
 
-<p><br /></p>
+<ul>
+  <li><strong>LLMs</strong> (e.g. GPT-4, Claude, etc.)</li>
+  <li><strong>Data sources</strong> (databases, PDFs, APIs, documents, etc.)</li>
+  <li><strong>Chains</strong> (sequences of steps combining prompts, logic, and tools)</li>
+  <li><strong>Agents</strong> (LLMs that decide which tools or actions to use)</li>
+</ul>
 
-<h2 id="extended-syntax">Extended Syntax</h2>
+<p>This allows you to build applications such as:</p>
 
-<p>These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.</p>
+<ul>
+  <li><strong>Chatbots &amp; assistants</strong></li>
+  <li><strong>Document Q&amp;A systems</strong></li>
+  <li><strong>Code helpers</strong></li>
+  <li><strong>Workflow automation with LLMs</strong></li>
+</ul>
 
-<table>
-  <thead>
-    <tr>
-      <th>Element</th>
-      <th style="text-align: center">Markdown Syntax</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Table</td>
-      <td style="text-align: center">| Header 1 | Header 2 | <br /> | —- | ———– | <br /> | Cell 1 | Cell 2 |</td>
-    </tr>
-    <tr>
-      <td>Fenced Code Block</td>
-      <td style="text-align: center">``` <br /> { <br /> “firstName”: “John”, <br /> “lastName”: “Smith”, <br /> “age”: 25 <br /> } <br /> ```</td>
-    </tr>
-    <tr>
-      <td>Footnote</td>
-      <td style="text-align: center">Here’s a sentence with a footnote. [^1] <br /> [^1]: Another sentence with footnote.</td>
-    </tr>
-    <tr>
-      <td>Striketrough</td>
-      <td style="text-align: center">~~The world is flat.~~</td>
-    </tr>
-    <tr>
-      <td>Escape Symbol</td>
-      <td style="text-align: center">\</td>
-    </tr>
-  </tbody>
-</table>
+<h2 id="where-is-langchain-being-used">Where is LangChain Being Used?</h2>
+
+<p>Some popular use cases include:</p>
+
+<ul>
+  <li><strong>Customer support chatbots</strong> trained on company documentation</li>
+  <li><strong>Research assistants</strong> that can read PDFs or websites</li>
+  <li><strong>AI-powered search engines</strong></li>
+  <li><strong>Data analysis tools</strong> where the LLM runs queries on your dataset</li>
+  <li><strong>Prototyping AI workflows quickly</strong></li>
+</ul>
+
+<h2 id="basic-examples">Basic Examples</h2>
+
+<p>Here are some minimal Python examples:</p>
+
+<h3 id="1-simple-llm-call">1. Simple LLM Call</h3>
+
+<pre><code class="language-python">from langchain_openai import OpenAI
+
+llm = OpenAI(model="gpt-3.5-turbo", temperature=0)
+response = llm.invoke("Explain LangChain in one sentence.")
+print(response)
+</code></pre>
+
+<h3 id="2-prompt-template--chain">2: Prompt Template + Chain</h3>
+
+<p>Sometimes you want to reuse a prompt in a structured way.
+Here we create a PromptTemplate, pass it to an LLMChain, and use it to generate consistent outputs.</p>
+
+<pre><code class="language-python">from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
+from langchain_openai import OpenAI
+
+# Define a reusable prompt template
+prompt = PromptTemplate(
+    input_variables=["topic", "audience"],
+    template="Explain {topic} in simple terms for {audience}."
+)
+
+llm = OpenAI(model="gpt-3.5-turbo", temperature=0.5)
+chain = LLMChain(llm=llm, prompt=prompt)
+
+# Run the chain with different inputs
+print(chain.run({"topic": "quantum computing", "audience": "high school students"}))
+print(chain.run({"topic": "machine learning", "audience": "software engineers"}))
+</code></pre>
+
+<h3 id="3-document-qa-vectorstore">3: Document Q&amp;A (Vectorstore)</h3>
+
+<p>Here’s how to let an LLM answer questions over your own data using embeddings + vector search.</p>
+
+<pre><code class="language-python">from langchain_openai import OpenAIEmbeddings, OpenAI
+from langchain_community.vectorstores import FAISS
+from langchain.chains import RetrievalQA
+
+# Step 1: Prepare documents (could also load from PDF, DB, API)
+docs = [
+    "LangChain is a framework for building applications with LLMs.",
+    "LangChain supports document Q&amp;A, chatbots, and workflow automation.",
+    "It integrates with vector databases like FAISS, Pinecone, Chroma."
+]
+
+# Step 2: Build embeddings + vectorstore
+embeddings = OpenAIEmbeddings()
+docsearch = FAISS.from_texts(docs, embeddings)
+
+# Step 3: Build a Retrieval-based QA chain
+qa = RetrievalQA.from_chain_type(
+    llm=OpenAI(model="gpt-3.5-turbo", temperature=0),
+    retriever=docsearch.as_retriever(),
+    return_source_documents=True
+)
+
+# Step 4: Ask questions
+query = "What can LangChain be used for?"
+result = qa.invoke(query)
+
+print("Answer:", result["result"])
+print("\nSources:")
+for doc in result["source_documents"]:
+    print("-", doc.page_content)
+</code></pre>
+
+<h3 id="4-automation-workflow-with-an-agent">4: Automation Workflow with an Agent</h3>
+
+<p>Agents allow an LLM to decide which tools to use dynamically (like calling APIs, running calculations, etc.).
+Here’s a simple workflow: the agent can answer general questions and do math.</p>
+
+<pre><code class="language-python">from langchain_openai import OpenAI
+from langchain.agents import initialize_agent, AgentType, load_tools
+
+# Step 1: Load tools (here we add a calculator tool)
+llm = OpenAI(model="gpt-3.5-turbo", temperature=0)
+tools = load_tools(["llm-math"], llm=llm)
+
+# Step 2: Initialize an agent
+agent = initialize_agent(
+    tools=tools,
+    llm=llm,
+    agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+    verbose=True
+)
+
+# Step 3: Run queries
+print(agent.run("What's 17 times the square root of 2?"))
+print(agent.run("Summarize what LangChain is in 2 sentences."))
+
+</code></pre>
+
+<p>💡 Here the LLM chooses when to use the calculator tool vs. just generating text.
+In production, you can wire up tools like web search, APIs, databases, shell commands, etc.</p>
+
+<h2 id="key-takeaways">Key Takeaways</h2>
+
+<ul>
+  <li>
+    <p>LangChain is a toolkit for LLM apps.</p>
+  </li>
+  <li>
+    <p>It simplifies prompt management, chaining, and external data integration.</p>
+  </li>
+  <li>
+    <p>Supports many backends (OpenAI, Hugging Face, Anthropic, etc.).</p>
+  </li>
+  <li>
+    <p>Great for quickly building chatbots, assistants, and AI-powered workflows.</p>
+  </li>
+</ul>
 
 </div>
 
@@ -319,19 +391,19 @@
     </p>
     <ul>
         <li class="ml-1 mr-1">
-            <a target="_blank" href="https://twitter.com/intent/tweet?text=Markdown Syntax&url=/markdown-syntax/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=LangChain Basics&url=/TIL-langchain-basics/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                 <i class="fab fa-twitter"></i>
             </a>
         </li>
 
         <li class="ml-1 mr-1">
-            <a target="_blank" href="https://facebook.com/sharer.php?u=/markdown-syntax/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=/TIL-langchain-basics/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
                 <i class="fab fa-facebook-f"></i>
             </a>
         </li>
 
         <li class="ml-1 mr-1">
-            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=/markdown-syntax/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=/TIL-langchain-basics/" onclick="window.open(this.href, 'width=550,height=435');return false;">
                 <i class="fab fa-linkedin-in"></i>
             </a>
         </li>
@@ -354,13 +426,19 @@
     <!-- Categories -->
     
     
-    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#Coding">Coding</a>                
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#AI">AI</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#LLM">LLM</a>                
     
 
     <!-- Tags -->  
     
                     
-    <a class="smoothscroll badge badge-primary text-capitalize" href="/tags#Markdown">Markdown</a>               
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/tags#automation">automation</a>               
+                    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/tags#langchain">langchain</a>               
+                    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/tags#python">python</a>               
     
 
     </div>
@@ -376,52 +454,6 @@
         
             
         
-            
-            <!-- begin post -->
-
-
-<div class="blog-grid-item">
-    <div class="card h-100">
-        <div class="maxthumb">
-            <a href="/template-for-creating-post/">
-                
-
-                    
-                        <img class="img-thumb" src="/assets/images/cropped_blog-post.jpg" alt="Template instructions for creating a blog post"> 
-                    
-
-                
-            </a>
-        </div>
-        <div class="card-body">
-            <h2 class="card-title">
-                <a class="text-dark" href="/template-for-creating-post/">Template instructions for creating a blog post</a>
-                
-            </h2>
-            <h4 class="card-text">Add a specific header to your post
-</h4>
-        </div>
-        <div class="card-footer bg-white">
-            <div class="wrapfooter">
-                
-                <span class="meta-footer-thumb">
-                
-                <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
-                
-                </span>
-                <span class="author-meta">
-                <span class="post-name font-weight-bold">Jens</span> 
-                
-                <span class="post-date">21 Aug 2025</span>
-                </span>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end post -->
-            
-            
             
         
         
