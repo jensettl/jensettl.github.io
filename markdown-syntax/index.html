@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo.png">
+
+<title>Markdown Syntax | Jens' Blog</title>
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Markdown Syntax | Jens’ Blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Markdown Syntax" />
+<meta name="author" content="jens" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case" />
+<meta property="og:description" content="This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case" />
+<meta property="og:site_name" content="Jens’ Blog" />
+<meta property="og:image" content="/assets/images/cropped_markdown.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-08-21T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/images/cropped_markdown.jpg" />
+<meta property="twitter:title" content="Markdown Syntax" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"jens"},"dateModified":"2025-08-21T00:00:00+02:00","datePublished":"2025-08-21T00:00:00+02:00","description":"This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case","headline":"Markdown Syntax","image":"/assets/images/cropped_markdown.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/markdown-syntax/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/logo.png"},"name":"jens"},"url":"/markdown-syntax/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+<link href="/assets/css/prism.css" rel="stylesheet">
+
+<link href="/assets/css/theme.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body>
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+<!-- Begin Sidebar Navigation
+================================================== -->
+
+<div class="sidebar">    
+</div>   
+<div class="nav-icon">
+    <div class="hamburger-bar"></div>
+</div>
+<div id="blackover-nav" class="blackover"></div>
+<nav id="menu">
+    <ul>
+        <h3>Navigation</h3>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/authors">Contributors</a></li>
+        <!-- <li><a href="/contact">Contact</a></li>        -->
+    </ul>   
+</nav>
+
+<script src="/assets/js/lunr.js"></script>
+
+<style>
+    
+</style>
+
+<div class="wrap-search">
+    <div class="d-flex align-items-center ml-auto">
+        <i class="fas fa-search show-search"></i>
+        <form class="bd-search ml-3" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+            <input type="text" class="form-control bigradius text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+        </form>
+    </div>
+</div>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+
+<!-- End Sidebar Navigation
+================================================== -->
+
+<div class="site-content ">
+
+<div class="container">
+
+    <!-- Site Logo/Name
+    ================================================== -->
+   
+    <a class="navbar-brand" href="/">
+        <img src="/assets/images/logo.png" alt="Jens' Blog">
+    </a>  
+   
+
+    <!-- Site Tag
+    ================================================== -->
+    
+
+    <!-- Content
+    ================================================== -->
+    <div class="main-content">
+        <div class="entry-header">
+    <!-- Post Title -->
+    <h1 class="posttitle">Markdown Syntax</h1>
+    <!-- Author & Date  Box -->
+    
+    
+    <div class="d-flex align-items-center mt-4">
+        <div>
+            
+            <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+            
+        </div>            
+        <div>
+        Written by Jens on 
+        <span class="post-date"><time class="post-date" datetime="2025-08-21">21 Aug 2025</time></span>           
+        
+        </div>            
+    </div>
+    
+</div>
+
+<!-- Adsense under title if enabled from _config.yml (change your pub id and slot) -->
+
+
+<!-- Featured Image -->
+
+<div class="entry-featured-image">
+    
+    <img class="featured-image " src="/assets/images/cropped_markdown.jpg" alt="Markdown Syntax">
+    
+</div>
+
+
+<!-- Content -->
+<!-- Post, Page Content
+================================================== -->
+<div class="article-post">
+    <!-- Toc if any -->
+    
+    
+        <p><em>This markdown cheat sheet covers just the basic syntax of markdown. For more information search the web.</em></p>
+    
+    <div class="toc mt-4 mb-4 lead">
+        <h3 class="font-weight-bold">Summary</h3>
+        <ul>
+  <li><a href="#basic">Basic</a></li>
+  <li><a href="#extended-syntax">Extended Syntax</a></li>
+</ul>
+    </div>
+    
+    <!-- End Toc -->
+    <p>This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case</p>
+
+<h2 id="basic">Basic</h2>
+
+<p>These are the elements outlined in John Gruber’s original design document. All Markdown applications support these elements.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th style="text-align: center">Markdown Syntax</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Headinng</td>
+      <td style="text-align: center"># H1 <br /> ## H2 <br /> ### H3</td>
+    </tr>
+    <tr>
+      <td>Bold Text</td>
+      <td style="text-align: center">** Text **</td>
+    </tr>
+    <tr>
+      <td>Italic</td>
+      <td style="text-align: center">* Text *</td>
+    </tr>
+    <tr>
+      <td>Blockquote</td>
+      <td style="text-align: center">&gt; Text</td>
+    </tr>
+    <tr>
+      <td>Ordered List</td>
+      <td style="text-align: center">1. First <br /> 2. Second <br /> 3. Third</td>
+    </tr>
+    <tr>
+      <td>Unordered List</td>
+      <td style="text-align: center">- First <br /> - Second <br /> - Third</td>
+    </tr>
+    <tr>
+      <td>Code</td>
+      <td style="text-align: center">`Code`</td>
+    </tr>
+    <tr>
+      <td>Horizontal Rule</td>
+      <td style="text-align: center">—</td>
+    </tr>
+    <tr>
+      <td>Link</td>
+      <td style="text-align: center">[Text] (URL)</td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td style="text-align: center">! [Text] (URL)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h2 id="extended-syntax">Extended Syntax</h2>
+
+<p>These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th style="text-align: center">Markdown Syntax</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table</td>
+      <td style="text-align: center">| Header 1 | Header 2 | <br /> | —- | ———– | <br /> | Cell 1 | Cell 2 |</td>
+    </tr>
+    <tr>
+      <td>Fenced Code Block</td>
+      <td style="text-align: center">``` <br /> { <br /> “firstName”: “John”, <br /> “lastName”: “Smith”, <br /> “age”: 25 <br /> } <br /> ```</td>
+    </tr>
+    <tr>
+      <td>Footnote</td>
+      <td style="text-align: center">Here’s a sentence with a footnote. [^1] <br /> [^1]: Another sentence with footnote.</td>
+    </tr>
+    <tr>
+      <td>Striketrough</td>
+      <td style="text-align: center">~~The world is flat.~~</td>
+    </tr>
+    <tr>
+      <td>Escape Symbol</td>
+      <td style="text-align: center">\</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<!-- Rating -->
+
+
+<!-- Author Box if enabled from _config.yml -->
+<!-- Author Box -->
+
+
+<div class="authorbox mb-5 mt-5 pt-4 pb-4">   
+    <div class="row">
+        <div class="wrapavname col-md-3 text-center">
+            
+            <img  class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+            
+            <p class="mt-4 mb-0 small text-center">
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href=""><i class="fa fa-link"></i></a> 
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href=""><i class="fab fa-twitter"></i></a>
+                <a class="d-inline-block mx-1 text-dark" href="mailto:ettljens@gmail.com"><i class="fa fa-envelope"></i></a>
+            </p>
+        </div>
+        <div class="col-md-9">
+            <h4>Jens</h4>
+            <p class="mt-3 mb-0">Content creator for this blog and user of this Jekyll template. I love to tackle problems with creative coding solutions and automations.</p>
+        </div>
+    </div> 
+</div> 
+
+
+
+<!-- Comments if not disabled with comments: false -->
+<!-- Comments
+================================================== -->
+ 
+<div class="comments mt-5">
+    <button class="btn btn-outline-dark py-2 px-5 d-block w-100 show-comments"><i class="fa fa-comments text-muted"></i> &nbsp; Load Comments</button>         
+    <div id="comments">  
+        <h4 class="mb-4">Comments</h4>                 
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'blogwebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+     
+    <div class="clearfix"></div>              
+    </div>    
+</div>       
+
+
+<!-- Share -->
+<div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Markdown Syntax&url=/markdown-syntax/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=/markdown-syntax/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=/markdown-syntax/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+
+<!-- Related Post -->
+<!-- Related Posts
+================================================== -->
+<div class=" related-posts ">  
+
+    
+    <h2 class="text-center mb-4">Explore more like this</h2>
+    
+    
+    <div class="d-flex justify-content-center align-items-center">
+    
+    <!-- Categories -->
+    
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#Coding">Coding</a>                
+    
+
+    <!-- Tags -->  
+    
+                    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/tags#Markdown">Markdown</a>               
+    
+
+    </div>
+
+    
+    
+    
+    <div class="blog-grid-container">
+        
+        
+            
+            
+        
+            
+        
+            
+            <!-- begin post -->
+
+
+<div class="blog-grid-item">
+    <div class="card h-100">
+        <div class="maxthumb">
+            <a href="/template-for-creating-post/">
+                
+
+                    
+                        <img class="img-thumb" src="/assets/images/cropped_blog-post.jpg" alt="Template instructions for creating a blog post"> 
+                    
+
+                
+            </a>
+        </div>
+        <div class="card-body">
+            <h2 class="card-title">
+                <a class="text-dark" href="/template-for-creating-post/">Template instructions for creating a blog post</a>
+                
+            </h2>
+            <h4 class="card-text">Add a specific header to your post
+</h4>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="wrapfooter">
+                
+                <span class="meta-footer-thumb">
+                
+                <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+                
+                </span>
+                <span class="author-meta">
+                <span class="post-name font-weight-bold">Jens</span> 
+                
+                <span class="post-date">21 Aug 2025</span>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end post -->
+            
+            
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        </div>        
+</div>
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+    </div>
+
+    
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-6 col-sm-12 text-center text-lg-left">
+                Copyright © 2025 Jens' Blog 
+            </div>
+            <div class="col-md-6 col-sm-12 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net/memoirs-free-jekyll-theme/">Memoirs Jekyll Theme</a> by WowThemes.net
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts (if you need bootstrap.js, please add it yourself. I didn't use it for performance reasons, it was not needed in this theme)
+================================================== -->
+
+<script src="/assets/js/prism.js"></script>
+
+<script src="/assets/js/theme.js"></script>
+
+
+
+
+<script id="dsq-count-scr" src="//blogwebsite.disqus.com/count.js"></script>
+
+
+</body>
+</html>

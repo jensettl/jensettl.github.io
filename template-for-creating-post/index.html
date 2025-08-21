@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo.png">
+
+<title>Template instructions for creating a blog post | Jens' Blog</title>
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Template instructions for creating a blog post | Jens’ Blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Template instructions for creating a blog post" />
+<meta name="author" content="jens" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Add a specific header to your post" />
+<meta property="og:description" content="Add a specific header to your post" />
+<meta property="og:site_name" content="Jens’ Blog" />
+<meta property="og:image" content="/assets/images/cropped_blog-post.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-08-21T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/images/cropped_blog-post.jpg" />
+<meta property="twitter:title" content="Template instructions for creating a blog post" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"jens"},"dateModified":"2025-08-21T00:00:00+02:00","datePublished":"2025-08-21T00:00:00+02:00","description":"Add a specific header to your post","headline":"Template instructions for creating a blog post","image":"/assets/images/cropped_blog-post.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"/template-for-creating-post/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/logo.png"},"name":"jens"},"url":"/template-for-creating-post/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+<link href="/assets/css/prism.css" rel="stylesheet">
+
+<link href="/assets/css/theme.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body>
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+<!-- Begin Sidebar Navigation
+================================================== -->
+
+<div class="sidebar">    
+</div>   
+<div class="nav-icon">
+    <div class="hamburger-bar"></div>
+</div>
+<div id="blackover-nav" class="blackover"></div>
+<nav id="menu">
+    <ul>
+        <h3>Navigation</h3>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/authors">Contributors</a></li>
+        <!-- <li><a href="/contact">Contact</a></li>        -->
+    </ul>   
+</nav>
+
+<script src="/assets/js/lunr.js"></script>
+
+<style>
+    
+</style>
+
+<div class="wrap-search">
+    <div class="d-flex align-items-center ml-auto">
+        <i class="fas fa-search show-search"></i>
+        <form class="bd-search ml-3" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+            <input type="text" class="form-control bigradius text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+        </form>
+    </div>
+</div>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+
+<!-- End Sidebar Navigation
+================================================== -->
+
+<div class="site-content ">
+
+<div class="container">
+
+    <!-- Site Logo/Name
+    ================================================== -->
+   
+    <a class="navbar-brand" href="/">
+        <img src="/assets/images/logo.png" alt="Jens' Blog">
+    </a>  
+   
+
+    <!-- Site Tag
+    ================================================== -->
+    
+
+    <!-- Content
+    ================================================== -->
+    <div class="main-content">
+        <div class="entry-header">
+    <!-- Post Title -->
+    <h1 class="posttitle">Template instructions for creating a blog post</h1>
+    <!-- Author & Date  Box -->
+    
+    
+    <div class="d-flex align-items-center mt-4">
+        <div>
+            
+            <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+            
+        </div>            
+        <div>
+        Written by Jens on 
+        <span class="post-date"><time class="post-date" datetime="2025-08-21">21 Aug 2025</time></span>           
+        
+        </div>            
+    </div>
+    
+</div>
+
+<!-- Adsense under title if enabled from _config.yml (change your pub id and slot) -->
+
+
+<!-- Featured Image -->
+
+<div class="entry-featured-image">
+    
+    <img class="featured-image " src="/assets/images/cropped_blog-post.jpg" alt="Template instructions for creating a blog post">
+    
+</div>
+
+
+<!-- Content -->
+<!-- Post, Page Content
+================================================== -->
+<div class="article-post">
+    <!-- Toc if any -->
+    
+    
+        <p><em>Additional Information here.</em></p>
+    
+    <div class="toc mt-4 mb-4 lead">
+        <h3 class="font-weight-bold">Summary</h3>
+        <ul>
+  <li><a href="#add-a-specific-header-to-your-post">Add a specific header to your post</a></li>
+  <li><a href="#content">Content</a></li>
+</ul>
+    </div>
+    
+    <!-- End Toc -->
+    <h2 id="add-a-specific-header-to-your-post">Add a specific header to your post</h2>
+
+<p>After creating the markdown file for your post, add the following header to the top of the file.</p>
+
+<pre><code class="language-bash">---
+layout: post
+title:  "Title of your post"
+author: jens
+categories: [ Category 1, Category 2 ]
+tags: [ Tag 1, Tag 2 ]
+rating: 4.5
+image: path/to/image.jpg
+beforetoc: "Short paragraüh to add additional information to your post"
+toc: true # Summary
+---
+</code></pre>
+
+<h2 id="content">Content</h2>
+
+<p>After the header start writing the content of your post in markdown syntax.</p>
+
+</div>
+
+<!-- Rating -->
+
+
+<!-- Author Box if enabled from _config.yml -->
+<!-- Author Box -->
+
+
+<div class="authorbox mb-5 mt-5 pt-4 pb-4">   
+    <div class="row">
+        <div class="wrapavname col-md-3 text-center">
+            
+            <img  class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+            
+            <p class="mt-4 mb-0 small text-center">
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href=""><i class="fa fa-link"></i></a> 
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href=""><i class="fab fa-twitter"></i></a>
+                <a class="d-inline-block mx-1 text-dark" href="mailto:ettljens@gmail.com"><i class="fa fa-envelope"></i></a>
+            </p>
+        </div>
+        <div class="col-md-9">
+            <h4>Jens</h4>
+            <p class="mt-3 mb-0">Content creator for this blog and user of this Jekyll template. I love to tackle problems with creative coding solutions and automations.</p>
+        </div>
+    </div> 
+</div> 
+
+
+
+<!-- Comments if not disabled with comments: false -->
+<!-- Comments
+================================================== -->
+ 
+<div class="comments mt-5">
+    <button class="btn btn-outline-dark py-2 px-5 d-block w-100 show-comments"><i class="fa fa-comments text-muted"></i> &nbsp; Load Comments</button>         
+    <div id="comments">  
+        <h4 class="mb-4">Comments</h4>                 
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'blogwebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+     
+    <div class="clearfix"></div>              
+    </div>    
+</div>       
+
+
+<!-- Share -->
+<div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Template instructions for creating a blog post&url=/template-for-creating-post/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=/template-for-creating-post/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=/template-for-creating-post/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+
+<!-- Related Post -->
+<!-- Related Posts
+================================================== -->
+<div class=" related-posts ">  
+
+    
+    <h2 class="text-center mb-4">Explore more like this</h2>
+    
+    
+    <div class="d-flex justify-content-center align-items-center">
+    
+    <!-- Categories -->
+    
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#Coding">Coding</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#Lifestyle">Lifestyle</a>                
+    
+
+    <!-- Tags -->  
+    
+    
+
+    </div>
+
+    
+    
+    
+    <div class="blog-grid-container">
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+            <!-- begin post -->
+
+
+<div class="blog-grid-item">
+    <div class="card h-100">
+        <div class="maxthumb">
+            <a href="/markdown-syntax/">
+                
+
+                    
+                        <img class="img-thumb" src="/assets/images/cropped_markdown.jpg" alt="Markdown Syntax"> 
+                    
+
+                
+            </a>
+        </div>
+        <div class="card-body">
+            <h2 class="card-title">
+                <a class="text-dark" href="/markdown-syntax/">Markdown Syntax</a>
+                
+            </h2>
+            <h4 class="card-text">This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case
+</h4>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="wrapfooter">
+                
+                <span class="meta-footer-thumb">
+                
+                <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+                
+                </span>
+                <span class="author-meta">
+                <span class="post-name font-weight-bold">Jens</span> 
+                
+                <span class="post-date">21 Aug 2025</span>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end post -->
+            
+            
+            
+        
+        
+        </div>        
+</div>
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+    </div>
+
+    
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-6 col-sm-12 text-center text-lg-left">
+                Copyright © 2025 Jens' Blog 
+            </div>
+            <div class="col-md-6 col-sm-12 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net/memoirs-free-jekyll-theme/">Memoirs Jekyll Theme</a> by WowThemes.net
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts (if you need bootstrap.js, please add it yourself. I didn't use it for performance reasons, it was not needed in this theme)
+================================================== -->
+
+<script src="/assets/js/prism.js"></script>
+
+<script src="/assets/js/theme.js"></script>
+
+
+
+
+<script id="dsq-count-scr" src="//blogwebsite.disqus.com/count.js"></script>
+
+
+</body>
+</html>

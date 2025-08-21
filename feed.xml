@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jens&apos; Blog</title>
+    <description>I share my coding journey and insights.</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 21 Aug 2025 16:08:19 +0200</pubDate>
+    <lastBuildDate>Thu, 21 Aug 2025 16:08:19 +0200</lastBuildDate>
+    <generator>Jekyll v4.4.1</generator>
+    
+      <item>
+        <title>Template instructions for creating a blog post</title>
+        <description>&lt;h2 id=&quot;add-a-specific-header-to-your-post&quot;&gt;Add a specific header to your post&lt;/h2&gt;
+
+&lt;p&gt;After creating the markdown file for your post, add the following header to the top of the file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;---
+layout: post
+title:  &quot;Title of your post&quot;
+author: jens
+categories: [ Category 1, Category 2 ]
+tags: [ Tag 1, Tag 2 ]
+rating: 4.5
+image: path/to/image.jpg
+beforetoc: &quot;Short paragraüh to add additional information to your post&quot;
+toc: true # Summary
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;content&quot;&gt;Content&lt;/h2&gt;
+
+&lt;p&gt;After the header start writing the content of your post in markdown syntax.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 21 Aug 2025 00:00:00 +0200</pubDate>
+        <link>/template-for-creating-post/</link>
+        <guid isPermaLink="true">/template-for-creating-post/</guid>
+        
+        
+        <category>Coding</category>
+        
+        <category>Lifestyle</category>
+        
+      </item>
+    
+      <item>
+        <title>Markdown Syntax</title>
+        <description>&lt;p&gt;This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case&lt;/p&gt;
+
+&lt;h2 id=&quot;basic&quot;&gt;Basic&lt;/h2&gt;
+
+&lt;p&gt;These are the elements outlined in John Gruber’s original design document. All Markdown applications support these elements.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Element&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Markdown Syntax&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Headinng&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;# H1 &lt;br /&gt; ## H2 &lt;br /&gt; ### H3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bold Text&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;** Text **&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Italic&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;* Text *&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Blockquote&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&amp;gt; Text&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ordered List&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1. First &lt;br /&gt; 2. Second &lt;br /&gt; 3. Third&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Unordered List&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;- First &lt;br /&gt; - Second &lt;br /&gt; - Third&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Code&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;`Code`&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Horizontal Rule&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;—&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Link&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;[Text] (URL)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Image&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;! [Text] (URL)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;extended-syntax&quot;&gt;Extended Syntax&lt;/h2&gt;
+
+&lt;p&gt;These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Element&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Markdown Syntax&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Table&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;| Header 1 | Header 2 | &lt;br /&gt; | —- | ———– | &lt;br /&gt; | Cell 1 | Cell 2 |&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Fenced Code Block&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;``` &lt;br /&gt; { &lt;br /&gt; “firstName”: “John”, &lt;br /&gt; “lastName”: “Smith”, &lt;br /&gt; “age”: 25 &lt;br /&gt; } &lt;br /&gt; ```&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Footnote&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Here’s a sentence with a footnote. [^1] &lt;br /&gt; [^1]: Another sentence with footnote.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Striketrough&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;~~The world is flat.~~&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Escape Symbol&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Thu, 21 Aug 2025 00:00:00 +0200</pubDate>
+        <link>/markdown-syntax/</link>
+        <guid isPermaLink="true">/markdown-syntax/</guid>
+        
+        <category>Markdown</category>
+        
+        
+        <category>Coding</category>
+        
+      </item>
+    
+  </channel>
+</rss>
