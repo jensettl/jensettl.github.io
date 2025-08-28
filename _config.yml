@@ -1,16 +1,16 @@
 # Site
-name: "Memoirs"
-title: "Memoirs"
-description: "I will take you on the fabulous world of exploration. Travel, culture, lifestyle. Eat, Pray, Love!"
+name: "Jens' Blog"
+title: "Jens' Blog"
+description: "I share my coding journey and insights."
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: 
 google_analytics: 'UA-xxxxxxxx-1'
-disqus: 'demowebsite'
+disqus: 'blogwebsite'
 mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 include: ["_pages"]
 permalink: /:title/
-email: wowthemesnet@gmail.com
+email: ettljens@gmail.com
 
 # Authors
 authors:
@@ -19,17 +19,13 @@ authors:
     display_name: Sal
     avatar: 'assets/images/avatar-sal.png'
     email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net/donate/
-    twitter: https://twitter.com/wowthemesnet
     description: "Author of Memoirs, a Bootstrap Medium styled template available for Jekyll. You are currently previewing Jekyll template demo."
-  john:
-    name: John
-    display_name: John    
-    avatar: 'assets/images/avatar.png'
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net
-    twitter: https://twitter.com/wowthemesnet
-    description: "Write a short description of the author here. You are currently previewing Memoirs demo, a Jekyll template compatible with Github pages."
+  jens:
+    name: Jens
+    display_name: Jens
+    avatar: 'assets/images/avatar-jens.png'
+    email: ettljens@gmail.com
+    description: "Content creator for this blog and user of this Jekyll template. I love to tackle problems with creative coding solutions and automations."
 
 # Plugins
 plugins:
