@@ -3,7 +3,7 @@ layout: post
 title:  "How to use this template?"
 author: jens
 categories: [ Coding, Lifestyle ]
-image: assets/images/cropped_blog-post.jpg
+image: assets/images/blog-post.jpg
 beforetoc: "Additional Information here."
 ---
 

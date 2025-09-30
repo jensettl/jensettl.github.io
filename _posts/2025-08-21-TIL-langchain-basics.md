@@ -5,7 +5,7 @@ author: jens
 date: 2025-08-21
 categories: [ AI, LLM ]
 tags: [langchain, python, automation]
-image: assets/images/cropped_langchain.jpg
+image: assets/images/langchain.jpg
 toc: true
 ---
 

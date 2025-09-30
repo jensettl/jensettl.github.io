@@ -5,7 +5,7 @@ author: jens
 date: 2025-08-21
 categories: [ AI, LLM ]
 tags: [coding, python, ollama]
-image: assets/images/cropped_ollama.jpg
+image: assets/images/ollama.jpg
 toc: true
 ---
 

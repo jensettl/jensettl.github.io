@@ -4,7 +4,7 @@ title:  "Markdown Syntax"
 author: jens
 categories: [ Coding ]
 tags: [ Markdown ]
-image: assets/images/cropped_markdown.jpg
+image: assets/images/markdown.jpg
 toc: true
 ---
 
