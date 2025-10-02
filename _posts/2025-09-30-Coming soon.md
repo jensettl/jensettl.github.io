@@ -37,12 +37,15 @@ image: assets/images/coming_soon.jpg
     - Agentic Workflows (multi-agent systems for problem solving)
     - Explainable AI (XAI) (making ML results transparent for compliance & trust)
 - RPA (Robotic Process Automation)
-- Process Mining
-- Digital Twins of Organizations (DTOs)
+- Process Mining -> Tools: Celonis, UIPath, Power Automate
+- Digital Twins of Organizations (DTOs) -> Simulating business processes and systems
 - Hyperautomation (combining BPM, RPA, AI for end-to-end automation)
 - Low-Code/No-Code Platforms (N8N, Make, Power Automate)
 - Document Processing with AI (OCR + NLP for invoices, contracts, forms)
 - DevOps & CI/CD Pipelines (GitHub Actions, Docker, Kubernetes basics)
+- AI in Automation -> Intelligent Process Automation (IPA)
+- Decision Automation & Business Rules Engines (Drools, Camunda DMN)
+- AI Enhanced BPM (using AI to optimize and adapt business processes)
 
 #### AI-powered Research & Reporting Agent with Langchain
 (Python, Langchain, Ollama)
