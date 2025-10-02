@@ -31,10 +31,18 @@ image: assets/images/coming_soon.jpg
 
 
 #### Interesting topics to be covered
-- BPM and Workflow Automation
-- BPMN Notation to Model Business Processes
 - AI and Machine Learning
+    - Prompt Engineering for LLMs (effective prompting patterns for LangChain, OpenAI, etc.)
+    - Vector Databases & Semantic Search (Pinecone, Weaviate, FAISS)
+    - Agentic Workflows (multi-agent systems for problem solving)
+    - Explainable AI (XAI) (making ML results transparent for compliance & trust)
 - RPA (Robotic Process Automation)
+- Process Mining
+- Digital Twins of Organizations (DTOs)
+- Hyperautomation (combining BPM, RPA, AI for end-to-end automation)
+- Low-Code/No-Code Platforms (N8N, Make, Power Automate)
+- Document Processing with AI (OCR + NLP for invoices, contracts, forms)
+- DevOps & CI/CD Pipelines (GitHub Actions, Docker, Kubernetes basics)
 
 #### AI-powered Research & Reporting Agent with Langchain
 (Python, Langchain, Ollama)
