@@ -10,7 +10,7 @@ image: assets/images/coming_soon.jpg
 ####  The following list showcases projects that are currently being worked on or are already finished and will be documented here soon.
 
 - AI-powered Research & Reporting Agent with Langchain
-- Mail Reporting Service on Raspberry Pi Zero 2 W
+<!-- - Mail Reporting Service on Raspberry Pi Zero 2 W -->
 - N8N Email Inbox Automation with AI
 - Social Media Platform for Event Management
 - AI-based Web Scraper
