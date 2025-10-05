@@ -36,7 +36,7 @@ image: assets/images/coming_soon.jpg
     - Vector Databases & Semantic Search (Pinecone, Weaviate, FAISS)
     - Agentic Workflows (multi-agent systems for problem solving)
     - Explainable AI (XAI) (making ML results transparent for compliance & trust)
-- RPA (Robotic Process Automation)
+- 
 - Process Mining -> Tools: Celonis, UIPath, Power Automate
 - Digital Twins of Organizations (DTOs) -> Simulating business processes and systems
 - Hyperautomation (combining BPM, RPA, AI for end-to-end automation)
