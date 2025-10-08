@@ -4,6 +4,7 @@ title:  "Coming soon on this blog"
 author: jens
 categories: [ Projects ]
 rating: 
+date: 2025-10-08
 image: assets/images/coming_soon.jpg
 ---
 
@@ -12,12 +13,12 @@ image: assets/images/coming_soon.jpg
 - AI-powered Research & Reporting Agent with Langchain
 <!-- - Mail Reporting Service on Raspberry Pi Zero 2 W -->
 - N8N Email Inbox Automation with AI
-- Social Media Platform for Event Management
+<!-- - Social Media Platform for Event Management -->
 - AI-based Web Scraper
 - Identification of Defective Products with Machine Learning
 - Supply Chain Management Simulation
 - SmartCampus Application Project
-- Automation of a Customer Order Process
+<!-- - Automation of a Customer Order Process -->
 - gRPC Client-Server Communication
 - Git Workshop for Students
 - Investigation of Company Data for Compliance
