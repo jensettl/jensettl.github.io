@@ -21,27 +21,27 @@ It ensures that the data you work with in your application is valid, well-struct
 
 ## Example: Using Pydantic
 ```python
-from pydantic import BaseModel, EmailStr
+  from pydantic import BaseModel, EmailStr
 
-# Define a data model
-class User(BaseModel):
-    id: int
-    name: str
-    email: EmailStr
-    is_active: bool = True  # default value
+  # Define a data model
+  class User(BaseModel):
+      id: int
+      name: str
+      email: EmailStr
+      is_active: bool = True  # default value
 
-# Parse and validate input data
-data = {
-    "id": 1,
-    "name": "Alice",
-    "email": "alice@example.com"
-}
+  # Parse and validate input data
+  data = {
+      "id": 1,
+      "name": "Alice",
+      "email": "alice@example.com"
+  }
 
-user = User(**data)
+  user = User(**data)
 
-print(user)           # id=1 name='Alice' email='alice@example.com' is_active=True
-print(user.dict())    # Convert to dictionary
-print(user.json())    # Convert to JSON
+  print(user)           # id=1 name='Alice' email='alice@example.com' is_active=True
+  print(user.dict())    # Convert to dictionary
+  print(user.json())    # Convert to JSON
 
 ```
 
