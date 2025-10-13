@@ -1,279 +1,1301 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Memoirs</title>
-    <description>I will take you on the fabulous world of exploration. Travel, culture, lifestyle. Eat, Pray, Love!</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Aug 2025 00:15:43 +0200</pubDate>
-    <lastBuildDate>Thu, 21 Aug 2025 00:15:43 +0200</lastBuildDate>
+    <title>Jens&apos; Blog</title>
+    <description>I share my coding journey and insights.</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 13 Oct 2025 22:42:08 +0200</pubDate>
+    <lastBuildDate>Mon, 13 Oct 2025 22:42:08 +0200</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
     
       <item>
-        <title>Les Ambassadeurs, the first Restaurant we Visited in Paris</title>
-        <description>&lt;p&gt;Within the Hôtel de Crillon, which was built in 1758, Les Ambassadeurs operated as a restaurant since the mid-19th century. It reached its peak of fame as a restaurant and nightclub (a café-concert) in the last three decades of the 19th century.&lt;/p&gt;
+        <title>Error Handling in n8n: Best Practices and Techniques</title>
+        <description>&lt;p&gt;Automating workflows with n8n can significantly enhance productivity and streamline processes. However, as with any automation tool, errors can occur. Effective error handling is crucial to ensure that your workflows run smoothly and that you can quickly address any issues that arise.&lt;/p&gt;
 
-&lt;p&gt;Always a center of entertainment for the aristocracy, in the 1870s it also became a regular destination of some of the best known figures of art and the demi-monde. Edgar Degas and Henri de Toulouse-Lautrec portrayed visitors at the night club, and Aristide Bruant performed there.&lt;/p&gt;
+&lt;h2 id=&quot;understanding-error-handling-in-n8n&quot;&gt;Understanding Error Handling in n8n&lt;/h2&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;It was decorated in an 18th-century rococo style, redesigned by Sybille de Margérie with furnishings by Sonia Rykiel.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;n8n provides several built-in features to help manage errors in your workflows. These include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Error Trigger Node&lt;/strong&gt;: This node can be used to catch errors from other nodes in your workflow. It allows you to define specific actions to take when an error occurs, such as sending notifications or logging the error details.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Continue On Fail&lt;/strong&gt;: This option can be enabled on individual nodes to allow the workflow to continue executing even if a node fails. This is useful for non-critical nodes where you want the workflow to proceed regardless of errors.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Retry Mechanism&lt;/strong&gt;: Some nodes have a built-in retry mechanism that can be configured to attempt the operation multiple times before failing.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Following a renovation of the hotel in 1981–85, the restaurant occupied a former private ballroom with windows looking out on the Place de la Concorde, a few hundred meters from the Palais Garnier.&lt;/p&gt;
+&lt;h2 id=&quot;use-the-error-trigger-node&quot;&gt;Use the Error Trigger Node&lt;/h2&gt;
+&lt;p&gt;Always include an Error Trigger node in your workflows to catch and handle errors effectively. This allows you to centralize error handling logic and take appropriate actions when something goes wrong.&lt;/p&gt;
 
-&lt;p&gt;Les Ambassadeurs had two Michelin stars. In the last decade of its operation, chef was Dominique Bouchet  followed by Jean-François Piège and finally when the hotel closed in 2013 for an extended renovation, Christopher Hache.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/n8n-error-handling/error_trigger_node.png&quot; alt=&quot;Error Trigger Node Example&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;In 2017 Hache opened a smaller restaurant, L’Écrin, within the renovated hotel; the former space of Les Ambassadeurs became a bar.&lt;/p&gt;
+&lt;p&gt;This can be extended with a function node to parse the error message and send a detailed notification via email or messaging platforms like Slack.&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to set up the Error Workflow in the workflow settings:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/n8n-error-handling/error_workflow_settings.png&quot; alt=&quot;Error Workflow Settings&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can use built-in variables like &lt;em&gt;**&lt;/em&gt; to include error details in your notifications. This helps in quickly identifying and resolving issues. Following is an example of how to include the error message in a notification:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/n8n-error-handling/error_message_expression.png&quot; alt=&quot;Error Notification Example&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;implement-retry-logic&quot;&gt;Implement Retry Logic&lt;/h2&gt;
+&lt;p&gt;For nodes that interact with external services (like APIs), implement retry logic to handle transient errors. This can be done using the built-in retry options available in some nodes or by creating custom retry mechanisms using loops and delays.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/n8n-error-handling/retry_loop_example.png&quot; alt=&quot;Retry Logic Example&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 02 Feb 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/les-ambassadeurs/</link>
-        <guid isPermaLink="true">http://localhost:4000/les-ambassadeurs/</guid>
-        
-        <category>France</category>
+        <pubDate>Mon, 13 Oct 2025 00:00:00 +0200</pubDate>
+        <link>/n8n-error-handeling/</link>
+        <guid isPermaLink="true">/n8n-error-handeling/</guid>
         
         
-        <category>Lifestyle</category>
+        <category>n8n</category>
+        
+        <category>workflow</category>
+        
+        <category>automation</category>
+        
+        <category>error handling</category>
         
       </item>
     
       <item>
-        <title>Much more than a desert: A trip into the Sahara</title>
-        <description>&lt;p&gt;The Sahara is a desert located on the African continent. It is the largest hot desert in the world, and the third largest desert overall after Antarctica and the Arctic. Its area of 9,200,000 square kilometres (3,600,000 sq mi) is comparable to the area of China or the United States.[3] The name ‘Sahara’ is derived from a dialectal Arabic word for “desert”, ṣaḥra (صحرا /ˈsˤaħra/).&lt;/p&gt;
+        <title>Creating an efficient gRPC Client-Server Communication</title>
+        <description>&lt;p&gt;gRPC &lt;strong&gt;(gRPC Remote Procedure Calls)&lt;/strong&gt; is a high-performance, open-source framework developed by Google that enables efficient communication between distributed systems. It is based on the HTTP/2 protocol and uses &lt;strong&gt;Protocol Buffers&lt;/strong&gt; (protobuf) as its &lt;strong&gt;interface definition language&lt;/strong&gt; (IDL) for serializing structured data. gRPC is designed to be &lt;strong&gt;polyglot&lt;/strong&gt;, allowing developers to create services in multiple programming languages.&lt;/p&gt;
 
-&lt;p&gt;The desert comprises much of North Africa, excluding the fertile region on the Mediterranean Sea coast, the Atlas Mountains of the Maghreb, and the Nile Valley in Egypt and Sudan. It stretches from the Red Sea in the east and the Mediterranean in the north to the Atlantic Ocean in the west, where the landscape gradually changes from desert to coastal plains.&lt;/p&gt;
+&lt;p&gt;Read more about gRPC on the &lt;a href=&quot;https://grpc.io/docs/what-is-grpc/&quot;&gt;official gRPC website&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;To the south, it is bounded by the Sahel, a belt of &lt;strong&gt;semi-arid tropical savanna&lt;/strong&gt; around the Niger River valley and the Sudan Region of Sub-Saharan Africa. The Sahara can be divided into several regions including: the western Sahara, the central Ahaggar Mountains, the Tibesti Mountains, the Aïr Mountains, the Ténéré desert, and the Libyan Desert.&lt;/p&gt;
+&lt;h2 id=&quot;remote-procedure-calls-rpc&quot;&gt;Remote Procedure Calls (RPC)&lt;/h2&gt;
 
-&lt;p&gt;For several hundred thousand years, the Sahara has alternated between desert and savanna grassland in a 20,000 year cycle caused by the precession of the Earth’s axis as it rotates around the Sun, which changes the location of the North African Monsoon. The area is next expected to become green in about 15,000 years (17,000 AD).&lt;/p&gt;
+&lt;p&gt;At its core, gRPC is built around the concept of Remote Procedure Calls (RPCs). RPCs allow a program to execute a procedure (or method) on a remote server as if it were a local function call. This abstraction simplifies the development of distributed applications by hiding the complexities of network communication.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-grpc-works&quot;&gt;How gRPC Works&lt;/h3&gt;
+
+&lt;p&gt;gRPC operates on the concept of defining services and their methods using Protocol Buffers. The process involves the following steps:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Define the Service&lt;/strong&gt;: Developers define the service and its methods in a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.proto&lt;/code&gt; file using Protocol Buffers syntax. Each method specifies the request and response message types.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Generate Code&lt;/strong&gt;: The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.proto&lt;/code&gt; file is then compiled using the Protocol Buffers compiler (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;protoc&lt;/code&gt;), which generates client and server code in the desired programming languages.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Implement the Server&lt;/strong&gt;: The server-side code is implemented to handle incoming requests and provide the appropriate responses.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Create the Client&lt;/strong&gt;: The client-side code is used to call the server methods as if they were local functions, abstracting away the complexities of network communication.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;key-features-of-grpc&quot;&gt;Key Features of gRPC&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;High Performance&lt;/strong&gt;: gRPC leverages HTTP/2, which provides features like multiplexing, header compression, and server push, resulting in lower latency and improved performance compared to traditional RESTful APIs.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Language Agnostic&lt;/strong&gt;: gRPC supports multiple programming languages, including Python, Java, C++, Go, Ruby, and more, making it suitable for polyglot environments.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Streaming Support&lt;/strong&gt;: gRPC supports four types of service methods: unary (single request-response), server streaming (single request, multiple responses), client streaming (multiple requests, single response), and bidirectional streaming (multiple requests and responses).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Built-in Authentication&lt;/strong&gt;: gRPC provides built-in support for authentication and encryption using SSL/TLS, ensuring secure communication between clients and servers.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pluggable Architecture&lt;/strong&gt;: gRPC allows developers to extend its functionality through custom plugins, such as interceptors for logging, monitoring, and error handling.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;use-case-grpc-client-server-communication-in-python&quot;&gt;Use Case: gRPC Client-Server Communication in Python&lt;/h2&gt;
+
+&lt;p&gt;Commonly, gRPC is used in microservices architectures, where different services need to communicate with each other efficiently. It is also used in scenarios where low latency and high throughput are critical, such as real-time applications, IoT systems, and mobile applications.&lt;/p&gt;
+
+&lt;p&gt;Famous companies like Google, Netflix, and Dropbox use gRPC for their internal services due to its performance and scalability.&lt;/p&gt;
+
+&lt;h3 id=&quot;example-implementing-a-grpc-client-server-in-python&quot;&gt;Example: Implementing a gRPC Client-Server in Python&lt;/h3&gt;
+
+&lt;p&gt;To demonstrate gRPC client-server communication in Python, we will set up a simple example where a client sends a request to the server, and the server responds with a message.&lt;/p&gt;
+
+&lt;h4 id=&quot;step-1-define-the-service&quot;&gt;Step 1: Define the Service&lt;/h4&gt;
+
+&lt;p&gt;Create a file named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;service.proto&lt;/code&gt; to define the gRPC service and its methods.&lt;/p&gt;
+
+&lt;div class=&quot;language-proto highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;language-&quot;&gt;&lt;code&gt;  &lt;span class=&quot;na&quot;&gt;syntax&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;proto3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;grpc_example&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;service&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Greeter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Sends a greeting&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;rpc&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SayHello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HelloRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;returns&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HelloReply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// The request message containing the user&apos;s name.&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HelloRequest&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// The response message containing the greetings&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HelloReply&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;define&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;structure&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;you&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;want&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serialize&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;int32&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;is_student&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DataResponse&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;The&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;containing&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;step-2-generate-code&quot;&gt;Step 2: Generate Code&lt;/h4&gt;
+
+&lt;p&gt;Use the Protocol Buffers compiler to generate Python code from the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.proto&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;language-&quot;&gt;&lt;code&gt;  protoc &lt;span class=&quot;nt&quot;&gt;--python_out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--grpc_python_out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; service.proto
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;step-3-implement-the-server&quot;&gt;Step 3: Implement the Server&lt;/h4&gt;
+
+&lt;p&gt;Create a file named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;server.py&lt;/code&gt; to implement the server-side logic.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;language-&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;concurrent&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;futures&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grpc&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service_pb2&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service_pb2_grpc&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ExampleServiceServicer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;service_pb2_grpc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExampleServiceServicer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;GetData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;# Implement the logic to process the request and generate a response
+&lt;/span&gt;          &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service_pb2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;DataResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Received query: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;serve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grpc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;futures&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ThreadPoolExecutor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_workers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;service_pb2_grpc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add_ExampleServiceServicer_to_server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ExampleServiceServicer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add_insecure_port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[::]:50051&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Server started on port 50051&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;wait_for_termination&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;__main__&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;serve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;step-4-create-the-client&quot;&gt;Step 4: Create the Client&lt;/h4&gt;
+
+&lt;p&gt;Create a file named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;client.py&lt;/code&gt; to implement the client-side logic.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;language-&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grpc&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service_pb2&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service_pb2_grpc&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grpc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insecure_channel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;localhost:50051&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;channel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;stub&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service_pb2_grpc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ExampleServiceStub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;channel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service_pb2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;DataRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Hello, gRPC!&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;GetData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Response from server: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;__main__&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;step-5-run-the-server-and-client&quot;&gt;Step 5: Run the Server and Client&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Start the server by running &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python server.py&lt;/code&gt; in one terminal.&lt;/li&gt;
+  &lt;li&gt;In another terminal, run the client by executing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python client.py&lt;/code&gt;.
+You should see the server output indicating it has started, and the client will print the response received from the server.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;gRPC is a powerful framework for building efficient and scalable distributed systems. Its use of HTTP/2 and Protocol Buffers makes it a high-performance alternative to traditional RESTful APIs. By following the steps outlined in this example, you can quickly set up a gRPC client-server communication in Python, enabling you to build robust microservices and distributed applications.&lt;/p&gt;
+
 </description>
-        <pubDate>Sat, 01 Feb 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/much-more-than-a-desert-trip-to-sahara/</link>
-        <guid isPermaLink="true">http://localhost:4000/much-more-than-a-desert-trip-to-sahara/</guid>
+        <pubDate>Wed, 08 Oct 2025 00:00:00 +0200</pubDate>
+        <link>/gRPC/</link>
+        <guid isPermaLink="true">/gRPC/</guid>
         
         
-        <category>Travel</category>
+        <category>Python</category>
         
       </item>
     
       <item>
-        <title>One day we just started our adventure</title>
-        <description>&lt;p&gt;The die cut has also been employed in the non-juvenile sphere as well, a recent example being Jonathan Safran Foer’s ambitious Tree of Codes.&lt;/p&gt;
+        <title>Coming soon on this blog</title>
+        <description>&lt;h4 id=&quot;the-following-list-showcases-projects-that-are-currently-being-worked-on-or-are-already-finished-and-will-be-documented-here-soon&quot;&gt;The following list showcases projects that are currently being worked on or are already finished and will be documented here soon.&lt;/h4&gt;
 
-&lt;p&gt;As for this particular rendition of Charles Perrault’s classic tale, the text and design is by Lydia Very (1823-1901), sister of Transcendentalist poet Jones Very. The gruesome ending of the original - which sees Little Red Riding Hood being gobbled up as well as her grandmother - is avoided here, the gore giving way to the less bloody aims of the morality tale, and the lesson that one should not disobey one’s mother.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;AI-powered Research &amp;amp; Reporting Agent with Langchain
+&lt;!-- - Mail Reporting Service on Raspberry Pi Zero 2 W --&gt;&lt;/li&gt;
+  &lt;li&gt;N8N Email Inbox Automation with AI
+&lt;!-- - Social Media Platform for Event Management --&gt;&lt;/li&gt;
+  &lt;li&gt;AI-based Web Scraper&lt;/li&gt;
+  &lt;li&gt;Identification of Defective Products with Machine Learning&lt;/li&gt;
+  &lt;li&gt;Supply Chain Management Simulation&lt;/li&gt;
+  &lt;li&gt;SmartCampus Application Project
+&lt;!-- - Automation of a Customer Order Process --&gt;&lt;/li&gt;
+  &lt;li&gt;gRPC Client-Server Communication&lt;/li&gt;
+  &lt;li&gt;Git Workshop for Students&lt;/li&gt;
+  &lt;li&gt;Investigation of Company Data for Compliance&lt;/li&gt;
+  &lt;li&gt;Organization Tool for Automatic File Management&lt;/li&gt;
+  &lt;li&gt;Local HEIC-JPEG Converter&lt;/li&gt;
+  &lt;li&gt;IT System Modeling for an App&lt;/li&gt;
+  &lt;li&gt;Digital Sticker Scavenger Hunt (”Nett-Hier”) Platform&lt;/li&gt;
+  &lt;li&gt;Automated Movie and Series Management&lt;/li&gt;
+  &lt;li&gt;Resume Website Creator with Langflow&lt;/li&gt;
+  &lt;li&gt;Inflation Forecast with Machine Learning&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;It would seem the claim could also extend to die cut books in general, as we can’t find anything sooner, but do let us know in the comments if you have further light to shed on this! Such books are, of course, still popular in children’s publishing today, though the die cutting is not now limited to mere outlines, as evidenced in a beautiful 2014 version of the same Little Red Riding Hood story.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h4 id=&quot;interesting-topics-to-be-covered&quot;&gt;Interesting topics to be covered&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;AI and Machine Learning
+    &lt;ul&gt;
+      &lt;li&gt;Prompt Engineering for LLMs (effective prompting patterns for LangChain, OpenAI, etc.)&lt;/li&gt;
+      &lt;li&gt;Vector Databases &amp;amp; Semantic Search (Pinecone, Weaviate, FAISS)&lt;/li&gt;
+      &lt;li&gt;Agentic Workflows (multi-agent systems for problem solving)&lt;/li&gt;
+      &lt;li&gt;Explainable AI (XAI) (making ML results transparent for compliance &amp;amp; trust)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;Process Mining -&amp;gt; Tools: Celonis, UIPath, Power Automate&lt;/li&gt;
+  &lt;li&gt;Digital Twins of Organizations (DTOs) -&amp;gt; Simulating business processes and systems&lt;/li&gt;
+  &lt;li&gt;Hyperautomation (combining BPM, RPA, AI for end-to-end automation)&lt;/li&gt;
+  &lt;li&gt;Low-Code/No-Code Platforms (N8N, Make, Power Automate)&lt;/li&gt;
+  &lt;li&gt;Document Processing with AI (OCR + NLP for invoices, contracts, forms)&lt;/li&gt;
+  &lt;li&gt;DevOps &amp;amp; CI/CD Pipelines (GitHub Actions, Docker, Kubernetes basics)&lt;/li&gt;
+  &lt;li&gt;AI in Automation -&amp;gt; Intelligent Process Automation (IPA)&lt;/li&gt;
+  &lt;li&gt;Decision Automation &amp;amp; Business Rules Engines (Drools, Camunda DMN)&lt;/li&gt;
+  &lt;li&gt;AI Enhanced BPM (using AI to optimize and adapt business processes)&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the shape of the protagonist herself with the troublesome wolf curled at her feet.&lt;/p&gt;
+&lt;h4 id=&quot;ai-powered-research--reporting-agent-with-langchain&quot;&gt;AI-powered Research &amp;amp; Reporting Agent with Langchain&lt;/h4&gt;
+&lt;p&gt;(Python, Langchain, Ollama)
+Conception and development of an AI agent for the automated collection, analysis, and processing of information from various sources. The tool significantly reduces the manual effort of report generation and increases the efficiency of information retrieval.&lt;/p&gt;
 
-&lt;p&gt;Produced by the Boston-based publisher Louis Prang, this is the first in their “Doll Series”, a set of five “die-cut” books, known also as shape books — the other titles being Robinson Crusoe, Goody Two-Shoes (also written by Red Riding Hood author Lydia Very), Cinderella, and King Winter.&lt;/p&gt;
+&lt;h4 id=&quot;mail-reporting-service-on-raspberry-pi-zero-2-w&quot;&gt;Mail Reporting Service on Raspberry Pi Zero 2 W&lt;/h4&gt;
+&lt;p&gt;(Python, Linux)
+Implementation of an energy-efficient system on a Raspberry Pi that queries APIs, collects data, and automatically sends reports via email. The goal was to reduce manual routine tasks.&lt;/p&gt;
 
-&lt;p&gt;An 1868 Prang catalogue would later claim that such “books in the shape of a regular paper Doll… originated with us”.&lt;/p&gt;
+&lt;p&gt;Stay tuned for detailed posts on each of these exciting projects!&lt;/p&gt;
+
 </description>
-        <pubDate>Sun, 12 Jan 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/one-day-just-started-adventure/</link>
-        <guid isPermaLink="true">http://localhost:4000/one-day-just-started-adventure/</guid>
+        <pubDate>Wed, 08 Oct 2025 00:00:00 +0200</pubDate>
+        <link>/Coming-soon/</link>
+        <guid isPermaLink="true">/Coming-soon/</guid>
         
         
-        <category>Travel</category>
+        <category>Projects</category>
         
       </item>
     
       <item>
-        <title>London is that kind of place you must visit in this lifetime</title>
-        <description>&lt;p&gt;The Queen’s Guard and Queen’s Life Guard (called King’s Guard and King’s Life Guard when the reigning monarch is male) are the names given to contingents of infantry and cavalry soldiers charged with guarding the official royal residences in the United Kingdom. The British Army has regiments of both Horse Guards and Foot Guards predating the English Restoration (1660), and since the reign of King Charles II these regiments have been responsible for guarding the Sovereign’s palaces. The Guards are fully operational soldiers.&lt;/p&gt;
+        <title>Getting Started with Streamlit: Build Python Frontends in Minutes</title>
+        <description>&lt;p&gt;&lt;strong&gt;Streamlit&lt;/strong&gt; is a Python library that makes it incredibly easy to build &lt;strong&gt;interactive web apps&lt;/strong&gt; directly from Python scripts.&lt;br /&gt;
+It is especially popular among &lt;strong&gt;data scientists, analysts, and machine learning engineers&lt;/strong&gt; who want to quickly create frontends for data exploration, visualization, and reporting — without needing any HTML, CSS, or JavaScript.&lt;/p&gt;
 
-&lt;p&gt;The Queen’s Guard and Queen’s Life Guard are mounted at the royal residences that come under the operating area of the British Army’s London District, which is responsible for the administration of the Household Division. This covers Buckingham Palace, St James’s Palace and the Tower of London, as well as Windsor Castle. The Queen’s Guard is also mounted at the sovereign’s other official residence, the Palace of Holyroodhouse, but not as often as in London. In Edinburgh, the guard is the responsibility of the resident infantry battalion at Redford Barracks. It is not mounted at the Queen’s private residences at Sandringham or Balmoral.&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;The Queen’s Guard is the name given to the contingent of infantry responsible for guarding Buckingham Palace and St James’s Palace (including Clarence House) in London. The guard is made up of a company of soldiers from a single regiment, which is split in two, providing a detachment for Buckingham Palace and a detachment for St James’s Palace. Because the Sovereign’s official residence is still St James’s, the guard commander (called the captain of the guard) is based there, as are the regiment’s colours.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h2 id=&quot;what-does-streamlit-do&quot;&gt;What does Streamlit do?&lt;/h2&gt;
 
-&lt;p&gt;When the Sovereign is in residence, the Queen’s Guard numbers three officers and forty other ranks, with four sentries each posted at Buckingham Palace (on the forecourt) and St James’s Palace (two in Friary Court, two at the entrance to Clarence House).&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Turns Python scripts into &lt;strong&gt;shareable web applications&lt;/strong&gt; with minimal code.&lt;/li&gt;
+  &lt;li&gt;Provides UI elements like &lt;strong&gt;charts, tables, forms, maps, and widgets&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Integrates smoothly with libraries like &lt;strong&gt;Pandas, NumPy, Matplotlib, Plotly, and Altair&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Enables &lt;strong&gt;real-time interaction&lt;/strong&gt; with sliders, checkboxes, and input fields.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;This reduces to three officers and 31 ORs, with two sentries each, when the Sovereign is not in residence. The Queen’s Guard is not purely ceremonial in nature. They provide sentries during the day and night, and during the later hours, they patrol the grounds of the Palace.&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;Until 1959, the sentries at Buckingham Palace were stationed outside the fence. This stopped following an incident involving a female tourist and a Coldstream Guardsman – due to the continued pestering by tourists and sightseers, the guardsman kicked the tourist on the ankle as he marched. The tourist made a complaint to the police and the sentry was confined to barracks for ten days. Not long after, the sentries were moved inside the fence.&lt;/p&gt;
+&lt;h2 id=&quot;when-is-streamlit-used&quot;&gt;When is Streamlit used?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Prototyping &lt;strong&gt;data-driven dashboards&lt;/strong&gt; quickly.&lt;/li&gt;
+  &lt;li&gt;Sharing &lt;strong&gt;machine learning models&lt;/strong&gt; with non-technical users.&lt;/li&gt;
+  &lt;li&gt;Creating &lt;strong&gt;internal tools&lt;/strong&gt; for teams (data entry, monitoring).&lt;/li&gt;
+  &lt;li&gt;Teaching and demonstrating concepts interactively.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;basic-streamlit-elements&quot;&gt;Basic Streamlit Elements&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;language-&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;streamlit&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;My First Streamlit App&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Hello, world! 👋&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Displaying data
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;DataFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Numbers&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Squares&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Simple chart
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;line_chart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;randn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;common-ui-components&quot;&gt;Common UI Components&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.title(&quot;...&quot;)&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.header(&quot;...&quot;)&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.subheader(&quot;...&quot;)&lt;/code&gt; → Text headings&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.write(&quot;...&quot;)&lt;/code&gt; → Display text, variables, or even Markdown&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.table(df)&lt;/code&gt; and st.dataframe(df) → Display data tables&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.line_chart()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.bar_chart()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.map()&lt;/code&gt; → Quick visualizations&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;advanced-components&quot;&gt;Advanced Components&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;language-&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;streamlit&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Sidebar for navigation
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sidebar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Settings&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;option&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sidebar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;selectbox&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Choose a dataset:&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Sales&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Marketing&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;HR&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Interactive widgets
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;slider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Select your age:&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Selected age:&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# File upload
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uploaded_file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;file_uploader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Upload a CSV&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;csv&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uploaded_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uploaded_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dataframe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Progress bar
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;progress&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;progress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;progress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;progress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;more-advanced-features&quot;&gt;More Advanced Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Forms:&lt;/strong&gt; Group input fields with st.form() and st.form_submit_button().&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Caching:&lt;/strong&gt; Use @st.cache_data or @st.cache_resource to improve performance.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Session State:&lt;/strong&gt; Store variables across user interactions (st.session_state).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Layouts &amp;amp; Columns:&lt;/strong&gt; Organize apps into multiple columns with st.columns().&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Deployments:&lt;/strong&gt; Easily deploy apps via Streamlit Cloud or Docker.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;best-practices-for-streamlit-apps&quot;&gt;Best Practices for Streamlit Apps&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Keep scripts modular → Separate logic (data loading, preprocessing, visualization).&lt;/li&gt;
+  &lt;li&gt;Use caching wisely → Cache expensive operations (e.g., reading a large dataset).&lt;/li&gt;
+  &lt;li&gt;Add sidebars for configuration → Keeps the main UI clean.&lt;/li&gt;
+  &lt;li&gt;Start simple, then refine → Begin with basic widgets, then add advanced features.&lt;/li&gt;
+  &lt;li&gt;Think about performance → Minimize unnecessary recomputations.&lt;/li&gt;
+  &lt;li&gt;Document your app → Use headers and markdown to guide users.&lt;/li&gt;
+  &lt;li&gt;Deploy and share → Use Streamlit Cloud or your own server for team access.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;streamlit-cheatsheet&quot;&gt;Streamlit Cheatsheet&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Category&lt;/th&gt;
+      &lt;th&gt;Function&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Text &amp;amp; Titles&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.title(&quot;Title&quot;)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Large page title&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.header(&quot;Header&quot;)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Section header&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.subheader(&quot;Subheader&quot;)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Subsection header&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.write(&quot;Text or variable&quot;)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Display text, numbers, Markdown, or data&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Data Display&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.table(df)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Static table&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.dataframe(df)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Interactive scrollable table&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.json(obj)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Display JSON nicely&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Charts&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.line_chart(data)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Quick line chart&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.bar_chart(data)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Quick bar chart&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.area_chart(data)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Quick area chart&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.map(df)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Plot locations on a map (lat/lon)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Widgets (Inputs)&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.button(&quot;Click me&quot;)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Button trigger&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.checkbox(&quot;Check me&quot;)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;True/False toggle&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.radio(&quot;Pick one&quot;, options)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Single-choice selection&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.selectbox(&quot;Pick one&quot;, options)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Dropdown menu&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.multiselect(&quot;Pick many&quot;, options)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Multi-select dropdown&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.slider(&quot;Range&quot;, min, max, value)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Slider for numeric input&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.text_input(&quot;Enter text&quot;)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Single-line text input&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.text_area(&quot;Enter text&quot;)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Multi-line text input&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.file_uploader(&quot;Upload file&quot;)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Upload files&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Layout &amp;amp; Navigation&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.sidebar.xxx&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Add any element to sidebar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.columns([2,1])&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Create columns with width ratio&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.expander(&quot;Details&quot;)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Collapsible section&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Status &amp;amp; Progress&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.progress(i)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Progress bar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.spinner(&quot;Loading...&quot;)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Loading indicator&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.success(&quot;Done!&quot;)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Green success message&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.error(&quot;Error!&quot;)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Red error message&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.warning(&quot;Warning!&quot;)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Yellow warning message&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;st.info(&quot;Info&quot;)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Blue info message&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@st.cache_data&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Cache data (e.g., file loading)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@st.cache_resource&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Cache models/resources&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;## Conclusion&lt;/p&gt;
+
+&lt;p&gt;Streamlit is the fastest way to build a Python-based frontend for data apps.
+Whether you’re exploring datasets, showcasing machine learning models, or creating interactive dashboards, Streamlit makes it simple and fun.&lt;/p&gt;
+
+&lt;p&gt;💡 If you know Python, you can build and share powerful apps in minutes — no web development experience required.&lt;/p&gt;
+
+&lt;h2 id=&quot;appendix-code-example&quot;&gt;Appendix: Code Example&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;language-&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;streamlit&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# ------------------------------
+# Data loading (with caching)
+# ------------------------------
+&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@st.cache_data&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;load_sample_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Simulate an expensive operation
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;DataFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+        &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Alice&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Bob&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Charlie&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Age&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;35&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# ------------------------------
+# UI Components
+# ------------------------------
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;render_title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;🚀 Best Practices Streamlit App&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;render_form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;user_form&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text_input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Enter your name:&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;number_input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Enter your age:&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;submitted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;form_submit_button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Submit&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;submitted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;❌ Please enter your name.&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session_state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;✅ Hello &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;, you are &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; years old.&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;render_data_section&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;📊 Sample Data&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;load_sample_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dataframe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;render_user_section&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session_state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;🙋 User Info&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session_state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Name: **&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Age: **&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# ------------------------------
+# Main app logic
+# ------------------------------
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;render_title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;render_form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;render_user_section&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;render_data_section&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;__main__&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
-        <pubDate>Sun, 12 Jan 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/london/</link>
-        <guid isPermaLink="true">http://localhost:4000/london/</guid>
+        <pubDate>Tue, 07 Oct 2025 00:00:00 +0200</pubDate>
+        <link>/streamlit-basics/</link>
+        <guid isPermaLink="true">/streamlit-basics/</guid>
+        
+        <category>Python</category>
+        
+        <category>Streamlit</category>
+        
+        <category>Data Apps</category>
+        
+        <category>Visualization</category>
         
         
-        <category>Travel</category>
+        <category>Python</category>
+        
+        <category>Streamlit</category>
+        
+        <category>Frontend</category>
         
       </item>
     
       <item>
-        <title>Memoirs supports external images as featured</title>
-        <description>&lt;p&gt;Adding images is a very annoying task, I know that, but “Memoirs” theme has external featured images integrated so your publishing task becomes easier now.&lt;/p&gt;
+        <title>[PROJECT] Mail Reporting Service on Raspberry Pi Zero 2 W</title>
+        <description>&lt;p&gt;The &lt;strong&gt;Automatic Reporting Mail Service&lt;/strong&gt; fetches weather, astronomy, and stock data from various &lt;strong&gt;APIs&lt;/strong&gt;, processes the data, and sends a formatted email report to a specified email address. The service is designed to run automatically at a specified time each day on a &lt;strong&gt;Raspberry Pi Zero 2 W&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;Education must also train one for quick, resolute and effective thinking. To think incisively and to think for one’s self is very difficult.&lt;/p&gt;
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;We are prone to let our mental life become invaded by legions of half truths, prejudices, and propaganda. At this point, I often wonder whether or not education is fulfilling its purpose. A great majority of the so-called educated people do not think logically and scientifically.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;ul&gt;
+  &lt;li&gt;Fetches current weather and astronomy data for a specified city using the WeatherAPI.&lt;/li&gt;
+  &lt;li&gt;Retrieves stock market data for a list of specified stock tickers using the Yahoo Finance API.&lt;/li&gt;
+  &lt;li&gt;Gathers top news headlines from the NewsAPI for a specified country and category.&lt;/li&gt;
+  &lt;li&gt;Composes a well-structured email report containing the fetched data.&lt;/li&gt;
+  &lt;li&gt;Sends the email report using SMTP with TLS encryption for security.&lt;/li&gt;
+  &lt;li&gt;Designed to run on a Raspberry Pi Zero 2 W for low power consumption and continuous operation.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Even the press, the classroom, the platform, and the pulpit in many instances do not give us objective and unbiased truths. To save man from the morass of propaganda, in my opinion, is one of the chief aims of education. Education must enable one to sift and weigh evidence, to discern the true from the false, the real from the unreal, and the facts from the fiction.&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;The function of education, therefore, is to teach one to think intensively and to think critically. But education which stops with efficiency may prove the greatest menace to society. The most dangerous criminal may be the man gifted with reason, but with no morals.&lt;/p&gt;
+&lt;h2 id=&quot;difficulties-encountered&quot;&gt;Difficulties Encountered&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;API Rate Limits&lt;/strong&gt;: Ensuring that the number of API requests stays within the free tier limits to avoid additional costs.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Email Security&lt;/strong&gt;: Configuring the email service to use secure authentication methods and handling sensitive information like passwords securely.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data Formatting&lt;/strong&gt;: Creating a clear and readable email format that presentss the data effectively.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Raspberry Pi Configuration&lt;/strong&gt;: Setting up the Raspberry Pi to run the script automatically at a specified time using cron jobs.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Error Handling&lt;/strong&gt;: Implementing robust error handling to manage potential issues with API requests or email sending.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Visualization&lt;/strong&gt;: Creating simple visualizations (like stock price charts) to enhance the email report.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;The late Eugene Talmadge, in my opinion, possessed one of the better minds of Georgia, or even America. Moreover, he wore the Phi Beta Kappa key. By all measuring rods, Mr. Talmadge could think critically and intensively; yet he contends that I am an inferior being. Are those the types of men we call educated?&lt;/p&gt;
+&lt;h2 id=&quot;configuration&quot;&gt;Configuration&lt;/h2&gt;
 
-&lt;p&gt;We must remember that intelligence is not enough. Intelligence plus character–that is the goal of true education. The complete education gives one not only power of concentration, but worthy objectives upon which to concentrate. The broad education will, therefore, transmit to one not only the accumulated knowledge of the race but also the accumulated experience of social living.&lt;/p&gt;
+&lt;p&gt;Edit the &lt;strong&gt;config.py&lt;/strong&gt; file to include your API keys, email address, and Gmail password.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;language-&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;QUERY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Karlsruhe&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# City for which to fetch weather and astronomy data
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WEATHER_URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;http://api.weatherapi.com/v1/current.json&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# URL for Weather API
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ASTRONOMY_URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;http://api.weatherapi.com/v1/astronomy.json&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# URL for Astronomy API
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WEATHER_API_KEY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# API key for Weather API
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;EMAIL_FROM&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&lt;/span&gt;                 &lt;span class=&quot;c1&quot;&gt;# Email adress for sending emails
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EMAIL_TO&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&lt;/span&gt;                   &lt;span class=&quot;c1&quot;&gt;# Email adress for sending emails
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EMAIL_PWD&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&lt;/span&gt;                  &lt;span class=&quot;c1&quot;&gt;# Password set in Google account settings
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SMTP_SERVER&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;smtp.gmail.com&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# SMTP server for sending emails
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SMTP_PORT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;587&lt;/span&gt;                 &lt;span class=&quot;c1&quot;&gt;# Standard port for email submission
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;TICKER_LIST&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;GOOGL&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;AAPL&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;MSFT&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;AMZN&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;TSLA&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;NVDA&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# List of stock tickers to fetch data for
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TODAY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;strftime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%Y-%m-%d&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                         &lt;span class=&quot;c1&quot;&gt;# Get today&apos;s date in format &quot;YYYY-MM-DD&quot;
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;HEADLINES_URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://newsapi.org/v2/top-headlines&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# URL for News API
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HEADLINES_API_KEY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# API key for News API
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HEADLINES_COUNTRY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;us&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;                                &lt;span class=&quot;c1&quot;&gt;# Country code to fetch headlines for
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HEADLINES_CATEGORY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;general&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;                          &lt;span class=&quot;c1&quot;&gt;# News category to fetch headlines for 
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;email-body-examples&quot;&gt;Email Body Examples&lt;/h2&gt;
+
+&lt;p&gt;At the specified time, the Raspberry Pi executes the script, gathers the data, and sends an email with the following sections:&lt;/p&gt;
+
+&lt;h3 id=&quot;weather-report&quot;&gt;Weather Report&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/mail-reporting/weather_report.png&quot; alt=&quot;Weather Report&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;stocks-report&quot;&gt;Stocks Report&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/mail-reporting/stocks_report.png&quot; alt=&quot;Stocks Report&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;headlines-report&quot;&gt;Headlines Report&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/mail-reporting/headlines_report.png&quot; alt=&quot;Headlines Report&quot; /&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Sun, 12 Jan 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/external-featured-image/</link>
-        <guid isPermaLink="true">http://localhost:4000/external-featured-image/</guid>
-        
-        <category>France</category>
+        <pubDate>Sun, 05 Oct 2025 00:00:00 +0200</pubDate>
+        <link>/mail-reporting-on-pi/</link>
+        <guid isPermaLink="true">/mail-reporting-on-pi/</guid>
         
         
-        <category>Lifestyle</category>
+        <category>Automation</category>
         
-        <category>Travel</category>
+        <category>Raspberry Pi</category>
+        
+        <category>Python</category>
+        
+        <category>Mail Reporting</category>
+        
+        <category>API</category>
         
       </item>
     
       <item>
-        <title>Spoliers Inside - a film review needs hidden spoilers like this post</title>
-        <description>&lt;p&gt;Director Roland Suso Richter’s enigmatic psychological thriller (direct to video/DVD) was based upon screenwriter Michael Cooney’s own play “Point of Death” - a title that gave away the film’s entire plot twist premise.&lt;/p&gt;
+        <title>[PROJECT] Social Media Platform for Event Management</title>
+        <description>&lt;p&gt;My take on tackling the challenge of planning and managing events with different friends, colleagues, or family members. The platform aims for a social media-like approach to facilitate communication, coordination, and organization of events.&lt;/p&gt;
 
-&lt;p&gt;As in many similar films, such as Jacob’s Ladder (1990), Soul Survivors (2001), and The Butterfly Effect (2004), events and people were thoroughly distorted and confused because the protagonist was at the point of death. The tagline was misleading:&lt;/p&gt;
+&lt;h1 id=&quot;overview&quot;&gt;Overview&lt;/h1&gt;
 
-&lt;p&gt;&lt;strong&gt;“When You Don’t Have a Memory, How Can You Remember Who to Trust?”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Event planning can often be a complex task, especially when coordinating with multiple people. To address this, I developed a web-based platform that combines social media features with event management tools. The goal is to create an intuitive and engaging environment where users can easily plan, share, and manage events.&lt;/p&gt;
 
-&lt;p&gt;The mind-warping film opened with a hospital patient Simon Cable (Ryan Phillippe) awakening in a &lt;span class=&quot;spoiler&quot;&gt; hospital with little knowledge (amnesia perhaps?) of what had happened, and why he was there, etc. He was told by attending Dr. Jeremy Newman (Stephen Rea) that it was July 29, 2002 (Simon thought it was the year 2000 - he was confused - he heard a doctor say 20:00 hours!) and that he had died for two minutes from cardiac arrest following the near-fatal accident – but he had been revived (“You’re as good as new”).&lt;/span&gt; Dr. Newman: “Simon, this is the 29th of July. The year is 2002. And your wife, whose name is Anna, is waiting outside.”&lt;/p&gt;
+&lt;p&gt;Since I am lacking frontend development skills, I used bolt.new to quickly prototype the UI. The frontend is built with React, ensuring a responsive and user-friendly experience.&lt;/p&gt;
 
-&lt;h4 id=&quot;what-critiques-say&quot;&gt;What critiques say?&lt;/h4&gt;
+&lt;h1 id=&quot;features&quot;&gt;Features&lt;/h1&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;“There’s almost no single moment in Portrait of a Lady on Fire that couldn’t be captured, mounted, and hung on a wall as high art.” &lt;cite&gt;— Entertainment Weekly&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;User Authentication&lt;/strong&gt;: Secure sign-up and login functionality to ensure user data privacy.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Event Creation&lt;/strong&gt;: Users can create events, set dates, locations, and invite friends&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Dashboard&lt;/strong&gt;: A personalized dashboard to view upcoming events, invitations, and notifications.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Chat Functionality&lt;/strong&gt;: Real-time messaging to facilitate communication among event participants.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Attendance Tracking&lt;/strong&gt;: Users can RSVP to events and see who else is attending.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;A major clue to everything that truly happened was the scene that played next under the credits - hospital staff failed to bring a patient back to life with a defibrillator after a car accident. Chest compressions failed and there was no pulse. A second major clue was provided by hospital orderly Travis (Stephen Graham): Everybody dies. No mystery there. But why and how everyone dies. Now, there’s a mystery worth solving. Probably the biggest mystery there is.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;so-how-do-we-add-spoilers-in-this-theme&quot;&gt;So how do we add spoilers in this theme?&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/event-management/features.png&quot; alt=&quot;Feature Overview&quot; /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;span class=&quot;spoiler&quot;&amp;gt;My hidden paragraph here.&amp;lt;/span&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;dashboard&quot;&gt;Dashboard&lt;/h2&gt;
+
+&lt;p&gt;The dashboard provides users with a quick overview of upcoming events, invitations, and recent activity. It serves as the central hub for managing all event-related tasks.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/event-management/dashboard.png&quot; alt=&quot;Dashboard&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;event-detail-view&quot;&gt;Event Detail View&lt;/h2&gt;
+
+&lt;p&gt;The event detail view offers comprehensive information about a specific event, including the date, time, location, and list of attendees. Users can also access the chat feature from this view.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/event-management/event_detail.png&quot; alt=&quot;Event Detail View&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;contribution&quot;&gt;Contribution&lt;/h1&gt;
+
+&lt;p&gt;I am continuously working on adding new features and improving the user experience based on feedback.&lt;/p&gt;
+
+&lt;p&gt;If you are interested in contributing to the project, feel free to reach out or check the repository for open issues and feature requests.&lt;/p&gt;
+
 </description>
-        <pubDate>Sat, 11 Jan 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/post-with-spoiler/</link>
-        <guid isPermaLink="true">http://localhost:4000/post-with-spoiler/</guid>
-        
-        <category>Movies</category>
+        <pubDate>Sun, 05 Oct 2025 00:00:00 +0200</pubDate>
+        <link>/event-management-plattform/</link>
+        <guid isPermaLink="true">/event-management-plattform/</guid>
         
         
-        <category>Lifestyle</category>
+        <category>Frontend</category>
+        
+        <category>Backend</category>
+        
+        <category>Fullstack</category>
+        
+        <category>React</category>
         
       </item>
     
       <item>
-        <title>That day when we almost missed our flight</title>
-        <description>&lt;p&gt;The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the shape of the protagonist herself with the troublesome wolf curled at her feet. Produced by the Boston-based publisher Louis Prang, this is the first in their “Doll Series”, a set of five “die-cut” books, known also as shape books — the other titles being Robinson Crusoe, Goody Two-Shoes (also written by Red Riding Hood author Lydia Very), Cinderella, and King Winter.&lt;/p&gt;
+        <title>Pydantic Basics for Data Validation in Python</title>
+        <description>&lt;p&gt;&lt;strong&gt;Pydantic&lt;/strong&gt; is a Python library for &lt;strong&gt;data validation and settings management&lt;/strong&gt; using Python type annotations.&lt;br /&gt;
+It ensures that the data you work with in your application is valid, well-structured, and type-safe.&lt;/p&gt;
 
-&lt;p&gt;An 1868 Prang catalogue would later claim that such “books in the shape of a regular paper Doll… originated with us”.&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;It would seem the claim could also extend to die cut books in general, as we can’t find anything sooner, but do let us know in the comments if you have further light to shed on this! Such books are, of course, still popular in children’s publishing today, though the die cutting is not now limited to mere outlines, as evidenced in a beautiful 2014 version of the same Little Red Riding Hood story.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h2 id=&quot;when-is-it-used&quot;&gt;When is it used?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Validating and parsing &lt;strong&gt;input data&lt;/strong&gt; (e.g., JSON payloads in APIs).&lt;/li&gt;
+  &lt;li&gt;Defining &lt;strong&gt;configurations&lt;/strong&gt; and environment variables.&lt;/li&gt;
+  &lt;li&gt;Ensuring type safety in Python applications.&lt;/li&gt;
+  &lt;li&gt;Used heavily in frameworks like &lt;strong&gt;FastAPI&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;The die cut has also been employed in the non-juvenile sphere as well, a recent example being Jonathan Safran Foer’s ambitious Tree of Codes.&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;As for this particular rendition of Charles Perrault’s classic tale, the text and design is by Lydia Very (1823-1901), sister of Transcendentalist poet Jones Very. The gruesome ending of the original - which sees Little Red Riding Hood being gobbled up as well as her grandmother - is avoided here, the gore giving way to the less bloody aims of the morality tale, and the lesson that one should not disobey one’s mother.&lt;/p&gt;
+&lt;h2 id=&quot;example-using-pydantic&quot;&gt;Example: Using Pydantic&lt;/h2&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;language-&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pydantic&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BaseModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EmailStr&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# Define a data model
+&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BaseModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EmailStr&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;is_active&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# default value
+&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# Parse and validate input data
+&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Alice&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;alice@example.com&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;           &lt;span class=&quot;c1&quot;&gt;# id=1 name=&apos;Alice&apos; email=&apos;alice@example.com&apos; is_active=True
+&lt;/span&gt;  &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# Convert to dictionary
+&lt;/span&gt;  &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# Convert to JSON
+&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;👉 If invalid data is provided (e.g., wrong type, bad email), Pydantic raises a validation error automatically.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Pydantic makes working with structured data in Python safe, clean, and reliable.
+Whether building APIs, loading configs, or just want strict type enforcement.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 01 Jan 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/that-day-we-almost-missed-flight/</link>
-        <guid isPermaLink="true">http://localhost:4000/that-day-we-almost-missed-flight/</guid>
+        <pubDate>Sat, 04 Oct 2025 00:00:00 +0200</pubDate>
+        <link>/python-pydantic/</link>
+        <guid isPermaLink="true">/python-pydantic/</guid>
         
         
-        <category>Travel</category>
+        <category>Python</category>
         
-        <category>Lifestyle</category>
+        <category>Pydantic</category>
+        
+        <category>Data Validation</category>
         
       </item>
     
       <item>
-        <title>Reviewing the best Oscar movies of all time</title>
-        <description>&lt;p&gt;Review products, books, movies, restaurant and anything you like on your Jekyll blog with &lt;strong&gt;Memoirs&lt;/strong&gt;! JSON-LD ready for review property.&lt;/p&gt;
+        <title>Robotic Process Automation (RPA) Explained</title>
+        <description>&lt;p&gt;&lt;strong&gt;Robotic Process Automation (RPA)&lt;/strong&gt; is one of the fastest-growing trends in business automation.&lt;br /&gt;
+It allows organizations to automate repetitive, rule-based tasks using &lt;strong&gt;software “robots”&lt;/strong&gt; that mimic human interactions with digital systems.&lt;/p&gt;
 
-&lt;h4 id=&quot;how-to-use&quot;&gt;How to use?&lt;/h4&gt;
+&lt;p&gt;Instead of a human clicking through forms, copy-pasting data, or running reports, RPA bots can handle these actions automatically — increasing speed, accuracy, and scalability.&lt;/p&gt;
 
-&lt;p&gt;It’s actually really simple! Add the rating in your YAML front matter. It also supports halfs:&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-md&quot;&gt;---
-layout: post
-title:  &quot;Inception Movie&quot;
-author: john
-categories: [ Lifestyle ]
-tags: [red, yellow]
-image: assets/images/11.jpg
-description: &quot;My review of Inception movie. Actors, directing and more.&quot;
-rating: 4.5
----
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;what-is-rpa&quot;&gt;What is RPA?&lt;/h2&gt;
+&lt;p&gt;RPA is a technology that enables bots to interact with applications and systems just like a human would:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Clicking buttons&lt;/li&gt;
+  &lt;li&gt;Entering or copying data&lt;/li&gt;
+  &lt;li&gt;Navigating menus&lt;/li&gt;
+  &lt;li&gt;Sending emails or notifications&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Unlike traditional automation (which requires deep system integration), RPA works on top of existing systems — often without changing the underlying applications.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;typical-use-cases&quot;&gt;Typical Use Cases&lt;/h2&gt;
+&lt;p&gt;RPA shines in &lt;strong&gt;high-volume, repetitive, rules-driven tasks&lt;/strong&gt;, for example:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Finance &amp;amp; Accounting&lt;/strong&gt; → invoice processing, expense report handling&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;HR&lt;/strong&gt; → employee onboarding, payroll, benefits administration&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;IT Services&lt;/strong&gt; → automated password resets, system monitoring&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Customer Service&lt;/strong&gt; → data entry, order status checks&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Compliance&lt;/strong&gt; → audit trail creation, regulatory reporting&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;benefits-of-rpa&quot;&gt;Benefits of RPA&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Strengths&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Cost Efficiency&lt;/td&gt;
+      &lt;td&gt;Reduces operational costs by automating manual work&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Speed&lt;/td&gt;
+      &lt;td&gt;Bots can execute tasks much faster than humans&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Accuracy&lt;/td&gt;
+      &lt;td&gt;Eliminates human errors in repetitive processes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Scalability&lt;/td&gt;
+      &lt;td&gt;Additional bots can be deployed as workload increases&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Compliance&lt;/td&gt;
+      &lt;td&gt;Creates detailed logs and ensures rules are consistently applied&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;challenges-of-rpa&quot;&gt;Challenges of RPA&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Weaknesses&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Limited to Rules&lt;/td&gt;
+      &lt;td&gt;RPA struggles with unstructured, unpredictable tasks&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Maintenance Overhead&lt;/td&gt;
+      &lt;td&gt;Bots must be updated when UIs or processes change&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Short-Term Fix&lt;/td&gt;
+      &lt;td&gt;Can lead to “band-aid automation” instead of true process redesign&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Initial Costs&lt;/td&gt;
+      &lt;td&gt;Licensing for enterprise RPA platforms can be expensive&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;rpa-vs-intelligent-automation&quot;&gt;RPA vs. Intelligent Automation&lt;/h2&gt;
+
+&lt;p&gt;Classic RPA is rule-based. The next evolution is &lt;strong&gt;Intelligent Automation (IA)&lt;/strong&gt;, which combines RPA with AI/ML:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;OCR (Optical Character Recognition):&lt;/strong&gt; Extracting data from PDFs and scanned documents&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;NLP (Natural Language Processing):&lt;/strong&gt; Understanding text from emails or chats&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ML Models:&lt;/strong&gt; Making decisions based on data patterns&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This combination extends RPA beyond simple rule execution into &lt;strong&gt;cognitive automation&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;popular-rpa-tools&quot;&gt;Popular RPA Tools&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;UiPath&lt;/strong&gt; – Leader in enterprise RPA platforms&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Automation Anywhere&lt;/strong&gt; – Cloud-native RPA with AI integrations&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Blue Prism&lt;/strong&gt; – Enterprise-grade automation for large organizations&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Microsoft Power Automate&lt;/strong&gt; – Low-code automation with Office 365 integration&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;future-of-rpa&quot;&gt;Future of RPA&lt;/h2&gt;
+
+&lt;p&gt;RPA is increasingly part of &lt;strong&gt;Hyperautomation&lt;/strong&gt;, where it works alongside:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;BPM&lt;/strong&gt; (Business Process Management) for orchestration&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;AI/ML&lt;/strong&gt; for intelligent decision-making&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Process Mining&lt;/strong&gt; to identify automation opportunities&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;💡 &lt;em&gt;The role of RPA is shifting from tactical task automation towards being a building block in enterprise-wide digital transformation.&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Robotic Process Automation enables organizations to &lt;strong&gt;save time, cut costs, and improve accuracy&lt;/strong&gt; by automating repetitive tasks.&lt;br /&gt;
+While it’s not a silver bullet, when combined with &lt;strong&gt;AI, BPM, and process mining&lt;/strong&gt;, RPA becomes a powerful enabler of &lt;strong&gt;end-to-end intelligent automation&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;For anyone working in automation, RPA skills are an essential foundation — and a stepping stone towards the future of &lt;strong&gt;Hyperautomation&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
 </description>
-        <pubDate>Wed, 01 Jan 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/review-oscar/</link>
-        <guid isPermaLink="true">http://localhost:4000/review-oscar/</guid>
-        
-        <category>Movies</category>
+        <pubDate>Fri, 03 Oct 2025 00:00:00 +0200</pubDate>
+        <link>/robotic-process-automation/</link>
+        <guid isPermaLink="true">/robotic-process-automation/</guid>
         
         
-        <category>Lifestyle</category>
+        <category>RPA</category>
+        
+        <category>Automation</category>
+        
+        <category>Bots</category>
+        
+        <category>Hyperautomation</category>
         
       </item>
     
       <item>
-        <title>French Wine has to compete with many new world wines</title>
-        <description>&lt;p&gt;French wine is produced all throughout France, in quantities between 50 and 60 million hectolitres per year, or 7–8 billion bottles. France is one of the largest wine producers in the world, along with Italian, Spanish, and American wine-producing regions.&lt;/p&gt;
+        <title>Low-Code and No-Code Platforms Explained</title>
+        <description>&lt;p&gt;&lt;strong&gt;Low-Code and No-Code (LCNC) platforms&lt;/strong&gt; empower non-developers and business users to create applications and automations with &lt;strong&gt;little to no coding required&lt;/strong&gt;.&lt;br /&gt;
+Instead of writing full applications from scratch, users can drag, drop, and configure workflows visually.&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;French wine traces its history to the 6th century BC, with many of France’s regions dating their wine-making history to Roman times. The wines produced range from expensive wines sold internationally to modest wines usually only seen within France such as the Margnat wines were during the post war period.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;This trend is a cornerstone of &lt;strong&gt;democratizing automation&lt;/strong&gt; and is driving the rise of so-called &lt;strong&gt;citizen developers&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;Two concepts central to the better French wines are the notion of terroir, which links the style of the wines to the locations where the grapes are grown and the wine is made and the Appellation d’origine contrôlée (AOC) system, replaced by the Appellation d’Origin Protégée (AOP) system in 2012.&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;Appellation rules closely define which grape varieties and winemaking practices are approved for classification in each of France’s several hundred geographically defined appellations, which can cover regions, villages or vineyards.&lt;/p&gt;
+&lt;h2 id=&quot;what-are-low-codeno-code-platforms&quot;&gt;What are Low-Code/No-Code Platforms?&lt;/h2&gt;
 
-&lt;p&gt;France is the source of many grape varieties (such as &lt;strong&gt;Cabernet Sauvignon, Chardonnay, Pinot noir, Sauvignon blanc, Syrah&lt;/strong&gt;) that are now planted throughout the world, as well as wine-making practices and styles of wine that have been adopted in other producing countries.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Low-Code Platforms:&lt;/strong&gt; Require some coding, but most of the logic is built visually. Good for technical users who need speed.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;No-Code Platforms:&lt;/strong&gt; Designed for non-technical users. Workflows are built entirely through a graphical interface.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Although some producers have benefited in recent years from rising prices and increased demand for some of the prestige wines from Burgundy and Bordeaux, the French wine industry has seen a decline in domestic consumption and internationally, it has had to compete with many new world wines.&lt;/p&gt;
+&lt;p&gt;These platforms are used to &lt;strong&gt;automate workflows, build internal tools, and connect apps quickly&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;benefits-of-lcnc&quot;&gt;Benefits of LCNC&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Strengths&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Accessibility&lt;/td&gt;
+      &lt;td&gt;Empowers non-developers to build solutions&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Speed&lt;/td&gt;
+      &lt;td&gt;Faster prototyping and deployment than traditional coding&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Cost Savings&lt;/td&gt;
+      &lt;td&gt;Reduces reliance on scarce developer resources&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Integration&lt;/td&gt;
+      &lt;td&gt;Connects diverse apps and services with pre-built connectors&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Agility&lt;/td&gt;
+      &lt;td&gt;Enables business teams to adapt processes quickly&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;challenges-of-lcnc&quot;&gt;Challenges of LCNC&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Weaknesses&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Complexity Limits&lt;/td&gt;
+      &lt;td&gt;Not ideal for highly custom or large-scale applications&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shadow IT Risk&lt;/td&gt;
+      &lt;td&gt;Business users may bypass IT governance&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Vendor Lock-In&lt;/td&gt;
+      &lt;td&gt;Some platforms tie you to proprietary ecosystems&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Performance&lt;/td&gt;
+      &lt;td&gt;Can be less efficient than custom-built solutions&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;popular-low-codeno-code-platforms&quot;&gt;Popular Low-Code/No-Code Platforms&lt;/h2&gt;
+
+&lt;h3 id=&quot;-n8n&quot;&gt;🔄 N8N&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; Open-source workflow automation tool.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Highlights:&lt;/strong&gt; Self-hosted, privacy-friendly, highly customizable with code nodes.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Use cases:&lt;/strong&gt; Automating emails, integrating APIs, building data pipelines.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;-make-formerly-integromat&quot;&gt;🔗 Make (formerly Integromat)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; Cloud-based no-code automation platform.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Highlights:&lt;/strong&gt; Visual drag-and-drop editor, thousands of integrations, flexible branching logic.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Use cases:&lt;/strong&gt; Marketing automation, social media posting, data syncing.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;-microsoft-power-automate&quot;&gt;⚡ Microsoft Power Automate&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; Enterprise-grade low-code automation (part of Power Platform).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Highlights:&lt;/strong&gt; Strong integration with Microsoft 365, AI Builder, and RPA features.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Use cases:&lt;/strong&gt; Automating approvals, document handling, IT workflows.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;lcnc-in-the-enterprise&quot;&gt;LCNC in the Enterprise&lt;/h2&gt;
+
+&lt;p&gt;Low-code/no-code is not just for hobby projects — enterprises use it to:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Empower employees to &lt;strong&gt;automate repetitive work&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Prototype solutions before investing in full development.&lt;/li&gt;
+  &lt;li&gt;Bridge gaps between siloed systems without complex integration projects.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;future-of-lcnc&quot;&gt;Future of LCNC&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Hyperautomation Enabler:&lt;/strong&gt; LCNC is a key driver of hyperautomation strategies.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;AI Integration:&lt;/strong&gt; Many platforms now include AI-powered actions (text analysis, image recognition, predictions).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Governance Focus:&lt;/strong&gt; IT departments are developing &lt;strong&gt;guardrails&lt;/strong&gt; to manage security, compliance, and quality.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;💡 &lt;em&gt;The future will see a blend: business users create workflows with LCNC, while developers extend them with advanced logic.&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Low-Code and No-Code platforms like &lt;strong&gt;N8N, Make, and Power Automate&lt;/strong&gt; are transforming how organizations approach automation.&lt;br /&gt;
+They make automation &lt;strong&gt;accessible, fast, and collaborative&lt;/strong&gt;, empowering both technical and non-technical users.&lt;/p&gt;
+
+&lt;p&gt;For anyone pursuing a career in &lt;strong&gt;process automation&lt;/strong&gt;, mastering LCNC platforms is increasingly valuable — as they bridge the gap between &lt;strong&gt;business requirements and technical execution&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
 </description>
-        <pubDate>Wed, 01 Jan 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/french-wine/</link>
-        <guid isPermaLink="true">http://localhost:4000/french-wine/</guid>
-        
-        <category>France</category>
+        <pubDate>Fri, 03 Oct 2025 00:00:00 +0200</pubDate>
+        <link>/low-code-plattforms/</link>
+        <guid isPermaLink="true">/low-code-plattforms/</guid>
         
         
-        <category>Lifestyle</category>
+        <category>Automation</category>
+        
+        <category>N8N</category>
+        
+        <category>Make</category>
+        
+        <category>Power Automate</category>
+        
+        <category>Low-Code</category>
+        
+        <category>No-Code</category>
         
       </item>
     
       <item>
-        <title>The Observer - National Gallery of Art, Washington, United States</title>
-        <description>&lt;p&gt;The National Gallery of Art, and its attached Sculpture Garden, is a national art museum in Washington, D.C., located on the National Mall, between 3rd and 9th Streets, at Constitution Avenue NW. Open to the public and free of charge, the museum was privately established in 1937 for the American people by a joint resolution of the United States Congress. Andrew W. Mellon donated a substantial art collection and funds for construction.&lt;/p&gt;
+        <title>Business Process Management (BPM) and Workflow Automation</title>
+        <description>&lt;p&gt;&lt;strong&gt;Business Process Management (BPM)&lt;/strong&gt; goes beyond just modeling and documenting processes—it provides a structured approach to improving and &lt;strong&gt;automating workflows&lt;/strong&gt; to achieve efficiency, compliance, and agility in organizations.&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;The core collection includes major works of art donated by Paul Mellon, Ailsa Mellon Bruce, Lessing J. Rosenwald, Samuel Henry Kress, Rush Harrison Kress, Peter Arrell Browne Widener, Joseph E. Widener, and Chester Dale.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;While &lt;strong&gt;BPMN&lt;/strong&gt; gives us the blueprint for processes, &lt;strong&gt;workflow automation&lt;/strong&gt; brings them to life by leveraging technology to execute tasks, route information, and reduce manual effort.&lt;/p&gt;
 
-&lt;p&gt;The Gallery’s collection of paintings, drawings, prints, photographs, sculpture, medals, and decorative arts traces the development of Western Art from the Middle Ages to the present, including the only painting by Leonardo da Vinci in the Americas and the largest mobile created by Alexander Calder.&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;The Gallery’s campus includes the original neoclassical West Building designed by John Russell Pope, which is linked underground to the modern East Building, designed by I. M. Pei, and the 6.1-acre (25,000 m2) Sculpture Garden.&lt;/p&gt;
+&lt;h2 id=&quot;what-is-workflow-automation&quot;&gt;What is Workflow Automation?&lt;/h2&gt;
+&lt;p&gt;Workflow automation is the use of technology to automatically execute and coordinate tasks in a business process. Instead of relying on human intervention for every step, automation tools handle routine actions such as:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Sending approval requests&lt;/li&gt;
+  &lt;li&gt;Updating databases&lt;/li&gt;
+  &lt;li&gt;Generating notifications&lt;/li&gt;
+  &lt;li&gt;Integrating with external systems (ERP, CRM, HR software)&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;The Gallery often presents temporary special exhibitions spanning the world and the history of art. It is one of the largest museums in North America.&lt;/p&gt;
+&lt;p&gt;By combining &lt;strong&gt;BPM for design and governance&lt;/strong&gt; with &lt;strong&gt;automation platforms for execution&lt;/strong&gt;, businesses can create streamlined, repeatable, and scalable processes.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;human-in-the-loop-hitl&quot;&gt;Human in the Loop (HITL)&lt;/h2&gt;
+&lt;p&gt;Not all processes can be fully automated. Some tasks require &lt;strong&gt;human judgment, creativity, or exceptions handling&lt;/strong&gt;.&lt;br /&gt;
+Examples include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Approving a high-value purchase order&lt;/li&gt;
+  &lt;li&gt;Reviewing a legal contract&lt;/li&gt;
+  &lt;li&gt;Handling an unusual customer complaint&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In BPMN, these are modeled as &lt;strong&gt;user tasks&lt;/strong&gt; or &lt;strong&gt;manual tasks&lt;/strong&gt;, clearly indicating where humans interact with the system.&lt;/p&gt;
+
+&lt;p&gt;Automation engines then orchestrate a mix of &lt;strong&gt;machine-executed tasks&lt;/strong&gt; and &lt;strong&gt;human-in-the-loop steps&lt;/strong&gt;, ensuring that the workflow remains efficient while still allowing for human oversight.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;scanning-bpmn-for-automation-opportunities&quot;&gt;Scanning BPMN for Automation Opportunities&lt;/h2&gt;
+&lt;p&gt;One of the strengths of BPMN is that you can &lt;strong&gt;analyze the process diagram to identify which tasks are automation candidates&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;A typical approach is:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Model the entire process&lt;/strong&gt; using BPMN, including both automated and manual steps.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Evaluate tasks for automation feasibility&lt;/strong&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;Rule-based, repetitive tasks → automation candidates.&lt;/li&gt;
+      &lt;li&gt;Decision-heavy or exception-driven tasks → human-in-the-loop.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Iteratively optimize&lt;/strong&gt; by automating more steps as tools, AI, and organizational maturity evolve.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This ensures that organizations balance &lt;strong&gt;efficiency&lt;/strong&gt; with &lt;strong&gt;quality and control&lt;/strong&gt;, rather than attempting unrealistic “full automation.”&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;benefits-of-bpm-and-workflow-automation&quot;&gt;Benefits of BPM and Workflow Automation&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Efficiency Gains&lt;/strong&gt; – Automating repetitive tasks reduces bottlenecks.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Improved Accuracy&lt;/strong&gt; – Fewer errors in data entry and handoffs.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Transparency and Monitoring&lt;/strong&gt; – Dashboards and analytics for real-time tracking.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Agility and Adaptability&lt;/strong&gt; – Processes can be rapidly updated.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Compliance and Auditability&lt;/strong&gt; – Automated logs and audit trails support governance.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;bpm--automation-in-practice&quot;&gt;BPM + Automation in Practice&lt;/h2&gt;
+&lt;p&gt;Here’s how BPM and workflow automation work hand-in-hand:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Design the Process&lt;/strong&gt; – Use BPMN to map out workflows, including user tasks.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Automate the Execution&lt;/strong&gt; – Deploy in a workflow engine (e.g., &lt;strong&gt;Camunda&lt;/strong&gt;, &lt;strong&gt;ProcessMaker&lt;/strong&gt;, &lt;strong&gt;Nintex&lt;/strong&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Monitor and Optimize&lt;/strong&gt; – Track KPIs and refine models for continuous improvement.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;example-automated-employee-onboarding&quot;&gt;Example: Automated Employee Onboarding&lt;/h2&gt;
+&lt;p&gt;A traditional onboarding process involves multiple departments and manual steps. With BPM and automation:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;HR inputs the new hire’s details once.&lt;/li&gt;
+  &lt;li&gt;The system provisions accounts, schedules training, and notifies IT and payroll.&lt;/li&gt;
+  &lt;li&gt;A &lt;strong&gt;manager receives a user task&lt;/strong&gt; to complete probation review manually.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This hybrid approach reduces onboarding time, ensures consistency, and keeps humans in the loop where necessary.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;popular-workflow-automation-tools&quot;&gt;Popular Workflow Automation Tools&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Camunda Platform&lt;/strong&gt; – Open-source workflow and decision automation.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ProcessMaker&lt;/strong&gt; – BPM and automation suite for enterprises.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Nintex&lt;/strong&gt; – Low-code automation platform with strong integration features.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Zapier&lt;/strong&gt; (for smaller workflows) – Automates repetitive tasks across SaaS apps.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;BPM provides the &lt;strong&gt;strategic framework&lt;/strong&gt; for managing business processes, while workflow automation delivers &lt;strong&gt;operational execution&lt;/strong&gt;. Together, they enable organizations to scale, adapt, and remain competitive in a digital-first world.&lt;/p&gt;
+
+&lt;p&gt;By &lt;strong&gt;scanning BPMN diagrams for automation opportunities&lt;/strong&gt; and integrating &lt;strong&gt;human-in-the-loop tasks&lt;/strong&gt; where judgment is required, businesses can achieve the right balance of efficiency and control.&lt;/p&gt;
+
+&lt;p&gt;If BPMN helps you &lt;strong&gt;draw the map&lt;/strong&gt;, automation ensures you can &lt;strong&gt;travel the path efficiently&lt;/strong&gt;—with humans still steering at the critical turns.&lt;/p&gt;
+
+&lt;hr /&gt;
 </description>
-        <pubDate>Sun, 01 Dec 2019 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/the-observer/</link>
-        <guid isPermaLink="true">http://localhost:4000/the-observer/</guid>
+        <pubDate>Wed, 01 Oct 2025 00:00:00 +0200</pubDate>
+        <link>/BPM-Workflow-Automation/</link>
+        <guid isPermaLink="true">/BPM-Workflow-Automation/</guid>
         
         
-        <category>Lifestyle</category>
+        <category>BPM</category>
+        
+        <category>Workflow</category>
+        
+        <category>Automation</category>
+        
+        <category>Human-in-the-Loop</category>
         
       </item>
     
