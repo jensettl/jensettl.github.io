@@ -3,7 +3,7 @@ layout: post
 title:  "Automation of a Customer Order Process"
 author: jens
 categories: [ Automation, BPMN, Camunda, Java ]
-image: assets/images/placeholder.jpg
+image: assets/images/bpmn-customer-order/cover_bpmn.jpg
 ---
 
 Part of a class in university was to model and automate a customer order process using BPMN (Business Process Model and Notation) and Camunda. The goal was to create a workflow that handles customer orders from initiation to completion, including various decision points and tasks. The customers were simulated using a simple JSON server. 
