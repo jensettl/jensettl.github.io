@@ -4,7 +4,7 @@ title:  "Coming soon on this blog"
 author: jens
 categories: [ Projects ]
 rating: 
-date: 2025-10-08
+date: 2025-10-14
 image: assets/images/coming_soon.jpg
 ---
 
