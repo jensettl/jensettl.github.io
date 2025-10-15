@@ -3,7 +3,7 @@ layout: post
 title:  "Robotic Process Automation (RPA) Explained"
 author: jens
 categories: [ RPA, Automation, Bots, Hyperautomation ]
-image: assets/images/rpa/cover_rpa.jpg
+image: assets/images/rpa/cover_rpa.png
 ---
 
 **Robotic Process Automation (RPA)** is one of the fastest-growing trends in business automation.  
