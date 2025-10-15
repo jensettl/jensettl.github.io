@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "A Developer’s Guide to Major API Types"
+title:  "Major API Types explained"
 author: jens
 categories: [ REST, SOAP, gRPC, GraphQL, WebHooks, WebSockets, WebRTC ]
-image: assets/images/api-types/api-overview.jpg
+image: assets/images/api-types/api-overview.png
 ---
 
 APIs (Application Programming Interfaces) are the **connective tissue of modern software**. They allow systems, apps, and services to talk to each other, powering everything from social media integrations to banking transactions and real-time chat apps.
