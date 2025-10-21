@@ -339,3 +339,28 @@ def map_omdb_to_notion_schema(omdb_data: dict):
         "URL": f"https://www.imdb.com/title/{omdb_data.get('imdbID')}/" if omdb_data.get("imdbID") else ""
     }
 ```
+
+
+## Difficulties Encountered
+
+During the implementation, I faced several challenges:
+1. **API Limitations**: The OMDb API has usage limits on the free tier, which required me to optimize my requests and handle rate limiting gracefully.
+2. **Notion API Complexity**: The Notion API has a steep learning curve, especially when it comes to understanding how to structure data for different property types.
+3. **Hosting Constraints**: PythonAnywhere's free tier has limitations on CPU time and web app availability, which required careful planning of when and how often to run the automation scripts.
+4. **Telegram Webhook Setup**: Setting up the Telegram webhook to work with PythonAnywhere required some trial and error, especially with ensuring the correct URL and handling incoming requests properly. The script should always be available to receive webhook calls.
+
+
+## Improvements and Future Work
+
+The system works well for my current needs, but there are several areas for potential improvement:
+1. **Enhanced Error Handling**: Implement more robust error handling and logging to better track issues during execution. Especially for API failures or data inconsistencies. The system **fails** on typo errors in movie titles or not knowing the english movie title.
+2. **API Key Management**: Implement a more secure way to manage API keys and sensitive information, possibly using environment variables or a secrets manager. I was to lazy to read the documentation on pythonanywhere about environment variables.
+3. **Change API**: Explore other movie databases or APIs that might offer more features or better data quality. Maybe The Movie Database (TMDb) API could be an alternative.
+
+
+## Conclusion
+
+Building an automated movie and TV show tracking system using Python, Notion, and free hosting services has been a rewarding experience. It has allowed me to maintain an organized media library with minimal manual effort. The project showcases the power of APIs and automation in simplifying everyday tasks. 
+
+Personally this project was a Prove of concept for me, that there are simple solutions to automate tedious tasks with free tools and a nice usability, since Telegram is available on all my devices.
+
