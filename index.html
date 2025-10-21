@@ -7,7 +7,14 @@ title: Home
 ================================================== -->
 <div class="blog-grid-container">
     {% for post in paginator.posts %}
-        {% include postbox.html %}
+        {% if post.pin %}
+            {% include postbox.html %}
+        {% endif %}
+    {% endfor %}
+    {% for post in paginator.posts %}
+        {% unless post.pin %}
+            {% include postbox.html %}
+        {% endunless %}
     {% endfor %}
 </div>
 

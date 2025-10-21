@@ -6,6 +6,7 @@ categories: [ Projects ]
 rating: 
 date: 2025-10-14
 image: assets/images/coming_soon.jpg
+pin: true
 ---
 
 ####  The following list showcases projects that are currently being worked on or are already finished and will be documented here soon.
