@@ -77,7 +77,11 @@ The main script has all the logic to handle incoming Telegram messages, fetch da
 
   # Temporary storage for pending confirmations (user_id → movie data)
   pending_movies = {}
+```
 
+The main webhook endpoint handles incoming Telegram messages. It processes both new messages (movie titles) and callback queries (button clicks for confirmation).
+
+```python
   # --- Telegram webhook endpoint ---
   @app.route(f"/{TELEGRAM_TOKEN}", methods=["POST"])
   def telegram_webhook():
@@ -109,14 +113,14 @@ The main script has all the logic to handle incoming Telegram messages, fetch da
       title = message.get("text")
 
       if not title:
-          send_message(chat_id, "Please send me a movie title.")
+          send_message(chat_id, "Please send me a movie or tv show title.")
           return "ok"
 
       try:
           # Fetch OMDB
           omdb_data = fetch_data_from_omdb(title, OMDB_API_KEY)
           if not omdb_data:
-              send_message(chat_id, "Movie not found. Please check the title and try again.")
+              send_message(chat_id, "Movie or TV Show not found. Please check the title and try again.")
               return "ok"
 
           # Map to Notion schema
@@ -153,7 +157,11 @@ The main script has all the logic to handle incoming Telegram messages, fetch da
           send_message(chat_id, f"Error: {e}")
 
       return "ok"
+```
 
+The home route is just a simple health check endpoint.
+
+```python
   @app.route("/")
   def home():
       return "Bot is running."
@@ -189,7 +197,7 @@ To edit a message via the Telegram Bot API, I created the following function:
 ```
 
 #### send_message
-To send a messaage via the Telegram Bot API, I created the following function:
+To send a message via the Telegram Bot API, all you need is the url with your Telegram bot token (aquired by the BotFather on Telegram) and the chat_id of the user you want to send the message to. reply_markup is optional, if you want to send buttons with the message. Since i want to use Markdown formatting, i set the parse_mode to "Markdown".
 
 ```python
   import requests
