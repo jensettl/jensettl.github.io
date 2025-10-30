@@ -9,17 +9,16 @@ image: assets/images/coming_soon.jpg
 pin: true
 ---
 
-####  The following list showcases projects that are currently being worked on or are already finished and will be documented here soon.
+I have some exciting projects and topics in the pipeline that I will be documenting here on this blog soon. Stay tuned for in-depth articles, tutorials, and insights into these areas.
+
+##  Projects I am working on or planning to document
 
 - AI-powered Research & Reporting Agent with Langchain
-<!-- - Mail Reporting Service on Raspberry Pi Zero 2 W -->
 - N8N Email Inbox Automation with AI
-<!-- - Social Media Platform for Event Management -->
 - AI-based Web Scraper
 - Identification of Defective Products with Machine Learning
 - Supply Chain Management Simulation
 - SmartCampus Application Project
-<!-- - Automation of a Customer Order Process -->
 - gRPC Client-Server Communication
 - Git Workshop for Students
 - Investigation of Company Data for Compliance
@@ -30,16 +29,16 @@ pin: true
 - Automated Movie and Series Management
 - Resume Website Creator with Langflow
 - Inflation Forecast with Machine Learning
+- resume latex template 
 
 
-#### Interesting topics to be covered
+## Topics to be covered
 - AI and Machine Learning
     - Prompt Engineering for LLMs (effective prompting patterns for LangChain, OpenAI, etc.)
     - Vector Databases & Semantic Search (Pinecone, Weaviate, FAISS)
     - Agentic Workflows (multi-agent systems for problem solving)
     - Explainable AI (XAI) (making ML results transparent for compliance & trust)
-- 
-- Process Mining -> Tools: Celonis, UIPath, Power Automate
+
 - Digital Twins of Organizations (DTOs) -> Simulating business processes and systems
 - Hyperautomation (combining BPM, RPA, AI for end-to-end automation)
 - Low-Code/No-Code Platforms (N8N, Make, Power Automate)
@@ -48,6 +47,8 @@ pin: true
 - AI in Automation -> Intelligent Process Automation (IPA)
 - Decision Automation & Business Rules Engines (Drools, Camunda DMN)
 - AI Enhanced BPM (using AI to optimize and adapt business processes)
+
+## First Overview of Selected Projects
 
 #### AI-powered Research & Reporting Agent with Langchain
 (Python, Langchain, Ollama)
