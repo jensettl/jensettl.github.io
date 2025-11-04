@@ -6,7 +6,7 @@ categories: [ n8n, workflow, automation, error handling ]
 image: assets/images/n8n/cover_n8n.png
 ---
 
-Automating workflows with n8n can significantly enhance productivity and streamline processes. However, as with any automation tool, errors can occur. Effective error handling is crucial to ensure that your workflows run smoothly and that you can quickly address any issues that arise. 
+> Automating workflows with n8n can significantly enhance productivity and streamline processes. However, as with any automation tool, errors can occur. **Effective error handling is crucial** to ensure that your workflows run smoothly and that you can quickly address any issues that arise. 
 
 ## Understanding Error Handling in n8n
 

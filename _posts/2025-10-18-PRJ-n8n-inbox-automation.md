@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "N8N AI-powered Email Inbox Automation"
+title:  "[PROJECT] N8N AI-powered Email Inbox Automation"
 author: jens
 categories: [ N8N, Automation, AI, Ollama ]
-image: assets/images/n8n/cover_n8n.png
+image: assets/images/PRJ-n8n/cover-n8n.png
 ---
 
 TBD 

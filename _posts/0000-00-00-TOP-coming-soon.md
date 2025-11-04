@@ -1,10 +1,9 @@
 ---
+date: 2025-10-21
 layout: post
 title:  "Coming soon on this blog"
 author: jens
 categories: [ Projects ]
-rating: 
-date: 2025-10-14
 image: assets/images/coming_soon.jpg
 pin: true
 ---
@@ -33,6 +32,7 @@ I have some exciting projects and topics in the pipeline that I will be document
 
 
 ## Topics to be covered
+- New Agent Builder N8n konkurrent by openai
 - AI and Machine Learning
     - Prompt Engineering for LLMs (effective prompting patterns for LangChain, OpenAI, etc.)
     - Vector Databases & Semantic Search (Pinecone, Weaviate, FAISS)

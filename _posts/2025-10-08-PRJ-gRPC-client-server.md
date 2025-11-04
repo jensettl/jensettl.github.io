@@ -1,29 +1,38 @@
 ---
 layout: post
-title:  "Creating an efficient gRPC Client-Server Communication"
+title:  "[PROJECT] Creating an efficient gRPC Client-Server Communication"
 author: jens
-categories: [ Python ]
-image: assets/images/gRPC/cover_gRPC.png
+categories: [ gRPC, protobuf, javascript ]
+image: assets/images/PRJ-gRPC/cover_gRPC.png
 ---
 
-gRPC **(gRPC Remote Procedure Calls)** is a high-performance, open-source framework developed by Google that enables efficient communication between distributed systems. It is based on the HTTP/2 protocol and uses **Protocol Buffers** (protobuf) as its **interface definition language** (IDL) for serializing structured data. gRPC is designed to be **polyglot**, allowing developers to create services in multiple programming languages.
+> gRPC **(gRPC Remote Procedure Calls)** is a high-performance, open-source framework developed by Google that enables efficient communication between distributed systems. 
 
-Read more about gRPC on the [official gRPC website](https://grpc.io/docs/what-is-grpc/).
+The project aims to demonstrate how to **set up a gRPC client-server communication using JavaScript** and demonstrate the key features and benefits of gRPC such as sending single messages and streaming data between client and server.
 
+---
 ## Remote Procedure Calls (RPC)
+---
 
 At its core, gRPC is built around the concept of Remote Procedure Calls (RPCs). RPCs allow a program to execute a procedure (or method) on a remote server as if it were a local function call. This abstraction simplifies the development of distributed applications by hiding the complexities of network communication.
 
-### How gRPC Works
+> 💡 Read more about gRPC on the [official gRPC website](https://grpc.io/docs/what-is-grpc/).
 
-gRPC operates on the concept of defining services and their methods using Protocol Buffers. The process involves the following steps:
+##### The Core Concepts of gRPC
 
-1. **Define the Service**: Developers define the service and its methods in a `.proto` file using Protocol Buffers syntax. Each method specifies the request and response message types.
-2. **Generate Code**: The `.proto` file is then compiled using the Protocol Buffers compiler (`protoc`), which generates client and server code in the desired programming languages.
+gRPC operates on the concept of defining services and their methods using Protocol Buffers. **Protocol Buffers is a binary serialization** format that is both compact and efficient to compute, making it ideal for high-performance communication. <br><br>
+The process involves the following steps:
+
+![Core Concepts of gRPC](/assets/images/PRJ-gRPC/gRPC-core-concept.png)
+
+1. **Define the Service**: Developers define the service and its methods in a **.proto** file using Protocol Buffers syntax. Each method specifies the request and response message types.
+2. **Generate Code**: The **.proto** file is then compiled using the Protocol Buffers compiler (**protoc**), which generates client and server code in the desired programming languages.
 3. **Implement the Server**: The server-side code is implemented to handle incoming requests and provide the appropriate responses.
 4. **Create the Client**: The client-side code is used to call the server methods as if they were local functions, abstracting away the complexities of network communication.
 
-### Key Features of gRPC
+---
+##### Key Features of gRPC
+---
 
 - **High Performance**: gRPC leverages HTTP/2, which provides features like multiplexing, header compression, and server push, resulting in lower latency and improved performance compared to traditional RESTful APIs.
 - **Language Agnostic**: gRPC supports multiple programming languages, including Python, Java, C++, Go, Ruby, and more, making it suitable for polyglot environments.
@@ -31,21 +40,26 @@ gRPC operates on the concept of defining services and their methods using Protoc
 - **Built-in Authentication**: gRPC provides built-in support for authentication and encryption using SSL/TLS, ensuring secure communication between clients and servers.
 - **Pluggable Architecture**: gRPC allows developers to extend its functionality through custom plugins, such as interceptors for logging, monitoring, and error handling.
 
-## Use Case: gRPC Client-Server Communication in Python
+---
+##### Use Case: gRPC Client-Server Communication 
+---
 
 Commonly, gRPC is used in microservices architectures, where different services need to communicate with each other efficiently. It is also used in scenarios where low latency and high throughput are critical, such as real-time applications, IoT systems, and mobile applications.
 
 Famous companies like Google, Netflix, and Dropbox use gRPC for their internal services due to its performance and scalability.
 
-### Example: Implementing a gRPC Client-Server in Python
+---
+# Project Example: Implementing a gRPC Client-Server in JavaScript
+---
 
-To demonstrate gRPC client-server communication in Python, we will set up a simple example where a client sends a request to the server, and the server responds with a message. 
+To demonstrate gRPC client-server communication in JavaScript, we will set up a simple example where a client sends a request to the server, and the server responds with a message. 
 
 #### Step 1: Define the Service
 
-Create a file named `service.proto` to define the gRPC service and its methods.
+Create a file named **service.proto** to define the gRPC service and its methods.
 
 ```proto
+
   syntax = "proto3";
   package grpc_example;
 
@@ -64,7 +78,7 @@ Create a file named `service.proto` to define the gRPC service and its methods.
     string message = 1;
   }
 
-  # define the structure for the data you want to serialize
+  // define the structure for the data you want to serialize
   message Person {
       string name = 1;
       int32 age = 2;
@@ -72,24 +86,26 @@ Create a file named `service.proto` to define the gRPC service and its methods.
   }
 
   message DataResponse {
-      # The response message containing the result
+      // The response message containing the result
       string result = 1;
   }
+
 ```
 
 #### Step 2: Generate Code
 
-Use the Protocol Buffers compiler to generate Python code from the `.proto` file.
+Use the Protocol Buffers compiler to generate JavaScript code from the **service.proto** file.
 
 ```bash
-  protoc --python_out=. --grpc_python_out=. service.proto
+  protoc --js_out=import_style=commonjs,binary:. --grpc-web_out=import_style=commonjs,mode=grpcwebtext:. service.proto
 ``` 
 
 #### Step 3: Implement the Server
 
-Create a file named `server.py` to implement the server-side logic.
+Create a file named **server.js** to implement the server-side logic.
 
 ```python
+
   from concurrent import futures
   import grpc
   import service_pb2
@@ -112,32 +128,47 @@ Create a file named `server.py` to implement the server-side logic.
 
   if __name__ == '__main__':
       serve()
+
 ```
 
 #### Step 4: Create the Client
 
-Create a file named `client.py` to implement the client-side logic.
+Create a file named **client.js** to implement the client-side logic.
 
-```python
-  import grpc
-  import service_pb2
-  import service_pb2_grpc
+```javascript
+  const grpc = require('@grpc/grpc-js');
+  const protoLoader = require('@grpc/proto-loader');
+  const packageDefinition = protoLoader.loadSync('service.proto', {
+      keepCase: true,
+      longs: String,
+      enums: String,
+      defaults: true,
+      oneofs: true
+  });
+  const grpcExample = grpc.loadPackageDefinition(packageDefinition).grpc_example;
 
-  def run():
-      with grpc.insecure_channel('localhost:50051') as channel:
-          stub = service_pb2_grpc.ExampleServiceStub(channel)
-          request = service_pb2.DataRequest(query="Hello, gRPC!")
-          response = stub.GetData(request)
-          print(f"Response from server: {response.result}")
+  function main() {
+      const client = new grpcExample.Greeter('localhost:50051', grpc.credentials.createInsecure());
 
-  if __name__ == '__main__':
-      run()
+      const request = { name: 'World' };
+
+      client.SayHello(request, (error, response) => {
+          if (error) {
+              console.error('Error:', error);
+          } else {
+              console.log('Greeting:', response.message);
+          }
+      });
+  }
+
+  main();
+
 ```
 
 #### Step 5: Run the Server and Client
 
-1. Start the server by running `python server.py` in one terminal.
-2. In another terminal, run the client by executing `python client.py`.
+1. Start the server by running **python server.py** in one terminal.
+2. In another terminal, run the client by executing **python client.py**.
 You should see the server output indicating it has started, and the client will print the response received from the server.
 
 ## Conclusion

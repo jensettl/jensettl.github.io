@@ -1,49 +1,76 @@
 ---
 layout: post
-title: "PROJECT: Building a Free Automated Movie and TV Show Tracking System"
+title: "[PROJECT] Building a Free Automated Movie and TV Show Tracking System"
 author: jens
 categories: [ Python, Automation, Notion, Telegram, OMDb, PythonAnywhere, Hosting, Project ]
-image: assets/images/MovieTrackerAutomation/cover_MovieTrackerAutomation.png
+image: assets/images/PRJ-movie-tracker-automation/cover-movie-tracker-automation-removebg-preview.png
 ---
 
-In this post, i will guide you through the process of creating an automated system to track your movie and TV show collection using Python and free Hosting services. This system helps me keep an organized record of my media library without relying on paid services.
+> This project covers the process of creating an **automated system to track your movie and TV show** collection using Python and free Hosting services. This system helps keep an organized record of your media library without relying on paid services.
 
-## Overview
-
+---
+# Overview
+---
 The system consists of the following components:
+![Project Overview](/assets/images/PRJ-movie-tracker-automation/movie_tracker_overview.png)
 
-1. **Data Source**: I need a reliable source for movie and TV show data to populate my tracker. I use the [Open Movie Database (OMDb) API](http://www.omdbapi.com/) which provides comprehensive information about movies and TV shows.
-2. **Database**: I track my movies and TV shows in Notion, a versatile note-taking and database application usable across multiple devices.
-3. **Automation**: I use Python scripts to fetch data from the OMDb API and update my Notion database automatically.
-4. **Hosting**: I host my Python scripts on [PythonAnywhere](https://www.pythonanywhere.com/), a free hosting service for Python applications. Limitations apply, but it works well for my needs.
-5. **Webhook**: I use a Telegram bot to trigger the automation process whenever I want to update my tracker. I just send a message to the bot, it triggers the script, Human-in-the-loop for error handling, and updates my Notion database.
+1. **Data Source**: A reliable source for movie and TV show data to populate my tracker. For example the [Open Movie Database (OMDb) API](http://www.omdbapi.com/) which provides comprehensive information about movies and TV shows.
+2. **Database**: For example Notion, a versatile, free note-taking and database application usable across multiple devices.
+3. **Automation**: Python scripts to fetch data from the OMDb API and update my Notion database automatically.
+4. **Hosting**: Python Scripts can be hosted on [PythonAnywhere](https://www.pythonanywhere.com/), a free hosting service. Limitations apply, but it works well for my needs.
+5. **Webhook**: For example a Telegram bot to trigger the automation process whenever you want to update your tracker. A message to the bot triggers the script, Human-in-the-loop for error handling, and updates the Notion database.
+
+---
+# My Decision-Making Process
+---
+
+###### Choosing Notion for Database
+
+I watched a YouTube video about using Notion for tracking movies and TV shows. So i started to copy the database structure into my own Notion workspace. However, I quickly realized that manually entering data for each movie and TV show would be tedious and time-consuming.
+
+###### Selecting OMDb API
+To automate the process, I researched various APIs and found the OMDb API to be a suitable choice due to its comprehensive data and ease of use. I then wrote Python scripts to fetch data from the API and update my Notion database. 
+
+###### Hosting on PythonAnywhere
+To host the scripts, I explored different options and settled on PythonAnywhere due to its free tier and ease of use. Render and Heroku were also considered, but they seem to no longer offer free plans or only with significant limitations.
+
+###### Using Telegram Bot for Webhook
+Finally, I set up a Telegram bot to trigger the automation process. This allows me to update my tracker whenever I want by simply sending a message to the bot. Telegram's Bot API is straightforward to use and integrates well with Python. WhatsApp Business API seemed more complex to set up and the need to share even more data to Meta was a concern for me.
+
+---
+# Difficulties Encountered
+---
+During the implementation, I faced several challenges:
+1. **API Limitations**: The OMDb API has usage limits on the free tier, which required me to optimize my requests and handle rate limiting gracefully.
+2. **Notion API Complexity**: The Notion API has a steep learning curve, especially when it comes to understanding how to structure data for different property types.
+3. **Hosting Constraints**: PythonAnywhere's free tier has limitations on CPU time and web app availability, which required careful planning of when and how often to run the automation scripts.
+4. **Telegram Webhook Setup**: Setting up the Telegram webhook to work with PythonAnywhere required some trial and error, especially with ensuring the correct URL and handling incoming requests properly. The script should always be available to receive webhook calls.
+
+---
+# Improvements and Future Work
+---
+
+The system works well for my current needs, but there are several areas for potential improvement:
+1. **Enhanced Error Handling**: Implement more robust error handling and logging to better track issues during execution. Especially for API failures or data inconsistencies. The system **fails** on typo errors in movie titles or not knowing the english movie title.
+2. **API Key Management**: Implement a more secure way to manage API keys and sensitive information, possibly using environment variables or a secrets manager. I was to lazy to read the documentation on pythonanywhere about environment variables.
+3. **Change API**: Explore other movie databases or APIs that might offer more features or better data quality. Maybe The Movie Database (TMDb) API could be an alternative.
+
+---
+# Conclusion
+---
+
+Building an automated movie and TV show tracking system using Python, Notion, and free hosting services has been a rewarding experience. It has allowed me to maintain an organized media library with minimal manual effort. The project showcases the power of APIs and automation in simplifying everyday tasks. 
+
+Personally this project was a Prove of concept for me, that there are simple solutions to automate tedious tasks with free tools and a nice usability, since Telegram is available on all my devices.
 
 <br>
 
-![Project Overview](/assets/images/MovieTrackerAutomation/movie_tracker_overview.png)
+---
+# Implementation Steps
+---
 
 
-## My Decision-Making Process
-
-#### Choosing Notion for Database
-I watched a YouTube video about using Notion for tracking movies and TV shows. So i started to copy the database structure into my own Notion workspace. However, I quickly realized that manually entering data for each movie and TV show would be tedious and time-consuming.
-
-##### Selecting OMDb API
-To automate the process, I researched various APIs and found the OMDb API to be a suitable choice due to its comprehensive data and ease of use. I then wrote Python scripts to fetch data from the API and update my Notion database.
-
-##### Hosting on PythonAnywhere
-To host the scripts, I explored different options and settled on PythonAnywhere due to its free tier and ease of use. Render and Heroku were also considered, but they seem to no longer offer free plans or only with significant limitations.
-
-##### Using Telegram Bot for Webhook
-Finally, I set up a Telegram bot to trigger the automation process. This allows me to update my tracker whenever I want by simply sending a message to the bot. Telegram's Bot API is straightforward to use and integrates well with Python. WhatsApp Business API seemed more complex to set up and the need to share even more data to Meta was a concern for me.
-
-## Implementation Steps
-
-The implementation involved several steps:
-
-### Requirements 
-
-I run my project with the following Python packages:
+##### Requirements 
 
 ```bash
   Flask==2.3.2
@@ -52,9 +79,9 @@ I run my project with the following Python packages:
   requests==2.31.0
 ```
 
-### Main.py
+##### Main.py
 
-The main script has all the logic to handle incoming Telegram messages, fetch data from the OMDb API, and update the Notion database. The Telegram Webhook listens for incoming messages and processes them accordingly. I wanted a **Human-in-the-loop** approach, so the bot asks for confirmation before adding a movie to Notion.
+> The main script has all the logic to handle incoming Telegram messages, fetch data from the OMDb API, and update the Notion database. The Telegram Webhook listens for incoming messages and processes them accordingly. I wanted a **Human-in-the-loop** approach, so the bot asks for confirmation before adding a movie to Notion.
 
 ```python
   from flask import Flask, request
@@ -178,7 +205,7 @@ The home route is just a simple health check endpoint.
 
 To somewhat modularize my code, I created helper functions for common tasks such as fetching data from the OMDb API and updating the Notion database.
 
-#### edit_message
+##### edit_message
 
 To edit a message via the Telegram Bot API, I created the following function:
 
@@ -196,7 +223,7 @@ To edit a message via the Telegram Bot API, I created the following function:
     requests.post(url, json=payload)
 ```
 
-#### send_message
+##### send_message
 To send a message via the Telegram Bot API, all you need is the url with your Telegram bot token (aquired by the BotFather on Telegram) and the chat_id of the user you want to send the message to. reply_markup is optional, if you want to send buttons with the message. Since i want to use Markdown formatting, i set the parse_mode to "Markdown".
 
 ```python
@@ -347,28 +374,4 @@ To map the OMDb data to my Notion database schema, i created the following funct
           "URL": f"https://www.imdb.com/title/{omdb_data.get('imdbID')}/" if omdb_data.get("imdbID") else ""
       }
 ```
-
-
-## Difficulties Encountered
-
-During the implementation, I faced several challenges:
-1. **API Limitations**: The OMDb API has usage limits on the free tier, which required me to optimize my requests and handle rate limiting gracefully.
-2. **Notion API Complexity**: The Notion API has a steep learning curve, especially when it comes to understanding how to structure data for different property types.
-3. **Hosting Constraints**: PythonAnywhere's free tier has limitations on CPU time and web app availability, which required careful planning of when and how often to run the automation scripts.
-4. **Telegram Webhook Setup**: Setting up the Telegram webhook to work with PythonAnywhere required some trial and error, especially with ensuring the correct URL and handling incoming requests properly. The script should always be available to receive webhook calls.
-
-
-## Improvements and Future Work
-
-The system works well for my current needs, but there are several areas for potential improvement:
-1. **Enhanced Error Handling**: Implement more robust error handling and logging to better track issues during execution. Especially for API failures or data inconsistencies. The system **fails** on typo errors in movie titles or not knowing the english movie title.
-2. **API Key Management**: Implement a more secure way to manage API keys and sensitive information, possibly using environment variables or a secrets manager. I was to lazy to read the documentation on pythonanywhere about environment variables.
-3. **Change API**: Explore other movie databases or APIs that might offer more features or better data quality. Maybe The Movie Database (TMDb) API could be an alternative.
-
-
-## Conclusion
-
-Building an automated movie and TV show tracking system using Python, Notion, and free hosting services has been a rewarding experience. It has allowed me to maintain an organized media library with minimal manual effort. The project showcases the power of APIs and automation in simplifying everyday tasks. 
-
-Personally this project was a Prove of concept for me, that there are simple solutions to automate tedious tasks with free tools and a nice usability, since Telegram is available on all my devices.
 

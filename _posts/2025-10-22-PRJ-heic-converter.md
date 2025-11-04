@@ -1,40 +1,42 @@
 ---
 layout: post
-title:  "Local HEIC-JPEG Converter"
+title:  "[PROJECT] Local HEIC-JPEG Converter"
 author: jens
-categories: [ Python,  ]
-image: assets/images/p_heic_converter/cover_heic_converter.png
+categories: [ Project, Python ]
+image: assets/images/PRJ-heic-converter/cover_heic_converter.png
+pin: false
 ---
 
-Windows users often face compatibility issues, as many applications do not support HEIC files natively. To address this, I developed a simple local HEIC to JPEG converter using Python.
+> Windows users often face compatibility issues, as many applications do not support HEIC files natively. To address this, I developed a simple local HEIC to JPEG converter using Python.
 
+---
 ## The Problem i aiming to solve
+---
 
 HEIC (High Efficiency Image Coding) is a modern image format iPhones use to save photos. While it offers better compression and quality compared to JPEG, many applications and platforms still do not support HEIC files. Since me and my friends often save vacations photos as a collection, I needed a quick way to convert HEIC files to the more widely supported JPEG format.
 
-<div class="note">
-    <b>⚠ Note:</b> Online converters may pose privacy risks, especially for sensitive images. This local solution ensures your photos remain private.
+<div class="warning">
+    ⚠️Online converters may pose privacy risks, especially for sensitive images. This local solution ensures your photos remain private.
 </div>
 
+---
+## Solution: Local Python Script for HEIC to JPEG Conversion
+---
 
-## The Solution: Python Script for HEIC to JPEG Conversion
-
-Python suits this task perfectly due to its simplicity and the availability of libraries for image processing. I used the `Pillow` library for image handling and `pillow_heif` for reading HEIC files.
-
-Here's the Python script I created:
+Python suits this task perfectly due to its simplicity and the availability of libraries for image processing. I used the **Pillow** library for image handling and **pillow_heif** for reading HEIC files.
 
 ```python
-  import os
-  import logging
-  from PIL import Image
-  from pillow_heif import register_heif_opener
-  import tkinter
-  from tkinter import filedialog
+  import os                                     # for file system operations
+  import logging                                # for logging conversion status
+  from PIL import Image                         # for image processing
+  from pillow_heif import register_heif_opener  # to handle HEIC files
+  import tkinter                                # for GUI file dialogs
+  from tkinter import filedialog                # for file dialog
 ```
 
-**os** for file system operations, **Pillow** for image processing, **pillow_heif** to handle HEIC files, and **tkinter** for file dialogs. **logging** is used to provide feedback during the conversion process.
-
 I wanted to cover two main use cases: converting individual files and converting all HEIC files in a selected folder.
+
+###### Convert Individual Files
 
 ```python
   # Set up logging
@@ -42,7 +44,6 @@ I wanted to cover two main use cases: converting individual files and converting
 
   # Prevent an empty tkinter window from appearing
   tkinter.Tk().withdraw()
-
 
   def convert_files(files: list) -> None:
       """Iterates through a list of files and converts them to JPG format and saves them in the same directory."""
@@ -53,6 +54,11 @@ I wanted to cover two main use cases: converting individual files and converting
           img.save(destFilePath, "JPEG")
           logging.info(f"{file} converted to {destFilePath}")
 
+```
+
+###### Convert Folder
+
+```python
 
   def convert_folder(inputFolder) -> None:
       """Converts all HEIC files in a folder to JPG format."""
@@ -75,17 +81,19 @@ I wanted to cover two main use cases: converting individual files and converting
           logging.info(f"{file} converted to {output_file}")
 
       logging.info("Conversion complete.")
+      
 ```
 
-Since HEIC files can be in uppercase or lowercase extensions, I used `file.lower().endswith(".heic")` to ensure all HEIC files are detected. The script creates a subfolder named `converted_jpgs` within the selected folder to store the converted JPEG files.
+Since HEIC files can be in uppercase or lowercase extensions, I used **file.lower().endswith(".heic")** to ensure all HEIC files are detected. The script creates a subfolder named **converted_jpgs** within the selected folder to store the converted JPEG files.
 
 ```python
+
   def main():
       """Main function that asks user for input and handles files and folders."""
       register_heif_opener()  # Register the HEIF file format with PIL
 
       print(
-          """
+            """
             =====================================
               HEIC to JPG Converter
             =====================================
@@ -94,11 +102,19 @@ Since HEIC files can be in uppercase or lowercase extensions, I used `file.lower
 
       while True:
           input_type = input(
-              "Would you like to convert a folder or individual files? (folder/files) > "
+              """
+              Enter the action you would like to perform:
+              
+                [1] Convert all HEIC files in a folder
+                [2] Convert individual HEIC files
+
+              Type 'exit' or 'quit' to close the program.
+              
+              """
           )
 
           match input_type.lower():
-              case "folder":
+              case "1":
                   try:
                       folder = filedialog.askdirectory(
                           title="Select folder containing HEIC files to convert."
@@ -108,7 +124,7 @@ Since HEIC files can be in uppercase or lowercase extensions, I used `file.lower
                       logging.info("Folder not found. Please try again.")
                       continue
                   break
-              case "files":
+              case "2":
                   files = filedialog.askopenfilenames(
                       title="Select HEIC files to convert."
                   )
@@ -126,23 +142,28 @@ Since HEIC files can be in uppercase or lowercase extensions, I used `file.lower
 
   if __name__ == "__main__":
       main()
+
 ```
 
-This script provides a simple command-line interface for users to select either a folder or individual HEIC files for conversion. It uses `tkinter` to open file dialogs, making it user-friendly. 
+This script provides a simple command-line interface for users to select either a folder or individual HEIC files for conversion. It uses **tkinter** to open file dialogs, making it user-friendly. 
 
 To run this script, ensure you have the required libraries installed. You can install them using pip:
 
 ```bash
-pip install Pillow pillow-heif
+  pip install Pillow pillow-heif
 ```
 
+---
 ## Conclusion
+---
 
 This HEIC to JPEG converter script is a practical solution for Windows users facing compatibility issues with HEIC files.
 
 I learned how Python can be used to fix everyday problems efficiently and safely on your local machine.
 
+---
 ## Improvements
+---
 
 - This repo should be upgraded by using **uv**, a more efficient library manager than pip.
 - Adding a GUI using **tkinter** or **PyQt** for a more user-friendly experience.
