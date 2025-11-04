@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Business Process Management (BPM) and Notation (BPMN)"
+title:  "BPMN Basics: Understanding Business Process Modeling Notation"
 author: jens
 categories: [ BPM, BPMN, Process Modeling ]
 image: assets/images/bpmn-basics/cover_bpmn.jpg

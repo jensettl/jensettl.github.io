@@ -7,20 +7,23 @@ image: assets/images/pydantic/cover_pydantic.png
 ---
 
 **Pydantic** is a Python library for **data validation and settings management** using Python type annotations.  
-It ensures that the data you work with in your application is valid, well-structured, and type-safe.  
+
+> Pydantic ensures that the data you work with in your application is valid, well-structured, and type-safe.  
 
 ---
+## When to Use Pydantic
+---
 
-## When is it used?
 - Validating and parsing **input data** (e.g., JSON payloads in APIs).  
 - Defining **configurations** and environment variables.  
 - Ensuring type safety in Python applications.  
 - Used heavily in frameworks like **FastAPI**.  
 
----
 
-## Example: Using Pydantic
+##### Example: Using Pydantic
+
 ```python
+
   from pydantic import BaseModel, EmailStr
 
   # Define a data model
@@ -44,10 +47,13 @@ It ensures that the data you work with in your application is valid, well-struct
   print(user.json())    # Convert to JSON
 
 ```
+<div class="warning">
+⚠️ If invalid data is provided (e.g., wrong type, bad email), Pydantic raises a validation error automatically.
+</div>
 
-👉 If invalid data is provided (e.g., wrong type, bad email), Pydantic raises a validation error automatically.
-
+---
 ## Conclusion
+---
 
 Pydantic makes working with structured data in Python safe, clean, and reliable.
 Whether building APIs, loading configs, or just want strict type enforcement.
