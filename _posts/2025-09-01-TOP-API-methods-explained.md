@@ -1,12 +1,15 @@
 ---
 layout: post
-title:  "Major API Types explained"
+title: "Essential API Types Every Developer Should Know"
 author: jens
 categories: [ REST, SOAP, gRPC, GraphQL, WebHooks, WebSockets, WebRTC ]
 image: assets/images/api-types/api-overview.png
 ---
 
 APIs (Application Programming Interfaces) are the **connective tissue of modern software**. They allow systems, apps, and services to talk to each other, powering everything from social media integrations to banking transactions and real-time chat apps.
+
+> 💡 This post was inspired by a YouTube Video I watched. <br>
+> [Every Type Of API You Must Know Explained!](https://www.youtube.com/watch?v=pBASqUbZgkY&t=3s)
 
 Different types of APIs exist, each with specific **use cases, strengths, and weaknesses**.  
 Here’s an overview of the most important API types every developer should know.
