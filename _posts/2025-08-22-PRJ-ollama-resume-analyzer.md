@@ -1,12 +1,10 @@
 ---
 layout: post
-title: "[PROJECT] Analyze resumes with Ollama locally"
+title: "[PROJECT] Streamlit Platform for PDF Resume Analysis with Ollama"
 author: jens
 date: 2025-08-21
-categories: [ AI, LLM ]
-tags: [coding, python, ollama]
-image: assets/images/ollama-resume/ollama.jpg
-toc: true
+categories: [ AI,Coding, Ollama, Python, Project ]
+image: assets/images/PRJ-ollama-resume/ollama.jpg
 ---
 
 Placeholder for project i have built using Ollama locally to analyze resumes. Later i add a RAG pipeline to feed company data to the model.
