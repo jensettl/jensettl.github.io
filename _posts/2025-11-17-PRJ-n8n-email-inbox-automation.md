@@ -24,11 +24,15 @@ The workflow consists of several components (This can be adjusted based on your 
 - **LLM**: Since I am running this project locally for testing purposes, I used [Ollama](https://ollama.com/) with a local model (e.g., Llama 2) and an embedding model. This way I can avoid API costs and have more control over data privacy. However, for production use, I recommend either a high-parameter local model and embedding model or using a paid plan with OpenAI or another LLM provider for better performance.
 - **Mail Inbox**: An email account that supports IMAP/SMTP (e.g., Gmail, Outlook)
 
+{% include download-box.html 
+   url="/assets/download/PRJ-n8n/n8n-inbox-agent.json" 
+   image_url="/assets/download/json-icon.png"
+   type="json" 
+   name="n8n-inbox-agent.json" 
+   size="14.4 KB" 
+%}
 
 
-<a href="/assets/download/PRJ-n8n/n8n-inbox-agent.json" download>
-    <img src="/assets/download/json_file.png" alt="n8n workflow" width="32" > n8n Workflow 
-</a>
 
 
 
