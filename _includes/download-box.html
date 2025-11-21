@@ -1,0 +1,15 @@
+<div class="download-box">
+  <a class="download-box__link" href="{{ include.url }}" download>
+
+    <img src="{{ include.image_url }}" alt="n8n workflow" width="32" style="margin-right:20px;" > 
+
+    <div class="download-box__info">
+      <div class="download-box__name">{{ include.name }}</div>
+      <div class="download-box__meta">
+        {{ include.type | upcase }} · {{ include.size }}
+      </div>
+    </div>
+
+    <div class="download-box__action">Download</div>
+  </a>
+</div>
