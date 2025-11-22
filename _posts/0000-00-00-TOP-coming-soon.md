@@ -13,7 +13,6 @@ I have some exciting projects and topics in the pipeline that I will be document
 ##  Projects I am working on or planning to document
 
 - AI-powered Research & Reporting Agent with Langchain
-- N8N Email Inbox Automation with AI
 - AI-based Web Scraper
 - Identification of Defective Products with Machine Learning
 - Supply Chain Management Simulation
@@ -22,11 +21,8 @@ I have some exciting projects and topics in the pipeline that I will be document
 - Git Workshop for Students
 - Investigation of Company Data for Compliance
 - Organization Tool for Automatic File Management
-- Local HEIC-JPEG Converter
 - IT System Modeling for an App
 - Digital Sticker Scavenger Hunt (”Nett-Hier”) Platform
-- Automated Movie and Series Management
-- Resume Website Creator with Langflow
 - Inflation Forecast with Machine Learning
 - resume latex template 
 
