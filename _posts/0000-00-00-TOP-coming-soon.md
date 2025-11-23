@@ -17,10 +17,6 @@ I have some exciting projects and topics in the pipeline that I will be document
 - Identification of Defective Products with Machine Learning
 - Supply Chain Management Simulation
 - SmartCampus Application Project
-- gRPC Client-Server Communication
-- Git Workshop for Students
-- Investigation of Company Data for Compliance
-- Organization Tool for Automatic File Management
 - IT System Modeling for an App
 - Digital Sticker Scavenger Hunt (”Nett-Hier”) Platform
 - Inflation Forecast with Machine Learning
@@ -43,16 +39,6 @@ I have some exciting projects and topics in the pipeline that I will be document
 - AI in Automation -> Intelligent Process Automation (IPA)
 - Decision Automation & Business Rules Engines (Drools, Camunda DMN)
 - AI Enhanced BPM (using AI to optimize and adapt business processes)
-
-## First Overview of Selected Projects
-
-#### AI-powered Research & Reporting Agent with Langchain
-(Python, Langchain, Ollama)
-Conception and development of an AI agent for the automated collection, analysis, and processing of information from various sources. The tool significantly reduces the manual effort of report generation and increases the efficiency of information retrieval.
-
-#### Mail Reporting Service on Raspberry Pi Zero 2 W
-(Python, Linux)
-Implementation of an energy-efficient system on a Raspberry Pi that queries APIs, collects data, and automatically sends reports via email. The goal was to reduce manual routine tasks.
 
 
 Stay tuned for detailed posts on each of these exciting projects!
