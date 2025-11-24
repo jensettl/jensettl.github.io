@@ -39,6 +39,7 @@ I have some exciting projects and topics in the pipeline that I will be document
 - AI in Automation -> Intelligent Process Automation (IPA)
 - Decision Automation & Business Rules Engines (Drools, Camunda DMN)
 - AI Enhanced BPM (using AI to optimize and adapt business processes)
+- Cheat Sheets for Tools and Frameworks (LangChain, N8N, Pinecone, Weaviate, etc.)
 
 
 Stay tuned for detailed posts on each of these exciting projects!
