@@ -2,7 +2,7 @@
 layout: post
 title: "Unlocking the Power of Low-Code and No-Code Platforms"
 author: jens
-categories: [ Automation, Low-Code, Make, N8N, No-Code,  Power Automate]
+categories: [ Automation, Low-Code, Make, n8n, No-Code,  Power Automate]
 image: assets/images/lcnc/cover-lcnc.png
 ---
 

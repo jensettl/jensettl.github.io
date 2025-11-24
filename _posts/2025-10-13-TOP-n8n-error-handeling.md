@@ -2,7 +2,7 @@
 layout: post
 title:  "Error Handling in n8n: Best Practices and Techniques"
 author: jens
-categories: [ n8n, workflow, automation, error handling ]
+categories: [ n8n, Workflow, Automation, error handling ]
 image: assets/images/n8n/cover_n8n.png
 ---
 

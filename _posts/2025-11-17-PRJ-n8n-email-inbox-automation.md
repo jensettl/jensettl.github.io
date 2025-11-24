@@ -2,7 +2,7 @@
 layout: post
 title: "[PROJECT] Smart Inbox Automation with n8n — Auto-categorize Emails and Trigger Custom Actions"
 author: jens
-categories: [ Automation, AI, N8N, Ollama ]
+categories: [ Automation, AI, n8n, Ollama ]
 image: assets/images/PRJ-n8n/cover-n8n.png
 ---
 
