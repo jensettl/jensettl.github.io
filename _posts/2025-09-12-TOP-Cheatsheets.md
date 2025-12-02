@@ -2,6 +2,7 @@
 layout: post
 title:  "Common Cheat Sheets for Developers in one place"
 author: jens
+categories: [ Cheat Sheets, Resources ]
 image: assets/images/TOP-cheat-sheets/cover_TOP-cheat-sheets.png
 ---
 

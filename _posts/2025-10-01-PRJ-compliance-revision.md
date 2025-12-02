@@ -2,7 +2,7 @@
 layout: post
 title:  "[PROJECT] Investitgation of Company Data for Compliance"
 author: jens
-categories: [ Python ]
+categories: [ Research, Project, Statistics ]
 image: assets/images/PRJ-compliance-revision/cover_compliance-revision.png
 ---
 
