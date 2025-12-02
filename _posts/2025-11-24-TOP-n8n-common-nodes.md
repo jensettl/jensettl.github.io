@@ -4,7 +4,6 @@ title:  "Overview of the most common nodes in n8n"
 author: jens
 categories: [ n8n, Tutorials ]
 image: assets/images/n8n/cover_n8n-common-nodes.png
-date: 2025-11-13
 ---
 
 n8n provides a wide range of nodes that allow you to connect different services, manipulate data, and automate workflows. Here is an overview of some of the most commonly used nodes in n8n:
@@ -66,3 +65,21 @@ n8n provides a wide range of nodes that allow you to connect different services,
 
 These nodes represent just a fraction of the capabilities n8n offers. By combining these nodes, you can create powerful and flexible workflows to automate a wide range of tasks and processes. Experiment with different nodes to discover how they can enhance your automation projects!
 
+
+> **EDIT**: A YouTube user I am subscribed to created a video based on this blog post. Check it out: [Master n8n With These 17 Essential Nodes](https://www.youtube.com/watch?v=D9MIGseFB3g). He provided additional documents and workflow examples in the video description. I link them here for your convenience:
+
+{% include download-box.html 
+   url="/assets/download/TOP-n8n-common-nodes/n8n-common-nodes.json" 
+   image_url="/assets/file-types/json-icon.png"
+   type="json" 
+   name="n8n-Essential-Nodes.json" 
+   size="942 MB"
+%}
+
+{% include download-box.html 
+   url="/assets/download/TOP-n8n-common-nodes/n8n-common-nodes.pdf" 
+   image_url="/assets/file-types/pdf-icon.png"
+   type="pdf" 
+   name="n8n-common-nodes.pdf" 
+   size="636 KB"
+%}
