@@ -40,7 +40,12 @@ I have some exciting projects and topics in the pipeline that I will be document
 - Decision Automation & Business Rules Engines (Drools, Camunda DMN)
 - AI Enhanced BPM (using AI to optimize and adapt business processes)
 - Cheat Sheets for Tools and Frameworks (LangChain, N8N, Pinecone, Weaviate, etc.)
-
+- Tool Showcase: Apple Spotlight for Windows -> Flowlauncher https://github.com/Flow-Launcher/Flow.Launcher?tab=readme-ov-file
+- Tool Review: Openclaw https://www.youtube.com/watch?v=ssYt09bCgUY
+- Tool Review: Traycer
+- Python Basic Libraries for every project: logging, pathlib, ... https://www.youtube.com/watch?v=cXl-AUXHHZYw
 
 Stay tuned for detailed posts on each of these exciting projects!
+
+
 
