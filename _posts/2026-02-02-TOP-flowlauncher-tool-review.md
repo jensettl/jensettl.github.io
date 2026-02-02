@@ -8,6 +8,7 @@ image: assets/images/TOP-flowlauncher-tool-review/cover_flow-launcher.png
 
 > Flow Launcher is an open-source application that brings the convenience of macOS's Spotlight search to Windows users. It allows you to quickly launch applications, search files, and perform various tasks with just a few keystrokes.
 
+![Flow Launcher](/assets/images/TOP-flowlauncher-tool-review/flow-launcher.webp)
 
 ## Introduction
 
