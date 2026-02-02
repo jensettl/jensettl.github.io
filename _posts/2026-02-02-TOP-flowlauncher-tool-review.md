@@ -44,7 +44,7 @@ A full list of plugins can be found on the [Flow Launcher Plugins Page](https://
 Here is a quick reference sheet for some useful Flow Launcher shortcuts:
 
 {% include download-box.html 
-   url="/assets/download/TOP-n8n-common-nodes/n8n-common-nodes.pdf" 
+   url="/assets/download/TOP-flow-launcher/Flow_Launcher_Shortcuts.pdf" 
    image_url="/assets/file-types/pdf-icon.png"
    type="pdf" 
    name="flow_launcher_shortcuts.pdf" 
