@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo1.png">
+
+<title>Essential API Types Every Developer Should Know | Jens' Blog</title>
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Essential API Types Every Developer Should Know | Jens’ Blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Essential API Types Every Developer Should Know" />
+<meta name="author" content="jens" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="APIs (Application Programming Interfaces) are the connective tissue of modern software. They allow systems, apps, and services to talk to each other, powering everything from social media integrations to banking transactions and real-time chat apps." />
+<meta property="og:description" content="APIs (Application Programming Interfaces) are the connective tissue of modern software. They allow systems, apps, and services to talk to each other, powering everything from social media integrations to banking transactions and real-time chat apps." />
+<meta property="og:site_name" content="Jens’ Blog" />
+<meta property="og:image" content="/assets/images/api-types/api-overview.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-09-01T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/images/api-types/api-overview.png" />
+<meta property="twitter:title" content="Essential API Types Every Developer Should Know" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"jens"},"dateModified":"2025-09-01T00:00:00+02:00","datePublished":"2025-09-01T00:00:00+02:00","description":"APIs (Application Programming Interfaces) are the connective tissue of modern software. They allow systems, apps, and services to talk to each other, powering everything from social media integrations to banking transactions and real-time chat apps.","headline":"Essential API Types Every Developer Should Know","image":"/assets/images/api-types/api-overview.png","mainEntityOfPage":{"@type":"WebPage","@id":"/TOP-API-methods-explained/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/logo_black_cropped.png"},"name":"jens"},"url":"/TOP-API-methods-explained/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+<!-- <link href="/assets/css/prism.css" rel="stylesheet"> -->
+
+<link href="/assets/css/theme.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body>
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+<!-- Begin Sidebar Navigation
+================================================== -->
+
+<div class="sidebar">    
+</div>   
+<div class="nav-icon">
+    <div class="hamburger-bar"></div>
+</div>
+<div id="blackover-nav" class="blackover"></div>
+<nav id="menu">
+    <ul>
+        <h3>Navigation</h3>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/authors">Contributors</a></li>
+        <!-- <li><a href="/contact">Contact</a></li>        -->
+    </ul>   
+</nav>
+
+<script src="/assets/js/lunr.js"></script>
+
+<style>
+    
+</style>
+
+<div class="wrap-search">
+    <div class="d-flex align-items-center ml-auto">
+        <i class="fas fa-search show-search"></i>
+        <form class="bd-search ml-3" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+            <input type="text" class="form-control bigradius text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+        </form>
+    </div>
+</div>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+
+<!-- End Sidebar Navigation
+================================================== -->
+
+<div class="site-content ">
+
+<div class="container">
+
+    <!-- Site Logo/Name
+    ================================================== -->
+   
+    <a class="navbar-brand" href="/">
+        <img src="/assets/images/logo_black_cropped.png" alt="Jens' Blog">
+    </a>  
+   
+
+    <!-- Site Tag
+    ================================================== -->
+    
+
+    <!-- Content
+    ================================================== -->
+    <div class="main-content">
+        <div class="entry-header">
+    <!-- Post Title -->
+    <h1 class="posttitle">Essential API Types Every Developer Should Know</h1>
+    <!-- Author & Date  Box -->
+    
+    
+    <div class="d-flex align-items-center mt-4">
+        <div>
+            
+            <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+            
+        </div>            
+        <div>
+        Written by Jens on 
+        <span class="post-date"><time class="post-date" datetime="2025-09-01">01 Sep 2025</time></span>           
+        
+        </div>            
+    </div>
+    
+</div>
+
+<!-- Adsense under title if enabled from _config.yml (change your pub id and slot) -->
+
+
+<!-- Featured Image -->
+
+<div class="entry-featured-image">
+    
+    <img class="featured-image " src="/assets/images/api-types/api-overview.png" alt="Essential API Types Every Developer Should Know">
+    
+</div>
+
+
+<!-- Content -->
+<!-- Post, Page Content
+================================================== -->
+<div class="article-post">
+    <!-- Toc if any -->
+    
+    <!-- End Toc -->
+    <p>APIs (Application Programming Interfaces) are the <strong>connective tissue of modern software</strong>. They allow systems, apps, and services to talk to each other, powering everything from social media integrations to banking transactions and real-time chat apps.</p>
+
+<blockquote>
+  <p>💡 This post was inspired by a YouTube Video I watched. <br />
+<a href="https://www.youtube.com/watch?v=pBASqUbZgkY&amp;t=3s">Every Type Of API You Must Know Explained!</a></p>
+</blockquote>
+
+<p>Different types of APIs exist, each with specific <strong>use cases, strengths, and weaknesses</strong>.<br />
+Here’s an overview of the most important API types every developer should know.</p>
+
+<hr />
+
+<h2 id="1-rest-api">1. REST API</h2>
+<p>The most widely used API style today, based on <strong>HTTP verbs</strong> (GET, POST, PUT, DELETE), with resources represented as URLs.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Strengths</th>
+      <th>Weaknesses</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Simple and stateless</td>
+      <td>Risk of over-fetching or under-fetching data</td>
+    </tr>
+    <tr>
+      <td>Works well with JSON and HTTP caching</td>
+      <td>No fine-grained queries</td>
+    </tr>
+    <tr>
+      <td>Widely supported and understood</td>
+      <td>Limited flexibility for complex data needs</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Use cases:</strong> Most web/mobile apps, e-commerce APIs, CRUD services.</p>
+
+<hr />
+
+<h2 id="2-soap-api">2. SOAP API</h2>
+<p>An XML-based protocol (Simple Object Access Protocol) with strict rules, schemas (WSDL), and security features.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Strengths</th>
+      <th>Weaknesses</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Highly standardized and formal</td>
+      <td>Verbose and XML-heavy</td>
+    </tr>
+    <tr>
+      <td>Built-in authentication, encryption, and transactions</td>
+      <td>Slower than modern alternatives</td>
+    </tr>
+    <tr>
+      <td>Reliable for mission-critical systems</td>
+      <td>Steeper learning curve for developers</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Use cases:</strong> Banking, healthcare, and enterprise systems where <strong>security and reliability</strong> are critical.</p>
+
+<hr />
+
+<h2 id="3-grpc-api">3. gRPC API</h2>
+<p>Developed by Google, gRPC uses <strong>Protocol Buffers (Protobuf)</strong> instead of JSON, enabling high-performance, strongly-typed communication.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Strengths</th>
+      <th>Weaknesses</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Very fast and compact</td>
+      <td>More complex setup compared to REST</td>
+    </tr>
+    <tr>
+      <td>Supports client, server, and bidirectional streaming</td>
+      <td>Debugging is harder (binary instead of JSON)</td>
+    </tr>
+    <tr>
+      <td>Cross-language compatibility</td>
+      <td>Smaller ecosystem compared to REST/GraphQL</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Use cases:</strong> Microservices, high-performance backends, streaming services (Netflix, Uber).</p>
+
+<hr />
+
+<h2 id="4-graphql-api">4. GraphQL API</h2>
+<p>Created by Facebook, GraphQL lets clients <strong>ask exactly for the data they need</strong>, avoiding over-fetching or under-fetching.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Strengths</th>
+      <th>Weaknesses</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Flexible and efficient data retrieval</td>
+      <td>More complex backend setup</td>
+    </tr>
+    <tr>
+      <td>Single endpoint for queries and mutations</td>
+      <td>Caching is harder than REST</td>
+    </tr>
+    <tr>
+      <td>Reduces network requests for clients</td>
+      <td>Risk of overly complex queries if misused</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Use cases:</strong> Frontend-driven apps, data-intensive UIs, dashboards, and mobile apps.</p>
+
+<hr />
+
+<h2 id="5-webhooks">5. WebHooks</h2>
+<p>“Reverse APIs” that <strong>push data to your app</strong> when events happen (instead of polling).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Strengths</th>
+      <th>Weaknesses</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Real-time notifications without polling</td>
+      <td>Harder to scale with many subscribers</td>
+    </tr>
+    <tr>
+      <td>Simple to implement and extend</td>
+      <td>Requires secure handling (signatures, retries)</td>
+    </tr>
+    <tr>
+      <td>Great for event-driven workflows</td>
+      <td>Delivery issues if endpoints are unavailable</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Use cases:</strong> Payment notifications (Stripe), CI/CD triggers (GitHub), Slack integrations.</p>
+
+<hr />
+
+<h2 id="6-websockets">6. WebSockets</h2>
+<p>Persistent, full-duplex connections between client and server. Unlike REST, WebSockets remain open.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Strengths</th>
+      <th>Weaknesses</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Real-time, low-latency communication</td>
+      <td>More complex than HTTP</td>
+    </tr>
+    <tr>
+      <td>Bidirectional messaging</td>
+      <td>Requires stateful infrastructure for scaling</td>
+    </tr>
+    <tr>
+      <td>Perfect for dynamic, interactive applications</td>
+      <td>Security requires careful handling</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Use cases:</strong> Chat apps, multiplayer games, live dashboards.</p>
+
+<hr />
+
+<h2 id="7-webrtc">7. WebRTC</h2>
+<p>Peer-to-peer protocol for <strong>real-time video, audio, and data</strong> communication in browsers.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Strengths</th>
+      <th>Weaknesses</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Low latency, direct peer-to-peer</td>
+      <td>Complex signaling setup required</td>
+    </tr>
+    <tr>
+      <td>Built into modern browsers, no plugins needed</td>
+      <td>NAT/firewall traversal challenges</td>
+    </tr>
+    <tr>
+      <td>Enables video, audio, and data sharing</td>
+      <td>Debugging and scaling can be difficult</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Use cases:</strong> Video calls (Google Meet, Zoom), collaboration tools (Figma, Miro).</p>
+
+<hr />
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Each API type has its <strong>sweet spot</strong>:</p>
+<ul>
+  <li>REST → Simple, universal, great for CRUD.</li>
+  <li>SOAP → Enterprise-grade reliability.</li>
+  <li>gRPC → High-performance microservices.</li>
+  <li>GraphQL → Flexible client-driven data fetching.</li>
+  <li>WebHooks → Event-driven real-time updates.</li>
+  <li>WebSockets → Persistent two-way communication.</li>
+  <li>WebRTC → Real-time peer-to-peer collaboration.</li>
+</ul>
+
+<p>Choosing the right one depends on <strong>your project’s goals, scalability needs, and complexity</strong>. Understanding these trade-offs helps you design robust, future-proof systems.</p>
+
+<hr />
+
+</div>
+
+<!-- Rating -->
+
+
+<!-- Author Box if enabled from _config.yml -->
+<!-- Author Box -->
+
+
+<div class="authorbox mb-5 mt-5 pt-4 pb-4">   
+    <div class="row">
+        <div class="wrapavname col-md-3 text-center">
+            
+            <img  class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+            
+            <p class="mt-4 mb-0 small text-center">
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href=""><i class="fa fa-link"></i></a> 
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href=""><i class="fab fa-twitter"></i></a>
+                <a class="d-inline-block mx-1 text-dark" href="mailto:ettljens@gmail.com"><i class="fa fa-envelope"></i></a>
+            </p>
+        </div>
+        <div class="col-md-9">
+            <h4>Jens</h4>
+            <p class="mt-3 mb-0">Content creator for this blog and user of this Jekyll template. I love to tackle problems with creative coding solutions and automations.</p>
+        </div>
+    </div> 
+</div> 
+
+
+
+<!-- Comments if not disabled with comments: false -->
+<!-- Comments
+================================================== -->
+ 
+<div class="comments mt-5">
+    <button class="btn btn-outline-dark py-2 px-5 d-block w-100 show-comments"><i class="fa fa-comments text-muted"></i> &nbsp; Load Comments</button>         
+    <div id="comments">  
+        <h4 class="mb-4">Comments</h4>                 
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'blogwebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+     
+    <div class="clearfix"></div>              
+    </div>    
+</div>       
+
+
+<!-- Share -->
+<div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Essential API Types Every Developer Should Know&url=/TOP-API-methods-explained/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=/TOP-API-methods-explained/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=/TOP-API-methods-explained/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+
+<!-- Related Post -->
+<!-- Related Posts
+================================================== -->
+<div class=" related-posts ">  
+
+    
+    <h2 class="text-center mb-4">Explore more like this</h2>
+    
+    
+    <div class="d-flex justify-content-center align-items-center">
+    
+    <!-- Categories -->
+    
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#GraphQL">GraphQL</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#REST">REST</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#SOAP">SOAP</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#WebHooks">WebHooks</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#WebRTC">WebRTC</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#WebSockets">WebSockets</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#gRPC">gRPC</a>                
+    
+
+    <!-- Tags -->  
+    
+    
+
+    </div>
+
+    
+    
+    
+    <div class="blog-grid-container">
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+            <!-- begin post -->
+
+
+<div class="blog-grid-item">
+    <div class="card h-100">
+        <div class="maxthumb">
+            <a href="/PRJ-gRPC-client-server/">
+                
+
+                    
+                        <img class="img-thumb" src="/assets/images/PRJ-gRPC/cover_gRPC.png" alt="[PROJECT] Creating an efficient gRPC Client-Server Communication"> 
+                    
+
+                
+            </a>
+        </div>
+        <div class="card-body">
+            <h2 class="card-title">
+                <a class="text-dark" href="/PRJ-gRPC-client-server/">[PROJECT] Creating an efficient gRPC Client-Server Communication</a>
+                
+            </h2>
+            <h4 class="card-text">
+  gRPC (gRPC Remote Procedure Calls) is a high-performance, open-source framework developed by Google that enables efficient communication between distributed systems.
+
+</h4>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="wrapfooter">
+                
+                <span class="meta-footer-thumb">
+                
+                <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+                
+                </span>
+                <span class="author-meta">
+                <span class="post-name font-weight-bold">Jens</span> 
+                
+                <span class="post-date">08 Oct 2025</span>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end post -->
+            
+            
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        </div>        
+</div>
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+    </div>
+
+    
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-6 col-sm-12 text-center text-lg-left">
+                Copyright © 2026 Jens' Blog 
+            </div>
+            <div class="col-md-6 col-sm-12 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net/memoirs-free-jekyll-theme/">Memoirs Jekyll Theme</a> by WowThemes.net
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts (if you need bootstrap.js, please add it yourself. I didn't use it for performance reasons, it was not needed in this theme)
+================================================== -->
+
+<!-- <script src="/assets/js/prism.js"></script> -->
+
+<script src="/assets/js/theme.js"></script>
+
+
+
+
+<script id="dsq-count-scr" src="//blogwebsite.disqus.com/count.js"></script>
+
+
+</body>
+</html>

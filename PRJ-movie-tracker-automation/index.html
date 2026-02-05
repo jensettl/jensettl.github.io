@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo1.png">
+
+<title>[PROJECT] Building a Free Automated Movie and TV Show Tracking System | Jens' Blog</title>
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[PROJECT] Building a Free Automated Movie and TV Show Tracking System | Jens’ Blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="[PROJECT] Building a Free Automated Movie and TV Show Tracking System" />
+<meta name="author" content="jens" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This project covers the process of creating an automated system to track your movie and TV show collection using Python and free Hosting services. This system helps keep an organized record of your media library without relying on paid services." />
+<meta property="og:description" content="This project covers the process of creating an automated system to track your movie and TV show collection using Python and free Hosting services. This system helps keep an organized record of your media library without relying on paid services." />
+<meta property="og:site_name" content="Jens’ Blog" />
+<meta property="og:image" content="/assets/images/PRJ-movie-tracker-automation/cover-movie-tracker-automation-removebg-preview.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-15T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/images/PRJ-movie-tracker-automation/cover-movie-tracker-automation-removebg-preview.png" />
+<meta property="twitter:title" content="[PROJECT] Building a Free Automated Movie and TV Show Tracking System" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"jens"},"dateModified":"2025-10-15T00:00:00+02:00","datePublished":"2025-10-15T00:00:00+02:00","description":"This project covers the process of creating an automated system to track your movie and TV show collection using Python and free Hosting services. This system helps keep an organized record of your media library without relying on paid services.","headline":"[PROJECT] Building a Free Automated Movie and TV Show Tracking System","image":"/assets/images/PRJ-movie-tracker-automation/cover-movie-tracker-automation-removebg-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"/PRJ-movie-tracker-automation/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/logo_black_cropped.png"},"name":"jens"},"url":"/PRJ-movie-tracker-automation/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+<!-- <link href="/assets/css/prism.css" rel="stylesheet"> -->
+
+<link href="/assets/css/theme.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body>
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+<!-- Begin Sidebar Navigation
+================================================== -->
+
+<div class="sidebar">    
+</div>   
+<div class="nav-icon">
+    <div class="hamburger-bar"></div>
+</div>
+<div id="blackover-nav" class="blackover"></div>
+<nav id="menu">
+    <ul>
+        <h3>Navigation</h3>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/authors">Contributors</a></li>
+        <!-- <li><a href="/contact">Contact</a></li>        -->
+    </ul>   
+</nav>
+
+<script src="/assets/js/lunr.js"></script>
+
+<style>
+    
+</style>
+
+<div class="wrap-search">
+    <div class="d-flex align-items-center ml-auto">
+        <i class="fas fa-search show-search"></i>
+        <form class="bd-search ml-3" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+            <input type="text" class="form-control bigradius text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+        </form>
+    </div>
+</div>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+
+<!-- End Sidebar Navigation
+================================================== -->
+
+<div class="site-content ">
+
+<div class="container">
+
+    <!-- Site Logo/Name
+    ================================================== -->
+   
+    <a class="navbar-brand" href="/">
+        <img src="/assets/images/logo_black_cropped.png" alt="Jens' Blog">
+    </a>  
+   
+
+    <!-- Site Tag
+    ================================================== -->
+    
+
+    <!-- Content
+    ================================================== -->
+    <div class="main-content">
+        <div class="entry-header">
+    <!-- Post Title -->
+    <h1 class="posttitle">[PROJECT] Building a Free Automated Movie and TV Show Tracking System</h1>
+    <!-- Author & Date  Box -->
+    
+    
+    <div class="d-flex align-items-center mt-4">
+        <div>
+            
+            <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+            
+        </div>            
+        <div>
+        Written by Jens on 
+        <span class="post-date"><time class="post-date" datetime="2025-10-15">15 Oct 2025</time></span>           
+        
+        </div>            
+    </div>
+    
+</div>
+
+<!-- Adsense under title if enabled from _config.yml (change your pub id and slot) -->
+
+
+<!-- Featured Image -->
+
+<div class="entry-featured-image">
+    
+    <img class="featured-image " src="/assets/images/PRJ-movie-tracker-automation/cover-movie-tracker-automation-removebg-preview.png" alt="[PROJECT] Building a Free Automated Movie and TV Show Tracking System">
+    
+</div>
+
+
+<!-- Content -->
+<!-- Post, Page Content
+================================================== -->
+<div class="article-post">
+    <!-- Toc if any -->
+    
+    <!-- End Toc -->
+    <blockquote>
+  <p>This project covers the process of creating an <strong>automated system to track your movie and TV show</strong> collection using Python and free Hosting services. This system helps keep an organized record of your media library without relying on paid services.</p>
+</blockquote>
+
+<hr />
+<h1 id="overview">Overview</h1>
+<hr />
+<p>The system consists of the following components:
+<img src="/assets/images/PRJ-movie-tracker-automation/movie_tracker_overview.png" alt="Project Overview" /></p>
+
+<ol>
+  <li><strong>Data Source</strong>: A reliable source for movie and TV show data to populate my tracker. For example the <a href="http://www.omdbapi.com/">Open Movie Database (OMDb) API</a> which provides comprehensive information about movies and TV shows.</li>
+  <li><strong>Database</strong>: For example Notion, a versatile, free note-taking and database application usable across multiple devices.</li>
+  <li><strong>Automation</strong>: Python scripts to fetch data from the OMDb API and update my Notion database automatically.</li>
+  <li><strong>Hosting</strong>: Python Scripts can be hosted on <a href="https://www.pythonanywhere.com/">PythonAnywhere</a>, a free hosting service. Limitations apply, but it works well for my needs.</li>
+  <li><strong>Webhook</strong>: For example a Telegram bot to trigger the automation process whenever you want to update your tracker. A message to the bot triggers the script, Human-in-the-loop for error handling, and updates the Notion database.</li>
+</ol>
+
+<hr />
+<h1 id="my-decision-making-process">My Decision-Making Process</h1>
+<hr />
+
+<h6 id="choosing-notion-for-database">Choosing Notion for Database</h6>
+
+<p>I watched a YouTube video about using Notion for tracking movies and TV shows. So i started to copy the database structure into my own Notion workspace. However, I quickly realized that manually entering data for each movie and TV show would be tedious and time-consuming.</p>
+
+<h6 id="selecting-omdb-api">Selecting OMDb API</h6>
+<p>To automate the process, I researched various APIs and found the OMDb API to be a suitable choice due to its comprehensive data and ease of use. I then wrote Python scripts to fetch data from the API and update my Notion database.</p>
+
+<h6 id="hosting-on-pythonanywhere">Hosting on PythonAnywhere</h6>
+<p>To host the scripts, I explored different options and settled on PythonAnywhere due to its free tier and ease of use. Render and Heroku were also considered, but they seem to no longer offer free plans or only with significant limitations.</p>
+
+<h6 id="using-telegram-bot-for-webhook">Using Telegram Bot for Webhook</h6>
+<p>Finally, I set up a Telegram bot to trigger the automation process. This allows me to update my tracker whenever I want by simply sending a message to the bot. Telegram’s Bot API is straightforward to use and integrates well with Python. WhatsApp Business API seemed more complex to set up and the need to share even more data to Meta was a concern for me.</p>
+
+<hr />
+<h1 id="difficulties-encountered">Difficulties Encountered</h1>
+<hr />
+<p>During the implementation, I faced several challenges:</p>
+<ol>
+  <li><strong>API Limitations</strong>: The OMDb API has usage limits on the free tier, which required me to optimize my requests and handle rate limiting gracefully.</li>
+  <li><strong>Notion API Complexity</strong>: The Notion API has a steep learning curve, especially when it comes to understanding how to structure data for different property types.</li>
+  <li><strong>Hosting Constraints</strong>: PythonAnywhere’s free tier has limitations on CPU time and web app availability, which required careful planning of when and how often to run the automation scripts.</li>
+  <li><strong>Telegram Webhook Setup</strong>: Setting up the Telegram webhook to work with PythonAnywhere required some trial and error, especially with ensuring the correct URL and handling incoming requests properly. The script should always be available to receive webhook calls.</li>
+</ol>
+
+<hr />
+<h1 id="improvements-and-future-work">Improvements and Future Work</h1>
+<hr />
+
+<p>The system works well for my current needs, but there are several areas for potential improvement:</p>
+<ol>
+  <li><strong>Enhanced Error Handling</strong>: Implement more robust error handling and logging to better track issues during execution. Especially for API failures or data inconsistencies. The system <strong>fails</strong> on typo errors in movie titles or not knowing the english movie title.</li>
+  <li><strong>API Key Management</strong>: Implement a more secure way to manage API keys and sensitive information, possibly using environment variables or a secrets manager. I was to lazy to read the documentation on pythonanywhere about environment variables.</li>
+  <li><strong>Change API</strong>: Explore other movie databases or APIs that might offer more features or better data quality. Maybe The Movie Database (TMDb) API could be an alternative.</li>
+</ol>
+
+<hr />
+<h1 id="conclusion">Conclusion</h1>
+<hr />
+
+<p>Building an automated movie and TV show tracking system using Python, Notion, and free hosting services has been a rewarding experience. It has allowed me to maintain an organized media library with minimal manual effort. The project showcases the power of APIs and automation in simplifying everyday tasks.</p>
+
+<p>Personally this project was a Prove of concept for me, that there are simple solutions to automate tedious tasks with free tools and a nice usability, since Telegram is available on all my devices.</p>
+
+<p><br /></p>
+
+<hr />
+<h1 id="implementation-steps">Implementation Steps</h1>
+<hr />
+
+<h5 id="requirements">Requirements</h5>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="language-"><code>  <span class="nv">Flask</span><span class="o">==</span>2.3.2
+  notion-client<span class="o">==</span>2.2.1
+  python-telegram-bot<span class="o">==</span>20.3
+  <span class="nv">requests</span><span class="o">==</span>2.31.0
+</code></pre></div></div>
+
+<h5 id="mainpy">Main.py</h5>
+
+<blockquote>
+  <p>The main script has all the logic to handle incoming Telegram messages, fetch data from the OMDb API, and update the Notion database. The Telegram Webhook listens for incoming messages and processes them accordingly. I wanted a <strong>Human-in-the-loop</strong> approach, so the bot asks for confirmation before adding a movie to Notion.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="language-"><code>  <span class="kn">from</span> <span class="n">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+  <span class="kn">from</span> <span class="n">notion_client</span> <span class="kn">import</span> <span class="n">Client</span>
+  <span class="kn">import</span> <span class="n">os</span>
+
+  <span class="kn">from</span> <span class="n">helper_functions</span> <span class="kn">import</span> <span class="n">fetch_data_from_omdb</span><span class="p">,</span> <span class="n">map_omdb_to_notion_schema</span><span class="p">,</span> <span class="n">add_entry_to_notion</span>
+
+  <span class="c1"># --- Config ---
+</span>  <span class="n">OMDB_API_KEY</span> <span class="o">=</span> <span class="sh">""</span> <span class="c1"># Your OMDB API key here
+</span>  <span class="n">TELEGRAM_TOKEN</span> <span class="o">=</span> <span class="sh">""</span> <span class="c1"># Your Telegram bot token here
+</span>  <span class="n">NOTION_TOKEN</span> <span class="o">=</span> <span class="sh">""</span> <span class="c1"># Your Notion integration token here
+</span>  <span class="n">DATABASE_ID</span> <span class="o">=</span> <span class="sh">""</span> <span class="c1"># Your Notion database ID here
+</span>
+  <span class="c1"># Notion client
+</span>  <span class="n">notion</span> <span class="o">=</span> <span class="nc">Client</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="n">NOTION_TOKEN</span><span class="p">)</span>
+
+  <span class="c1"># Flask app
+</span>  <span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+  <span class="c1"># Temporary storage for pending confirmations (user_id → movie data)
+</span>  <span class="n">pending_movies</span> <span class="o">=</span> <span class="p">{}</span>
+</code></pre></div></div>
+
+<p>The main webhook endpoint handles incoming Telegram messages. It processes both new messages (movie titles) and callback queries (button clicks for confirmation).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="language-"><code>  <span class="c1"># --- Telegram webhook endpoint ---
+</span>  <span class="nd">@app.route</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">/</span><span class="si">{</span><span class="n">TELEGRAM_TOKEN</span><span class="si">}</span><span class="sh">"</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">POST</span><span class="sh">"</span><span class="p">])</span>
+  <span class="k">def</span> <span class="nf">telegram_webhook</span><span class="p">():</span>
+      <span class="n">update</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="nf">get_json</span><span class="p">()</span>
+
+      <span class="c1"># --- 1. Handle CallbackQuery (button clicks) ---
+</span>      <span class="k">if</span> <span class="sh">"</span><span class="s">callback_query</span><span class="sh">"</span> <span class="ow">in</span> <span class="n">update</span><span class="p">:</span>
+          <span class="n">callback</span> <span class="o">=</span> <span class="n">update</span><span class="p">[</span><span class="sh">"</span><span class="s">callback_query</span><span class="sh">"</span><span class="p">]</span>
+          <span class="n">user_id</span> <span class="o">=</span> <span class="n">callback</span><span class="p">[</span><span class="sh">"</span><span class="s">from</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">id</span><span class="sh">"</span><span class="p">]</span>
+          <span class="n">data</span> <span class="o">=</span> <span class="n">callback</span><span class="p">[</span><span class="sh">"</span><span class="s">data</span><span class="sh">"</span><span class="p">]</span>
+          <span class="n">chat_id</span> <span class="o">=</span> <span class="n">callback</span><span class="p">[</span><span class="sh">"</span><span class="s">message</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">chat</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">id</span><span class="sh">"</span><span class="p">]</span>
+
+          <span class="k">if</span> <span class="n">data</span> <span class="o">==</span> <span class="sh">"</span><span class="s">confirm</span><span class="sh">"</span><span class="p">:</span>
+              <span class="n">movie</span> <span class="o">=</span> <span class="n">pending_movies</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+              <span class="k">if</span> <span class="n">movie</span><span class="p">:</span>
+                  <span class="nf">add_entry_to_notion</span><span class="p">(</span><span class="n">notion</span><span class="p">,</span> <span class="n">DATABASE_ID</span><span class="p">,</span> <span class="n">movie</span><span class="p">)</span>
+                  <span class="nf">edit_message</span><span class="p">(</span><span class="n">chat_id</span><span class="p">,</span> <span class="n">callback</span><span class="p">[</span><span class="sh">"</span><span class="s">message</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">message_id</span><span class="sh">"</span><span class="p">],</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Added *</span><span class="si">{</span><span class="n">movie</span><span class="p">[</span><span class="sh">'</span><span class="s">Title</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="s">* to Notion! 🎉</span><span class="sh">"</span><span class="p">)</span>
+              <span class="k">else</span><span class="p">:</span>
+                  <span class="nf">edit_message</span><span class="p">(</span><span class="n">chat_id</span><span class="p">,</span> <span class="n">callback</span><span class="p">[</span><span class="sh">"</span><span class="s">message</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">message_id</span><span class="sh">"</span><span class="p">],</span> <span class="sh">"</span><span class="s">No pending movie to confirm.</span><span class="sh">"</span><span class="p">)</span>
+          <span class="k">elif</span> <span class="n">data</span> <span class="o">==</span> <span class="sh">"</span><span class="s">cancel</span><span class="sh">"</span><span class="p">:</span>
+              <span class="n">pending_movies</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+              <span class="nf">edit_message</span><span class="p">(</span><span class="n">chat_id</span><span class="p">,</span> <span class="n">callback</span><span class="p">[</span><span class="sh">"</span><span class="s">message</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">message_id</span><span class="sh">"</span><span class="p">],</span> <span class="sh">"</span><span class="s">Cancelled.</span><span class="sh">"</span><span class="p">)</span>
+          <span class="k">return</span> <span class="sh">"</span><span class="s">ok</span><span class="sh">"</span>
+
+      <span class="c1"># --- 2. Handle New Message (movie title) ---
+</span>      <span class="n">message</span> <span class="o">=</span> <span class="n">update</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">message</span><span class="sh">"</span><span class="p">,</span> <span class="p">{})</span>
+      <span class="n">chat_id</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">chat</span><span class="sh">"</span><span class="p">,</span> <span class="p">{}).</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">id</span><span class="sh">"</span><span class="p">)</span>
+      <span class="n">user_id</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">from</span><span class="sh">"</span><span class="p">,</span> <span class="p">{}).</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">id</span><span class="sh">"</span><span class="p">)</span>
+      <span class="n">title</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">)</span>
+
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">title</span><span class="p">:</span>
+          <span class="nf">send_message</span><span class="p">(</span><span class="n">chat_id</span><span class="p">,</span> <span class="sh">"</span><span class="s">Please send me a movie or tv show title.</span><span class="sh">"</span><span class="p">)</span>
+          <span class="k">return</span> <span class="sh">"</span><span class="s">ok</span><span class="sh">"</span>
+
+      <span class="k">try</span><span class="p">:</span>
+          <span class="c1"># Fetch OMDB
+</span>          <span class="n">omdb_data</span> <span class="o">=</span> <span class="nf">fetch_data_from_omdb</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">OMDB_API_KEY</span><span class="p">)</span>
+          <span class="k">if</span> <span class="ow">not</span> <span class="n">omdb_data</span><span class="p">:</span>
+              <span class="nf">send_message</span><span class="p">(</span><span class="n">chat_id</span><span class="p">,</span> <span class="sh">"</span><span class="s">Movie or TV Show not found. Please check the title and try again.</span><span class="sh">"</span><span class="p">)</span>
+              <span class="k">return</span> <span class="sh">"</span><span class="s">ok</span><span class="sh">"</span>
+
+          <span class="c1"># Map to Notion schema
+</span>          <span class="n">mapped</span> <span class="o">=</span> <span class="nf">map_omdb_to_notion_schema</span><span class="p">(</span><span class="n">omdb_data</span><span class="p">)</span>
+
+          <span class="c1"># Save temporarily for confirmation
+</span>          <span class="n">pending_movies</span><span class="p">[</span><span class="n">user_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapped</span>
+
+          <span class="c1"># Build details message
+</span>          <span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
+              <span class="sa">f</span><span class="sh">"</span><span class="s">*</span><span class="si">{</span><span class="n">mapped</span><span class="p">[</span><span class="sh">'</span><span class="s">Title</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="s">* (</span><span class="si">{</span><span class="n">mapped</span><span class="p">[</span><span class="sh">'</span><span class="s">Released</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="s">)</span><span class="se">\n</span><span class="sh">"</span>
+              <span class="sa">f</span><span class="sh">"</span><span class="s">Rated: </span><span class="si">{</span><span class="n">mapped</span><span class="p">[</span><span class="sh">'</span><span class="s">Rated</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="sh">"</span>
+              <span class="sa">f</span><span class="sh">"</span><span class="s">Runtime: </span><span class="si">{</span><span class="n">mapped</span><span class="p">[</span><span class="sh">'</span><span class="s">Runtime</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="sh">"</span>
+              <span class="sa">f</span><span class="sh">"</span><span class="s">Genre: </span><span class="si">{</span><span class="n">mapped</span><span class="p">[</span><span class="sh">'</span><span class="s">Genre</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="sh">"</span>
+              <span class="sa">f</span><span class="sh">"</span><span class="s">Director: </span><span class="si">{</span><span class="n">mapped</span><span class="p">[</span><span class="sh">'</span><span class="s">Director</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="sh">"</span>
+              <span class="sa">f</span><span class="sh">"</span><span class="s">Actors: </span><span class="si">{</span><span class="n">mapped</span><span class="p">[</span><span class="sh">'</span><span class="s">Actors</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="se">\n\n</span><span class="sh">"</span>
+              <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">mapped</span><span class="p">[</span><span class="sh">'</span><span class="s">Plot</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="se">\n\n</span><span class="sh">"</span>
+              <span class="sa">f</span><span class="sh">"</span><span class="s">IMDb: </span><span class="si">{</span><span class="n">mapped</span><span class="p">[</span><span class="sh">'</span><span class="s">imdbRating</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="s"> | Metascore: </span><span class="si">{</span><span class="n">mapped</span><span class="p">[</span><span class="sh">'</span><span class="s">Metascore</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="sh">"</span>
+          <span class="p">)</span>
+
+          <span class="c1"># Inline keyboard buttons
+</span>          <span class="n">keyboard</span> <span class="o">=</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">inline_keyboard</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">[</span>
+                      <span class="p">{</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">✅ Add to Notion</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">callback_data</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">confirm</span><span class="sh">"</span><span class="p">},</span>
+                      <span class="p">{</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">❌ Cancel</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">callback_data</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">cancel</span><span class="sh">"</span><span class="p">},</span>
+                  <span class="p">]</span>
+              <span class="p">]</span>
+          <span class="p">}</span>
+
+          <span class="nf">send_message</span><span class="p">(</span><span class="n">chat_id</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">reply_markup</span><span class="o">=</span><span class="n">keyboard</span><span class="p">)</span>
+
+      <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+          <span class="nf">send_message</span><span class="p">(</span><span class="n">chat_id</span><span class="p">,</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+
+      <span class="k">return</span> <span class="sh">"</span><span class="s">ok</span><span class="sh">"</span>
+</code></pre></div></div>
+
+<p>The home route is just a simple health check endpoint.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="language-"><code>  <span class="nd">@app.route</span><span class="p">(</span><span class="sh">"</span><span class="s">/</span><span class="sh">"</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+      <span class="k">return</span> <span class="sh">"</span><span class="s">Bot is running.</span><span class="sh">"</span>
+
+
+  <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+      <span class="n">app</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="sh">"</span><span class="s">0.0.0.0</span><span class="sh">"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h3 id="helper-functions">Helper Functions</h3>
+
+<p>To somewhat modularize my code, I created helper functions for common tasks such as fetching data from the OMDb API and updating the Notion database.</p>
+
+<h5 id="edit_message">edit_message</h5>
+
+<p>To edit a message via the Telegram Bot API, I created the following function:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="language-"><code>  <span class="kn">import</span> <span class="n">requests</span>
+
+  <span class="k">def</span> <span class="nf">edit_message</span><span class="p">(</span><span class="n">chat_id</span><span class="p">,</span> <span class="n">message_id</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+      <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="s">https://api.telegram.org/bot</span><span class="si">{</span><span class="n">TELEGRAM_TOKEN</span><span class="si">}</span><span class="s">/editMessageText</span><span class="sh">"</span>
+      <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="sh">"</span><span class="s">chat_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">chat_id</span><span class="p">,</span>
+          <span class="sh">"</span><span class="s">message_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">message_id</span><span class="p">,</span>
+          <span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="n">text</span><span class="p">,</span>
+          <span class="sh">"</span><span class="s">parse_mode</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Markdown</span><span class="sh">"</span>
+      <span class="p">}</span>
+    <span class="n">requests</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h5 id="send_message">send_message</h5>
+<p>To send a message via the Telegram Bot API, all you need is the url with your Telegram bot token (aquired by the BotFather on Telegram) and the chat_id of the user you want to send the message to. reply_markup is optional, if you want to send buttons with the message. Since i want to use Markdown formatting, i set the parse_mode to “Markdown”.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="language-"><code>  <span class="kn">import</span> <span class="n">requests</span>
+
+  <span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="n">chat_id</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">reply_markup</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+      <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="s">https://api.telegram.org/bot</span><span class="si">{</span><span class="n">TELEGRAM_TOKEN</span><span class="si">}</span><span class="s">/sendMessage</span><span class="sh">"</span>
+      <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="sh">"</span><span class="s">chat_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">chat_id</span><span class="p">,</span>
+          <span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="n">text</span><span class="p">,</span>
+          <span class="sh">"</span><span class="s">parse_mode</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Markdown</span><span class="sh">"</span>
+      <span class="p">}</span>
+      <span class="k">if</span> <span class="n">reply_markup</span><span class="p">:</span>
+          <span class="n">payload</span><span class="p">[</span><span class="sh">"</span><span class="s">reply_markup</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="n">reply_markup</span>
+      <span class="n">requests</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h5 id="fetch_data_from_omdb">fetch_data_from_omdb</h5>
+
+<p>To fetch data from the OMDb API, I created the following function:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="language-"><code>  <span class="kn">import</span> <span class="n">requests</span>
+
+  <span class="k">def</span> <span class="nf">fetch_data_from_omdb</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">OMDB_API_KEY</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+      <span class="sh">"""</span><span class="s">
+      Fetch movie or show data from OMDB API using the provided title.
+      If the title is not found, return None.
+      </span><span class="sh">"""</span>
+      
+      <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="s">http://www.omdbapi.com/?t=</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s">&amp;apikey=</span><span class="si">{</span><span class="n">OMDB_API_KEY</span><span class="si">}</span><span class="sh">"</span>
+      <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+      <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="nf">json</span><span class="p">()</span>
+      <span class="k">if</span> <span class="n">data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">Response</span><span class="sh">"</span><span class="p">)</span> <span class="o">==</span> <span class="sh">"</span><span class="s">False</span><span class="sh">"</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="nc">Exception</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Movie not found: </span><span class="si">{</span><span class="n">data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">Error</span><span class="sh">'</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">data</span>
+
+</code></pre></div></div>
+
+<h5 id="add_entry_to_notion">add_entry_to_notion</h5>
+
+<p>To add an entry to the Notion database, I created the following function:</p>
+
+<p>In order to interact with Notion’s API, I used the <code class="language-plaintext highlighter-rouge">notion-client</code> library. I pass the data i fetched from the OMDb API to this function, but i also do some data cleaning and type conversion to match the Notion database schema.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="language-"><code>  <span class="kn">from</span> <span class="n">notion_client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+  <span class="k">def</span> <span class="nf">add_entry_to_notion</span><span class="p">(</span><span class="n">notion_client</span><span class="p">:</span> <span class="n">Client</span><span class="p">,</span> <span class="n">database_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+      <span class="sh">"""</span><span class="s">
+      Adds a movie entry to a Notion database.
+      
+      :param notion_client: Initialized Notion Client
+      :param database_id: The Notion database ID
+      :param data: Dictionary with movie details
+      </span><span class="sh">"""</span>
+      
+      <span class="c1"># Helper: safely get value
+</span>      <span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="sh">""</span><span class="p">):</span>
+          <span class="k">return</span> <span class="n">data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span> <span class="ow">or</span> <span class="n">default</span>
+
+      <span class="c1"># Convert string to float if numeric
+</span>      <span class="k">def</span> <span class="nf">parse_float</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+          <span class="k">try</span><span class="p">:</span>
+              <span class="k">return</span> <span class="nf">float</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+          <span class="nf">except </span><span class="p">(</span><span class="nb">ValueError</span><span class="p">,</span> <span class="nb">TypeError</span><span class="p">):</span>
+              <span class="k">return</span> <span class="bp">None</span>
+
+      <span class="n">properties</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="sh">"</span><span class="s">Title</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">title</span><span class="sh">"</span><span class="p">:</span> <span class="p">[{</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span><span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="nf">get_value</span><span class="p">(</span><span class="sh">"</span><span class="s">Title</span><span class="sh">"</span><span class="p">)}}]</span>
+          <span class="p">},</span>
+          <span class="sh">"</span><span class="s">Favorite</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">checkbox</span><span class="sh">"</span><span class="p">:</span> <span class="nf">bool</span><span class="p">(</span><span class="nf">get_value</span><span class="p">(</span><span class="sh">"</span><span class="s">Favorite</span><span class="sh">"</span><span class="p">))</span>
+          <span class="p">},</span>
+          <span class="sh">"</span><span class="s">Status</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">status</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="nf">get_value</span><span class="p">(</span><span class="sh">"</span><span class="s">Status</span><span class="sh">"</span><span class="p">)}</span>
+          <span class="p">},</span>
+          <span class="sh">"</span><span class="s">Type</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">select</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="nf">get_value</span><span class="p">(</span><span class="sh">"</span><span class="s">Type</span><span class="sh">"</span><span class="p">)}</span>
+          <span class="p">},</span>
+          <span class="sh">"</span><span class="s">Rated</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">rich_text</span><span class="sh">"</span><span class="p">:</span> <span class="p">[{</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span><span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="nf">get_value</span><span class="p">(</span><span class="sh">"</span><span class="s">Rated</span><span class="sh">"</span><span class="p">)}}]</span>
+          <span class="p">},</span>
+          <span class="sh">"</span><span class="s">Release Date</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">rich_text</span><span class="sh">"</span><span class="p">:</span> <span class="p">[{</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span><span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="nf">get_value</span><span class="p">(</span><span class="sh">"</span><span class="s">Released</span><span class="sh">"</span><span class="p">)}}]</span>
+          <span class="p">},</span>
+          <span class="sh">"</span><span class="s">Runtime</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">rich_text</span><span class="sh">"</span><span class="p">:</span> <span class="p">[{</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span><span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="nf">get_value</span><span class="p">(</span><span class="sh">"</span><span class="s">Runtime</span><span class="sh">"</span><span class="p">)}}]</span>
+          <span class="p">},</span>
+          <span class="sh">"</span><span class="s">Genre</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">rich_text</span><span class="sh">"</span><span class="p">:</span> <span class="p">[{</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span><span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="nf">get_value</span><span class="p">(</span><span class="sh">"</span><span class="s">Genre</span><span class="sh">"</span><span class="p">)}}]</span>
+          <span class="p">},</span>
+          <span class="sh">"</span><span class="s">Director</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">rich_text</span><span class="sh">"</span><span class="p">:</span> <span class="p">[{</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span><span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="nf">get_value</span><span class="p">(</span><span class="sh">"</span><span class="s">Director</span><span class="sh">"</span><span class="p">)}}]</span>
+          <span class="p">},</span>
+          <span class="sh">"</span><span class="s">Actors</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">rich_text</span><span class="sh">"</span><span class="p">:</span> <span class="p">[{</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span><span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="nf">get_value</span><span class="p">(</span><span class="sh">"</span><span class="s">Actors</span><span class="sh">"</span><span class="p">)}}]</span>
+          <span class="p">},</span>
+          <span class="sh">"</span><span class="s">Plot</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">rich_text</span><span class="sh">"</span><span class="p">:</span> <span class="p">[{</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span><span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="nf">get_value</span><span class="p">(</span><span class="sh">"</span><span class="s">Plot</span><span class="sh">"</span><span class="p">)}}]</span>
+          <span class="p">},</span>
+          <span class="sh">"</span><span class="s">Metascore</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">number</span><span class="sh">"</span><span class="p">:</span> <span class="nf">parse_float</span><span class="p">(</span><span class="nf">get_value</span><span class="p">(</span><span class="sh">"</span><span class="s">Metascore</span><span class="sh">"</span><span class="p">))</span>
+          <span class="p">},</span>
+          <span class="sh">"</span><span class="s">imdbRating</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">number</span><span class="sh">"</span><span class="p">:</span> <span class="nf">parse_float</span><span class="p">(</span><span class="nf">get_value</span><span class="p">(</span><span class="sh">"</span><span class="s">imdbRating</span><span class="sh">"</span><span class="p">))</span>
+          <span class="p">},</span>
+          <span class="sh">"</span><span class="s">Where to watch</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">rich_text</span><span class="sh">"</span><span class="p">:</span> <span class="p">[{</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span><span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="nf">get_value</span><span class="p">(</span><span class="sh">"</span><span class="s">Where to watch</span><span class="sh">"</span><span class="p">)}}]</span>
+          <span class="p">},</span>
+          <span class="sh">"</span><span class="s">URL</span><span class="sh">"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="sh">"</span><span class="s">url</span><span class="sh">"</span><span class="p">:</span> <span class="nf">get_value</span><span class="p">(</span><span class="sh">"</span><span class="s">URL</span><span class="sh">"</span><span class="p">)</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+
+      <span class="c1"># Create page
+</span>      <span class="n">response</span> <span class="o">=</span> <span class="n">notion_client</span><span class="p">.</span><span class="n">pages</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+          <span class="n">parent</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">database_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">database_id</span><span class="p">},</span>
+          <span class="n">properties</span><span class="o">=</span><span class="n">properties</span>
+      <span class="p">)</span>
+
+      <span class="k">return</span> <span class="n">response</span>
+</code></pre></div></div>
+
+<h5 id="map_omdb_to_notion_schema">map_omdb_to_notion_schema</h5>
+
+<p>To map the OMDb data to my Notion database schema, i created the following function:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="language-"><code>  <span class="k">def</span> <span class="nf">map_omdb_to_notion_schema</span><span class="p">(</span><span class="n">omdb_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+      <span class="k">return</span> <span class="p">{</span>
+          <span class="sh">"</span><span class="s">Status</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">To watch</span><span class="sh">"</span><span class="p">,</span>
+          <span class="sh">"</span><span class="s">Title</span><span class="sh">"</span><span class="p">:</span> <span class="n">omdb_data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">Title</span><span class="sh">"</span><span class="p">,</span> <span class="sh">""</span><span class="p">),</span>
+          <span class="sh">"</span><span class="s">Type</span><span class="sh">"</span><span class="p">:</span> <span class="n">omdb_data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">Type</span><span class="sh">"</span><span class="p">,</span> <span class="sh">""</span><span class="p">),</span>
+          <span class="sh">"</span><span class="s">Rated</span><span class="sh">"</span><span class="p">:</span> <span class="n">omdb_data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">Rated</span><span class="sh">"</span><span class="p">,</span> <span class="sh">""</span><span class="p">),</span>
+          <span class="sh">"</span><span class="s">Released</span><span class="sh">"</span><span class="p">:</span> <span class="n">omdb_data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">Released</span><span class="sh">"</span><span class="p">,</span> <span class="sh">""</span><span class="p">),</span>
+          <span class="sh">"</span><span class="s">Runtime</span><span class="sh">"</span><span class="p">:</span> <span class="n">omdb_data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">Runtime</span><span class="sh">"</span><span class="p">,</span> <span class="sh">""</span><span class="p">),</span>
+          <span class="sh">"</span><span class="s">Genre</span><span class="sh">"</span><span class="p">:</span> <span class="n">omdb_data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">Genre</span><span class="sh">"</span><span class="p">,</span> <span class="sh">""</span><span class="p">),</span>
+          <span class="sh">"</span><span class="s">Director</span><span class="sh">"</span><span class="p">:</span> <span class="n">omdb_data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">Director</span><span class="sh">"</span><span class="p">,</span> <span class="sh">""</span><span class="p">),</span>
+          <span class="sh">"</span><span class="s">Actors</span><span class="sh">"</span><span class="p">:</span> <span class="n">omdb_data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">Actors</span><span class="sh">"</span><span class="p">,</span> <span class="sh">""</span><span class="p">),</span>
+          <span class="sh">"</span><span class="s">Plot</span><span class="sh">"</span><span class="p">:</span> <span class="n">omdb_data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">Plot</span><span class="sh">"</span><span class="p">,</span> <span class="sh">""</span><span class="p">),</span>
+          <span class="sh">"</span><span class="s">Metascore</span><span class="sh">"</span><span class="p">:</span> <span class="n">omdb_data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">Metascore</span><span class="sh">"</span><span class="p">,</span> <span class="sh">""</span><span class="p">),</span>
+          <span class="sh">"</span><span class="s">imdbRating</span><span class="sh">"</span><span class="p">:</span> <span class="n">omdb_data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">imdbRating</span><span class="sh">"</span><span class="p">,</span> <span class="sh">""</span><span class="p">),</span>
+          <span class="sh">"</span><span class="s">Where to watch</span><span class="sh">"</span><span class="p">:</span> <span class="sh">""</span><span class="p">,</span>
+          <span class="sh">"</span><span class="s">Favorite</span><span class="sh">"</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+          <span class="sh">"</span><span class="s">URL</span><span class="sh">"</span><span class="p">:</span> <span class="sa">f</span><span class="sh">"</span><span class="s">https://www.imdb.com/title/</span><span class="si">{</span><span class="n">omdb_data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">imdbID</span><span class="sh">'</span><span class="p">)</span><span class="si">}</span><span class="s">/</span><span class="sh">"</span> <span class="k">if</span> <span class="n">omdb_data</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">imdbID</span><span class="sh">"</span><span class="p">)</span> <span class="k">else</span> <span class="sh">""</span>
+      <span class="p">}</span>
+</code></pre></div></div>
+
+
+</div>
+
+<!-- Rating -->
+
+
+<!-- Author Box if enabled from _config.yml -->
+<!-- Author Box -->
+
+
+<div class="authorbox mb-5 mt-5 pt-4 pb-4">   
+    <div class="row">
+        <div class="wrapavname col-md-3 text-center">
+            
+            <img  class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+            
+            <p class="mt-4 mb-0 small text-center">
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href=""><i class="fa fa-link"></i></a> 
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href=""><i class="fab fa-twitter"></i></a>
+                <a class="d-inline-block mx-1 text-dark" href="mailto:ettljens@gmail.com"><i class="fa fa-envelope"></i></a>
+            </p>
+        </div>
+        <div class="col-md-9">
+            <h4>Jens</h4>
+            <p class="mt-3 mb-0">Content creator for this blog and user of this Jekyll template. I love to tackle problems with creative coding solutions and automations.</p>
+        </div>
+    </div> 
+</div> 
+
+
+
+<!-- Comments if not disabled with comments: false -->
+<!-- Comments
+================================================== -->
+ 
+<div class="comments mt-5">
+    <button class="btn btn-outline-dark py-2 px-5 d-block w-100 show-comments"><i class="fa fa-comments text-muted"></i> &nbsp; Load Comments</button>         
+    <div id="comments">  
+        <h4 class="mb-4">Comments</h4>                 
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'blogwebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+     
+    <div class="clearfix"></div>              
+    </div>    
+</div>       
+
+
+<!-- Share -->
+<div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=[PROJECT] Building a Free Automated Movie and TV Show Tracking System&url=/PRJ-movie-tracker-automation/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=/PRJ-movie-tracker-automation/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=/PRJ-movie-tracker-automation/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+
+<!-- Related Post -->
+<!-- Related Posts
+================================================== -->
+<div class=" related-posts ">  
+
+    
+    <h2 class="text-center mb-4">Explore more like this</h2>
+    
+    
+    <div class="d-flex justify-content-center align-items-center">
+    
+    <!-- Categories -->
+    
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#Automation">Automation</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#Hosting">Hosting</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#Notion">Notion</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#OMDb">OMDb</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#Project">Project</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#Python">Python</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#PythonAnywhere">PythonAnywhere</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#Telegram">Telegram</a>                
+    
+
+    <!-- Tags -->  
+    
+    
+
+    </div>
+
+    
+    
+    
+    <div class="blog-grid-container">
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+            <!-- begin post -->
+
+
+<div class="blog-grid-item">
+    <div class="card h-100">
+        <div class="maxthumb">
+            <a href="/PRJ-automatic-file-management/">
+                
+
+                    
+                        <img class="img-thumb" src="/assets/images/PRJ-automatic-file-management/cover_automatic-file-management.png" alt="[PROJECT] Automatic File Management — Organize, Automate with Python Scripting"> 
+                    
+
+                
+            </a>
+        </div>
+        <div class="card-body">
+            <h2 class="card-title">
+                <a class="text-dark" href="/PRJ-automatic-file-management/">[PROJECT] Automatic File Management — Organize, Automate with Python Scripting</a>
+                
+            </h2>
+            <h4 class="card-text">Python can be an amazing tool for automating simple, repetitive tasks on your computer with minimal effort. One tidious task i often face is keeping my downloads folder organized. Over...</h4>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="wrapfooter">
+                
+                <span class="meta-footer-thumb">
+                
+                <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+                
+                </span>
+                <span class="author-meta">
+                <span class="post-name font-weight-bold">Jens</span> 
+                
+                <span class="post-date">22 Nov 2025</span>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end post -->
+            
+            
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+            <!-- begin post -->
+
+
+<div class="blog-grid-item">
+    <div class="card h-100">
+        <div class="maxthumb">
+            <a href="/PRJ-n8n-email-inbox-automation/">
+                
+
+                    
+                        <img class="img-thumb" src="/assets/images/PRJ-n8n/cover-n8n.png" alt="[PROJECT] Smart Inbox Automation with n8n — Auto-categorize Emails and Trigger Custom Actions"> 
+                    
+
+                
+            </a>
+        </div>
+        <div class="card-body">
+            <h2 class="card-title">
+                <a class="text-dark" href="/PRJ-n8n-email-inbox-automation/">[PROJECT] Smart Inbox Automation with n8n — Auto-categorize Emails and Trigger Custom Actions</a>
+                
+            </h2>
+            <h4 class="card-text">With n8n, an open-source workflow automation tool, you can fairly easy create AI powered workflows such as an workflow that automatically categorizes incoming emails and triggers custom actions based on...</h4>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="wrapfooter">
+                
+                <span class="meta-footer-thumb">
+                
+                <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+                
+                </span>
+                <span class="author-meta">
+                <span class="post-name font-weight-bold">Jens</span> 
+                
+                <span class="post-date">17 Nov 2025</span>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end post -->
+            
+            
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+            <!-- begin post -->
+
+
+<div class="blog-grid-item">
+    <div class="card h-100">
+        <div class="maxthumb">
+            <a href="/PRJ-langflow_resume-website/">
+                
+
+                    
+                        <img class="img-thumb" src="/assets/images/PRJ-langflow-resume-website/cover-langflow.png" alt="[PROJECT] Create a static Website based on a resume using Langflow"> 
+                    
+
+                
+            </a>
+        </div>
+        <div class="card-body">
+            <h2 class="card-title">
+                <a class="text-dark" href="/PRJ-langflow_resume-website/">[PROJECT] Create a static Website based on a resume using Langflow</a>
+                
+            </h2>
+            <h4 class="card-text">Langflow is a Low-code AI builder for agentic and RAG applications. It is a powerful tool to build and deploy AI agents and MCP servers. It supports all major LLMs,...</h4>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="wrapfooter">
+                
+                <span class="meta-footer-thumb">
+                
+                <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+                
+                </span>
+                <span class="author-meta">
+                <span class="post-name font-weight-bold">Jens</span> 
+                
+                <span class="post-date">22 Oct 2025</span>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end post -->
+            
+            
+                
+        </div>        
+</div>
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+    </div>
+
+    
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-6 col-sm-12 text-center text-lg-left">
+                Copyright © 2026 Jens' Blog 
+            </div>
+            <div class="col-md-6 col-sm-12 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net/memoirs-free-jekyll-theme/">Memoirs Jekyll Theme</a> by WowThemes.net
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts (if you need bootstrap.js, please add it yourself. I didn't use it for performance reasons, it was not needed in this theme)
+================================================== -->
+
+<!-- <script src="/assets/js/prism.js"></script> -->
+
+<script src="/assets/js/theme.js"></script>
+
+
+
+
+<script id="dsq-count-scr" src="//blogwebsite.disqus.com/count.js"></script>
+
+
+</body>
+</html>

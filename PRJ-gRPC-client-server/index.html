@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo1.png">
+
+<title>[PROJECT] Creating an efficient gRPC Client-Server Communication | Jens' Blog</title>
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[PROJECT] Creating an efficient gRPC Client-Server Communication | Jens’ Blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="[PROJECT] Creating an efficient gRPC Client-Server Communication" />
+<meta name="author" content="jens" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="gRPC (gRPC Remote Procedure Calls) is a high-performance, open-source framework developed by Google that enables efficient communication between distributed systems." />
+<meta property="og:description" content="gRPC (gRPC Remote Procedure Calls) is a high-performance, open-source framework developed by Google that enables efficient communication between distributed systems." />
+<meta property="og:site_name" content="Jens’ Blog" />
+<meta property="og:image" content="/assets/images/PRJ-gRPC/cover_gRPC.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-08T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/images/PRJ-gRPC/cover_gRPC.png" />
+<meta property="twitter:title" content="[PROJECT] Creating an efficient gRPC Client-Server Communication" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"jens"},"dateModified":"2025-10-08T00:00:00+02:00","datePublished":"2025-10-08T00:00:00+02:00","description":"gRPC (gRPC Remote Procedure Calls) is a high-performance, open-source framework developed by Google that enables efficient communication between distributed systems.","headline":"[PROJECT] Creating an efficient gRPC Client-Server Communication","image":"/assets/images/PRJ-gRPC/cover_gRPC.png","mainEntityOfPage":{"@type":"WebPage","@id":"/PRJ-gRPC-client-server/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/logo_black_cropped.png"},"name":"jens"},"url":"/PRJ-gRPC-client-server/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+<!-- <link href="/assets/css/prism.css" rel="stylesheet"> -->
+
+<link href="/assets/css/theme.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body>
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+<!-- Begin Sidebar Navigation
+================================================== -->
+
+<div class="sidebar">    
+</div>   
+<div class="nav-icon">
+    <div class="hamburger-bar"></div>
+</div>
+<div id="blackover-nav" class="blackover"></div>
+<nav id="menu">
+    <ul>
+        <h3>Navigation</h3>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/authors">Contributors</a></li>
+        <!-- <li><a href="/contact">Contact</a></li>        -->
+    </ul>   
+</nav>
+
+<script src="/assets/js/lunr.js"></script>
+
+<style>
+    
+</style>
+
+<div class="wrap-search">
+    <div class="d-flex align-items-center ml-auto">
+        <i class="fas fa-search show-search"></i>
+        <form class="bd-search ml-3" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+            <input type="text" class="form-control bigradius text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+        </form>
+    </div>
+</div>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+
+<!-- End Sidebar Navigation
+================================================== -->
+
+<div class="site-content ">
+
+<div class="container">
+
+    <!-- Site Logo/Name
+    ================================================== -->
+   
+    <a class="navbar-brand" href="/">
+        <img src="/assets/images/logo_black_cropped.png" alt="Jens' Blog">
+    </a>  
+   
+
+    <!-- Site Tag
+    ================================================== -->
+    
+
+    <!-- Content
+    ================================================== -->
+    <div class="main-content">
+        <div class="entry-header">
+    <!-- Post Title -->
+    <h1 class="posttitle">[PROJECT] Creating an efficient gRPC Client-Server Communication</h1>
+    <!-- Author & Date  Box -->
+    
+    
+    <div class="d-flex align-items-center mt-4">
+        <div>
+            
+            <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+            
+        </div>            
+        <div>
+        Written by Jens on 
+        <span class="post-date"><time class="post-date" datetime="2025-10-08">08 Oct 2025</time></span>           
+        
+        </div>            
+    </div>
+    
+</div>
+
+<!-- Adsense under title if enabled from _config.yml (change your pub id and slot) -->
+
+
+<!-- Featured Image -->
+
+<div class="entry-featured-image">
+    
+    <img class="featured-image " src="/assets/images/PRJ-gRPC/cover_gRPC.png" alt="[PROJECT] Creating an efficient gRPC Client-Server Communication">
+    
+</div>
+
+
+<!-- Content -->
+<!-- Post, Page Content
+================================================== -->
+<div class="article-post">
+    <!-- Toc if any -->
+    
+    <!-- End Toc -->
+    <blockquote>
+  <p>gRPC <strong>(gRPC Remote Procedure Calls)</strong> is a high-performance, open-source framework developed by Google that enables efficient communication between distributed systems.</p>
+</blockquote>
+
+<p>The project aims to demonstrate how to <strong>set up a gRPC client-server communication using JavaScript</strong> and demonstrate the key features and benefits of gRPC such as sending single messages and streaming data between client and server.</p>
+
+<hr />
+<h2 id="remote-procedure-calls-rpc">Remote Procedure Calls (RPC)</h2>
+<hr />
+
+<p>At its core, gRPC is built around the concept of Remote Procedure Calls (RPCs). RPCs allow a program to execute a procedure (or method) on a remote server as if it were a local function call. This abstraction simplifies the development of distributed applications by hiding the complexities of network communication.</p>
+
+<blockquote>
+  <p>💡 Read more about gRPC on the <a href="https://grpc.io/docs/what-is-grpc/">official gRPC website</a>.</p>
+</blockquote>
+
+<h5 id="the-core-concepts-of-grpc">The Core Concepts of gRPC</h5>
+
+<p>gRPC operates on the concept of defining services and their methods using Protocol Buffers. <strong>Protocol Buffers is a binary serialization</strong> format that is both compact and efficient to compute, making it ideal for high-performance communication. <br /><br />
+The process involves the following steps:</p>
+
+<p><img src="/assets/images/PRJ-gRPC/gRPC-core-concept.png" alt="Core Concepts of gRPC" /></p>
+
+<ol>
+  <li><strong>Define the Service</strong>: Developers define the service and its methods in a <strong>.proto</strong> file using Protocol Buffers syntax. Each method specifies the request and response message types.</li>
+  <li><strong>Generate Code</strong>: The <strong>.proto</strong> file is then compiled using the Protocol Buffers compiler (<strong>protoc</strong>), which generates client and server code in the desired programming languages.</li>
+  <li><strong>Implement the Server</strong>: The server-side code is implemented to handle incoming requests and provide the appropriate responses.</li>
+  <li><strong>Create the Client</strong>: The client-side code is used to call the server methods as if they were local functions, abstracting away the complexities of network communication.</li>
+</ol>
+
+<hr />
+<h5 id="key-features-of-grpc">Key Features of gRPC</h5>
+<hr />
+
+<ul>
+  <li><strong>High Performance</strong>: gRPC leverages HTTP/2, which provides features like multiplexing, header compression, and server push, resulting in lower latency and improved performance compared to traditional RESTful APIs.</li>
+  <li><strong>Language Agnostic</strong>: gRPC supports multiple programming languages, including Python, Java, C++, Go, Ruby, and more, making it suitable for polyglot environments.</li>
+  <li><strong>Streaming Support</strong>: gRPC supports four types of service methods: unary (single request-response), server streaming (single request, multiple responses), client streaming (multiple requests, single response), and bidirectional streaming (multiple requests and responses).</li>
+  <li><strong>Built-in Authentication</strong>: gRPC provides built-in support for authentication and encryption using SSL/TLS, ensuring secure communication between clients and servers.</li>
+  <li><strong>Pluggable Architecture</strong>: gRPC allows developers to extend its functionality through custom plugins, such as interceptors for logging, monitoring, and error handling.</li>
+</ul>
+
+<hr />
+<h5 id="use-case-grpc-client-server-communication">Use Case: gRPC Client-Server Communication</h5>
+<hr />
+
+<p>Commonly, gRPC is used in microservices architectures, where different services need to communicate with each other efficiently. It is also used in scenarios where low latency and high throughput are critical, such as real-time applications, IoT systems, and mobile applications.</p>
+
+<p>Famous companies like Google, Netflix, and Dropbox use gRPC for their internal services due to its performance and scalability.</p>
+
+<hr />
+<h1 id="project-example-implementing-a-grpc-client-server-in-javascript">Project Example: Implementing a gRPC Client-Server in JavaScript</h1>
+<hr />
+
+<p>To demonstrate gRPC client-server communication in JavaScript, we will set up a simple example where a client sends a request to the server, and the server responds with a message.</p>
+
+<h4 id="step-1-define-the-service">Step 1: Define the Service</h4>
+
+<p>Create a file named <strong>service.proto</strong> to define the gRPC service and its methods.</p>
+
+<div class="language-proto highlighter-rouge"><div class="highlight"><pre class="language-"><code>
+  <span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
+  <span class="kn">package</span> <span class="nn">grpc_example</span><span class="p">;</span>
+
+  <span class="kd">service</span> <span class="n">Greeter</span> <span class="p">{</span>
+    <span class="c1">// Sends a greeting</span>
+    <span class="k">rpc</span> <span class="n">SayHello</span> <span class="p">(</span><span class="n">HelloRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">HelloReply</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// The request message containing the user's name.</span>
+  <span class="kd">message</span> <span class="nc">HelloRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// The response message containing the greetings</span>
+  <span class="kd">message</span> <span class="nc">HelloReply</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="kd">message</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// define the structure for the data you want to serialize</span>
+  <span class="kd">message</span> <span class="nc">Person</span> <span class="p">{</span>
+      <span class="kt">string</span> <span class="na">name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="kt">int32</span> <span class="na">age</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+      <span class="kt">bool</span> <span class="na">is_student</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">message</span> <span class="nc">DataResponse</span> <span class="p">{</span>
+      <span class="c1">// The response message containing the result</span>
+      <span class="kt">string</span> <span class="na">result</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+
+</code></pre></div></div>
+
+<h4 id="step-2-generate-code">Step 2: Generate Code</h4>
+
+<p>Use the Protocol Buffers compiler to generate JavaScript code from the <strong>service.proto</strong> file.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="language-"><code>  protoc <span class="nt">--js_out</span><span class="o">=</span><span class="nv">import_style</span><span class="o">=</span>commonjs,binary:. <span class="nt">--grpc-web_out</span><span class="o">=</span><span class="nv">import_style</span><span class="o">=</span>commonjs,mode<span class="o">=</span>grpcwebtext:. service.proto
+</code></pre></div></div>
+
+<h4 id="step-3-implement-the-server">Step 3: Implement the Server</h4>
+
+<p>Create a file named <strong>server.js</strong> to implement the server-side logic.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="language-"><code>
+  <span class="kn">from</span> <span class="n">concurrent</span> <span class="kn">import</span> <span class="n">futures</span>
+  <span class="kn">import</span> <span class="n">grpc</span>
+  <span class="kn">import</span> <span class="n">service_pb2</span>
+  <span class="kn">import</span> <span class="n">service_pb2_grpc</span>
+
+  <span class="k">class</span> <span class="nc">ExampleServiceServicer</span><span class="p">(</span><span class="n">service_pb2_grpc</span><span class="p">.</span><span class="n">ExampleServiceServicer</span><span class="p">):</span>
+      <span class="k">def</span> <span class="nf">GetData</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+          <span class="c1"># Implement the logic to process the request and generate a response
+</span>          <span class="n">response</span> <span class="o">=</span> <span class="n">service_pb2</span><span class="p">.</span><span class="nc">DataResponse</span><span class="p">()</span>
+          <span class="n">response</span><span class="p">.</span><span class="n">result</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Received query: </span><span class="si">{</span><span class="n">request</span><span class="p">.</span><span class="n">query</span><span class="si">}</span><span class="sh">"</span>
+          <span class="k">return</span> <span class="n">response</span>
+
+  <span class="k">def</span> <span class="nf">serve</span><span class="p">():</span>
+      <span class="n">server</span> <span class="o">=</span> <span class="n">grpc</span><span class="p">.</span><span class="nf">server</span><span class="p">(</span><span class="n">futures</span><span class="p">.</span><span class="nc">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+      <span class="n">service_pb2_grpc</span><span class="p">.</span><span class="nf">add_ExampleServiceServicer_to_server</span><span class="p">(</span><span class="nc">ExampleServiceServicer</span><span class="p">(),</span> <span class="n">server</span><span class="p">)</span>
+      <span class="n">server</span><span class="p">.</span><span class="nf">add_insecure_port</span><span class="p">(</span><span class="sh">'</span><span class="s">[::]:50051</span><span class="sh">'</span><span class="p">)</span>
+      <span class="n">server</span><span class="p">.</span><span class="nf">start</span><span class="p">()</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Server started on port 50051</span><span class="sh">"</span><span class="p">)</span>
+      <span class="n">server</span><span class="p">.</span><span class="nf">wait_for_termination</span><span class="p">()</span>
+
+  <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+      <span class="nf">serve</span><span class="p">()</span>
+
+</code></pre></div></div>
+
+<h4 id="step-4-create-the-client">Step 4: Create the Client</h4>
+
+<p>Create a file named <strong>client.js</strong> to implement the client-side logic.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="language-"><code>  <span class="kd">const</span> <span class="nx">grpc</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@grpc/grpc-js</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">protoLoader</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@grpc/proto-loader</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">packageDefinition</span> <span class="o">=</span> <span class="nx">protoLoader</span><span class="p">.</span><span class="nf">loadSync</span><span class="p">(</span><span class="dl">'</span><span class="s1">service.proto</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">keepCase</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">longs</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+      <span class="na">enums</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+      <span class="na">defaults</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">oneofs</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">});</span>
+  <span class="kd">const</span> <span class="nx">grpcExample</span> <span class="o">=</span> <span class="nx">grpc</span><span class="p">.</span><span class="nf">loadPackageDefinition</span><span class="p">(</span><span class="nx">packageDefinition</span><span class="p">).</span><span class="nx">grpc_example</span><span class="p">;</span>
+
+  <span class="kd">function</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">grpcExample</span><span class="p">.</span><span class="nc">Greeter</span><span class="p">(</span><span class="dl">'</span><span class="s1">localhost:50051</span><span class="dl">'</span><span class="p">,</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">credentials</span><span class="p">.</span><span class="nf">createInsecure</span><span class="p">());</span>
+
+      <span class="kd">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">World</span><span class="dl">'</span> <span class="p">};</span>
+
+      <span class="nx">client</span><span class="p">.</span><span class="nc">SayHello</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">if </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+              <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Greeting:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">response</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+          <span class="p">}</span>
+      <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="nf">main</span><span class="p">();</span>
+
+</code></pre></div></div>
+
+<h4 id="step-5-run-the-server-and-client">Step 5: Run the Server and Client</h4>
+
+<ol>
+  <li>Start the server by running <strong>python server.py</strong> in one terminal.</li>
+  <li>In another terminal, run the client by executing <strong>python client.py</strong>.
+You should see the server output indicating it has started, and the client will print the response received from the server.</li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>gRPC is a powerful framework for building efficient and scalable distributed systems. Its use of HTTP/2 and Protocol Buffers makes it a high-performance alternative to traditional RESTful APIs. By following the steps outlined in this example, you can quickly set up a gRPC client-server communication in Python, enabling you to build robust microservices and distributed applications.</p>
+
+
+</div>
+
+<!-- Rating -->
+
+
+<!-- Author Box if enabled from _config.yml -->
+<!-- Author Box -->
+
+
+<div class="authorbox mb-5 mt-5 pt-4 pb-4">   
+    <div class="row">
+        <div class="wrapavname col-md-3 text-center">
+            
+            <img  class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+            
+            <p class="mt-4 mb-0 small text-center">
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href=""><i class="fa fa-link"></i></a> 
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href=""><i class="fab fa-twitter"></i></a>
+                <a class="d-inline-block mx-1 text-dark" href="mailto:ettljens@gmail.com"><i class="fa fa-envelope"></i></a>
+            </p>
+        </div>
+        <div class="col-md-9">
+            <h4>Jens</h4>
+            <p class="mt-3 mb-0">Content creator for this blog and user of this Jekyll template. I love to tackle problems with creative coding solutions and automations.</p>
+        </div>
+    </div> 
+</div> 
+
+
+
+<!-- Comments if not disabled with comments: false -->
+<!-- Comments
+================================================== -->
+ 
+<div class="comments mt-5">
+    <button class="btn btn-outline-dark py-2 px-5 d-block w-100 show-comments"><i class="fa fa-comments text-muted"></i> &nbsp; Load Comments</button>         
+    <div id="comments">  
+        <h4 class="mb-4">Comments</h4>                 
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'blogwebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+     
+    <div class="clearfix"></div>              
+    </div>    
+</div>       
+
+
+<!-- Share -->
+<div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=[PROJECT] Creating an efficient gRPC Client-Server Communication&url=/PRJ-gRPC-client-server/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=/PRJ-gRPC-client-server/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=/PRJ-gRPC-client-server/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+
+<!-- Related Post -->
+<!-- Related Posts
+================================================== -->
+<div class=" related-posts ">  
+
+    
+    <h2 class="text-center mb-4">Explore more like this</h2>
+    
+    
+    <div class="d-flex justify-content-center align-items-center">
+    
+    <!-- Categories -->
+    
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#gRPC">gRPC</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#javascript">javascript</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#protobuf">protobuf</a>                
+    
+
+    <!-- Tags -->  
+    
+    
+
+    </div>
+
+    
+    
+    
+    <div class="blog-grid-container">
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+            <!-- begin post -->
+
+
+<div class="blog-grid-item">
+    <div class="card h-100">
+        <div class="maxthumb">
+            <a href="/TOP-API-methods-explained/">
+                
+
+                    
+                        <img class="img-thumb" src="/assets/images/api-types/api-overview.png" alt="Essential API Types Every Developer Should Know"> 
+                    
+
+                
+            </a>
+        </div>
+        <div class="card-body">
+            <h2 class="card-title">
+                <a class="text-dark" href="/TOP-API-methods-explained/">Essential API Types Every Developer Should Know</a>
+                
+            </h2>
+            <h4 class="card-text">APIs (Application Programming Interfaces) are the connective tissue of modern software. They allow systems, apps, and services to talk to each other, powering everything from social media integrations to banking...</h4>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="wrapfooter">
+                
+                <span class="meta-footer-thumb">
+                
+                <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+                
+                </span>
+                <span class="author-meta">
+                <span class="post-name font-weight-bold">Jens</span> 
+                
+                <span class="post-date">01 Sep 2025</span>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end post -->
+            
+            
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        </div>        
+</div>
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+    </div>
+
+    
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-6 col-sm-12 text-center text-lg-left">
+                Copyright © 2026 Jens' Blog 
+            </div>
+            <div class="col-md-6 col-sm-12 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net/memoirs-free-jekyll-theme/">Memoirs Jekyll Theme</a> by WowThemes.net
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts (if you need bootstrap.js, please add it yourself. I didn't use it for performance reasons, it was not needed in this theme)
+================================================== -->
+
+<!-- <script src="/assets/js/prism.js"></script> -->
+
+<script src="/assets/js/theme.js"></script>
+
+
+
+
+<script id="dsq-count-scr" src="//blogwebsite.disqus.com/count.js"></script>
+
+
+</body>
+</html>

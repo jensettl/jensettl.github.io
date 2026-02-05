@@ -1,0 +1,562 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {},
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "2b5fe340-1592-444f-94d8-3b248f15afe9",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "WtZTn967Ia7RPF2W",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputText": "={{ $json.subject }}",
+        "categories": {
+          "categories": [
+            {
+              "category": "Urgent",
+              "description": "=Use this for emails requiring immediate action, strictly within 24 hours. Look for high-stakes language indicating crises, missed deadlines, service outages, security alerts, or direct requests from VIP stakeholders (e.g., \"CEO\", \"Client Emergency\").\n\nKeywords to look for: ASAP, Emergency, Immediate Attention Required, Overdue, Service Down, Security Alert, Final Notice."
+            },
+            {
+              "category": "Invoice",
+              "description": "=Use this for financial transactional emails. This includes incoming bills for payment, receipts for past payments, order confirmations, subscription renewals, and banking notifications.  Keywords to look for: Invoice, Receipt, Bill, Order Confirmation, Payment Successful, Subscription Renewed, Amount Due, PDF attachment with currency symbols."
+            },
+            {
+              "category": "Personal",
+              "description": "=Use this for direct, human-to-human correspondence that is not mass-distributed. These emails usually have a casual or conversational tone, specific context unique to the relationship, and lack \"Unsubscribe\" links.  Keywords to look for: Meeting for coffee, checking in, personal favor, specific project updates (non-urgent), introductions, family or friends."
+            },
+            {
+              "category": "Newsletter",
+              "description": "=Use this for one-to-many automated communications. This includes marketing blasts, weekly digests, webinar invites, product updates, cold sales outreach, and system notifications that do not require a response.\n\nKeywords to look for: Unsubscribe, Manage Preferences, Weekly Digest, Webinar, Offer inside, No-reply address, Sale, Update."
+            }
+          ]
+        },
+        "options": {
+          "fallback": "other",
+          "systemPromptTemplate": "=You are an expert Email Triage Assistant. Your task is to analyze the provided email Subject and Body and classify it into exactly ONE of the defined categories. Also take the sender email into account.\n\nSubject: {{ $json.subject }}\nText: {{ $json.text }}\nSender: {{ $json.from.value[0].address }}\nAdhere to the following rules:\n1. OUTPUT ONLY the category name (e.g., \"Urgent\"). Do not add punctuation, explanations, or conversational filler.\n2. ORDER OF PRECEDENCE: If an email fits multiple categories, choose the one highest on this list:\n   - Priority 1: Urgent (Highest Priority)\n   - Priority 2: Invoice\n   - Priority 3: Personal\n   - Priority 4: Newsletter\n3. If the email contains a bill but implies a service shut-off or immediate deadline, classify as \"Urgent\" rather than \"Invoice\".\n4. If the email is from a real human but is purely promotional or automated sales outreach, classify as \"Newsletter\"."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1.1,
+      "position": [
+        224,
+        -48
+      ],
+      "id": "2a04d8f2-092e-4906-8996-092dcf52e22f",
+      "name": "Text Classifier"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmOllama",
+      "typeVersion": 1,
+      "position": [
+        176,
+        256
+      ],
+      "id": "190c7952-f493-401b-9737-55f031873ce9",
+      "name": "Ollama Model"
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1440,
+        -592
+      ],
+      "id": "3482019e-0300-4bbb-bac8-39bd3b63cc79",
+      "name": "Send a text message",
+      "webhookId": "aa3665d8-5544-42c7-bab5-2262c2b918d4"
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}",
+        "labelIds": [
+          "Label_6442668042286511338"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        656,
+        -592
+      ],
+      "id": "a8a3b13e-069c-4b0a-a74c-81fa8134c4b3",
+      "name": "Add [urgent] to message",
+      "webhookId": "caf43428-991f-496e-bac2-e8fb6a20aa66",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "WtZTn967Ia7RPF2W",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}",
+        "labelIds": [
+          "Label_6442668042286511338"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        656,
+        -320
+      ],
+      "id": "ec4715ec-ac11-457f-9869-cd42dbf3608c",
+      "name": "Add [invoice] to message",
+      "webhookId": "caf43428-991f-496e-bac2-e8fb6a20aa66",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "WtZTn967Ia7RPF2W",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}",
+        "labelIds": [
+          "Label_6442668042286511338"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        656,
+        -144
+      ],
+      "id": "46fece42-ab1f-4917-8a00-f16d0764648a",
+      "name": "Add [personal] to message",
+      "webhookId": "caf43428-991f-496e-bac2-e8fb6a20aa66",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "WtZTn967Ia7RPF2W",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}",
+        "labelIds": [
+          "Label_6442668042286511338"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        656,
+        64
+      ],
+      "id": "e70020cf-5180-4603-97c0-6def92d0506c",
+      "name": "Add [newsletter] to message",
+      "webhookId": "caf43428-991f-496e-bac2-e8fb6a20aa66",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "WtZTn967Ia7RPF2W",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "markAsRead",
+        "messageId": "={{ $json.id }}"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        880,
+        -320
+      ],
+      "id": "7247e067-71c1-4d03-ac15-bd61a067c9b8",
+      "name": "Mark a message as read",
+      "webhookId": "ebba3276-ad1e-41bb-959b-cd3ebc3ea0b3",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "WtZTn967Ia7RPF2W",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "draft",
+        "subject": "hello",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1264,
+        -592
+      ],
+      "id": "2566b685-add3-4923-a183-9d74194a02b2",
+      "name": "Create a draft",
+      "webhookId": "2ef4dee4-39d2-4634-9dba-433563e5bfcf",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "WtZTn967Ia7RPF2W",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        896,
+        -592
+      ],
+      "id": "9d86f5aa-cb66-49e4-9f16-8c11a56cf742",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "typeVersion": 1,
+      "position": [
+        896,
+        -448
+      ],
+      "id": "c8ab3104-142e-4375-9fae-e2b29eda35e4",
+      "name": "Ollama Chat Model"
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1408,
+        -144
+      ],
+      "id": "e74c9b72-5c61-47dc-b402-ff06ec654351",
+      "name": "Send a text message1",
+      "webhookId": "aa3665d8-5544-42c7-bab5-2262c2b918d4"
+    },
+    {
+      "parameters": {
+        "resource": "draft",
+        "subject": "hello",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1232,
+        -144
+      ],
+      "id": "e1bf1c3d-40c5-4ed8-b73e-55f39c4b6263",
+      "name": "Create a draft1",
+      "webhookId": "2ef4dee4-39d2-4634-9dba-433563e5bfcf",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "WtZTn967Ia7RPF2W",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        864,
+        -144
+      ],
+      "id": "f74d5d18-1e76-4709-a752-411dd1f11c9c",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "typeVersion": 1,
+      "position": [
+        864,
+        -16
+      ],
+      "id": "d5b8f4bc-26fc-40f0-87ed-2d3ae588b6df",
+      "name": "Ollama Chat Model1"
+    }
+  ],
+  "pinData": {
+    "Gmail Trigger": [
+      {
+        "json": {
+          "id": "19aaba494e690eb2",
+          "threadId": "19aaba494e690eb2",
+          "labelIds": [
+            "UNREAD",
+            "CATEGORY_UPDATES",
+            "INBOX"
+          ],
+          "sizeEstimate": 27374,
+          "headers": {
+            "delivered-to": "Delivered-To: ettljens@gmail.com",
+            "received": "Received: by 0fbaa70cbae34063972bde781d19627dc70a8922b850dd38a2e690ff8e650cfe with HTTP\r\n id 6921b35966cded20a7a656f3; Sat, 22 Nov 2025 12:58:01 GMT",
+            "x-google-smtp-source": "X-Google-Smtp-Source: AGHT+IE1QmtkmWxVqlnqw+76NEkhJy/qLVX+UX/2NbOu5YR/F9Dt6WdvUyiRZm6FKYsc3ruV3wjO",
+            "x-received": "X-Received: by 2002:a05:620a:198a:b0:8b2:f9ac:a88e with SMTP id af79cd13be357-8b33d268185mr637240385a.43.1763816281551;\r\n        Sat, 22 Nov 2025 04:58:01 -0800 (PST)",
+            "arc-seal": "ARC-Seal: i=1; a=rsa-sha256; t=1763816281; cv=none;\r\n        d=google.com; s=arc-20240605;\r\n        b=ZIKYKBpF7KDU6qynzUHJGJND02USgJVpQflhXbHL2ppyL+n7WSWdNzQWsjf8jQ2Ug0\r\n         CyNFnxn15u0cFoFkjeIphIK+0DG3lzQoJGbNk+RmxXKPqfRLGIi+S6+3+9PDmTxJbFJ3\r\n         9BE6Gww/l/2nQqJ5xjVk1b/O+VHVUpVkqYjMO3hyX/yYMUIh2xOUXUw7OaSIdDbP18BU\r\n         cDH0ZsW2FLfHMjSxf9EiLk25O4/KOPCn8HBJRPbZpycFua1XVINeXciNTrU0LUCUbgH3\r\n         Q8Jukd+8uzCD4pxZ3mQHhvoLGI/6WvVErnJMBg3EFSQ80mirGEZZ0XExyMmC2CUvWVJu\r\n         Ce+g==",
+            "arc-message-signature": "ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;\r\n        h=message-id:to:from:subject:mime-version:date:dkim-signature\r\n         :dkim-signature;\r\n        bh=WcF6Lt3JncmqhIlFzjaRDqYJdCjWnEtyAnz0C5uJkQY=;\r\n        fh=gusGLpCXlxSIP48+t5NzgOGpvBcT3zhH9DtpaQNisRo=;\r\n        b=N7uny2JM6e2huyp/YDhpPHXsmyQ2kiJXweLVb6ZOOAiCygr8nyFznsApwaOeOV5YBp\r\n         9ynm3ihoI1Kg9ouvQeVyh4G7dWEwFeQSDbwnQ0Qe9W2RAyfaDl1jpnWMG3aIvXxhcTy/\r\n         Uwcnkpgb5lyivu26i1DwmlFGPQ59/Xk4JJ7GtmUStA3QlIc8vPxQ2k5DgE6OkhOeG3Hb\r\n         XOwPvCXhvSdhS9PsCBExGgZCNz/3FfiBBFdPn+TWFj1sP1LVYPa3RERBnPBrillXxt0x\r\n         CYYPKC5XRoDcjtOrPuw1kmAp1MzSBTlRAQbWouk/TONPSunrEKZ9F1VhaXvR0zfxqm+W\r\n         /UNg==;\r\n        dara=google.com",
+            "arc-authentication-results": "ARC-Authentication-Results: i=1; mx.google.com;\r\n       dkim=pass header.i=@cio56699.info.n8n.io header.s=mx header.b=DfQXOJBv;\r\n       dkim=pass header.i=@mailgun.org header.s=mg header.b=qV+namWN;\r\n       spf=pass (google.com: domain of postmaster@cio56699.info.n8n.io designates 198.244.52.106 as permitted sender) smtp.mailfrom=postmaster@cio56699.info.n8n.io;\r\n       dmarc=pass (p=REJECT sp=NONE dis=NONE) header.from=n8n.io",
+            "return-path": "Return-Path: <postmaster@cio56699.info.n8n.io>",
+            "received-spf": "Received-SPF: pass (google.com: domain of postmaster@cio56699.info.n8n.io designates 198.244.52.106 as permitted sender) client-ip=198.244.52.106;",
+            "authentication-results": "Authentication-Results: mx.google.com;\r\n       dkim=pass header.i=@cio56699.info.n8n.io header.s=mx header.b=DfQXOJBv;\r\n       dkim=pass header.i=@mailgun.org header.s=mg header.b=qV+namWN;\r\n       spf=pass (google.com: domain of postmaster@cio56699.info.n8n.io designates 198.244.52.106 as permitted sender) smtp.mailfrom=postmaster@cio56699.info.n8n.io;\r\n       dmarc=pass (p=REJECT sp=NONE dis=NONE) header.from=n8n.io",
+            "dkim-signature": "DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1763816281; x=1763823481;\r\n h=Message-Id: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;\r\n bh=WcF6Lt3JncmqhIlFzjaRDqYJdCjWnEtyAnz0C5uJkQY=;\r\n b=qV+namWNYvAtV+/vFAh2JX9VBRI+HP5NmBztvxt7EzM62HOl4yHziX2vbf6CwMVAcmLjlTAMq6jk/DxeVq1rQ1ifUQjN/JUWnSevAJ4ZIibn9Idv/n70MWcBtocscSNryZ+03VTtJJ78b1X9uw+d3LIhoGoll5NDvACrKzQa6KA=",
+            "x-mailgun-sid": "X-Mailgun-Sid: WyI3ZGE2OSIsImV0dGxqZW5zQGdtYWlsLmNvbSIsIjU1OTRiZSJd",
+            "x-feedback-id": "X-Feedback-Id: postmaster@cio56699.info.n8n.io::62ab0d3dd800ab26e5fffc4b:mailgun",
+            "x-mailgun-sending-ip": "X-Mailgun-Sending-Ip: 198.244.52.106",
+            "date": "Date: Sat, 22 Nov 2025 12:58:01 +0000",
+            "mime-version": "Mime-Version: 1.0",
+            "content-type": "Content-Type: multipart/alternative;\r\n boundary=\"647c3dd5f7ae3d9c02ae9f4debb8588878b8b6c43f3358199f238436534d\"",
+            "subject": "Subject: Your free n8n license key to unlock selected paid features",
+            "from": "From: n8n.io <hello@info.n8n.io>",
+            "to": "To: ettljens@gmail.com",
+            "x-mailgun-track-clicks": "X-Mailgun-Track-Clicks: false",
+            "x-mailgun-track-opens": "X-Mailgun-Track-Opens: false",
+            "x-mailgun-dkim": "X-Mailgun-Dkim: true",
+            "x-mailgun-native-send": "X-Mailgun-Native-Send: true",
+            "x-mailer": "X-Mailer: Customer.io (RKLaBQUAAZqrpI0m7eARvK_QPF6Gew==;\r\n +https://whatis.customeriomail.com)",
+            "x-report-abuse-to": "X-Report-Abuse-To: badactor@customer.io",
+            "x-mailgun-variables": "X-Mailgun-Variables: {\"email_id\": \"RKLaBQUAAZqrpI0m7eARvK_QPF6Gew==\"}",
+            "message-id": "Message-Id: <20251122125801.7a031ce533c34671@cio56699.info.n8n.io>"
+          },
+          "html": "<!DOCTYPE html><html xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" lang=\"en\"><head><title></title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"/><!--[if mso]>\n<xml><w:WordDocument xmlns:w=\"urn:schemas-microsoft-com:office:word\"><w:DontUseAdvancedTypographyReadingMail/></w:WordDocument>\n<o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml>\n<![endif]--><!--[if !mso]><!--><link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap\" rel=\"stylesheet\" type=\"text/css\"/><!--<![endif]--><style>\n*{box-sizing:border-box}body{margin:0;padding:0}a[x-apple-data-detectors]{color:inherit!important;text-decoration:inherit!important}#MessageViewBody a{color:inherit;text-decoration:none}p{line-height:inherit}.desktop_hide,.desktop_hide table{mso-hide:all;display:none;max-height:0;overflow:hidden}.image_block img+div{display:none}sub,sup{font-size:75%;line-height:0}#converted-body .list_block ol,#converted-body .list_block ul,.body [class~=x_list_block] ol,.body [class~=x_list_block] ul,u+.body .list_block ol,u+.body .list_block ul{padding-left:20px} @media (max-width:620px){.social_block.desktop_hide .social-table{display:inline-block!important}.mobile_hide{display:none}.row-content{width:100%!important}.stack .column{width:100%;display:block}.mobile_hide{min-height:0;max-height:0;max-width:0;overflow:hidden;font-size:0}.desktop_hide,.desktop_hide table{display:table!important;max-height:none!important}}\n</style><!--[if mso ]><style>sup, sub { font-size: 100% !important; } sup { mso-text-raise:10% } sub { mso-text-raise:-10% }</style> <![endif]--></head><body class=\"body\" style=\"margin:0;background-color:#fff;padding:0;-webkit-text-size-adjust:none;text-size-adjust:none\"><table class=\"nl-container\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff\"><tbody><tr><td><table class=\"row row-1\" align=\"center\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr><td><table class=\"row-content stack\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;color:#000;width:600px;margin:0 auto\" width=\"600\"><tbody><tr><td class=\"column column-1\" width=\"100%\" style=\"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:top\"><table class=\"image_block block-1\" width=\"100%\" border=\"0\" cellpadding=\"20\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr><td class=\"pad\"><div class=\"alignment\" align=\"left\"><div style=\"max-width:150px\"><img src=\"https://userimg-assets.customeriomail.com/images/client-env-93474/mailHeader@2x_01JZ6ACC8A1V7D7B6MDM6KP3K8.png\" style=\"display:block;height:auto;border:0;width:100%\" width=\"150\" alt=\"\" title=\"\" height=\"auto\"/></div></div></td></tr></tbody></table></td></tr></tbody>\n</table></td></tr></tbody></table><table class=\"row row-2\" align=\"center\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr><td><table class=\"row-content stack\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;border-radius:5px;color:#000;width:600px;margin:0 auto\" width=\"600\"><tbody><tr><td class=\"column column-1\" width=\"100%\" style=\"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-left:20px;padding-right:20px;padding-top:10px;vertical-align:top\"><table class=\"paragraph_block block-1\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tbody><tr><td class=\"pad\"><div style=\"color:#28292a;direction:ltr;font-family:&#39;Open Sans&#39;,&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:left;mso-line-height-alt:24px\"><p style=\"margin:0;margin-bottom:16px\">Hi there,</p><p style=\"margin:0\">Please find your license key below to unlock selected paid features on your community edition of n8n. </p></div>\n</td></tr></tbody></table><table class=\"heading_block block-2\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr><td class=\"pad\" style=\"padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:30px;text-align:center;width:100%\"><h1 style=\"margin:0;color:#28292a;direction:ltr;font-family:&#39;Open Sans&#39;,&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:20px;font-weight:700;letter-spacing:normal;line-height:1.5;text-align:left;margin-top:0;margin-bottom:0;mso-line-height-alt:30px\"><span class=\"tinyMce-placeholder\" style=\"word-break: break-word;\">Your license key</span></h1></td></tr></tbody></table><table class=\"paragraph_block block-3\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tbody><tr><td class=\"pad\"><div style=\"color:#28292a;direction:ltr;font-family:&#39;Open Sans&#39;,&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:left;mso-line-height-alt:24px\"><p style=\"margin:0\">ed3951f2-c1cf-4233-8ea6-fca83cf1bb73</p></div></td></tr></tbody></table><table class=\"button_block block-4\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr><td class=\"pad\"><div class=\"alignment\" align=\"left\"><a href=\"https://email.info.n8n.io/e/c/eyJlbWFpbF9pZCI6IlJLTGFCUVVBQVpxcnBJMG03ZUFSdktfUVBGNkdldz09IiwiaHJlZiI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTY3OC9zZXR0aW5ncy91c2FnZT9rZXk9ZWQzOTUxZjItYzFjZi00MjMzLThlYTYtZmNhODNjZjFiYjczIiwiaW50ZXJuYWwiOiJhMmRhMDUyOGE5ZTYwMWFhODU0YiIsImxpbmtfaWQiOjEzNjB9/08b0851504df36d3daace5d7a6b1cb6054d61bbf3be029ac97e77f86443349fc\" target=\"_blank\" style=\"color:#ffffff;text-decoration:none;\"><!--[if mso]>\n<v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" href=\"https://email.info.n8n.io/e/c/eyJlbWFpbF9pZCI6IlJLTGFCUVVBQVpxcnBJMG03ZUFSdktfUVBGNkdldz09IiwiaHJlZiI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTY3OC9zZXR0aW5ncy91c2FnZT9rZXk9ZWQzOTUxZjItYzFjZi00MjMzLThlYTYtZmNhODNjZjFiYjczIiwiaW50ZXJuYWwiOiJhMmRhMDUyOGE5ZTYwMWFhODU0YiIsImxpbmtfaWQiOjEzNjB9/08b0851504df36d3daace5d7a6b1cb6054d61bbf3be029ac97e77f86443349fc\" style=\"height:42px;width:189px;v-text-anchor:middle;\" arcsize=\"10%\" fillcolor=\"#ff6451\">\n<v:stroke dashstyle=\"Solid\" weight=\"0px\" color=\"#ff6451\"/>\n<w:anchorlock/>\n<v:textbox inset=\"0px,0px,0px,0px\">\n<center dir=\"false\" style=\"color:#ffffff;font-family:sans-serif;font-size:16px\">\n<![endif]-->\n<span class=\"button\" style=\"background-color: #ff6451; border-bottom: 0px solid transparent; border-left: 0px solid transparent; border-radius: 4px; border-right: 0px solid transparent; border-top: 0px solid transparent; color: #ffffff; display: inline-block; font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; mso-border-alt: none; padding-bottom: 5px; padding-top: 5px; padding-left: 20px; padding-right: 20px; text-align: center; width: auto; word-break: keep-all; letter-spacing: normal;\"><span style=\"word-break: break-word; line-height: 32px;\">Activate License Key</span></span>\n<!--[if mso]></center></v:textbox></v:roundrect><![endif]--></a></div></td></tr></tbody></table><table class=\"paragraph_block block-5\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tbody><tr><td class=\"pad\" style=\"padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:30px\"><div style=\"color:#28292a;direction:ltr;font-family:&#39;Open Sans&#39;,&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:20px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:left;mso-line-height-alt:30px\"><p style=\"margin:0\"><strong>Getting started and what happens next:</strong></p></div></td></tr></tbody></table><table class=\"list_block block-6\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word;color:#28292a;direction:ltr;font-family:&#39;Open Sans&#39;,&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:left;mso-line-height-alt:24px\"><tbody><tr><td class=\"pad\"><div style=\"margin-left:-20px\"><ul style=\"margin-top:0;margin-bottom:0;list-style-type:disc\"><div style=\"margin-left:-25px\"><ul style=\"margin-top:0;margin-bottom:0;list-style-type:disc\"><li style=\"Margin:12px 0 12px 0\"><strong>Activate Your License: </strong>Use the button above or copy and paste the license key into settings → usage → plan → enter activation key.<br/><em>You have 14 days to activate your license.</em></li><li style=\"Margin:0 0 12px 0\">\n<strong>Explore Features:</strong> Take a look the features you&#39;ve unlocked, <a href=\"https://email.info.n8n.io/e/c/eyJlbWFpbF9pZCI6IlJLTGFCUVVBQVpxcnBJMG03ZUFSdktfUVBGNkdldz09IiwiaHJlZiI6Imh0dHBzOi8vZG9jcy5uOG4uaW8vd29ya2Zsb3dzL2hpc3RvcnkvIiwiaW50ZXJuYWwiOiJhMmRhMDUyOGE5ZTYwMWFhODU0YiIsImxpbmtfaWQiOjEzNTR9/5a7c2a5d6188269642ac34dedb51b2e3d0e539a829df36591b9b70293387697f\" target=\"_blank\" class=\"\" style=\"text-decoration: underline; color: #28292a;\" rel=\"noopener\">Workflow history</a>, <a href=\"https://email.info.n8n.io/e/c/eyJlbWFpbF9pZCI6IlJLTGFCUVVBQVpxcnBJMG03ZUFSdktfUVBGNkdldz09IiwiaHJlZiI6Imh0dHBzOi8vZG9jcy5uOG4uaW8vd29ya2Zsb3dzL2V4ZWN1dGlvbnMvZGVidWcvIiwiaW50ZXJuYWwiOiJhMmRhMDUyOGE5ZTYwMWFhODU0YiIsImxpbmtfaWQiOjEzNTN9/996265b5bdff8c057ff3a8d77054e75ba7afad9637a208b33ce7bd17b2638042\" target=\"_blank\" class=\"\" style=\"text-decoration: underline; color: #28292a;\" rel=\"noopener\">Debug in editor</a>, <a href=\"https://email.info.n8n.io/e/c/eyJlbWFpbF9pZCI6IlJLTGFCUVVBQVpxcnBJMG03ZUFSdktfUVBGNkdldz09IiwiaHJlZiI6Imh0dHBzOi8vZG9jcy5uOG4uaW8vcmVsZWFzZS1ub3Rlcy8jbjhuMTg1MCIsImludGVybmFsIjoiYTJkYTA1MjhhOWU2MDFhYTg1NGIiLCJsaW5rX2lkIjoyOTA5fQ/52ba9bcc6f458f3ae57481f5c5e6c5dffc44b1edc9c16d00101ca481854a0a01\" target=\"_blank\" class=\"\" style=\"text-decoration: underline; color: #28292a;\" rel=\"noopener\">Folders</a> and <a href=\"https://email.info.n8n.io/e/c/eyJlbWFpbF9pZCI6IlJLTGFCUVVBQVpxcnBJMG03ZUFSdktfUVBGNkdldz09IiwiaHJlZiI6Imh0dHBzOi8vZG9jcy5uOG4uaW8vd29ya2Zsb3dzL2V4ZWN1dGlvbnMvY3VzdG9tLWV4ZWN1dGlvbnMtZGF0YS8iLCJpbnRlcm5hbCI6ImEyZGEwNTI4YTllNjAxYWE4NTRiIiwibGlua19pZCI6MTU5Mn0/8d7306444b47b2b1aa4f6db9120928d41f7304a26125193dd0500f298de8ead9\" target=\"_blank\" class=\"\" style=\"text-decoration: underline; color: #28292a;\" rel=\"noopener\">custom execution search</a>.\n</li><li style=\"Margin:0 0 12px 0\"><strong>Unlocked for life: </strong>You&#39;ll have life time access to these features</li></ul></div></ul></div></td></tr></tbody></table><table class=\"paragraph_block block-7\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tbody><tr><td class=\"pad\" style=\"padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:30px\"><div style=\"color:#28292a;direction:ltr;font-family:&#39;Open Sans&#39;,&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:20px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:left;mso-line-height-alt:30px\"><p style=\"margin:0\"><strong>Need Help?</strong></p></div></td></tr></tbody></table><table class=\"paragraph_block block-8\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tbody><tr><td class=\"pad\"><div style=\"color:#28292a;direction:ltr;font-family:&#39;Open Sans&#39;,&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:left;mso-line-height-alt:24px\"><p style=\"margin:0;margin-bottom:16px\">\nOur <a href=\"https://email.info.n8n.io/e/c/eyJlbWFpbF9pZCI6IlJLTGFCUVVBQVpxcnBJMG03ZUFSdktfUVBGNkdldz09IiwiaHJlZiI6Imh0dHBzOi8vY29tbXVuaXR5Lm44bi5pby8iLCJpbnRlcm5hbCI6ImEyZGEwNTI4YTllNjAxYWE4NTRiIiwibGlua19pZCI6OTJ9/836ef366eba528bea3a4f74f426dea2f8727c0fb97eb9befaf9134d785d465fb\" target=\"_blank\" class=\"\" style=\"text-decoration: underline; color: #28292a;\" rel=\"noopener\">community forum</a> and <a href=\"https://email.info.n8n.io/e/c/eyJlbWFpbF9pZCI6IlJLTGFCUVVBQVpxcnBJMG03ZUFSdktfUVBGNkdldz09IiwiaHJlZiI6Imh0dHBzOi8vZG9jcy5uOG4uaW8vIiwiaW50ZXJuYWwiOiJhMmRhMDUyOGE5ZTYwMWFhODU0YiIsImxpbmtfaWQiOjExOH0/8f4988c1883072df1314cf0db3b0db7a061fdfacb8243d52e574e066da1e3802\" target=\"_blank\" class=\"\" style=\"text-decoration: underline; color: #28292a;\" rel=\"noopener\">docs</a> are the best place to to ask questions and find out more about using n8n!<strong><br/></strong></p><p style=\"margin:0\">Happy automating!<br/>The n8n Team</p>\n</div></td></tr></tbody></table><table class=\"divider_block block-9\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr><td class=\"pad\" style=\"padding-bottom:30px;padding-left:10px;padding-right:10px;padding-top:30px\"><div class=\"alignment\" align=\"center\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" width=\"100%\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr><td class=\"divider_inner\" style=\"font-size:1px;line-height:1px;border-top:1px solid #bbb\"><span style=\"word-break: break-word;\"> </span></td></tr></tbody></table></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table class=\"row row-3\" align=\"center\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr><td><table class=\"row-content stack\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;color:#000;width:600px;margin:0 auto\" width=\"600\"><tbody><tr><td class=\"column column-1\" width=\"100%\" style=\"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-bottom:20px;padding-left:20px;padding-right:20px;vertical-align:top\"><table class=\"social_block block-1\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr><td class=\"pad\"><div class=\"alignment\" align=\"left\"><table class=\"social-table\" width=\"168.66666666666669px\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;display:inline-block\"><tbody><tr><td style=\"padding:0 4px 0 0\"><a href=\"\" target=\"_blank\"><img src=\"https://userimg-assets.customeriomail.com/images/client-env-93474/MailFooterLogosDiscord@2x_01JZ6C7CXVTG2PFKT05M2EFDDQ.png\" width=\"41.333333333333336\" height=\"auto\" alt=\"Custom\" title=\"Custom\" style=\"display:block;height:auto;border:0\"/></a></td><td style=\"padding:0 4px 0 0\"><a href=\"\" target=\"_blank\"><img src=\"https://userimg-assets.customeriomail.com/images/client-env-93474/MailFooterLogosGithub@2x_01JZ6C7CXT9RS5PQCN9XCQ0V1S.png\" width=\"33.333333333333336\" height=\"auto\" alt=\"Custom\" title=\"Custom\" style=\"display:block;height:auto;border:0\"/></a></td><td style=\"padding:0 4px 0 0\"><a href=\"\" target=\"_blank\"><img src=\"https://userimg-assets.customeriomail.com/images/client-env-93474/MailFooterLogosYouTube@2x_01JZ6C7CXV1TABTDYV3CB6HXW3.png\" width=\"46\" height=\"auto\" alt=\"Custom\" title=\"Custom\" style=\"display:block;height:auto;border:0\"/></a></td><td style=\"padding:0 4px 0 0\"><a href=\"\" target=\"_blank\"><img src=\"https://userimg-assets.customeriomail.com/images/client-env-93474/Untitled%20design%20(44)_01JXAQ7RJWXBYP0KQ5NTY2NHG9.png\" width=\"32\" height=\"auto\" alt=\"Custom\" title=\"Custom\" style=\"display:block;height:auto;border:0\"/></a></td></tr></tbody></table></div></td></tr></tbody></table><table class=\"paragraph_block block-2\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tbody><tr><td class=\"pad\"><div style=\"color:#909398;direction:ltr;font-family:&#39;Open Sans&#39;,&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:left;mso-line-height-alt:24px\"><p style=\"margin:0\">Automate without limits</p></div></td></tr></tbody></table><table class=\"paragraph_block block-3\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tbody><tr><td class=\"pad\"><div style=\"color:#909398;direction:ltr;font-family:&#39;Open Sans&#39;,&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:left;mso-line-height-alt:21px\"><p style=\"margin:0\">n8n GmbH, Novalisstraße 10, 10115 Berlin, Germany<br/>©2025 n8n GmbH, all rights reserved<br/>\n<a href=\"https://email.info.n8n.io/e/c/eyJlbWFpbF9pZCI6IlJLTGFCUVVBQVpxcnBJMG03ZUFSdktfUVBGNkdldz09IiwiaHJlZiI6Imh0dHBzOi8vYXNzZXRzLnBhcmNlbGRucy5jb20vZGVzaWduLXN0dWRpby1tYXJzaGFsZWQtcHJldmlldy8lN0IlJTIwdW5zdWJzY3JpYmUlMjAlJTdEIiwiaW50ZXJuYWwiOiJhMmRhMDUyOGE5ZTYwMWFhODU0YiIsImxpbmtfaWQiOjM3MjF9/97bf656c7f593c184b73d8c215a7bd0fcd45a16174fd9c29f81da061cd663425\" style=\"text-decoration: underline; color: #28292a;\">Unsubscribe</a> <a href=\"https://email.info.n8n.io/e/c/eyJlbWFpbF9pZCI6IlJLTGFCUVVBQVpxcnBJMG03ZUFSdktfUVBGNkdldz09IiwiaHJlZiI6Imh0dHBzOi8vYXNzZXRzLnBhcmNlbGRucy5jb20vZGVzaWduLXN0dWRpby1tYXJzaGFsZWQtcHJldmlldy8lN0IlJTIwdmlld19pbl9icm93c2VyX3VybCUyMCUlN0QiLCJpbnRlcm5hbCI6ImEyZGEwNTI4YTllNjAxYWE4NTRiIiwibGlua19pZCI6MzcyMn0/27edabeeb84bc2d18df59decedf2a3f63e0c8d0b5c2d378148c472d7e0f96792\" style=\"text-decoration: underline; color: #28292a;\">View email in browser</a></p></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><!-- End --><img src=\"https://email.info.n8n.io/e/o/eyJlbWFpbF9pZCI6IlJLTGFCUVVBQVpxcnBJMG03ZUFSdktfUVBGNkdldz09In0=\" style=\"height: 1px !important; max-height: 1px !important; max-width: 1px !important; width: 1px !important; display: none !important;\" alt=\"\"/></body></html>",
+          "text": "Hi there,\n\nPlease find your license key below to unlock selected paid features on your community edition of n8n. \n\n****************\nYour license key\n****************\n\ned3951f2-c1cf-4233-8ea6-fca83cf1bb73\n\nActivate License Key ( http://localhost:5678/settings/usage?key=ed3951f2-c1cf-4233-8ea6-fca83cf1bb73 )Getting started and what happens next:\n\n* Activate Your License: Use the button above or copy and paste the license key into settings → usage → plan → enter activation key.\nYou have 14 days to activate your license.\n*\nExplore Features: Take a look the features you've unlocked, Workflow history ( https://docs.n8n.io/workflows/history/ ), Debug in editor ( https://docs.n8n.io/workflows/executions/debug/ ), Folders ( https://docs.n8n.io/release-notes/#n8n1850 ) and custom execution search ( https://docs.n8n.io/workflows/executions/custom-executions-data/ ).\n* Unlocked for life: You'll have life time access to these features\nNeed Help?\n\nOur community forum ( https://community.n8n.io/ ) and docs ( https://docs.n8n.io/ ) are the best place to to ask questions and find out more about using n8n!\n\nHappy automating!\nThe n8n Team\n\n CustomCustomCustomCustomAutomate without limits\n\nn8n GmbH, Novalisstraße 10, 10115 Berlin, Germany\n©2025 n8n GmbH, all rights reserved\n\nUnsubscribe ( https://assets.parceldns.com/design-studio-marshaled-preview/%7B%%20unsubscribe%20%%7D ) View email in browser ( https://assets.parceldns.com/design-studio-marshaled-preview/%7B%%20view_in_browser_url%20%%7D )",
+          "textAsHtml": "<p>Hi there,</p><p>Please find your license key below to unlock selected paid features on your community edition of n8n.&nbsp;</p><p>****************<br/>Your license key<br/>****************</p><p>ed3951f2-c1cf-4233-8ea6-fca83cf1bb73</p><p>Activate License Key ( <a href=\"http://localhost:5678/settings/usage?key=ed3951f2-c1cf-4233-8ea6-fca83cf1bb73\">http://localhost:5678/settings/usage?key=ed3951f2-c1cf-4233-8ea6-fca83cf1bb73</a> )Getting started and what happens next:</p><p>* Activate Your License: Use the button above or copy and paste the license key into settings &rarr; usage &rarr; plan &rarr; enter activation key.<br/>You have 14 days to activate your license.<br/>*<br/>Explore Features: Take a look the features you&apos;ve unlocked, Workflow history ( <a href=\"https://docs.n8n.io/workflows/history/\">https://docs.n8n.io/workflows/history/</a> ), Debug in editor ( <a href=\"https://docs.n8n.io/workflows/executions/debug/\">https://docs.n8n.io/workflows/executions/debug/</a> ), Folders ( <a href=\"https://docs.n8n.io/release-notes/#n8n1850\">https://docs.n8n.io/release-notes/#n8n1850</a> ) and custom execution search ( <a href=\"https://docs.n8n.io/workflows/executions/custom-executions-data/\">https://docs.n8n.io/workflows/executions/custom-executions-data/</a> ).<br/>* Unlocked for life: You&apos;ll have life time access to these features<br/>Need Help?</p><p>Our community forum ( <a href=\"https://community.n8n.io/\">https://community.n8n.io/</a> ) and docs ( <a href=\"https://docs.n8n.io/\">https://docs.n8n.io/</a> ) are the best place to to ask questions and find out more about using n8n!</p><p>Happy automating!<br/>The n8n Team</p><p>&hairsp;CustomCustomCustomCustomAutomate without limits</p><p>n8n GmbH, Novalisstra&szlig;e 10, 10115 Berlin, Germany<br/>&copy;2025 n8n GmbH, all rights reserved</p><p>Unsubscribe ( <a href=\"https://assets.parceldns.com/design-studio-marshaled-preview/%7B%%20unsubscribe%20%%7D\">https://assets.parceldns.com/design-studio-marshaled-preview/%7B%%20unsubscribe%20%%7D</a> )&nbsp;View email in browser ( <a href=\"https://assets.parceldns.com/design-studio-marshaled-preview/%7B%%20view_in_browser_url%20%%7D\">https://assets.parceldns.com/design-studio-marshaled-preview/%7B%%20view_in_browser_url%20%%7D</a> )</p>",
+          "subject": "Your free n8n license key to unlock selected paid features",
+          "date": "2025-11-22T12:58:01.000Z",
+          "to": {
+            "value": [
+              {
+                "address": "ettljens@gmail.com",
+                "name": ""
+              }
+            ],
+            "html": "<span class=\"mp_address_group\"><a href=\"mailto:ettljens@gmail.com\" class=\"mp_address_email\">ettljens@gmail.com</a></span>",
+            "text": "ettljens@gmail.com"
+          },
+          "from": {
+            "value": [
+              {
+                "address": "hello@info.n8n.io",
+                "name": "n8n.io"
+              }
+            ],
+            "html": "<span class=\"mp_address_group\"><span class=\"mp_address_name\">n8n.io</span> &lt;<a href=\"mailto:hello@info.n8n.io\" class=\"mp_address_email\">hello@info.n8n.io</a>&gt;</span>",
+            "text": "\"n8n.io\" <hello@info.n8n.io>"
+          },
+          "messageId": "<20251122125801.7a031ce533c34671@cio56699.info.n8n.io>"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Classifier": {
+      "main": [
+        [
+          {
+            "node": "Add [urgent] to message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add [invoice] to message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add [personal] to message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add [newsletter] to message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add [urgent] to message": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add [invoice] to message": {
+      "main": [
+        [
+          {
+            "node": "Mark a message as read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a draft": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Create a draft",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a draft1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Create a draft1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add [personal] to message": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "aa8af608-08d1-47b4-975c-b5043c81b3d5",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5b15964e990354ea4d66ab23dbb9a0e12dd445b9d726bb09673b83ab6343f293"
+  },
+  "id": "YIo4T73Em4mmPaAR",
+  "tags": []
+}

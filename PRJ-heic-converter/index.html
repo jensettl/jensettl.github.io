@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo1.png">
+
+<title>[PROJECT] Local HEIC-JPEG Converter | Jens' Blog</title>
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[PROJECT] Local HEIC-JPEG Converter | Jens’ Blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="[PROJECT] Local HEIC-JPEG Converter" />
+<meta name="author" content="jens" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windows users often face compatibility issues, as many applications do not support HEIC files natively. To address this, I developed a simple local HEIC to JPEG converter using Python." />
+<meta property="og:description" content="Windows users often face compatibility issues, as many applications do not support HEIC files natively. To address this, I developed a simple local HEIC to JPEG converter using Python." />
+<meta property="og:site_name" content="Jens’ Blog" />
+<meta property="og:image" content="/assets/images/PRJ-heic-converter/cover_heic_converter.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-22T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/images/PRJ-heic-converter/cover_heic_converter.png" />
+<meta property="twitter:title" content="[PROJECT] Local HEIC-JPEG Converter" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"jens"},"dateModified":"2025-10-22T00:00:00+02:00","datePublished":"2025-10-22T00:00:00+02:00","description":"Windows users often face compatibility issues, as many applications do not support HEIC files natively. To address this, I developed a simple local HEIC to JPEG converter using Python.","headline":"[PROJECT] Local HEIC-JPEG Converter","image":"/assets/images/PRJ-heic-converter/cover_heic_converter.png","mainEntityOfPage":{"@type":"WebPage","@id":"/PRJ-heic-converter/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/logo_black_cropped.png"},"name":"jens"},"url":"/PRJ-heic-converter/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+<!-- <link href="/assets/css/prism.css" rel="stylesheet"> -->
+
+<link href="/assets/css/theme.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body>
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+<!-- Begin Sidebar Navigation
+================================================== -->
+
+<div class="sidebar">    
+</div>   
+<div class="nav-icon">
+    <div class="hamburger-bar"></div>
+</div>
+<div id="blackover-nav" class="blackover"></div>
+<nav id="menu">
+    <ul>
+        <h3>Navigation</h3>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/authors">Contributors</a></li>
+        <!-- <li><a href="/contact">Contact</a></li>        -->
+    </ul>   
+</nav>
+
+<script src="/assets/js/lunr.js"></script>
+
+<style>
+    
+</style>
+
+<div class="wrap-search">
+    <div class="d-flex align-items-center ml-auto">
+        <i class="fas fa-search show-search"></i>
+        <form class="bd-search ml-3" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+            <input type="text" class="form-control bigradius text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+        </form>
+    </div>
+</div>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+
+<!-- End Sidebar Navigation
+================================================== -->
+
+<div class="site-content ">
+
+<div class="container">
+
+    <!-- Site Logo/Name
+    ================================================== -->
+   
+    <a class="navbar-brand" href="/">
+        <img src="/assets/images/logo_black_cropped.png" alt="Jens' Blog">
+    </a>  
+   
+
+    <!-- Site Tag
+    ================================================== -->
+    
+
+    <!-- Content
+    ================================================== -->
+    <div class="main-content">
+        <div class="entry-header">
+    <!-- Post Title -->
+    <h1 class="posttitle">[PROJECT] Local HEIC-JPEG Converter</h1>
+    <!-- Author & Date  Box -->
+    
+    
+    <div class="d-flex align-items-center mt-4">
+        <div>
+            
+            <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+            
+        </div>            
+        <div>
+        Written by Jens on 
+        <span class="post-date"><time class="post-date" datetime="2025-10-22">22 Oct 2025</time></span>           
+        
+        </div>            
+    </div>
+    
+</div>
+
+<!-- Adsense under title if enabled from _config.yml (change your pub id and slot) -->
+
+
+<!-- Featured Image -->
+
+<div class="entry-featured-image">
+    
+    <img class="featured-image " src="/assets/images/PRJ-heic-converter/cover_heic_converter.png" alt="[PROJECT] Local HEIC-JPEG Converter">
+    
+</div>
+
+
+<!-- Content -->
+<!-- Post, Page Content
+================================================== -->
+<div class="article-post">
+    <!-- Toc if any -->
+    
+    <!-- End Toc -->
+    <blockquote>
+  <p>Windows users often face compatibility issues, as many applications do not support HEIC files natively. To address this, I developed a simple local HEIC to JPEG converter using Python.</p>
+</blockquote>
+
+<hr />
+<h2 id="the-problem-i-aiming-to-solve">The Problem i aiming to solve</h2>
+<hr />
+
+<p>HEIC (High Efficiency Image Coding) is a modern image format iPhones use to save photos. While it offers better compression and quality compared to JPEG, many applications and platforms still do not support HEIC files. Since me and my friends often save vacations photos as a collection, I needed a quick way to convert HEIC files to the more widely supported JPEG format.</p>
+
+<div class="warning">
+    ⚠️Online converters may pose privacy risks, especially for sensitive images. This local solution ensures your photos remain private.
+</div>
+
+<hr />
+<h2 id="solution-local-python-script-for-heic-to-jpeg-conversion">Solution: Local Python Script for HEIC to JPEG Conversion</h2>
+<hr />
+
+<p>Python suits this task perfectly due to its simplicity and the availability of libraries for image processing. I used the <strong>Pillow</strong> library for image handling and <strong>pillow_heif</strong> for reading HEIC files.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="language-"><code>  <span class="kn">import</span> <span class="n">os</span>                                     <span class="c1"># for file system operations
+</span>  <span class="kn">import</span> <span class="n">logging</span>                                <span class="c1"># for logging conversion status
+</span>  <span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">Image</span>                         <span class="c1"># for image processing
+</span>  <span class="kn">from</span> <span class="n">pillow_heif</span> <span class="kn">import</span> <span class="n">register_heif_opener</span>  <span class="c1"># to handle HEIC files
+</span>  <span class="kn">import</span> <span class="n">tkinter</span>                                <span class="c1"># for GUI file dialogs
+</span>  <span class="kn">from</span> <span class="n">tkinter</span> <span class="kn">import</span> <span class="n">filedialog</span>                <span class="c1"># for file dialog
+</span></code></pre></div></div>
+
+<p>I wanted to cover two main use cases: converting individual files and converting all HEIC files in a selected folder.</p>
+
+<h6 id="convert-individual-files">Convert Individual Files</h6>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="language-"><code>  <span class="c1"># Set up logging
+</span>  <span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="sh">"</span><span class="s">%(message)s</span><span class="sh">"</span><span class="p">)</span>
+
+  <span class="c1"># Prevent an empty tkinter window from appearing
+</span>  <span class="n">tkinter</span><span class="p">.</span><span class="nc">Tk</span><span class="p">().</span><span class="nf">withdraw</span><span class="p">()</span>
+
+  <span class="k">def</span> <span class="nf">convert_files</span><span class="p">(</span><span class="n">files</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+      <span class="sh">"""</span><span class="s">Iterates through a list of files and converts them to JPG format and saves them in the same directory.</span><span class="sh">"""</span>
+
+      <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+          <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+          <span class="n">destFilePath</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">splitext</span><span class="p">(</span><span class="nb">file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="sh">"</span><span class="s">.jpg</span><span class="sh">"</span>
+          <span class="n">img</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">destFilePath</span><span class="p">,</span> <span class="sh">"</span><span class="s">JPEG</span><span class="sh">"</span><span class="p">)</span>
+          <span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="nb">file</span><span class="si">}</span><span class="s"> converted to </span><span class="si">{</span><span class="n">destFilePath</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h6 id="convert-folder">Convert Folder</h6>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="language-"><code>
+  <span class="k">def</span> <span class="nf">convert_folder</span><span class="p">(</span><span class="n">inputFolder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+      <span class="sh">"""</span><span class="s">Converts all HEIC files in a folder to JPG format.</span><span class="sh">"""</span>
+
+      <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">os</span><span class="p">.</span><span class="nf">listdir</span><span class="p">(</span><span class="n">inputFolder</span><span class="p">):</span>
+          <span class="c1"># Skip if not a HEIC file
+</span>          <span class="k">if</span> <span class="ow">not</span> <span class="nb">file</span><span class="p">.</span><span class="nf">lower</span><span class="p">().</span><span class="nf">endswith</span><span class="p">(</span><span class="sh">"</span><span class="s">.heic</span><span class="sh">"</span><span class="p">):</span>
+              <span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="nb">file</span><span class="si">}</span><span class="s"> is not a HEIC file. Skipping...</span><span class="sh">"</span><span class="p">)</span>
+              <span class="k">continue</span>
+
+          <span class="n">filePath</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">inputFolder</span><span class="p">,</span> <span class="nb">file</span><span class="p">)</span>
+          <span class="n">destFilePath</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">inputFolder</span><span class="p">,</span> <span class="sh">"</span><span class="s">converted_jpgs</span><span class="sh">"</span><span class="p">)</span>
+
+          <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">exists</span><span class="p">(</span><span class="n">destFilePath</span><span class="p">):</span>
+              <span class="n">os</span><span class="p">.</span><span class="nf">makedirs</span><span class="p">(</span><span class="n">destFilePath</span><span class="p">)</span>
+
+          <span class="n">output_file</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">destFilePath</span><span class="p">,</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">splitext</span><span class="p">(</span><span class="nb">file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="sh">"</span><span class="s">.jpg</span><span class="sh">"</span><span class="p">)</span>
+          <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">filePath</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="se">\\</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">/</span><span class="sh">"</span><span class="p">))</span>
+          <span class="n">img</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="sh">"</span><span class="s">JPEG</span><span class="sh">"</span><span class="p">)</span>
+          <span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="nb">file</span><span class="si">}</span><span class="s"> converted to </span><span class="si">{</span><span class="n">output_file</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+
+      <span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">Conversion complete.</span><span class="sh">"</span><span class="p">)</span>
+      
+</code></pre></div></div>
+
+<p>Since HEIC files can be in uppercase or lowercase extensions, I used <strong>file.lower().endswith(“.heic”)</strong> to ensure all HEIC files are detected. The script creates a subfolder named <strong>converted_jpgs</strong> within the selected folder to store the converted JPEG files.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="language-"><code>
+  <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+      <span class="sh">"""</span><span class="s">Main function that asks user for input and handles files and folders.</span><span class="sh">"""</span>
+      <span class="nf">register_heif_opener</span><span class="p">()</span>  <span class="c1"># Register the HEIF file format with PIL
+</span>
+      <span class="nf">print</span><span class="p">(</span>
+            <span class="sh">"""</span><span class="s">
+            =====================================
+              HEIC to JPG Converter
+            =====================================
+            </span><span class="sh">"""</span>
+      <span class="p">)</span>
+
+      <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+          <span class="n">input_type</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span>
+              <span class="sh">"""</span><span class="s">
+              Enter the action you would like to perform:
+              
+                [1] Convert all HEIC files in a folder
+                [2] Convert individual HEIC files
+
+              Type </span><span class="sh">'</span><span class="s">exit</span><span class="sh">'</span><span class="s"> or </span><span class="sh">'</span><span class="s">quit</span><span class="sh">'</span><span class="s"> to close the program.
+              
+              </span><span class="sh">"""</span>
+          <span class="p">)</span>
+
+          <span class="k">match</span> <span class="n">input_type</span><span class="p">.</span><span class="nf">lower</span><span class="p">():</span>
+              <span class="k">case</span> <span class="sh">"</span><span class="s">1</span><span class="sh">"</span><span class="p">:</span>
+                  <span class="k">try</span><span class="p">:</span>
+                      <span class="n">folder</span> <span class="o">=</span> <span class="n">filedialog</span><span class="p">.</span><span class="nf">askdirectory</span><span class="p">(</span>
+                          <span class="n">title</span><span class="o">=</span><span class="sh">"</span><span class="s">Select folder containing HEIC files to convert.</span><span class="sh">"</span>
+                      <span class="p">)</span>
+                      <span class="nf">convert_folder</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+                  <span class="k">except</span> <span class="nb">FileNotFoundError</span><span class="p">:</span>
+                      <span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">Folder not found. Please try again.</span><span class="sh">"</span><span class="p">)</span>
+                      <span class="k">continue</span>
+                  <span class="k">break</span>
+              <span class="k">case</span> <span class="sh">"</span><span class="s">2</span><span class="sh">"</span><span class="p">:</span>
+                  <span class="n">files</span> <span class="o">=</span> <span class="n">filedialog</span><span class="p">.</span><span class="nf">askopenfilenames</span><span class="p">(</span>
+                      <span class="n">title</span><span class="o">=</span><span class="sh">"</span><span class="s">Select HEIC files to convert.</span><span class="sh">"</span>
+                  <span class="p">)</span>
+                  <span class="nf">convert_files</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+                  <span class="k">break</span>
+              <span class="k">case</span> <span class="sh">"</span><span class="s">exit</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">quit</span><span class="sh">"</span><span class="p">:</span>
+                  <span class="k">break</span>
+              <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                  <span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">Invalid input. Please enter </span><span class="sh">'</span><span class="s">folder</span><span class="sh">'</span><span class="s"> or </span><span class="sh">'</span><span class="s">files</span><span class="sh">'</span><span class="s">.</span><span class="sh">"</span><span class="p">)</span>
+                  <span class="k">continue</span>
+
+      <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">Press enter to exit.</span><span class="sh">"</span><span class="p">)</span>
+      <span class="nf">exit</span><span class="p">()</span>
+
+
+  <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+      <span class="nf">main</span><span class="p">()</span>
+
+</code></pre></div></div>
+
+<p>This script provides a simple command-line interface for users to select either a folder or individual HEIC files for conversion. It uses <strong>tkinter</strong> to open file dialogs, making it user-friendly.</p>
+
+<p>To run this script, ensure you have the required libraries installed. You can install them using pip:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="language-"><code>  pip <span class="nb">install </span>Pillow pillow-heif
+</code></pre></div></div>
+
+<hr />
+<h2 id="conclusion">Conclusion</h2>
+<hr />
+
+<p>This HEIC to JPEG converter script is a practical solution for Windows users facing compatibility issues with HEIC files.</p>
+
+<p>I learned how Python can be used to fix everyday problems efficiently and safely on your local machine.</p>
+
+<hr />
+<h2 id="improvements">Improvements</h2>
+<hr />
+
+<ul>
+  <li>This repo should be upgraded by using <strong>uv</strong>, a more efficient library manager than pip.</li>
+  <li>Adding a GUI using <strong>tkinter</strong> or <strong>PyQt</strong> for a more user-friendly experience.</li>
+  <li>Implementing batch processing with progress bars for better user feedback.</li>
+  <li>Support for additional image formats like PNG or BMP.</li>
+  <li>Use this base to create a whole n:m format conversion tool.</li>
+</ul>
+
+
+</div>
+
+<!-- Rating -->
+
+
+<!-- Author Box if enabled from _config.yml -->
+<!-- Author Box -->
+
+
+<div class="authorbox mb-5 mt-5 pt-4 pb-4">   
+    <div class="row">
+        <div class="wrapavname col-md-3 text-center">
+            
+            <img  class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+            
+            <p class="mt-4 mb-0 small text-center">
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href=""><i class="fa fa-link"></i></a> 
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href=""><i class="fab fa-twitter"></i></a>
+                <a class="d-inline-block mx-1 text-dark" href="mailto:ettljens@gmail.com"><i class="fa fa-envelope"></i></a>
+            </p>
+        </div>
+        <div class="col-md-9">
+            <h4>Jens</h4>
+            <p class="mt-3 mb-0">Content creator for this blog and user of this Jekyll template. I love to tackle problems with creative coding solutions and automations.</p>
+        </div>
+    </div> 
+</div> 
+
+
+
+<!-- Comments if not disabled with comments: false -->
+<!-- Comments
+================================================== -->
+ 
+<div class="comments mt-5">
+    <button class="btn btn-outline-dark py-2 px-5 d-block w-100 show-comments"><i class="fa fa-comments text-muted"></i> &nbsp; Load Comments</button>         
+    <div id="comments">  
+        <h4 class="mb-4">Comments</h4>                 
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'blogwebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+     
+    <div class="clearfix"></div>              
+    </div>    
+</div>       
+
+
+<!-- Share -->
+<div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=[PROJECT] Local HEIC-JPEG Converter&url=/PRJ-heic-converter/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=/PRJ-heic-converter/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=/PRJ-heic-converter/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+
+<!-- Related Post -->
+<!-- Related Posts
+================================================== -->
+<div class=" related-posts ">  
+
+    
+    <h2 class="text-center mb-4">Explore more like this</h2>
+    
+    
+    <div class="d-flex justify-content-center align-items-center">
+    
+    <!-- Categories -->
+    
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#Project">Project</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#Python">Python</a>                
+    
+
+    <!-- Tags -->  
+    
+    
+
+    </div>
+
+    
+    
+    
+    <div class="blog-grid-container">
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+            <!-- begin post -->
+
+
+<div class="blog-grid-item">
+    <div class="card h-100">
+        <div class="maxthumb">
+            <a href="/PRJ-automatic-file-management/">
+                
+
+                    
+                        <img class="img-thumb" src="/assets/images/PRJ-automatic-file-management/cover_automatic-file-management.png" alt="[PROJECT] Automatic File Management — Organize, Automate with Python Scripting"> 
+                    
+
+                
+            </a>
+        </div>
+        <div class="card-body">
+            <h2 class="card-title">
+                <a class="text-dark" href="/PRJ-automatic-file-management/">[PROJECT] Automatic File Management — Organize, Automate with Python Scripting</a>
+                
+            </h2>
+            <h4 class="card-text">Python can be an amazing tool for automating simple, repetitive tasks on your computer with minimal effort. One tidious task i often face is keeping my downloads folder organized. Over...</h4>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="wrapfooter">
+                
+                <span class="meta-footer-thumb">
+                
+                <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+                
+                </span>
+                <span class="author-meta">
+                <span class="post-name font-weight-bold">Jens</span> 
+                
+                <span class="post-date">22 Nov 2025</span>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end post -->
+            
+            
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+            <!-- begin post -->
+
+
+<div class="blog-grid-item">
+    <div class="card h-100">
+        <div class="maxthumb">
+            <a href="/PRJ-langflow_resume-website/">
+                
+
+                    
+                        <img class="img-thumb" src="/assets/images/PRJ-langflow-resume-website/cover-langflow.png" alt="[PROJECT] Create a static Website based on a resume using Langflow"> 
+                    
+
+                
+            </a>
+        </div>
+        <div class="card-body">
+            <h2 class="card-title">
+                <a class="text-dark" href="/PRJ-langflow_resume-website/">[PROJECT] Create a static Website based on a resume using Langflow</a>
+                
+            </h2>
+            <h4 class="card-text">Langflow is a Low-code AI builder for agentic and RAG applications. It is a powerful tool to build and deploy AI agents and MCP servers. It supports all major LLMs,...</h4>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="wrapfooter">
+                
+                <span class="meta-footer-thumb">
+                
+                <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+                
+                </span>
+                <span class="author-meta">
+                <span class="post-name font-weight-bold">Jens</span> 
+                
+                <span class="post-date">22 Oct 2025</span>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end post -->
+            
+            
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+            <!-- begin post -->
+
+
+<div class="blog-grid-item">
+    <div class="card h-100">
+        <div class="maxthumb">
+            <a href="/PRJ-movie-tracker-automation/">
+                
+
+                    
+                        <img class="img-thumb" src="/assets/images/PRJ-movie-tracker-automation/cover-movie-tracker-automation-removebg-preview.png" alt="[PROJECT] Building a Free Automated Movie and TV Show Tracking System"> 
+                    
+
+                
+            </a>
+        </div>
+        <div class="card-body">
+            <h2 class="card-title">
+                <a class="text-dark" href="/PRJ-movie-tracker-automation/">[PROJECT] Building a Free Automated Movie and TV Show Tracking System</a>
+                
+            </h2>
+            <h4 class="card-text">This project covers the process of creating an automated system to track your movie and TV show collection using Python and free Hosting services. This system helps keep an organized...</h4>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="wrapfooter">
+                
+                <span class="meta-footer-thumb">
+                
+                <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+                
+                </span>
+                <span class="author-meta">
+                <span class="post-name font-weight-bold">Jens</span> 
+                
+                <span class="post-date">15 Oct 2025</span>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end post -->
+            
+            
+                
+        </div>        
+</div>
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+    </div>
+
+    
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-6 col-sm-12 text-center text-lg-left">
+                Copyright © 2026 Jens' Blog 
+            </div>
+            <div class="col-md-6 col-sm-12 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net/memoirs-free-jekyll-theme/">Memoirs Jekyll Theme</a> by WowThemes.net
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts (if you need bootstrap.js, please add it yourself. I didn't use it for performance reasons, it was not needed in this theme)
+================================================== -->
+
+<!-- <script src="/assets/js/prism.js"></script> -->
+
+<script src="/assets/js/theme.js"></script>
+
+
+
+
+<script id="dsq-count-scr" src="//blogwebsite.disqus.com/count.js"></script>
+
+
+</body>
+</html>
