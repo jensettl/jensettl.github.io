@@ -5,8 +5,8 @@
     <description>Welcome to my little footprint on the web.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 05 Feb 2026 22:02:28 +0100</pubDate>
-    <lastBuildDate>Thu, 05 Feb 2026 22:02:28 +0100</lastBuildDate>
+    <pubDate>Thu, 05 Feb 2026 22:05:34 +0100</pubDate>
+    <lastBuildDate>Thu, 05 Feb 2026 22:05:34 +0100</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
     
       <item>
@@ -14,8 +14,6 @@
         <description>&lt;blockquote&gt;
   &lt;p&gt;Flow Launcher is an open-source application that brings the convenience of macOS’s Spotlight search to Windows users. It allows you to quickly launch applications, search files, and perform various tasks with just a few keystrokes.&lt;/p&gt;
 &lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/TOP-flowlauncher-tool-review/flow-launcher.webp&quot; alt=&quot;Flow Launcher&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
