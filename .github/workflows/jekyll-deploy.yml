@@ -33,6 +33,9 @@ jobs:
           ruby-version: '3.1'
           bundler-cache: false # Deaktiviert wegen Platform-Problemen
       
+      - name: Install build dependencies
+        run: sudo apt-get update && sudo apt-get install -y build-essential libffi-dev
+          
       - name: Install dependencies
         run: |
           bundle lock --add-platform x86_64-linux
