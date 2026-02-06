@@ -31,15 +31,13 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-          bundler-cache: false # Deaktiviert wegen Platform-Problemen
+          bundler-cache: false
       
-      - name: Install build dependencies
-        run: sudo apt-get update && sudo apt-get install -y build-essential libffi-dev
-          
       - name: Install dependencies
         run: |
-          bundle lock --add-platform x86_64-linux
-          bundle install
+          bundle config set --local path 'vendor/bundle'
+          bundle lock --add-platform x86_64-linux --update
+          bundle install --jobs 4
       
       - name: Setup Pages
         id: pages
