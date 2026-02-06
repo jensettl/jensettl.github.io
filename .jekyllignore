@@ -1,0 +1,3 @@
+# Ignore vendored gems and other vendored files so Jekyll doesn't parse gem templates
+vendor/
+vendor/bundle/
