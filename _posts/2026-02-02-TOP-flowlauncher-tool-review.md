@@ -8,6 +8,8 @@ image: assets/images/TOP-flowlauncher-tool-review/cover_flow-launcher.png
 
 > Flow Launcher is an open-source application that brings the convenience of macOS's Spotlight search to Windows users. It allows you to quickly launch applications, search files, and perform various tasks with just a few keystrokes.
 
+![Flow Launcher GIF](/assets/images/TOP-flowlauncher-tool-review/flow-launcher.webp)
+
 ## Introduction
 
 In recent times I got frustrated with the default Windows search functionality. which often failed me when I needed to quickly find and launch applications or files. I am familiar with macOS's Spotlight search, which provides a seamless and efficient way to access applications and files. Clean and simple, one hotkey to open dialog window centered on screen, start typing, hit enter to launch. I used Windows PowerToys on a previous setup. A bundle of tools for power users to tune and streamline their Windows experience for greater productivity. Tools like FancyZones for window management, Mouse utilities and PowerToys Run, a quick launcher similar to Spotlight. However, I wanted to explore alternatives and stumbled upon Flow Launcher, an open-source project that promises to bring the Spotlight experience to Windows.
