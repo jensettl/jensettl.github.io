@@ -6,9 +6,13 @@ categories: [ Python ]
 image: assets/images/PRJ-automatic-file-management/cover_automatic-file-management.png
 ---
 
-> Python can be an amazing tool for automating simple, repetitive tasks on your computer with minimal effort. One tidious task i often face is keeping my downloads folder organized. Over time, it can become cluttered with various file types, making it difficult to find what I need quickly. 
+> A Python script that **automatically organizes files in my downloads folder into subfolders** based on their file types. This not only helps keep my workspace tidy but also saves me time and effort in managing my files.
 
-In this project, I developed a Python script that **automatically organizes files in my downloads folder into subfolders** based on their file types. This not only helps keep my workspace tidy but also saves me time and effort in managing my files.
+
+![Organizer Demo GIF](/assets/images/PRJ-automatic-file-management/organizer-demo.webp)
+
+Python can be an amazing tool for automating simple, repetitive tasks on your computer with minimal effort. One tidious task i often face is keeping my downloads folder organized. Over time, it can become cluttered with various file types, making it difficult to find what I need quickly. 
+
 
 ## Features of the Automatic File Management Script
 
@@ -23,20 +27,15 @@ In this project, I developed a Python script that **automatically organizes file
 ![How the Automatic File Management Script Works](/assets/images/PRJ-automatic-file-management/automatic-file-management-diagram.png)
 
 
-#### Example Code Snippet
+#### Code
 
-```python
-
-```
-
-To view the complete code and detailed instructions on how to set up and run the script on your own, check out the [GitHub repository](https://github.com/jensettl/LittleOrganizeHelper_py)
+To view the complete code and detailed instructions on how to set up and run the script on your own, check out the [GitHub repository](https://github.com/jensettl/folder-organizer)
 
 
 ## Potential Enhancements
 
 - **Customizable Rules**: Allow users to define their own rules for file organization.
-- **OCR Integration**: Implement OCR to categorize files based on their content rather than just file type. 
-- **User Interface**: Develop a simple GUI to make it easier for non-technical users
+- **OCR Integration**: Implement OCR to categorize files based on their content rather than just file type.
 
 ## Conclusion
 
