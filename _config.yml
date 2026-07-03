@@ -5,7 +5,8 @@ description: "Welcome to my little footprint on the web."
 subheader: "This is where I share my projects and thoughts on coding, automation, and technology to share my learning journey and improve my writing skills."
 logo: 'assets/images/logo_black_cropped.png'
 favicon: 'assets/images/logo_black_cropped.png'
-baseurl: 
+baseurl:
+url: "https://jensettl.com"
 google_analytics: 'UA-xxxxxxxx-1'
 disqus: 'blogwebsite'
 mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
