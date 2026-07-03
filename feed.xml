@@ -3,11 +3,97 @@
   <channel>
     <title>Jens&apos; Blog</title>
     <description>Welcome to my little footprint on the web.</description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 05 Feb 2026 23:00:12 +0100</pubDate>
-    <lastBuildDate>Thu, 05 Feb 2026 23:00:12 +0100</lastBuildDate>
+    <link>https://jensettl.com/</link>
+    <atom:link href="https://jensettl.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 03 Jul 2026 09:56:21 +0200</pubDate>
+    <lastBuildDate>Fri, 03 Jul 2026 09:56:21 +0200</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
+    
+      <item>
+        <title>Algorithms to Live By: A Guide to Human Decision-Making</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Life is full of choices. In “Algorithms to Live By”, Brian Christian and Tom Griffiths look at how algorithmic approaches can solve everyday human dilemmas. This post breaks down the core principles behind these algorithms and how they can be applied in real-world scenarios to navigating daily chaos.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/algorithms-to-live-by/optimal-stopping-graph.png&quot; alt=&quot;Optimal Stopping 37% Rule Graph&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;We frequently face the frustration of not knowing when to stop searching and finally commit—whether we are looking for a parking spot, interviewing job candidates, or trying to sell a house.&lt;/p&gt;
+
+&lt;p&gt;Looking at more options gives us more data, but waiting too long means we might pass up the best choice entirely. In computer science, this is known as an &lt;strong&gt;Optimal Stopping&lt;/strong&gt; problem. Fortunately, math offers elegant strategies to beat the stress of overthinking.
+The first chapter centers on a classic mathematical puzzle known as the &lt;em&gt;Secretary Problem&lt;/em&gt;. The math assumes you can only evaluate one applicant at a time, you must make an immediate hire-or-fire decision, and once you reject someone, you can never go back. To solve this, the authors introduce a set of rules that apply to a wide variety of real-world scenarios.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;chapter-1-optimal-stopping&quot;&gt;Chapter 1: Optimal Stopping&lt;/h2&gt;
+
+&lt;p&gt;We frequently face the frustration of not knowing when to stop searching and finally commit - wether we are looking for an appartment, interviewing job candidates, or trying to sell a house. Looking at more options gives us more data, but waiting too long means we might pass up the best choice entirely. 
+Fortunately, math offers an elegant approach to beat the stress of overthinking. This problem is known as an &lt;strong&gt;Optimal Stopping&lt;/strong&gt; problem.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-look-then-leap-rule&quot;&gt;The Look-Then-Leap Rule&lt;/h3&gt;
+&lt;p&gt;To maximize your chances of picking the absolute best person from a pool of options, the book outlines the &lt;strong&gt;Look-Then-Leap Rule&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;The Look Phase:&lt;/strong&gt; You set aside a specific portion of your pool as pure research. You gather data to establish a baseline of what a “good” candidate looks like. During this phase, you cannot commit to anyone, no matter how amazing they seem.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The Leap Phase:&lt;/strong&gt; The second this phase ends, you prepare to strike. The very next candidate you meet who outperforms the highest baseline from your look phase gets chosen on the spot.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;But whats the threshold? Does it apply to a large number of candidates? Or a long period of time? Or a large distance between candidates?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;how-the-math-leads-to-37&quot;&gt;How the Math Leads to 37%&lt;/h3&gt;
+&lt;p&gt;To understand where this magic number comes from, the authors break down what happens to your chances of success as the number of applicants increases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;1 Applicant:&lt;/strong&gt; Your chances of picking the best applicant are &lt;strong&gt;100%&lt;/strong&gt;, because you have no other choice.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;2 Applicants:&lt;/strong&gt; Your chances drop to &lt;strong&gt;50%&lt;/strong&gt;. Whether you pick the first person blindly or reject the first and leap to the second, you are essentially flipping a coin.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;3 Applicants:&lt;/strong&gt; This is where the strategy shifts. If you hire blindly, your odds are 1 in 3 (33%). However, if you use a “Look Phase” of exactly &lt;strong&gt;one&lt;/strong&gt; applicant (which is 33% of the pool), you gather data on Candidate 1. Then you move to the “Leap Phase.” If Candidate 2 is better than Candidate 1, you hire them. If not, you are forced to hire Candidate 3. This optimal strategy boosts your chances of getting the absolute best candidate back up to &lt;strong&gt;50%&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;scaling-the-37-rule-to-any-parameter&quot;&gt;Scaling the 37% Rule to Any Parameter&lt;/h3&gt;
+&lt;p&gt;Mathematically, the precise dividing line between looking and leaping is &lt;strong&gt;37%&lt;/strong&gt; (derived from $1/e$). The beauty of this rule is that it doesn’t care what parameter you are measuring; it scales perfectly to numbers of options, total time, or spatial distance:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;By Applicants (Number):&lt;/strong&gt; If you are interviewing 100 applicants, interview and reject the first 37 to set your baseline. From applicant 38 onward, hire the first person who beats that baseline.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;By Days (Time):&lt;/strong&gt; If you give yourself 30 days to find an apartment, spend the first 11 days (37%) just viewing places without signing anything. On day 12, sign the very first place that beats everything you saw in that first week and a half.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Following this strategy yields a fascinating mathematical symmetry: in a completely random pool, it gives you a &lt;strong&gt;37% chance of picking the absolute best option&lt;/strong&gt;. While that might sound low, it is the highest possible mathematical probability of success.&lt;/p&gt;
+
+&lt;h3 id=&quot;no-information-vs-full-information&quot;&gt;No-Information vs. Full-Information&lt;/h3&gt;
+&lt;p&gt;The 37% rule operates under a &lt;strong&gt;No-Information&lt;/strong&gt; constraint—meaning you have zero context about the overall market and can only judge candidates relative to one another. You don’t know if the first applicant is a genius or terrible until you see more people.&lt;/p&gt;
+
+&lt;p&gt;However, the math changes completely when you have &lt;strong&gt;Full-Information&lt;/strong&gt;. Imagine you are looking at applicants’ standardized test scores, where you know exactly what a “perfect 100” means without needing a baseline. When you have access to objective, absolute data, you no longer need a “Look Phase.” Instead, the math switches to a &lt;strong&gt;Threshold Rule&lt;/strong&gt;. You instantly hire the first person who crosses a specific statistical benchmark based on how many applicants are left. If you have many candidates left, your threshold is incredibly high; as you run out of candidates, your standards mathematically drop.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-true-cost-of-time-waiting-costs&quot;&gt;The True Cost of Time (Waiting Costs)&lt;/h3&gt;
+&lt;p&gt;In pure mathematical puzzles, time is free. In human life, it isn’t. Every day an apartment sits empty, a landlord loses rent. Every minute you spend looking for a better parking spot, you waste gas and energy.&lt;/p&gt;
+
+&lt;p&gt;When Christian and Griffiths introduce &lt;strong&gt;Waiting Costs&lt;/strong&gt; into the equation, the optimal strategy changes significantly:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The moment searching costs you something—whether it’s energy, time, or cash—the algorithm tells you to &lt;strong&gt;leap much sooner&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If the cost of continuing the search outweighs the tiny mathematical chance of finding a slightly better option, the look phase shrinks well below 37%. The algorithm adapts to reality: a “good enough” choice today is frequently superior to a perfect choice next month.&lt;/p&gt;
+
+&lt;h3 id=&quot;real-world-applications&quot;&gt;Real-World Applications&lt;/h3&gt;
+&lt;p&gt;Optimal stopping isn’t just a thought experiment; it shows up across countless everyday dilemmas:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;House Selling:&lt;/strong&gt; A seller must decide whether to accept the current offer or keep the house on the market, balancing the hope of a higher bid against the ongoing cost of mortgage payments.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;When to Park:&lt;/strong&gt; Drivers use optimal stopping intuitively as they approach a destination, transitioning from a “look” phase (assessing lot fullness) to a “leap” phase (grabbing the next available spot close to the door).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Dating and Marriage:&lt;/strong&gt; The rule famously applies to the “marriage problem,” calculating how many years one should spend dating around to understand the dating pool before actively looking to settle down.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 18 Jun 2026 00:00:00 +0200</pubDate>
+        <link>https://jensettl.com/BR-algorithms-to-live-by/</link>
+        <guid isPermaLink="true">https://jensettl.com/BR-algorithms-to-live-by/</guid>
+        
+        
+        <category>Book Review</category>
+        
+        <category>Science</category>
+        
+      </item>
     
       <item>
         <title>24/7 Agents with Openclaw</title>
@@ -17,8 +103,8 @@
 
 </description>
         <pubDate>Thu, 05 Feb 2026 00:00:00 +0100</pubDate>
-        <link>/TOP-openclaw-agents/</link>
-        <guid isPermaLink="true">/TOP-openclaw-agents/</guid>
+        <link>https://jensettl.com/TOP-openclaw-agents/</link>
+        <guid isPermaLink="true">https://jensettl.com/TOP-openclaw-agents/</guid>
         
         
         <category>Python</category>
@@ -30,6 +116,8 @@
         <description>&lt;blockquote&gt;
   &lt;p&gt;Flow Launcher is an open-source application that brings the convenience of macOS’s Spotlight search to Windows users. It allows you to quickly launch applications, search files, and perform various tasks with just a few keystrokes.&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/TOP-flowlauncher-tool-review/flow-launcher.webp&quot; alt=&quot;Flow Launcher GIF&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
@@ -92,8 +180,8 @@
 &lt;p&gt;Overall, Flow Launcher is a powerful and efficient tool that brings the convenience of macOS’s Spotlight search to Windows users. Its ease of use, customization options, and extensive plugin support make it a valuable addition to any Windows setup. Whether you’re looking to streamline your workflow or simply want a better way to access applications and files, Flow Launcher is definitely worth trying out.&lt;/p&gt;
 </description>
         <pubDate>Mon, 02 Feb 2026 00:00:00 +0100</pubDate>
-        <link>/TOP-flowlauncher-tool-review/</link>
-        <guid isPermaLink="true">/TOP-flowlauncher-tool-review/</guid>
+        <link>https://jensettl.com/TOP-flowlauncher-tool-review/</link>
+        <guid isPermaLink="true">https://jensettl.com/TOP-flowlauncher-tool-review/</guid>
         
         
         <category>Tool</category>
@@ -205,8 +293,8 @@
 &lt;/div&gt;
 </description>
         <pubDate>Mon, 24 Nov 2025 00:00:00 +0100</pubDate>
-        <link>/TOP-n8n-common-nodes/</link>
-        <guid isPermaLink="true">/TOP-n8n-common-nodes/</guid>
+        <link>https://jensettl.com/TOP-n8n-common-nodes/</link>
+        <guid isPermaLink="true">https://jensettl.com/TOP-n8n-common-nodes/</guid>
         
         
         <category>n8n</category>
@@ -218,10 +306,12 @@
       <item>
         <title>[PROJECT] Automatic File Management — Organize, Automate with Python Scripting</title>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;Python can be an amazing tool for automating simple, repetitive tasks on your computer with minimal effort. One tidious task i often face is keeping my downloads folder organized. Over time, it can become cluttered with various file types, making it difficult to find what I need quickly.&lt;/p&gt;
+  &lt;p&gt;A Python script that &lt;strong&gt;automatically organizes files in my downloads folder into subfolders&lt;/strong&gt; based on their file types. This not only helps keep my workspace tidy but also saves me time and effort in managing my files.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;In this project, I developed a Python script that &lt;strong&gt;automatically organizes files in my downloads folder into subfolders&lt;/strong&gt; based on their file types. This not only helps keep my workspace tidy but also saves me time and effort in managing my files.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/PRJ-automatic-file-management/organizer-demo.webp&quot; alt=&quot;Organizer Demo GIF&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Python can be an amazing tool for automating simple, repetitive tasks on your computer with minimal effort. One tidious task i often face is keeping my downloads folder organized. Over time, it can become cluttered with various file types, making it difficult to find what I need quickly.&lt;/p&gt;
 
 &lt;h2 id=&quot;features-of-the-automatic-file-management-script&quot;&gt;Features of the Automatic File Management Script&lt;/h2&gt;
 
@@ -236,19 +326,15 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/PRJ-automatic-file-management/automatic-file-management-diagram.png&quot; alt=&quot;How the Automatic File Management Script Works&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;example-code-snippet&quot;&gt;Example Code Snippet&lt;/h4&gt;
+&lt;h4 id=&quot;code&quot;&gt;Code&lt;/h4&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;language-&quot;&gt;&lt;code&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;To view the complete code and detailed instructions on how to set up and run the script on your own, check out the &lt;a href=&quot;https://github.com/jensettl/LittleOrganizeHelper_py&quot;&gt;GitHub repository&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To view the complete code and detailed instructions on how to set up and run the script on your own, check out the &lt;a href=&quot;https://github.com/jensettl/folder-organizer&quot;&gt;GitHub repository&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;potential-enhancements&quot;&gt;Potential Enhancements&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Customizable Rules&lt;/strong&gt;: Allow users to define their own rules for file organization.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;OCR Integration&lt;/strong&gt;: Implement OCR to categorize files based on their content rather than just file type.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;User Interface&lt;/strong&gt;: Develop a simple GUI to make it easier for non-technical users&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
@@ -259,8 +345,8 @@
 
 </description>
         <pubDate>Sat, 22 Nov 2025 00:00:00 +0100</pubDate>
-        <link>/PRJ-automatic-file-management/</link>
-        <guid isPermaLink="true">/PRJ-automatic-file-management/</guid>
+        <link>https://jensettl.com/PRJ-automatic-file-management/</link>
+        <guid isPermaLink="true">https://jensettl.com/PRJ-automatic-file-management/</guid>
         
         
         <category>Python</category>
@@ -329,8 +415,8 @@
 
 </description>
         <pubDate>Mon, 17 Nov 2025 00:00:00 +0100</pubDate>
-        <link>/PRJ-n8n-email-inbox-automation/</link>
-        <guid isPermaLink="true">/PRJ-n8n-email-inbox-automation/</guid>
+        <link>https://jensettl.com/PRJ-n8n-email-inbox-automation/</link>
+        <guid isPermaLink="true">https://jensettl.com/PRJ-n8n-email-inbox-automation/</guid>
         
         
         <category>Automation</category>
@@ -356,8 +442,8 @@
 &lt;p&gt;❗ Langflow no longer seems to have a web interface available so my workflow is no longer accessible for me.&lt;/p&gt;
 </description>
         <pubDate>Wed, 22 Oct 2025 00:00:00 +0200</pubDate>
-        <link>/PRJ-langflow_resume-website/</link>
-        <guid isPermaLink="true">/PRJ-langflow_resume-website/</guid>
+        <link>https://jensettl.com/PRJ-langflow_resume-website/</link>
+        <guid isPermaLink="true">https://jensettl.com/PRJ-langflow_resume-website/</guid>
         
         
         <category>Python</category>
@@ -531,8 +617,8 @@
 
 </description>
         <pubDate>Wed, 22 Oct 2025 00:00:00 +0200</pubDate>
-        <link>/PRJ-heic-converter/</link>
-        <guid isPermaLink="true">/PRJ-heic-converter/</guid>
+        <link>https://jensettl.com/PRJ-heic-converter/</link>
+        <guid isPermaLink="true">https://jensettl.com/PRJ-heic-converter/</guid>
         
         
         <category>Project</category>
@@ -692,8 +778,8 @@ Typical examples include temporary files, build artifacts, and system-specific d
 By following these practices, new contributors can manage their code efficiently and collaborate effectively in version-controlled environments.&lt;/p&gt;
 </description>
         <pubDate>Wed, 22 Oct 2025 00:00:00 +0200</pubDate>
-        <link>/PRJ-git_workshop/</link>
-        <guid isPermaLink="true">/PRJ-git_workshop/</guid>
+        <link>https://jensettl.com/PRJ-git_workshop/</link>
+        <guid isPermaLink="true">https://jensettl.com/PRJ-git_workshop/</guid>
         
         
         <category>GitHub</category>
@@ -740,6 +826,7 @@ By following these practices, new contributors can manage their code efficiently
   &lt;li&gt;Decision Automation &amp;amp; Business Rules Engines (Drools, Camunda DMN)&lt;/li&gt;
   &lt;li&gt;AI Enhanced BPM (using AI to optimize and adapt business processes)&lt;/li&gt;
   &lt;li&gt;Cheat Sheets for Tools and Frameworks (LangChain, N8N, Pinecone, Weaviate, etc.)&lt;/li&gt;
+  &lt;li&gt;Tool Showcase: Apple Spotlight for Windows -&amp;gt; Flowlauncher https://github.com/Flow-Launcher/Flow.Launcher?tab=readme-ov-file&lt;/li&gt;
   &lt;li&gt;Tool Review: Openclaw https://www.youtube.com/watch?v=ssYt09bCgUY&lt;/li&gt;
   &lt;li&gt;Tool Review: Traycer&lt;/li&gt;
   &lt;li&gt;Python Basic Libraries for every project: logging, pathlib, … https://www.youtube.com/watch?v=cXl-AUXHHZYw&lt;/li&gt;
@@ -749,68 +836,11 @@ By following these practices, new contributors can manage their code efficiently
 
 </description>
         <pubDate>Tue, 21 Oct 2025 00:00:00 +0200</pubDate>
-        <link>/TOP-coming-soon/</link>
-        <guid isPermaLink="true">/TOP-coming-soon/</guid>
+        <link>https://jensettl.com/TOP-coming-soon/</link>
+        <guid isPermaLink="true">https://jensettl.com/TOP-coming-soon/</guid>
         
         
         <category>Projects</category>
-        
-      </item>
-    
-      <item>
-        <title>Process Mining with Celonis, UIPath and Power Automate</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;Process Mining describes the &lt;strong&gt;analysis of business data in order to visualize, analyze and optimize processes&lt;/strong&gt;. So far I have come across three different tools that can be used for process mining: Celonis, UIPath and Power Automate. In this blog post, I will give a brief overview of each tool and share my experiences with them.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;benefits-of-process-mining&quot;&gt;Benefits of Process Mining&lt;/h1&gt;
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;transparency&quot;&gt;Transparency&lt;/h5&gt;
-&lt;p&gt;It provides a clear view of how processes are actually executed, revealing bottlenecks and inefficiencies.&lt;/p&gt;
-
-&lt;h5 id=&quot;optimization&quot;&gt;Optimization&lt;/h5&gt;
-&lt;p&gt;By analyzing process data, organizations can identify areas for improvement and optimize workflows.&lt;/p&gt;
-
-&lt;h5 id=&quot;compliance&quot;&gt;Compliance&lt;/h5&gt;
-&lt;p&gt;It helps ensure that processes adhere to regulatory requirements by identifying deviations from standard procedures.&lt;/p&gt;
-
-&lt;h5 id=&quot;data-driven-decisions&quot;&gt;Data-Driven Decisions&lt;/h5&gt;
-&lt;p&gt;Process Mining enables organizations to make informed decisions based on actual process data rather than assumptions.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;h2 id=&quot;tools-for-process-mining&quot;&gt;Tools for Process Mining&lt;/h2&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;Depending on the specific needs and context of an organization, different tools may be more suitable for process mining. Here are three popular options:&lt;/p&gt;
-
-&lt;h5 id=&quot;celonis&quot;&gt;Celonis&lt;/h5&gt;
-
-&lt;p&gt;Celonis is a leading process mining platform that offers advanced analytics and visualization capabilities. It allows users to connect to various data sources, extract process data, and create interactive dashboards to analyze process performance. Celonis provides features such as root cause analysis, process conformance checking, and predictive analytics.&lt;/p&gt;
-
-&lt;h5 id=&quot;uipath&quot;&gt;UIPath&lt;/h5&gt;
-
-&lt;p&gt;UIPath is primarily known as a Robotic Process Automation (RPA) tool, but it also offers process mining capabilities through its Process Mining module. UIPath allows users to discover, analyze, and optimize processes by leveraging data from various systems. It provides insights into process bottlenecks and inefficiencies, enabling organizations to automate repetitive tasks and improve overall process efficiency.&lt;/p&gt;
-
-&lt;h5 id=&quot;power-automate&quot;&gt;Power Automate&lt;/h5&gt;
-
-&lt;p&gt;Power Automate, part of the Microsoft Power Platform, offers process mining features through its Process Advisor tool. It enables users to analyze workflows and identify areas for improvement. Power Automate integrates seamlessly with other Microsoft products, making it a convenient choice for organizations already using the Microsoft ecosystem. It provides insights into process performance and helps automate tasks to enhance efficiency.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 19 Oct 2025 00:00:00 +0200</pubDate>
-        <link>/TOP-process_mining/</link>
-        <guid isPermaLink="true">/TOP-process_mining/</guid>
-        
-        
-        <category>Process Mining</category>
-        
-        <category>Celonis</category>
-        
-        <category>UIPath</category>
-        
-        <category>Power Automate</category>
-        
-        <category>Compliance</category>
         
       </item>
     

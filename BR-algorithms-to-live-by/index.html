@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo1.png">
+
+<title>Algorithms to Live By: A Guide to Human Decision-Making | Jens' Blog</title>
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Algorithms to Live By: A Guide to Human Decision-Making | Jens’ Blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Algorithms to Live By: A Guide to Human Decision-Making" />
+<meta name="author" content="jens" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Life is full of choices. In “Algorithms to Live By”, Brian Christian and Tom Griffiths look at how algorithmic approaches can solve everyday human dilemmas. This post breaks down the core principles behind these algorithms and how they can be applied in real-world scenarios to navigating daily chaos." />
+<meta property="og:description" content="Life is full of choices. In “Algorithms to Live By”, Brian Christian and Tom Griffiths look at how algorithmic approaches can solve everyday human dilemmas. This post breaks down the core principles behind these algorithms and how they can be applied in real-world scenarios to navigating daily chaos." />
+<link rel="canonical" href="https://jensettl.com/BR-algorithms-to-live-by/" />
+<meta property="og:url" content="https://jensettl.com/BR-algorithms-to-live-by/" />
+<meta property="og:site_name" content="Jens’ Blog" />
+<meta property="og:image" content="https://jensettl.com/assets/images/algorithms-to-live-by/cover_algorithms_main.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-06-18T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://jensettl.com/assets/images/algorithms-to-live-by/cover_algorithms_main.png" />
+<meta property="twitter:title" content="Algorithms to Live By: A Guide to Human Decision-Making" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"jens"},"dateModified":"2026-06-18T00:00:00+02:00","datePublished":"2026-06-18T00:00:00+02:00","description":"Life is full of choices. In “Algorithms to Live By”, Brian Christian and Tom Griffiths look at how algorithmic approaches can solve everyday human dilemmas. This post breaks down the core principles behind these algorithms and how they can be applied in real-world scenarios to navigating daily chaos.","headline":"Algorithms to Live By: A Guide to Human Decision-Making","image":"https://jensettl.com/assets/images/algorithms-to-live-by/cover_algorithms_main.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://jensettl.com/BR-algorithms-to-live-by/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://jensettl.com/assets/images/logo_black_cropped.png"},"name":"jens"},"url":"https://jensettl.com/BR-algorithms-to-live-by/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+<!-- <link href="/assets/css/prism.css" rel="stylesheet"> -->
+
+<link href="/assets/css/theme.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body>
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+<!-- Begin Sidebar Navigation
+================================================== -->
+
+<div class="sidebar">    
+</div>   
+<div class="nav-icon">
+    <div class="hamburger-bar"></div>
+</div>
+<div id="blackover-nav" class="blackover"></div>
+<nav id="menu">
+    <ul>
+        <h3>Navigation</h3>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/authors">Contributors</a></li>
+        <!-- <li><a href="/contact">Contact</a></li>        -->
+    </ul>   
+</nav>
+
+<script src="/assets/js/lunr.js"></script>
+
+<style>
+    
+</style>
+
+<div class="wrap-search">
+    <div class="d-flex align-items-center ml-auto">
+        <i class="fas fa-search show-search"></i>
+        <form class="bd-search ml-3" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+            <input type="text" class="form-control bigradius text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+        </form>
+    </div>
+</div>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+
+<!-- End Sidebar Navigation
+================================================== -->
+
+<div class="site-content ">
+
+<div class="container">
+
+    <!-- Site Logo/Name
+    ================================================== -->
+   
+    <a class="navbar-brand" href="/">
+        <img src="/assets/images/logo_black_cropped.png" alt="Jens' Blog">
+    </a>  
+   
+
+    <!-- Site Tag
+    ================================================== -->
+    
+
+    <!-- Content
+    ================================================== -->
+    <div class="main-content">
+        <div class="entry-header">
+    <!-- Post Title -->
+    <h1 class="posttitle">Algorithms to Live By: A Guide to Human Decision-Making</h1>
+    <!-- Author & Date  Box -->
+    
+    
+    <div class="d-flex align-items-center mt-4">
+        <div>
+            
+            <img class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+            
+        </div>            
+        <div>
+        Written by Jens on 
+        <span class="post-date"><time class="post-date" datetime="2026-06-18">18 Jun 2026</time></span>           
+        
+        </div>            
+    </div>
+    
+</div>
+
+<!-- Adsense under title if enabled from _config.yml (change your pub id and slot) -->
+
+
+<!-- Featured Image -->
+
+<div class="entry-featured-image">
+    
+    <img class="featured-image " src="/assets/images/algorithms-to-live-by/cover_algorithms_main.png" alt="Algorithms to Live By: A Guide to Human Decision-Making">
+    
+</div>
+
+
+<!-- Content -->
+<!-- Post, Page Content
+================================================== -->
+<div class="article-post">
+    <!-- Toc if any -->
+    
+    <!-- End Toc -->
+    <blockquote>
+  <p>Life is full of choices. In “Algorithms to Live By”, Brian Christian and Tom Griffiths look at how algorithmic approaches can solve everyday human dilemmas. This post breaks down the core principles behind these algorithms and how they can be applied in real-world scenarios to navigating daily chaos.</p>
+</blockquote>
+
+<p><img src="/assets/images/algorithms-to-live-by/optimal-stopping-graph.png" alt="Optimal Stopping 37% Rule Graph" /></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>We frequently face the frustration of not knowing when to stop searching and finally commit—whether we are looking for a parking spot, interviewing job candidates, or trying to sell a house.</p>
+
+<p>Looking at more options gives us more data, but waiting too long means we might pass up the best choice entirely. In computer science, this is known as an <strong>Optimal Stopping</strong> problem. Fortunately, math offers elegant strategies to beat the stress of overthinking.
+The first chapter centers on a classic mathematical puzzle known as the <em>Secretary Problem</em>. The math assumes you can only evaluate one applicant at a time, you must make an immediate hire-or-fire decision, and once you reject someone, you can never go back. To solve this, the authors introduce a set of rules that apply to a wide variety of real-world scenarios.</p>
+
+<hr />
+
+<h2 id="chapter-1-optimal-stopping">Chapter 1: Optimal Stopping</h2>
+
+<p>We frequently face the frustration of not knowing when to stop searching and finally commit - wether we are looking for an appartment, interviewing job candidates, or trying to sell a house. Looking at more options gives us more data, but waiting too long means we might pass up the best choice entirely. 
+Fortunately, math offers an elegant approach to beat the stress of overthinking. This problem is known as an <strong>Optimal Stopping</strong> problem.</p>
+
+<h3 id="the-look-then-leap-rule">The Look-Then-Leap Rule</h3>
+<p>To maximize your chances of picking the absolute best person from a pool of options, the book outlines the <strong>Look-Then-Leap Rule</strong>:</p>
+<ul>
+  <li><strong>The Look Phase:</strong> You set aside a specific portion of your pool as pure research. You gather data to establish a baseline of what a “good” candidate looks like. During this phase, you cannot commit to anyone, no matter how amazing they seem.</li>
+  <li><strong>The Leap Phase:</strong> The second this phase ends, you prepare to strike. The very next candidate you meet who outperforms the highest baseline from your look phase gets chosen on the spot.</li>
+</ul>
+
+<blockquote>
+  <p>But whats the threshold? Does it apply to a large number of candidates? Or a long period of time? Or a large distance between candidates?</p>
+</blockquote>
+
+<h3 id="how-the-math-leads-to-37">How the Math Leads to 37%</h3>
+<p>To understand where this magic number comes from, the authors break down what happens to your chances of success as the number of applicants increases:</p>
+
+<ul>
+  <li><strong>1 Applicant:</strong> Your chances of picking the best applicant are <strong>100%</strong>, because you have no other choice.</li>
+  <li><strong>2 Applicants:</strong> Your chances drop to <strong>50%</strong>. Whether you pick the first person blindly or reject the first and leap to the second, you are essentially flipping a coin.</li>
+  <li><strong>3 Applicants:</strong> This is where the strategy shifts. If you hire blindly, your odds are 1 in 3 (33%). However, if you use a “Look Phase” of exactly <strong>one</strong> applicant (which is 33% of the pool), you gather data on Candidate 1. Then you move to the “Leap Phase.” If Candidate 2 is better than Candidate 1, you hire them. If not, you are forced to hire Candidate 3. This optimal strategy boosts your chances of getting the absolute best candidate back up to <strong>50%</strong>.</li>
+</ul>
+
+<h3 id="scaling-the-37-rule-to-any-parameter">Scaling the 37% Rule to Any Parameter</h3>
+<p>Mathematically, the precise dividing line between looking and leaping is <strong>37%</strong> (derived from $1/e$). The beauty of this rule is that it doesn’t care what parameter you are measuring; it scales perfectly to numbers of options, total time, or spatial distance:</p>
+<ul>
+  <li><strong>By Applicants (Number):</strong> If you are interviewing 100 applicants, interview and reject the first 37 to set your baseline. From applicant 38 onward, hire the first person who beats that baseline.</li>
+  <li><strong>By Days (Time):</strong> If you give yourself 30 days to find an apartment, spend the first 11 days (37%) just viewing places without signing anything. On day 12, sign the very first place that beats everything you saw in that first week and a half.</li>
+</ul>
+
+<p>Following this strategy yields a fascinating mathematical symmetry: in a completely random pool, it gives you a <strong>37% chance of picking the absolute best option</strong>. While that might sound low, it is the highest possible mathematical probability of success.</p>
+
+<h3 id="no-information-vs-full-information">No-Information vs. Full-Information</h3>
+<p>The 37% rule operates under a <strong>No-Information</strong> constraint—meaning you have zero context about the overall market and can only judge candidates relative to one another. You don’t know if the first applicant is a genius or terrible until you see more people.</p>
+
+<p>However, the math changes completely when you have <strong>Full-Information</strong>. Imagine you are looking at applicants’ standardized test scores, where you know exactly what a “perfect 100” means without needing a baseline. When you have access to objective, absolute data, you no longer need a “Look Phase.” Instead, the math switches to a <strong>Threshold Rule</strong>. You instantly hire the first person who crosses a specific statistical benchmark based on how many applicants are left. If you have many candidates left, your threshold is incredibly high; as you run out of candidates, your standards mathematically drop.</p>
+
+<h3 id="the-true-cost-of-time-waiting-costs">The True Cost of Time (Waiting Costs)</h3>
+<p>In pure mathematical puzzles, time is free. In human life, it isn’t. Every day an apartment sits empty, a landlord loses rent. Every minute you spend looking for a better parking spot, you waste gas and energy.</p>
+
+<p>When Christian and Griffiths introduce <strong>Waiting Costs</strong> into the equation, the optimal strategy changes significantly:</p>
+
+<blockquote>
+  <p>The moment searching costs you something—whether it’s energy, time, or cash—the algorithm tells you to <strong>leap much sooner</strong>.</p>
+</blockquote>
+
+<p>If the cost of continuing the search outweighs the tiny mathematical chance of finding a slightly better option, the look phase shrinks well below 37%. The algorithm adapts to reality: a “good enough” choice today is frequently superior to a perfect choice next month.</p>
+
+<h3 id="real-world-applications">Real-World Applications</h3>
+<p>Optimal stopping isn’t just a thought experiment; it shows up across countless everyday dilemmas:</p>
+<ul>
+  <li><strong>House Selling:</strong> A seller must decide whether to accept the current offer or keep the house on the market, balancing the hope of a higher bid against the ongoing cost of mortgage payments.</li>
+  <li><strong>When to Park:</strong> Drivers use optimal stopping intuitively as they approach a destination, transitioning from a “look” phase (assessing lot fullness) to a “leap” phase (grabbing the next available spot close to the door).</li>
+  <li><strong>Dating and Marriage:</strong> The rule famously applies to the “marriage problem,” calculating how many years one should spend dating around to understand the dating pool before actively looking to settle down.</li>
+</ul>
+
+</div>
+
+<!-- Rating -->
+
+
+<!-- Author Box if enabled from _config.yml -->
+<!-- Author Box -->
+
+
+<div class="authorbox mb-5 mt-5 pt-4 pb-4">   
+    <div class="row">
+        <div class="wrapavname col-md-3 text-center">
+            
+            <img  class="author-thumb" src="/assets/images/avatar-jens.png" alt="Jens">
+            
+            <p class="mt-4 mb-0 small text-center">
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href=""><i class="fa fa-link"></i></a> 
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href=""><i class="fab fa-twitter"></i></a>
+                <a class="d-inline-block mx-1 text-dark" href="mailto:ettljens@gmail.com"><i class="fa fa-envelope"></i></a>
+            </p>
+        </div>
+        <div class="col-md-9">
+            <h4>Jens</h4>
+            <p class="mt-3 mb-0">Content creator for this blog and user of this Jekyll template. I love to tackle problems with creative coding solutions and automations.</p>
+        </div>
+    </div> 
+</div> 
+
+
+
+<!-- Comments if not disabled with comments: false -->
+<!-- Comments
+================================================== -->
+ 
+<div class="comments mt-5">
+    <button class="btn btn-outline-dark py-2 px-5 d-block w-100 show-comments"><i class="fa fa-comments text-muted"></i> &nbsp; Load Comments</button>         
+    <div id="comments">  
+        <h4 class="mb-4">Comments</h4>                 
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'blogwebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+     
+    <div class="clearfix"></div>              
+    </div>    
+</div>       
+
+
+<!-- Share -->
+<div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Algorithms to Live By: A Guide to Human Decision-Making&url=https://jensettl.com/BR-algorithms-to-live-by/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=https://jensettl.com/BR-algorithms-to-live-by/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https://jensettl.com/BR-algorithms-to-live-by/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+
+<!-- Related Post -->
+<!-- Related Posts
+================================================== -->
+<div class=" related-posts ">  
+
+    
+    <h2 class="text-center mb-4">Explore more like this</h2>
+    
+    
+    <div class="d-flex justify-content-center align-items-center">
+    
+    <!-- Categories -->
+    
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#Book-Review">Book Review</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#Science">Science</a>                
+    
+
+    <!-- Tags -->  
+    
+    
+
+    </div>
+
+    
+    
+    
+    <div class="blog-grid-container">
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        </div>        
+</div>
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+    </div>
+
+    
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-6 col-sm-12 text-center text-lg-left">
+                Copyright © 2026 Jens' Blog 
+            </div>
+            <div class="col-md-6 col-sm-12 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net/memoirs-free-jekyll-theme/">Memoirs Jekyll Theme</a> by WowThemes.net
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts (if you need bootstrap.js, please add it yourself. I didn't use it for performance reasons, it was not needed in this theme)
+================================================== -->
+
+<!-- <script src="/assets/js/prism.js"></script> -->
+
+<script src="/assets/js/theme.js"></script>
+
+
+
+
+<script id="dsq-count-scr" src="//blogwebsite.disqus.com/count.js"></script>
+
+
+</body>
+</html>

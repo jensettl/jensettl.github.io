@@ -4,9 +4,11 @@
 set -e
 
 # Konfiguration
-REPO="git@github.com:jensettl/jensettl.github.io.git"  # SSH
-# REPO="https://github.com/YOUR_USERNAME/YOUR_REPO.git"  # HTTPS Alternative
+REPO="git@github.com:jensettl/jensettl.github.io.git"
 BRANCH="gh-pages"
+
+# Gems installieren (falls nicht vorhanden)
+bundle install
 
 # Build Jekyll-Seite
 bundle exec jekyll build
