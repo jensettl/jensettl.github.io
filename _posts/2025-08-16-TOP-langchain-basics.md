@@ -5,9 +5,10 @@ author: jens
 date: 2025-08-21
 categories: [ AI, LLM ]
 tags: [langchain, python, automation]
-image: assets/images/langchain/cover-langchain.png
+image: assets/images/langchain/cover_langchain.png
 ---
 
+![test](/assets/images/langchain/cover_langchain.png)
 
 LangChain is an **open-source framework** that helps developers build applications with large language models (LLMs).  
 It provides abstractions and integrations for working with LLMs like OpenAI, Anthropic, Cohere, and others.
