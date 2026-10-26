@@ -5,28 +5,23 @@ description: "Welcome to my little footprint on the web."
 subheader: "This is where I share my projects and thoughts on coding, automation, and technology to share my learning journey and improve my writing skills."
 logo: 'assets/images/logo_black_cropped.png'
 favicon: 'assets/images/logo_black_cropped.png'
-baseurl: 
-google_analytics: 'UA-xxxxxxxx-1'
-disqus: 'blogwebsite'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+url: "https://jensettl.com"
+baseurl: ""
+# Optional integrations: leave empty to disable
+google_analytics: ''  # GA4 measurement ID, e.g. 'G-XXXXXXXXXX'
+disqus: ''            # your own Disqus shortname enables comments on posts
 include: ["_pages"]
 permalink: /:title/
 email: ettljens@gmail.com
 
 # Authors
 authors:
-  sal:
-    name: Sal
-    display_name: Sal
-    avatar: 'assets/images/avatar-sal.png'
-    email: wowthemesnet@gmail.com
-    description: "Author of Memoirs, a Bootstrap Medium styled template available for Jekyll."
   jens:
     name: Jens
     display_name: Jens
     avatar: 'assets/images/avatar-jens.png'
     email: ettljens@gmail.com
-    description: "Content creator for this blog and user of this Jekyll template. I love to tackle problems with creative coding solutions and automations."
+    description: "I love to tackle problems with creative coding solutions and automations."
 
 # Plugins
 plugins:
@@ -67,15 +62,15 @@ kramdown:
       line_numbers: false
       start_line: 1
 
-exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock, vendor/, .bundle/]
+exclude: [LICENSE.txt, README.md, Gemfile, Gemfile.lock, new_post.sh, vendor/, .bundle/, .jekyll-cache/]
 
 # Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
 adsense: "disabled"
-adsense-data-ad-client: "ca-pub-3412143450191416"
-adsense-data-ad-slot: "1363087678"
+adsense-data-ad-client: ""
+adsense-data-ad-slot: ""
 
 # Lazy Images ("enabled" or "disabled")
 lazyimages: "disabled"
 
 # Post Author Box ("enabled" or "disabled")
-authorbox: "enabled"
+authorbox: "disabled"
