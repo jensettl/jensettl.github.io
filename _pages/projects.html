@@ -7,9 +7,8 @@ comments: false
 
 <p class="mb-5">A collection of personal and professional projects I've built — covering automation, AI tooling, full-stack development, and more.</p>
 
-{% assign prj_posts = site.posts | where_exp: "post", "post.path contains 'PRJ-'" %}
+{% assign prj_posts = site.posts | where: "type", "project" %}
 {% for post in prj_posts %}
-  {% unless post.path contains '0000-00-00' %}
   <a href="{{ site.baseurl }}{{ post.url }}" class="project-list-item">
     <div class="project-list-thumb">
       {% if post.image %}
@@ -31,5 +30,4 @@ comments: false
       </div>
     </div>
   </a>
-  {% endunless %}
 {% endfor %}

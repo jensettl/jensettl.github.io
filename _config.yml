@@ -23,6 +23,28 @@ authors:
     email: ettljens@gmail.com
     description: "I love to tackle problems with creative coding solutions and automations."
 
+# Post defaults: every post gets these unless its front matter says otherwise.
+# The folder a post lives in (_posts/projects|articles|reviews) sets its type.
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: jens
+  - scope:
+      path: "_posts/projects"
+    values:
+      type: project
+  - scope:
+      path: "_posts/articles"
+    values:
+      type: article
+  - scope:
+      path: "_posts/reviews"
+    values:
+      type: review
+
 # Plugins
 plugins:
   - jekyll-paginate
@@ -31,6 +53,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-archives
   - jekyll-figure
+  - jekyll-postfiles
     
 # Archives
 jekyll-archives:

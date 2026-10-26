@@ -15,22 +15,40 @@ bundle exec jekyll serve   # http://localhost:4000
 ## New post
 
 ```bash
-./new_post.sh <slug> "Post title"
+./new_post.sh project heic-converter "Local HEIC-JPEG Converter"   # or: article, review
 ```
 
-Creates `_posts/YYYY-MM-DD-<slug>.md` and an image folder `assets/images/<slug>/`.
-Filename prefixes in use: `PRJ-` (project, listed on `/projects`), `TOP-` (topic), `BR-` (book review).
+This creates `_posts/projects/2026-10-26-PRJ-heic-converter/2026-10-26-PRJ-heic-converter.md`.
+Every post lives in its own folder together with its files:
+
+```
+_posts/projects/2026-10-26-PRJ-heic-converter/
+  2026-10-26-PRJ-heic-converter.md
+  cover.png          <- front matter `image: cover.png`
+  screenshot.png     <- in the text: ![Screenshot](screenshot.png)
+  converter.zip      <- downloads work the same way
+```
+
+Files are referenced by name only, so they also show in the editor's Markdown preview.
+`jekyll-postfiles` copies them next to the post's URL, and `_plugins/post_image.rb`
+makes the `image:` cover work on cards, the post header and social previews.
+`layout`, `author` and `type` (project / article / review, from the folder) come from
+`defaults` in `_config.yml`. The Projects page lists every post with `type: project`.
 
 ## Structure
 
 | Path | Content |
 |---|---|
-| `_posts/` | Blog posts and project write-ups |
+| `_posts/projects/`, `_posts/articles/`, `_posts/reviews/` | One folder per post: Markdown plus its images and downloads |
 | `_pages/` | Standalone pages (about, projects, categories, tags) |
 | `_layouts/`, `_includes/` | Page templates |
+| `_plugins/` | Small build hooks (cover image paths) |
 | `_sass/` | Styles (vendored Bootstrap 4, theme partials) |
-| `assets/images/<slug>/` | Images per post |
-| `assets/download/` | Files offered for download in posts |
+| `assets/images/` | Site-wide images only (logo, avatar) |
+| `assets/icons/` | File-type icons for the download box |
+| `assets/download/` | Downloads of older posts, kept at their published URLs |
+
+The folder a post is in doesn't change its URL: the permalink is `/:title/`, taken from the file name.
 
 ## Deployment
 

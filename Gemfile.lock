@@ -47,6 +47,8 @@ GEM
     jekyll-feed (0.7.2)
     jekyll-figure (0.2.0)
     jekyll-paginate (1.1.0)
+    jekyll-postfiles (3.1.0)
+      jekyll (>= 3.8.6, < 5)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
     jekyll-seo-tag (1.2.0)
@@ -96,6 +98,7 @@ DEPENDENCIES
   jekyll-feed
   jekyll-figure
   jekyll-paginate
+  jekyll-postfiles
   jekyll-seo-tag
   jekyll-sitemap
   kramdown
@@ -124,6 +127,7 @@ CHECKSUMS
   jekyll-feed (0.7.2) sha256=21c77b297db583f080b4e91323bbff5cc7a11560682a8e963f77eff9e8ccaace
   jekyll-figure (0.2.0) sha256=5493eed2440c064fa47f4ffe9a2665aeefc226d9c49939e8f7678cac2206a2e1
   jekyll-paginate (1.1.0) sha256=880aadf4b02529a93541d508c5cbb744f014cbfc071d0263a31f25ec9066eb64
+  jekyll-postfiles (3.1.0) sha256=315eb9c79e69953a7721c7b02b3370a499fac2479bc42f21ae25336339061651
   jekyll-sass-converter (3.1.0) sha256=83925d84f1d134410c11d0c6643b0093e82e3a3cf127e90757a85294a3862443
   jekyll-seo-tag (1.2.0) sha256=1019e702639bdeca57c29c2178de9be7118861972292b42b461e406d9c23c5df
   jekyll-sitemap (0.11.0) sha256=8e9e6d54a6e52a1f1b9f8188555453d05213a8491a302f2939886cb066fa759f
