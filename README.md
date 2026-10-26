@@ -12,13 +12,14 @@ bundle install
 bundle exec jekyll serve   # http://localhost:4000
 ```
 
-## New post
+## Writing posts
 
-```bash
-./new_post.sh project heic-converter "Local HEIC-JPEG Converter"   # or: article, review
-```
+Posts are written with help from an AI agent. The rules it follows live in two places:
 
-This creates `_posts/projects/2026-10-26-PRJ-heic-converter/2026-10-26-PRJ-heic-converter.md`.
+- `CLAUDE.md`: repo conventions, loaded automatically in every Claude Code session here
+- `.claude/skills/write-post/SKILL.md`: the full writing guide (workflow, front matter,
+  structure per post type, style). Run it with `/write-post` in Claude Code.
+
 Every post lives in its own folder together with its files:
 
 ```
