@@ -17,6 +17,16 @@ $nav-text:   #4a5560;
 // Sen for headings and UI, Source Serif 4 for long reading text
 $font-ui:   'Sen', system-ui, -apple-system, 'Segoe UI', sans-serif;
 $font-read: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+
+// Card shape for feed cards, cover images and code blocks (DESIGN.md: The Soft Edge Rule).
+// 12px = soft and friendly; set to 0 for the original square look.
+$card-radius: 12px;
+
+// Card depth (DESIGN.md: The Flat-at-Rest Rule): a hairline edge at rest,
+// a soft layered lift only on hover or keyboard focus.
+$card-edge:  rgba($black, 0.07);
+$card-lift:  0 1px 2px rgba($black, 0.04), 0 14px 32px -12px rgba($black, 0.22);
+$ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
 $enable-rounded: false;
 
 @import "bootstrap/functions";
@@ -310,11 +320,43 @@ img, img:hover {
         margin-right: 7px;
     }
     .card {
-        border:0;
+        border: 1px solid $card-edge;
         width:100%;
-        &:hover {           
-           .card-title a { 
+        border-radius: $card-radius;
+        overflow: hidden;   // clips the cover image to the card's corners
+        transition: transform .35s $ease-out, box-shadow .35s $ease-out, border-color .35s $ease-out;
+        .img-thumb {
+            transition: transform .6s $ease-out;
+        }
+        // The whole card is one link (stretched title link); it lifts like one.
+        &:hover, &:has(:focus-visible) {
+            transform: translateY(-4px);
+            box-shadow: $card-lift;
+            border-color: transparent;
+            .card-title a {
                 background-size: 100% 100%;
+            }
+            .img-thumb {
+                transform: scale(1.03);
+            }
+        }
+        &:active {
+            transform: translateY(-1px);
+            transition-duration: .1s;
+        }
+        // Keyboard focus shows on the card, not on the invisible stretched area
+        &:has(:focus-visible) {
+            outline: 2px solid $link;
+            outline-offset: 3px;
+        }
+        .card-title a:focus-visible {
+            outline: none;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            &, .img-thumb { transition: none; }
+            &:hover, &:has(:focus-visible) {
+                transform: none;
+                .img-thumb { transform: none; }
             }
         }
     }
@@ -327,7 +369,6 @@ img, img:hover {
             background-repeat: no-repeat;
             background-size: 0 100%;
             transition: background-size .6s ease;
-            position:relative;
             &:hover {
                 text-decoration:none;
             }
@@ -536,6 +577,9 @@ img, img:hover {
     font-weight:700;
     line-height:1.2;
 }
+.entry-featured-image img {
+    border-radius: $card-radius;
+}
 .entry-featured-image {  
     width:940px;  
     max-width: 100%;
@@ -601,6 +645,10 @@ img, img:hover {
     }
     code {
         font-size: 15px;
+    }
+    div.highlighter-rouge {
+        border-radius: max($card-radius - 4px, 0px);
+        overflow: hidden;   // clips the dark code background to the corners; the code still scrolls inside
     }
     code[class*="language-"], pre[class*="language-"] {
         font-size: 15px;

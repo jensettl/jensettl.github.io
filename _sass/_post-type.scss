@@ -1,6 +1,8 @@
 // Type label on post cards and post headers (_includes/post-type.html)
 .post-type {
   display: inline-block;
+  position: relative;
+  z-index: 2;   // stays clickable above the card's stretched title link
   margin-bottom: 0.5rem;
   padding: 0.1rem 0.6rem;
   border-radius: 999px;

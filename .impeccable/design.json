@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-27T17:13:51+00:00",
+  "title": "Design System: Jens' Blog",
+  "extensions": {
+    "colorMeta": {
+      "highlighter-teal": {
+        "role": "primary",
+        "displayName": "Highlighter Teal",
+        "canonical": "oklch(90.0% 0.155 176.9)",
+        "tonalRamp": [
+          "#00190a",
+          "#003722",
+          "#00563e",
+          "#00775c",
+          "#00997b",
+          "#00bc9c",
+          "#00e4c2",
+          "#8cffed"
+        ]
+      },
+      "ink-teal": {
+        "role": "primary",
+        "displayName": "Ink Teal",
+        "canonical": "oklch(52.6% 0.100 173.8)",
+        "tonalRamp": [
+          "#001608",
+          "#003220",
+          "#00503b",
+          "#006f59",
+          "#289078",
+          "#51b399",
+          "#79dabf",
+          "#a4ffe9"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(17.8% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#7d7d7d",
+          "#9e9e9e",
+          "#c4c4c4",
+          "#eeeeee"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(96.7% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#7d7d7d",
+          "#9e9e9e",
+          "#c4c4c4",
+          "#eeeeee"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "oklch(49.8% 0.009 253.9)",
+        "tonalRamp": [
+          "#090b0f",
+          "#212429",
+          "#3c4045",
+          "#5a5e63",
+          "#797e83",
+          "#9a9fa4",
+          "#c0c4ca",
+          "#eaeff5"
+        ]
+      },
+      "nav-slate": {
+        "role": "neutral",
+        "displayName": "Nav Slate",
+        "canonical": "oklch(44.4% 0.023 248.3)",
+        "tonalRamp": [
+          "#040c14",
+          "#1b252f",
+          "#36414c",
+          "#545f6a",
+          "#737f8b",
+          "#94a0ac",
+          "#b9c6d3",
+          "#e3f0fe"
+        ]
+      },
+      "tint-project": {
+        "role": "tertiary",
+        "displayName": "Project Mint",
+        "canonical": "oklch(97.1% 0.040 181.3)",
+        "tonalRamp": [
+          "#00100c",
+          "#072a25",
+          "#264741",
+          "#44655f",
+          "#63857f",
+          "#83a7a0",
+          "#a8cdc6",
+          "#d2f8f0"
+        ]
+      },
+      "tint-article": {
+        "role": "tertiary",
+        "displayName": "Article Parchment",
+        "canonical": "oklch(94.3% 0.018 89.4)",
+        "tonalRamp": [
+          "#0e0b04",
+          "#27241a",
+          "#433f35",
+          "#625d52",
+          "#817d71",
+          "#a39e92",
+          "#c9c4b7",
+          "#f3eee1"
+        ]
+      },
+      "tint-review": {
+        "role": "tertiary",
+        "displayName": "Review Lilac",
+        "canonical": "oklch(93.2% 0.023 291.4)",
+        "tonalRamp": [
+          "#0b0914",
+          "#24222e",
+          "#403e4b",
+          "#5d5c6a",
+          "#7d7b8a",
+          "#9e9cac",
+          "#c4c2d2",
+          "#eeecfd"
+        ]
+      },
+      "code-surface": {
+        "role": "neutral",
+        "displayName": "Code Surface",
+        "canonical": "oklch(27.4% 0.011 114.8)",
+        "tonalRamp": [
+          "#0b0c07",
+          "#24251f",
+          "#3f403a",
+          "#5d5e58",
+          "#7d7e77",
+          "#9e9f98",
+          "#c4c5bd",
+          "#eeefe7"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Homepage greeting only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Post titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card titles in the feed."
+      },
+      "body": {
+        "displayName": "Reading",
+        "purpose": "Article body text in Source Serif 4, max 700px column."
+      },
+      "body-ui": {
+        "displayName": "Body UI",
+        "purpose": "Card excerpts, page text, lists."
+      },
+      "nav": {
+        "displayName": "Navigation",
+        "purpose": "Header and menu links."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase type labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card-lift",
+        "value": "0 1px 2px rgba(17,17,17,.04), 0 14px 32px -12px rgba(17,17,17,.22)",
+        "purpose": "Feed cards on hover and keyboard focus, with translateY(-4px)."
+      },
+      {
+        "name": "hover-lift",
+        "value": "0 4px 16px rgba(0,0,0,0.08)",
+        "purpose": "Project list rows on hover."
+      },
+      {
+        "name": "image-float",
+        "value": "0 7px 50px 0 rgba(84,110,122,.15)",
+        "purpose": "Opt-in soft lift for a post's featured image."
+      }
+    ],
+    "motion": [
+      {
+        "name": "highlight-swipe",
+        "value": "background-size .6s ease",
+        "purpose": "Highlighter Teal fills behind a card title on hover."
+      },
+      {
+        "name": "card-lift",
+        "value": "transform .35s cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Feed card rises 4px; cover image scales to 103% over .6s. Off with reduced motion."
+      },
+      {
+        "name": "state-standard",
+        "value": "0.2s ease",
+        "purpose": "Colour, border and shadow changes on hover."
+      },
+      {
+        "name": "card-entrance",
+        "value": "fade-up 0.7s ease-out",
+        "purpose": "First three feed cards and the featured image rise in once on load."
+      },
+      {
+        "name": "menu-slide",
+        "value": "transform .3s ease-in-out",
+        "purpose": "Side menu and scrim."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "xs-tight",
+        "value": "480px"
+      },
+      {
+        "name": "sm",
+        "value": "576px"
+      },
+      {
+        "name": "rail-collapse",
+        "value": "600px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "992px"
+      },
+      {
+        "name": "grid-two",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1200px"
+      },
+      {
+        "name": "container-cap",
+        "value": "1440px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Post Card",
+      "kind": "card",
+      "refersTo": "post-card",
+      "description": "Feed entry as one link: 12px corners, hairline edge at rest; lifts with a soft shadow on hover or keyboard focus.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-img\"></div><div class=\"ds-card-body\"><span class=\"ds-type ds-type--project\">Project</span><h2 class=\"ds-card-title\"><a href=\"#\">Local HEIC-JPEG Converter</a></h2><p class=\"ds-card-text\">Windows users often face compatibility issues with HEIC files. A small local converter in Python.</p><div class=\"ds-card-meta\"><span>Jens</span><span>22 Oct 2025</span></div></div></article>",
+      "css": ".ds-card{background:#fff;max-width:340px;font-family:Sen, system-ui, -apple-system, 'Segoe UI', sans-serif;color:#212529;border:1px solid rgba(17,17,17,.07);border-radius:12px;overflow:hidden;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s cubic-bezier(.22,1,.36,1),border-color .35s cubic-bezier(.22,1,.36,1)}.ds-card:hover,.ds-card:has(:focus-visible){transform:translateY(-4px);border-color:transparent;box-shadow:0 1px 2px rgba(17,17,17,.04),0 14px 32px -12px rgba(17,17,17,.22)}.ds-card:has(:focus-visible){outline:2px solid #007d66;outline-offset:3px}.ds-card-img{height:160px;background:linear-gradient(135deg,#d9fff7,#f4f4f4);transition:transform .6s cubic-bezier(.22,1,.36,1)}.ds-card:hover .ds-card-img{transform:scale(1.03)}.ds-card-body{padding:20px}.ds-card-title{font-size:22px;font-weight:700;line-height:1.4;margin:8px 0 0}.ds-card-title a{color:#111;text-decoration:none;background-image:linear-gradient(180deg,transparent 89%,#40FFDC 0);background-repeat:no-repeat;background-size:0 100%;transition:background-size .6s ease}.ds-card:hover .ds-card-title a{background-size:100% 100%}.ds-card-title a:focus-visible{outline:none}.ds-card-text{font-size:16px;line-height:1.8;margin:15px 0}.ds-card-meta{display:flex;justify-content:space-between;font-size:14px}.ds-type{display:inline-block;padding:.1rem .6rem;border-radius:999px;font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#111;text-decoration:none}.ds-type--project{background:#d9fff7}"
+    },
+    {
+      "name": "Type Labels",
+      "kind": "chip",
+      "refersTo": "type-label-project",
+      "description": "Tinted pills marking the entry type; each tint has one fixed meaning.",
+      "html": "<div class=\"ds-types\"><a class=\"ds-type ds-type--project\" href=\"#\">Project</a><a class=\"ds-type ds-type--article\" href=\"#\">Article</a><a class=\"ds-type ds-type--review\" href=\"#\">Review</a></div>",
+      "css": ".ds-types{display:flex;gap:8px;font-family:Sen, system-ui, -apple-system, 'Segoe UI', sans-serif}.ds-type{display:inline-block;padding:.1rem .6rem;border-radius:999px;font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#111;text-decoration:none}.ds-type:hover{filter:brightness(.95)}.ds-type:focus-visible{outline:2px solid #007d66;outline-offset:2px}.ds-type--project{background:#d9fff7}.ds-type--article{background:#f1ecdf}.ds-type--review{background:#e8e6f7}"
+    },
+    {
+      "name": "Topic Chips",
+      "kind": "chip",
+      "refersTo": "topic-chip",
+      "description": "Outlined pills linking to categories, with post counts.",
+      "html": "<ul class=\"ds-topics\"><li><a href=\"#\">Automation <span>10</span></a></li><li><a href=\"#\">Python <span>8</span></a></li><li><a href=\"#\">Process Management <span>6</span></a></li></ul>",
+      "css": ".ds-topics{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:0;font-family:Sen, system-ui, -apple-system, 'Segoe UI', sans-serif}.ds-topics a{display:inline-block;padding:.3rem .85rem;border:1px solid #ddd;border-radius:999px;color:#212529;font-size:.9rem;text-decoration:none;transition:border-color .2s ease,background-color .2s ease}.ds-topics a:hover{border-color:#111;background:#f5f5f5}.ds-topics a:focus-visible{outline:2px solid #007d66;outline-offset:2px}.ds-topics span{margin-left:.25rem;color:#5f6368}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Main links beside the logo from 768px; current section bold Ink with a Highlighter Teal underline.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Home</a><a href=\"#\">About</a><a href=\"#\" aria-current=\"page\">Projects</a><a href=\"#\">Articles</a><a href=\"#\">Reviews</a></nav>",
+      "css": ".ds-nav{display:flex;gap:1.75rem;font-family:Sen, system-ui, -apple-system, 'Segoe UI', sans-serif}.ds-nav a{color:#4a5560;font-size:16px;padding:.35rem 0;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:.45em;transition:color .2s ease,text-decoration-color .2s ease}.ds-nav a:hover{color:#111;text-decoration-color:rgba(17,17,17,.25)}.ds-nav a:focus-visible{outline:2px solid #007d66;outline-offset:2px}.ds-nav a[aria-current=page]{color:#111;font-weight:700;text-decoration-color:#40FFDC}"
+    },
+    {
+      "name": "Pagination",
+      "kind": "nav",
+      "refersTo": "pagination-page-current",
+      "description": "Round page buttons; the current page is a solid Ink circle.",
+      "html": "<nav class=\"ds-pages\"><a href=\"#\" aria-label=\"Previous page\">&laquo;</a><a href=\"#\">1</a><span aria-current=\"page\">2</span><a href=\"#\">3</a><a href=\"#\" aria-label=\"Next page\">&raquo;</a></nav>",
+      "css": ".ds-pages{display:flex;gap:8px;font-family:Sen, system-ui, -apple-system, 'Segoe UI', sans-serif}.ds-pages a,.ds-pages span{width:40px;height:40px;line-height:40px;text-align:center;border-radius:50%}.ds-pages a{background:rgba(0,0,0,.05);color:#000;text-decoration:none;transition:background .3s ease-in-out}.ds-pages a:hover{background:#40FFDC}.ds-pages a:focus-visible{outline:2px solid #007d66;outline-offset:2px}.ds-pages span{background:#111;color:#fff;font-weight:700}"
+    },
+    {
+      "name": "Callouts",
+      "kind": "custom",
+      "refersTo": "callout-note",
+      "description": "Note, tip and warning boxes inside posts: tinted surface, 1px border all round.",
+      "html": "<div class=\"ds-callout ds-callout--note\"><b>Note:</b> This is a note.</div><div class=\"ds-callout ds-callout--tip\"><b>Tip:</b> This is a tip.</div><div class=\"ds-callout ds-callout--warning\"><b>Warning:</b> This is a warning.</div>",
+      "css": ".ds-callout{font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;font-size:19px;line-height:1.75;color:#222;padding:.9em 1.1em;margin:0 0 1em;border:1px solid;border-radius:6px}.ds-callout b{font-family:Sen, system-ui, -apple-system, 'Segoe UI', sans-serif}.ds-callout--note{background:#eef6fd;border-color:#b7d7f3}.ds-callout--note b{color:#0b5394}.ds-callout--tip{background:#ebf8ef;border-color:#b4e2c1}.ds-callout--tip b{color:#1e6b34}.ds-callout--warning{background:#fff4e5;border-color:#f6cf98}.ds-callout--warning b{color:#8a4b00}"
+    },
+    {
+      "name": "Project List Row",
+      "kind": "card",
+      "refersTo": "project-list-item",
+      "description": "Overview page row with rounded thumbnail; lifts on hover.",
+      "html": "<a class=\"ds-row\" href=\"#\"><div class=\"ds-row-thumb\"></div><div><h3>Smart Inbox Automation with n8n</h3><p>Auto-categorize emails and trigger custom actions with a local LLM.</p><span class=\"ds-row-date\">November 2025</span></div></a>",
+      "css": ".ds-row{display:flex;align-items:center;gap:1.5rem;padding:1.25rem 1.5rem;border:1px solid #e8e8e8;border-radius:12px;color:#212529;text-decoration:none;font-family:Sen, system-ui, -apple-system, 'Segoe UI', sans-serif;transition:box-shadow .2s ease,border-color .2s ease;max-width:640px}.ds-row:hover{box-shadow:0 4px 16px rgba(0,0,0,.08);border-color:#ccc}.ds-row:focus-visible{outline:2px solid #007d66;outline-offset:2px}.ds-row-thumb{flex:0 0 120px;height:90px;border-radius:8px;background:#f5f5f5}.ds-row h3{margin:0 0 .4rem;font-size:1.1rem;font-weight:700}.ds-row p{margin:0 0 .5rem;color:#555;font-size:.92rem;line-height:1.5}.ds-row-date{font-size:.8rem;color:#5f6368}"
+    },
+    {
+      "name": "Download Box",
+      "kind": "custom",
+      "refersTo": "download-box",
+      "description": "File download inside a post: icon, name, type and size, Download link.",
+      "html": "<a class=\"ds-dl\" href=\"#\"><svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#5f6368\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z\"/><path d=\"M14 3v5h5\"/></svg><span class=\"ds-dl-info\"><span class=\"ds-dl-name\">regex-cheat-sheet.pdf</span><span class=\"ds-dl-meta\">PDF &middot; 190 KB</span></span><span class=\"ds-dl-action\">Download</span></a>",
+      "css": ".ds-dl{display:flex;align-items:center;gap:18px;border:1px solid #e4e4e4;background:#fafafa;padding:14px 16px;border-radius:10px;color:inherit;text-decoration:none;font-family:Sen, system-ui, -apple-system, 'Segoe UI', sans-serif;max-width:520px;transition:background .2s ease,border-color .2s ease}.ds-dl:hover{background:#f0f0f0;border-color:#ccc}.ds-dl:focus-visible{outline:2px solid #007d66;outline-offset:2px}.ds-dl-info{flex-grow:1;display:flex;flex-direction:column}.ds-dl-name{font-weight:600;font-size:15px}.ds-dl-meta{font-size:13px;color:#5f6368}.ds-dl-action{color:#007d66;text-decoration:underline;font-size:14px}.ds-dl:hover .ds-dl-action{color:#005c4b}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Lab Notebook",
+    "overview": "The site reads like a well-kept lab notebook: light paper, careful notes in two hands, and one bright highlighter that marks what matters. Projects, articles and book reviews sit side by side as entries in the same notebook, each tagged with what kind of entry it is. Work in progress is welcome here; the design should make an unfinished entry look honest, not broken.\n\nThe mood is calm and tidy, curious and personal, technical and precise. Most of every screen is light grey paper and white sheets; colour arrives only as the highlighter and as soft tints that classify entries. The interface speaks in Sen, a friendly geometric sans; the long reading text inside posts switches to Source Serif 4, so reading feels like reading and not like using an app. Code blocks are dark slabs set into the light page, the only dark surfaces in the system.\n\nThis is a personal site, not a company's: never a dark \"hacker\" terminal look, and never busy or cluttered with widgets, popups or ads.",
+    "keyCharacteristics": [
+      "Light paper background with white sheets that have a hairline edge; they lift only when you reach for them.",
+      "One signature accent, Highlighter Teal, used to mark, never to write.",
+      "Two typefaces with strict jobs: Sen for interface and headings, Source Serif 4 for reading.",
+      "Entries labelled by type with small tinted pills (project, article, review).",
+      "Generous whitespace and a single reading column inside posts.",
+      "WCAG 2.1 AA contrast on every text colour."
+    ],
+    "rules": [
+      {
+        "name": "The Highlighter Rule",
+        "body": "Highlighter Teal never carries text; at 1.3:1 on white it can't. It marks backgrounds, underlines and selection. Any readable teal text uses Ink Teal.",
+        "section": "colors"
+      },
+      {
+        "name": "The Stable Meaning Rule",
+        "body": "A tint means one thing everywhere: mint is always a project, parchment always an article, lilac always a review, blue/green/amber always note/tip/warning. Never reuse a tint for decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Hands Rule",
+        "body": "Sen writes the interface; Source Serif 4 writes the reading text. Cards, lists, navigation and headings stay in Sen, even inside posts. The serif appears only in article body text and the post's opening summary quote (in italic).",
+        "section": "typography"
+      },
+      {
+        "name": "The No Fallback Face Rule",
+        "body": "Never set visible text in a system default face (Arial, Times New Roman). If a component needs a font, it uses one of the two.",
+        "section": "typography"
+      },
+      {
+        "name": "The Notebook Margin Rule",
+        "body": "Reading text never runs wider than the 700px column, however wide the screen. Width belongs to the feed, not to the text.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat-at-Rest Rule",
+        "body": "Nothing carries a shadow while the page is still; a hairline edge is the most a resting surface gets. A shadow is an answer to the pointer or the keyboard, never decoration.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Soft Edge Rule",
+        "body": "Every surface uses soft corners (6–12px) and pills for anything label-like. Card-like surfaces change shape together through `$card-radius`, never one at a time.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** use Highlighter Teal only as a mark: underline, hover swipe, selection, tint.",
+      "**Do** set every readable teal in Ink Teal (#007d66), which passes 4.5:1 on Paper and Surface.",
+      "**Do** keep reading text in Source Serif 4 at 19px within a 700px column.",
+      "**Do** label every entry with its type pill, using the fixed tint for that type.",
+      "**Do** keep surfaces flat at rest with at most a hairline edge; lift cards (Card Lift) only on hover or keyboard focus.",
+      "**Do** give components soft corners (6–12px) and pills for labels; change card corners only through `$card-radius`.",
+      "**Do** show keyboard focus with the 2px Ink Teal outline at 2px offset."
+    ],
+    "donts": [
+      "**Don't** set text in Highlighter Teal (#40FFDC).",
+      "**Don't** introduce a dark \"hacker\" or terminal look; dark surfaces are only for code.",
+      "**Don't** add clutter: no widget sidebars, popups, banners or ads.",
+      "**Don't** use a thick coloured stripe on one side of callouts, cards or list items.",
+      "**Don't** use Arial, Times New Roman or other system faces for visible text.",
+      "**Don't** reuse a classification tint for decoration.",
+      "**Don't** add resting shadows to cards.",
+      "**Don't** make only part of a card clickable; a card that lifts is one link."
+    ]
+  }
+}

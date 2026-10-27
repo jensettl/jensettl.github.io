@@ -4,7 +4,7 @@
 <div class="blog-grid-item">
     <div class="card h-100">
         <div class="maxthumb">
-            <a href="{{ site.baseurl }}{{ post.url }}">
+            <a href="{{ site.baseurl }}{{ post.url }}" tabindex="-1" aria-hidden="true">
                 {% if post.image %}
 
                     {% if site.lazyimages == "enabled" %}
@@ -19,7 +19,7 @@
         <div class="card-body">
             {% include post-type.html type=post.type %}
             <h2 class="card-title">
-                <a class="text-dark" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                <a class="text-dark stretched-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
                 {% if post.rating %}
                 <div class="mb-2 mt-2 font-weight-normal">
                 {% include star_rating_postbox.html %}
