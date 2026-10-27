@@ -60,6 +60,11 @@ typography:
     fontFamily: "Sen, system-ui, -apple-system, 'Segoe UI', sans-serif"
     fontSize: "16px"
     fontWeight: 400
+  caption:
+    fontFamily: "Sen, system-ui, -apple-system, 'Segoe UI', sans-serif"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: 1.55
   label:
     fontFamily: "Sen, system-ui, -apple-system, 'Segoe UI', sans-serif"
     fontSize: "12px"
@@ -115,6 +120,20 @@ components:
     typography: "{typography.nav}"
   nav-link-current:
     textColor: "{colors.ink}"
+  search-button:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.nav-slate}"
+    typography: "{typography.nav}"
+    rounded: "{rounded.pill}"
+    height: "40px"
+  search-dialog:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.body-text}"
+    rounded: "{rounded.lg}"
+    width: "640px"
+  search-result-hover:
+    backgroundColor: "{colors.hover-wash}"
+    rounded: "{rounded.md}"
   link:
     textColor: "{colors.ink-teal}"
   link-hover:
@@ -195,7 +214,7 @@ A near-monochrome paper palette with one electric highlighter and a set of quiet
 - **Body Text** (#212529): default interface text on cards and pages.
 - **Reading Text** (#222222): article body text.
 - **Paper** (#f4f4f4): the page background everywhere.
-- **Surface** (#ffffff): cards, the side rail, the footer, the side menu.
+- **Surface** (#ffffff): cards, the search button and search dialog, the footer.
 - **Faint Surface** (#fafafa) and **Hover Wash** (#f5f5f5): resting and hover fills for secondary
   containers (download box, topic chips, project thumbnails).
 - **Hairline** (#e8e8e8), **Card Edge** (ink at 7%) and **Chip Border** (#dddddd): the only borders: project list rows, feed cards and topic chips.
@@ -233,6 +252,7 @@ headings and margins. Source Serif 4 is a calm text serif with optical sizes, bu
   most 700px (about 68 characters). Paragraphs are separated by 1.5em; headings inside articles
   switch back to Sen with 2em above and 0.6em below.
 - **Body UI** (400, 16px, 1.7): card excerpts, page text, lists.
+- **Caption** (400, 14px, 1.55): secondary interface text such as search snippets, result dates and the search status line.
 - **Label** (700, 12px, 0.04em, uppercase): type labels on cards and posts.
 
 ### Named Rules
@@ -245,11 +265,11 @@ Roman). If a component needs a font, it uses one of the two.
 
 ## Layout
 
-A fixed 80px white rail runs down the left edge with the menu button at the top and search at the
-bottom (on phones below 600px the rail collapses into a top bar). Content sits in a centred
+There is no side rail or side menu: the header is the only navigation. Content sits in a centred
 container: 80% wide from 768px, capped at 1140px from 1440px.
 
-- **Header:** logo left, main navigation right, from 768px. Below that, the side menu is the only navigation.
+- **Header:** logo left; main navigation and the Search button right, from 768px. Below that, the
+  Search button stays beside the logo and the links move to their own full-width row underneath.
 - **Feed:** a three-column grid with 30px gaps. On the first page, the newest entry spans two columns
   and two rows, the next two stack beside it. Two columns below 1024px, one below 768px.
 - **Post:** a single reading column (740px including 20px side padding), with the cover image up to 940px wide.
@@ -305,11 +325,27 @@ Small tinted pills that say what kind of entry this is.
 - **Hover:** border turns Ink, background Hover Wash.
 
 ### Navigation
-- **Header (from 768px):** Sen 16px in Nav Slate; hover turns Ink with a faint underline; the current
-  section is Ink, bold, with a 2px Highlighter Teal underline.
-- **Side menu:** opens from the menu button over a dark scrim; links in Nav Slate, the current page in bold Ink.
+- **Header links:** Sen 16px in Nav Slate; hover turns Ink with a faint underline; the current
+  section is Ink, bold, with a 2px Highlighter Teal underline. On phones they spread across one
+  row under the logo (44px touch targets) and scroll sideways rather than wrap on the narrowest screens.
+- **Search button:** a white pill with Chip Border, a drawn magnifier, "Search" in Nav Slate and a
+  `/` key hint; hover turns border and text Ink. On phones it is 44px tall and drops the key hint.
 - **Pagination:** 40px circles; the current page is a solid Ink circle with white text, others a
   faint grey fill that turns Highlighter Teal on hover.
+
+### Search dialog
+A command-palette style dialog over a dimmed page (ink at 35%), opened by the Search button, `/` or
+Ctrl+K, and closed by Esc, the Esc key button or a click outside.
+- **Shape:** 640px wide, 12px corners, the Card Lift family of shadow (it only exists while open),
+  12vh from the top (16px on phones). It fades in and settles 8px over 0.28s; no motion with reduced motion.
+- **Field:** Sen 19px with an Ink Teal caret; keyboard focus shows as a 2px Ink Teal line under the field.
+- **Results:** appear while typing (up to 10). Each row shows the type label and date, the title in
+  Sen 18px bold, and a two-line caption snippet around the first match. Matched words are marked with
+  Highlighter Teal, as on paper. Rows get Hover Wash and 8px corners on hover and focus; arrow keys
+  move between field and results, Enter opens the first result.
+- **States:** a hint before typing, "Loading search…" on first open (lunr and the index load only
+  then), a count of posts, and a "No posts found" line that suggests a shorter or different word.
+- **Key hints:** a faint footer with key caps for ↑ ↓, Enter and Esc; hidden on touch screens.
 
 ### Links
 Ink Teal, Deep Ink Teal on hover. Inside articles, links are underlined (1px, 0.2em offset).
@@ -348,3 +384,4 @@ Dark Monokai slabs (Code Surface), square, 15px monospace. Inline code is Ink on
 - **Don't** reuse a classification tint for decoration.
 - **Don't** add resting shadows to cards.
 - **Don't** make only part of a card clickable; a card that lifts is one link.
+- **Don't** hide the five main links behind a menu button or a side rail; the header shows them on every screen size.

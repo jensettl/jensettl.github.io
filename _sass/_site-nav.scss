@@ -1,31 +1,54 @@
-// Header with logo and main navigation (_layouts/default.html).
-// The links are visible from tablet width up; on phones the side menu takes over.
+// Header with logo, main navigation and the search button (_layouts/default.html).
+// From tablet width up: logo left, links and search right. On phones the links drop to
+// their own row under the logo, and the search button stays beside the logo.
 .site-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+  column-gap: 2rem;
+  padding: 40px 0;
+
+  .navbar-brand {
+    margin-right: 0;
+    padding: 0;
+
+    img {
+      display: block;
+      max-height: 80px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 24px 0 8px;
+    column-gap: 1rem;
+
+    .navbar-brand img {
+      max-height: 56px;
+    }
+  }
 }
 
 .site-nav {
-  display: none;
-
-  @include media-breakpoint-up(md) {
-    display: block;
-  }
+  margin-left: auto;
 
   ul {
     display: flex;
-    gap: 1.75rem;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.75rem;
     list-style: none;
     margin: 0;
     padding: 0;
+
+    // Tablets: a little tighter so links and the Search button stay on the logo's line
+    @include media-breakpoint-only(md) {
+      column-gap: 1.25rem;
+    }
   }
 
   a {
+    display: inline-block;
     color: $nav-text;
     font-size: 16px;
-    text-decoration: none;
     padding: 0.35rem 0;
     text-decoration-line: underline;
     text-decoration-color: transparent;
@@ -42,6 +65,27 @@
       color: $dark;
       font-weight: 700;
       text-decoration-color: $primary;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    order: 3;
+    flex-basis: 100%;
+    margin: 1.25rem 0 0;
+
+    // One row across the full width; on the narrowest phones it scrolls sideways instead of wrapping
+    ul {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      margin: -4px;
+      padding: 4px;   // room for the focus outline inside the scroll box
+    }
+
+    a {
+      padding: 0.6rem 0;   // 44px touch target
     }
   }
 }

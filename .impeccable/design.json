@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-27T17:13:51+00:00",
+  "generatedAt": "2026-10-27T18:55:39.580055+00:00",
   "title": "Design System: Jens' Blog",
   "extensions": {
     "colorMeta": {
@@ -200,6 +200,11 @@
         "name": "image-float",
         "value": "0 7px 50px 0 rgba(84,110,122,.15)",
         "purpose": "Opt-in soft lift for a post's featured image."
+      },
+      {
+        "name": "dialog",
+        "value": "0 1px 2px rgba(17,17,17,.06), 0 24px 64px -16px rgba(17,17,17,.4)",
+        "purpose": "The open search dialog; exists only while it is open."
       }
     ],
     "motion": [
@@ -224,9 +229,9 @@
         "purpose": "First three feed cards and the featured image rise in once on load."
       },
       {
-        "name": "menu-slide",
-        "value": "transform .3s ease-in-out",
-        "purpose": "Side menu and scrim."
+        "name": "search-open",
+        "value": "search-in .28s cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Search dialog fades in and settles 8px; backdrop fades over .2s. Off with reduced motion."
       }
     ],
     "breakpoints": [
@@ -239,7 +244,7 @@
         "value": "576px"
       },
       {
-        "name": "rail-collapse",
+        "name": "phone",
         "value": "600px"
       },
       {
@@ -293,9 +298,17 @@
       "name": "Header Navigation",
       "kind": "nav",
       "refersTo": "nav-link",
-      "description": "Main links beside the logo from 768px; current section bold Ink with a Highlighter Teal underline.",
-      "html": "<nav class=\"ds-nav\"><a href=\"#\">Home</a><a href=\"#\">About</a><a href=\"#\" aria-current=\"page\">Projects</a><a href=\"#\">Articles</a><a href=\"#\">Reviews</a></nav>",
-      "css": ".ds-nav{display:flex;gap:1.75rem;font-family:Sen, system-ui, -apple-system, 'Segoe UI', sans-serif}.ds-nav a{color:#4a5560;font-size:16px;padding:.35rem 0;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:.45em;transition:color .2s ease,text-decoration-color .2s ease}.ds-nav a:hover{color:#111;text-decoration-color:rgba(17,17,17,.25)}.ds-nav a:focus-visible{outline:2px solid #007d66;outline-offset:2px}.ds-nav a[aria-current=page]{color:#111;font-weight:700;text-decoration-color:#40FFDC}"
+      "description": "The only navigation: five links and the Search button beside the logo from 768px; on phones the links take their own row under the logo. Current section bold Ink with a Highlighter Teal underline.",
+      "html": "<div class=\"ds-header\"><nav class=\"ds-nav\"><a href=\"#\">Home</a><a href=\"#\">About</a><a href=\"#\" aria-current=\"page\">Projects</a><a href=\"#\">Articles</a><a href=\"#\">Reviews</a></nav><button type=\"button\" class=\"ds-search-btn\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg><span>Search</span><kbd>/</kbd></button></div>",
+      "css": ".ds-nav{display:flex;gap:1.75rem;font-family:Sen, system-ui, -apple-system, 'Segoe UI', sans-serif}.ds-nav a{color:#4a5560;font-size:16px;padding:.35rem 0;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:.45em;transition:color .2s ease,text-decoration-color .2s ease}.ds-nav a:hover{color:#111;text-decoration-color:rgba(17,17,17,.25)}.ds-nav a:focus-visible{outline:2px solid #007d66;outline-offset:2px}.ds-nav a[aria-current=page]{color:#111;font-weight:700;text-decoration-color:#40FFDC}.ds-header{display:flex;align-items:center;gap:1.75rem;font-family:Sen, system-ui, -apple-system, 'Segoe UI', sans-serif}.ds-search-btn{display:inline-flex;align-items:center;gap:.5rem;height:40px;padding:0 .5rem 0 .85rem;border:1px solid #ddd;border-radius:999px;background:#fff;color:#4a5560;font:16px/1 Sen, system-ui, -apple-system, 'Segoe UI', sans-serif;cursor:pointer;transition:border-color .2s ease,color .2s ease}.ds-search-btn:hover{border-color:#111;color:#111}.ds-search-btn:focus-visible{outline:2px solid #007d66;outline-offset:2px}.ds-search-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}.ds-search-btn kbd{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 .35rem;border:1px solid #ddd;border-bottom-width:2px;border-radius:6px;background:#fafafa;color:#5f6368;font:700 12px/1 Sen, system-ui, -apple-system, 'Segoe UI', sans-serif}"
+    },
+    {
+      "name": "Search Dialog",
+      "kind": "dialog",
+      "refersTo": "search-dialog",
+      "description": "Command-palette search over a dimmed page: field, live results with type label, date, title and a snippet whose matches are marked in Highlighter Teal, and key hints.",
+      "html": "<div class=\"ds-search\"><div class=\"ds-search-bar\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg><input type=\"search\" value=\"process\" aria-label=\"Search\"><kbd>Esc</kbd></div><p class=\"ds-search-status\">4 posts</p><a class=\"ds-search-result\" href=\"#\"><span class=\"ds-search-meta\"><span class=\"ds-type\">Article</span>Sep 3, 2025</span><span class=\"ds-search-title\">BPMN Basics: Understanding Business <mark>Process</mark> Modeling Notation</span><span class=\"ds-search-snippet\">Business <mark>Process</mark> Model and Notation (BPMN) is a standardized graphical notation that enables the representation of business <mark>process</mark>es in a visual format.</span></a></div>",
+      "css": ".ds-search{width:min(640px,100%);background:#fff;border-radius:12px;box-shadow:0 1px 2px rgba(17,17,17,.06),0 24px 64px -16px rgba(17,17,17,.4);overflow:hidden;font-family:Sen, system-ui, -apple-system, 'Segoe UI', sans-serif;color:#212529}.ds-search-bar{display:flex;align-items:center;gap:.75rem;height:64px;padding:0 1rem 0 1.25rem;border-bottom:1px solid #e8e8e8}.ds-search-bar svg{width:20px;height:20px;fill:none;stroke:#5f6368;stroke-width:2.2;stroke-linecap:round}.ds-search-bar input{flex:1;border:0;font:19px Sen, system-ui, -apple-system, 'Segoe UI', sans-serif;color:#111;caret-color:#007d66;outline:none;background:transparent}.ds-search-bar kbd,.ds-search kbd{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 .35rem;border:1px solid #ddd;border-bottom-width:2px;border-radius:6px;background:#fafafa;color:#5f6368;font:700 12px/1 Sen, system-ui, -apple-system, 'Segoe UI', sans-serif}.ds-search-status{margin:0;padding:.75rem 1.25rem .25rem;color:#5f6368;font-size:14px}.ds-search-result{display:block;margin:.25rem .5rem .75rem;padding:.7rem .75rem;border-radius:8px;color:#212529;text-decoration:none}.ds-search-result:hover,.ds-search-result:focus-visible{background:#f5f5f5}.ds-search-result:focus-visible{outline:2px solid #007d66;outline-offset:-2px}.ds-search-meta{display:flex;align-items:center;gap:.6rem;margin-bottom:.2rem;color:#5f6368;font-size:14px}.ds-type{padding:.1rem .6rem;border-radius:999px;background:#f1ecdf;color:#111;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.ds-search-title{display:block;color:#111;font-size:18px;font-weight:700;line-height:1.35}.ds-search-snippet{display:block;margin-top:.25rem;color:#5f6368;font-size:14px;line-height:1.55}.ds-search mark{padding:0 .1em;border-radius:3px;background:rgba(64,255,220,.45);color:inherit}"
     },
     {
       "name": "Pagination",

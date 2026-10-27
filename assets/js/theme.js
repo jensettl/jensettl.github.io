@@ -36,10 +36,6 @@ jQuery(document).ready(function($){
 		$('#comments').toggleClass('comments--show');		
 	});
 
-	//toggle search
-	$('.show-search').on('click', function() {  
-		$('.bd-search').toggleClass('search--show');		
-	});
     
     // spoilers
      $(document).on('click', '.spoiler', function() {
@@ -69,21 +65,6 @@ setTimeout(function(){
 	document.body.className="";
 },500);
 
-// Open/close the side menu (hamburger button, dark overlay, Escape key)
-function setMenu(open) {
-	$(".nav-icon").toggleClass("active", open).attr("aria-expanded", open);
-	$("#menu, #blackover-nav").toggleClass("active", open);
-	$("body").toggleClass("active-side", open);
-}
-$(document).ready(function(){
-	$(".nav-icon").click(function(){
-		setMenu(!$("#menu").hasClass("active"));
-	});
-	$("#blackover-nav").click(function(){
-		setMenu(false);
-	});
-});
-
 // Grid selector Inspiration
 $(document).ready(function(){
 	$(".grid-selector").click(function(){
@@ -92,12 +73,6 @@ $(document).ready(function(){
 	$(".grid-selector").click(function(){
 		$(".post").toggleClass('active');
 	});
-});
-
-$(document).keyup(function(e) {
-	if (e.keyCode == 27) {
-		setMenu(false);
-	}
 });
 
 

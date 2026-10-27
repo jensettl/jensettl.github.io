@@ -1,4 +1,4 @@
-{% comment %} Main navigation links, shared by the header and the side menu. The current section gets aria-current. {% endcomment %}
+{% comment %} Main navigation links in the header. The current section gets aria-current. {% endcomment %}
 {% assign nav_section = page.url | split: "/" | slice: 1 | first | default: "" %}
 {% if nav_section contains "page" %}{% assign nav_section = "" %}{% endif %}
 <li><a href="{{ site.baseurl }}/" {% if nav_section == "" %}aria-current="page"{% endif %}>Home</a></li>
