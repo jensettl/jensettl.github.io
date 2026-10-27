@@ -1,5 +1,6 @@
 ---
 ---
+@use "sass:color";
 @import "monokai";
 $brown: #B59F62;
 $teal: #40FFDC;
@@ -24,7 +25,7 @@ body {
     background: #f4f4f4;
 }
 a {
-    color: darken($primary, 24%);
+    color: color.adjust($primary, $lightness: -24%);
 }
 img {
     max-width:100%;
@@ -502,7 +503,7 @@ img, img:hover {
         width:50px;
         border-radius:50%;
         margin-right:10px;
-        border:2px solid darken($primary,20%);
+        border:2px solid color.adjust($primary, $lightness: -20%);
         padding:2px;
     }
 }
@@ -515,7 +516,7 @@ img, img:hover {
     .author-thumb {
         width:70px;
         border-radius:50%;
-        border:2px solid darken($primary,20%);
+        border:2px solid color.adjust($primary, $lightness: -20%);
         padding:2px;
     }
 }
@@ -633,7 +634,7 @@ img, img:hover {
 .show-search {
     cursor:pointer;
     &:hover {
-        color: darken($primary,20%);
+        color: color.adjust($primary, $lightness: -20%);
     }
 }
 .bd-search {
@@ -664,7 +665,7 @@ img, img:hover {
         font-size:20px;
         margin-bottom:5px;
         &:hover {
-            color: darken($primary,20%);
+            color: color.adjust($primary, $lightness: -20%);
         }
     }
     span.body {
@@ -824,3 +825,5 @@ body.active-side {
 }
 
 @import 'projects';
+@import 'topics';
+@import 'post-type';

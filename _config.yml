@@ -2,7 +2,7 @@
 name: "Jens' Blog"
 title: "Jens' Blog"
 description: "Welcome to my little footprint on the web."
-subheader: "This is where I share my projects and thoughts on coding, automation, and technology to share my learning journey and improve my writing skills."
+subheader: "This is where I share my projects and thoughts on coding, automation and technology, documenting what I learn along the way."
 logo: 'assets/images/logo_black_cropped.png'
 favicon: 'assets/images/logo_black_cropped.png'
 url: "https://jensettl.com"
@@ -24,7 +24,8 @@ authors:
     description: "I love to tackle problems with creative coding solutions and automations."
 
 # Post defaults: every post gets these unless its front matter says otherwise.
-# The folder a post lives in (_posts/projects|articles|reviews) sets its type.
+# The folder a post lives in (_posts/projects|articles|reviews) sets its type and URL,
+# e.g. _posts/projects/2025-10-22-heic-converter/ -> /projects/heic-converter/
 defaults:
   - scope:
       path: ""
@@ -36,14 +37,17 @@ defaults:
       path: "_posts/projects"
     values:
       type: project
+      permalink: /projects/:title/
   - scope:
       path: "_posts/articles"
     values:
       type: article
+      permalink: /articles/:title/
   - scope:
       path: "_posts/reviews"
     values:
       type: review
+      permalink: /reviews/:title/
 
 # Plugins
 plugins:
@@ -54,6 +58,7 @@ plugins:
   - jekyll-archives
   - jekyll-figure
   - jekyll-postfiles
+  - jekyll-redirect-from
     
 # Archives
 jekyll-archives:
@@ -71,6 +76,8 @@ paginate_path: /page:num/
 sass:
   sass_dir: _sass
   style: compressed
+  quiet_deps: true                 # no deprecation warnings from vendored Bootstrap (_sass/bootstrap)
+  silence_deprecations: [ import ] # Bootstrap 4 needs @import; @use would need a Bootstrap 5 migration
 
 # Markdown Processing
 markdown: kramdown

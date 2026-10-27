@@ -1,33 +1,10 @@
 ---
 layout: page
 title: Projects
-permalink: /projects
+permalink: /projects/
 comments: false
 ---
 
 <p class="mb-5">A collection of personal and professional projects I've built — covering automation, AI tooling, full-stack development, and more.</p>
 
-{% assign prj_posts = site.posts | where: "type", "project" %}
-{% for post in prj_posts %}
-  <a href="{{ site.baseurl }}{{ post.url }}" class="project-list-item">
-    <div class="project-list-thumb">
-      {% if post.image %}
-        <img src="{{ site.baseurl }}/{{ post.image }}" alt="{{ post.title }}">
-      {% else %}
-        <div class="project-list-thumb-placeholder"></div>
-      {% endif %}
-    </div>
-    <div class="project-list-body">
-      <h3>{{ post.title | remove: "[PROJECT] " }}</h3>
-      <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-      <div class="project-list-tags">
-        {% for cat in post.categories %}
-          {% unless cat == "Project" %}
-            <span class="badge badge-secondary mr-1">{{ cat }}</span>
-          {% endunless %}
-        {% endfor %}
-        <span class="project-list-date text-muted ml-2">{{ post.date | date: "%B %Y" }}</span>
-      </div>
-    </div>
-  </a>
-{% endfor %}
+{% include post-list.html type="project" %}

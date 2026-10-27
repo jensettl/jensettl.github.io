@@ -24,30 +24,27 @@ If you can read the source yourself (a local repo, a GitHub link), do that befor
 **Never invent** personal experience, opinions, results, numbers, timelines or quotes. Where
 something only Jens can supply is missing, leave a visible marker and list it at the end:
 
-```markdown
-<!-- TODO(jens): how long did the migration take? -->
-```
 
 ## 2. Create the post
 
 ```
-_posts/<section>/<YYYY-MM-DD>-<PREFIX>-<slug>/<YYYY-MM-DD>-<PREFIX>-<slug>.md
+_posts/<section>/<YYYY-MM-DD>-<slug>/<YYYY-MM-DD>-<slug>.md
 ```
 
-| Type | section | PREFIX |
-|---|---|---|
-| project | `projects` | `PRJ` |
-| article | `articles` | `TOP` |
-| review | `reviews` | `BR` |
+| Type | section | What goes there | URL |
+|---|---|---|---|
+| project | `projects` | coding projects Jens built | `/projects/<slug>/` |
+| article | `articles` | topics he read about, watched (YouTube videos, talks) or tried out | `/articles/<slug>/` |
+| review | `reviews` | books he read | `/reviews/<slug>/` |
 
-Use today's date. The file name becomes the URL (`/PRJ-heic-converter/`), so choose the slug
+Use today's date. Section and file name become the URL (`/projects/heic-converter/`), so choose the slug
 carefully. Once the post is pushed, renaming it breaks links.
 
 Front matter: `layout`, `author` and `type` are set by the folder, so leave them out:
 
 ```yaml
 ---
-title: "[PROJECT] Local HEIC-JPEG Converter"   # projects only get the [PROJECT] prefix
+title: "Local HEIC-JPEG Converter"            # no type prefix: the type badge shows it
 categories: [ Python ]                         # 1-2, from the list below
 tags: [ heic, pillow, cli ]                    # specific tech, tools, concepts; lowercase
 image: cover.png                               # file in the post folder
@@ -72,7 +69,7 @@ Every post starts the same way:
 
 Then:
 
-**Project** (`[PROJECT] …`), usually 400-900 words
+**Project**, usually 400-900 words
 - `## The Problem`: the situation or annoyance that started it, in first person
 - `## The Solution` or `## How It Works`: architecture, a diagram if there is one, key decisions
 - `## Features`: bullet list, **bold label**: one-line explanation
@@ -81,8 +78,9 @@ Then:
 - `## What's Next` (optional)
 - `## Code`: link the GitHub repository
 
-**Article** (topic explainer, tutorial or tool review), usually 500-1000 words
-- `## Introduction`: why this topic, where Jens ran into it
+**Article** (topic explainer, tutorial, tool review or a write-up of a video or talk), usually 500-1000 words
+- `## Introduction`: why this topic, where Jens ran into it. If it's based on a video, article or
+  talk, link the source here with its author, and keep his own takeaways apart from the summary
 - 3-6 `##` sections, building from concept to practice; code examples where useful
 - `## Conclusion`: the takeaway in 2-4 sentences, plus when he would or wouldn't use it
 
@@ -127,20 +125,20 @@ Then:
 ```liquid
 {% include download-box.html
    url="cheat-sheet.pdf"
-   image_url="/assets/icons/pdf-icon.png"
    type="pdf"
    name="cheat-sheet.pdf"
    size="190 KB"
 %}
 ```
 
-Icons available: `/assets/icons/pdf-icon.png`, `/assets/icons/json-icon.png`.
+The icon is picked from `type` (`/assets/icons/<type>-icon.png`; `pdf` and `json` exist).
+For another type, add an icon there or pass `image_url`.
 
 ## 6. Check and hand over
 
 1. Build: `JEKYLL_ENV=production bundle exec jekyll build`. There must be no new warnings,
    including no "Cover image … not found".
-2. If the dev server is running, open the post at `http://localhost:4000/<PREFIX>-<slug>/`
+2. If the dev server is running, open the post at `http://localhost:4000/<section>/<slug>/`
    and check that the images, the card on the home page and (for projects) `/projects` look right.
 3. Report to Jens:
    - the file path and future URL

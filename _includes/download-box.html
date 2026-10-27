@@ -1,7 +1,10 @@
 <div class="download-box">
   <a class="download-box__link" href="{{ include.url }}" download>
 
-    <img src="{{ include.image_url }}" alt="n8n workflow" width="32" style="margin-right:20px;" > 
+    {% comment %} Icon defaults to /assets/icons/<type>-icon.png; decorative, the name is next to it {% endcomment %}
+    {% assign icon = include.image_url %}
+    {% unless icon %}{% assign icon = "/assets/icons/" | append: include.type | append: "-icon.png" %}{% endunless %}
+    <img src="{{ icon }}" alt="" width="32" style="margin-right:20px;">
 
     <div class="download-box__info">
       <div class="download-box__name">{{ include.name }}</div>

@@ -23,8 +23,8 @@ Posts are written with help from an AI agent. The rules it follows live in two p
 Every post lives in its own folder together with its files:
 
 ```
-_posts/projects/2026-10-26-PRJ-heic-converter/
-  2026-10-26-PRJ-heic-converter.md
+_posts/projects/2026-10-26-heic-converter/
+  2026-10-26-heic-converter.md
   cover.png          <- front matter `image: cover.png`
   screenshot.png     <- in the text: ![Screenshot](screenshot.png)
   converter.zip      <- downloads work the same way
@@ -41,7 +41,7 @@ makes the `image:` cover work on cards, the post header and social previews.
 | Path | Content |
 |---|---|
 | `_posts/projects/`, `_posts/articles/`, `_posts/reviews/` | One folder per post: Markdown plus its images and downloads |
-| `_pages/` | Standalone pages (about, projects, categories, tags) |
+| `_pages/` | Standalone pages (about, categories, tags, projects/articles/reviews overviews) |
 | `_layouts/`, `_includes/` | Page templates |
 | `_plugins/` | Small build hooks (cover image paths) |
 | `_sass/` | Styles (vendored Bootstrap 4, theme partials) |
@@ -49,7 +49,8 @@ makes the `image:` cover work on cards, the post header and social previews.
 | `assets/icons/` | File-type icons for the download box |
 | `assets/download/` | Downloads of older posts, kept at their published URLs |
 
-The folder a post is in doesn't change its URL: the permalink is `/:title/`, taken from the file name.
+The section folder and file name set the URL: `_posts/projects/2026-10-26-heic-converter/` becomes
+`/projects/heic-converter/`. Old URLs (`/PRJ-…/`, `/TOP-…/`, `/BR-…/`) redirect via `redirect_from` in each post.
 
 ## Deployment
 

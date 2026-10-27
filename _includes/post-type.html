@@ -1,0 +1,2 @@
+{% comment %} Small label linking to the overview of a post's type (project, article, review) {% endcomment %}
+{% if include.type %}<a class="post-type post-type--{{ include.type }}" href="{{ site.baseurl }}/{{ include.type }}s/">{{ include.type | capitalize }}</a>{% endif %}

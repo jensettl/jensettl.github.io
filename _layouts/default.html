@@ -50,8 +50,9 @@
         <h3>Navigation</h3>
         <li><a href="{{ site.baseurl }}/">Home</a></li>
         <li><a href="{{ site.baseurl }}/about">About</a></li>
-        <li><a href="{{ site.baseurl }}/projects">Projects</a></li>
-        <!-- <li><a href="{{ site.baseurl }}/contact">Contact</a></li>        -->
+        <li><a href="{{ site.baseurl }}/projects/">Projects</a></li>
+        <li><a href="{{ site.baseurl }}/articles/">Articles</a></li>
+        <li><a href="{{ site.baseurl }}/reviews/">Reviews</a></li>
     </ul>   
 </nav>
 
@@ -81,7 +82,17 @@
         </p>
         <p>
             {{ site.subheader }}
+            <a href="{{ site.baseurl }}/projects/">See my projects &rarr;</a>
         </p>
+        <!-- Topics: categories by number of posts -->
+        <ul class="topic-list">
+            {% capture topics %}{% for c in site.categories %}{{ c[1].size | plus: 1000 }}|{{ c[0] }}{% unless forloop.last %};{% endunless %}{% endfor %}{% endcapture %}
+            {% assign topics = topics | split: ";" | sort | reverse %}
+            {% for topic in topics %}
+            {% assign t = topic | split: "|" %}
+            <li><a href="{{ site.baseurl }}/category/{{ t[1] | slugify }}/">{{ t[1] }} <span>{{ t[0] | minus: 1000 }}</span></a></li>
+            {% endfor %}
+        </ul>
     {% endif %}
 
     <!-- Content

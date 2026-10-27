@@ -1,0 +1,23 @@
+{% comment %} List of posts of one type (project, article, review), used by the overview pages. {% endcomment %}
+{% assign list_posts = site.posts | where: "type", include.type %}
+{% for post in list_posts %}
+  <a href="{{ site.baseurl }}{{ post.url }}" class="project-list-item">
+    <div class="project-list-thumb">
+      {% if post.image %}
+        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+      {% else %}
+        <div class="project-list-thumb-placeholder"></div>
+      {% endif %}
+    </div>
+    <div class="project-list-body">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+      <div class="project-list-tags">
+        {% for cat in post.categories %}
+          <span class="badge badge-secondary mr-1">{{ cat }}</span>
+        {% endfor %}
+        <span class="project-list-date text-muted ml-2">{{ post.date | date: "%B %Y" }}</span>
+      </div>
+    </div>
+  </a>
+{% endfor %}

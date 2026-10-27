@@ -20,6 +20,7 @@ group :jekyll_plugins do
     gem 'jekyll-archives'
     gem 'jekyll-figure'
     gem 'jekyll-postfiles'
+    gem 'jekyll-redirect-from'
     gem 'kramdown'
     gem 'rouge'
 end

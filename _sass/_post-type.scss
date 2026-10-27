@@ -1,0 +1,23 @@
+// Type label on post cards and post headers (_includes/post-type.html)
+.post-type {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #111;
+  background-color: #eee;
+
+  &:hover {
+    color: #111;
+    text-decoration: none;
+    filter: brightness(0.95);
+  }
+
+  &--project { background-color: #d9fff7; }
+  &--article { background-color: #f1ecdf; }
+  &--review  { background-color: #e8e6f7; }
+}
