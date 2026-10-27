@@ -1,0 +1,47 @@
+// Header with logo and main navigation (_layouts/default.html).
+// The links are visible from tablet width up; on phones the side menu takes over.
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.site-nav {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+
+  ul {
+    display: flex;
+    gap: 1.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: $nav-text;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 0.35rem 0;
+    text-decoration-line: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.45em;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+
+    &:hover {
+      color: $dark;
+      text-decoration-color: rgba($dark, 0.25);
+    }
+
+    &[aria-current="page"] {
+      color: $dark;
+      font-weight: 700;
+      text-decoration-color: $primary;
+    }
+  }
+}

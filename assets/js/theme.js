@@ -69,35 +69,18 @@ setTimeout(function(){
 	document.body.className="";
 },500);
 
-// Open/close navigation when clicked .nav-icon
+// Open/close the side menu (hamburger button, dark overlay, Escape key)
+function setMenu(open) {
+	$(".nav-icon").toggleClass("active", open).attr("aria-expanded", open);
+	$("#menu, #blackover-nav").toggleClass("active", open);
+	$("body").toggleClass("active-side", open);
+}
 $(document).ready(function(){
-	$('.nav-icon').click(function(){
-		$('.nav-icon').toggleClass('active');
-	});
 	$(".nav-icon").click(function(){
-		$("#menu").toggleClass('active');
-	});
-	$(".nav-icon").click(function(){
-		$("#blackover-nav").toggleClass('active');
-	});
-	$(".nav-icon").click(function(){
-		$("body").toggleClass('active-side');
-	});
-});
-
-// Close navigation when clicked .blackover (Black background)
-$(document).ready(function(){
-	$("#blackover-nav").click(function(){
-		$(".nav-icon").removeClass('active');
+		setMenu(!$("#menu").hasClass("active"));
 	});
 	$("#blackover-nav").click(function(){
-		$("#menu").removeClass('active');
-	});
-	$("#blackover-nav").click(function(){
-		$("#blackover-nav").removeClass('active');
-	});
-	$("#blackover-nav").click(function(){
-		$("body").removeClass('active-side');
+		setMenu(false);
 	});
 });
 
@@ -112,11 +95,8 @@ $(document).ready(function(){
 });
 
 $(document).keyup(function(e) {
-	if (e.keyCode == 27) { 
-		$(".nav-icon").removeClass('active');
-		$("#menu").removeClass('active');
-		$("#blackover-nav").removeClass('active');
-		$("body").removeClass('active-side');
+	if (e.keyCode == 27) {
+		setMenu(false);
 	}
 });
 
